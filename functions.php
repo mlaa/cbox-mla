@@ -79,5 +79,13 @@ function modify_some_widgets(){
 }
 add_action( 'widgets_init', 'modify_some_widgets', 9 );
 
+function restrict_admin() {
+
+	if ( !current_user_can('edit_posts') && !defined('DOING_AJAX') ) {
+		wp_die( __('Access to the dashboard has been disabled.') );
+	}
+
+}
+add_action( 'admin_init', 'restrict_admin', 1 );
 
 ?>
