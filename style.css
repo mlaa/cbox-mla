@@ -1,5 +1,5 @@
 /*
-Theme Name: MLA Commons C-Box
+Theme Name: MLA Commons Network Home
 Theme URI: http://communitystructure.com
 Description: A child theme of Commons In A Box. Powered by the Infinity Theming Engine, this professional, polished theme is designed to be easy to configure without making any sacrifices when it comes to flexibility and power. The CBOX theme features full support for the BuddyPress and bbPress community platforms.
 Version: 1.0-beta1
@@ -21,7 +21,11 @@ Template: cbox-theme
 
 @import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
 
-#wrapper { padding:0px; }
+/* Load the front-end adminbar styles. BP-Default's adminbar.css will still be used in the WordPress Dashboard. */
+/* "all" text prevents IE7 from loading. buddybar.css is not compatible with IE7 and below. */
+@import url( assets/css/buddybar.css ) all; */
+
+#wrapper { padding:0px !important; margin-top:-20px; }
 body {background:#fff; border-top:0px none;}
 a { color:#0066cc; }
 ul, ol { list-style-position: outside; padding-left:0px; margin-left:1em;}
@@ -43,137 +47,6 @@ h5, h6, div.item-list-tabs ul li a { font-weight:600; }
 .sf-menu { font-weight:500; text-transform:uppercase; font-size:12.5px; }
 div#object-nav.item-list-tabs li { font-size:15.5px; }
 .bbp-forum-title, .bbp-topic-title {font-size:100%;}
-
-/*--------------------------------------------------------------
-Styles for the Admin Bar (formerly Buddybar)
---------------------------------------------------------------*/
-#wpadminbar {
-	position: absolute !important;
-	top: 0px !important;
-	left: 50% !important; /* centers adminbar */
-	margin-left: -605px !important; /* must be half of the width of next line */
-	width: 1150px !important; /* must be same width as #wrapper in _inc/css/default.css */
-	background: transparent !important;
-	z-index: auto !important;
-}
-#wpadminbar, #wpadminbar * { font: 400 12px/28px sans-serif !important; }
-#wpadminbar .quicklinks {
-	width: auto !important;
-	float: right !important;
-	border: none !important;
-	z-index: 99999 !important;
-}
-#wpadminbar .ab-top-menu,
-#wpadminbar .ab-top-secondary {
-	float: left !important;
-	margin: 0 0 0 15px  !important;
-	border: 0px none #ccc  !important;
-	background: url("") repeat-x scroll center top #cc0000 !important;
-	-webkit-border-radius: 0px 0px 10px 10px;
-	-moz-border-radius: 0px 0px 10px 10px;
-	border-radius: 0px 0px 10px 10px;
-}
-#wpadminbar * {
-	text-shadow: none !important;
- color:#fff !important;
-}
-#wpadminbar .ab-top-menu,
-#wpadminbar .ab-top-secondary { color:#fff !important; }
-#wpadminbar .ab-top-menu .ab-sub-wrapper a,
-#wpadminbar .ab-top-secondary .ab-sub-wrapper a { color:#000 !important; }
-#wpadminbar #wp-admin-bar-appearance { margin-top: 0 !important; }
-
-/*--------------------------------------------------------------
-WordPress Admin Bar
---------------------------------------------------------------*/
-#wpadminbar .quicklinks .ab-top-menu > li > a, #wpadminbar .quicklinks .ab-top-menu > li > .ab-empty-item {
-	border-right: 1px solid #990000;
-}
-#wpadminbar .quicklinks .ab-top-menu > li#wp-admin-bar-bp-notifications > a { border-right: 1px solid #990000 !important; }
-#wpadminbar .quicklinks .ab-top-menu > li {
-	border-right: 1px solid #df6e79 !important;
-}
-#wpadminbar .quicklinks .ab-top-menu > li:last-child > .ab-empty-item,
-#wpadminbar .quicklinks .ab-top-menu > li:last-child > a,
-#wpadminbar .quicklinks .ab-top-menu > li:last-child,
-#wpadminbar .quicklinks .ab-top-menu li#wp-admin-bar-edit > a,
-#wpadminbar .quicklinks .ab-top-menu > li#wp-admin-bar-search > div,
-#wpadminbar .quicklinks .ab-top-menu > li#wp-admin-bar-search,
-#wpadminbar .quicklinks .ab-top-menu > li#wp-admin-bar-my-account,
-#wpadminbar .quicklinks .ab-top-menu #wp-admin-bar-bp-register,
-#wpadminbar .quicklinks .ab-top-menu #wp-admin-bar-bp-register a {
-	border-right: none !important;
-}
-#wpadminbar .quicklinks .ab-top-menu > li > .ab-empty-item {
-	display: none !important;
-}
-#wpadminbar .quicklinks .ab-top-menu > li#wp-admin-bar-search > .ab-empty-item { display:block !important; }
-#wpadminbar .quicklinks .ab-top-menu > li#wp-admin-bar-edit > a,
-#wpadminbar .quicklinks .ab-top-menu > li#wp-admin-bar-edit > .ab-empty-item { border-right:0px none none !important;}
-
-#wpadminbar .quicklinks .ab-top-menu #wp-admin-bar-bp-login a,
-#wpadminbar .quicklinks .ab-top-menu #wp-admin-bar-bp-register a {
-	min-width: 85px;
-	text-align: center;
-}
-
-/*--------------------------------------------------------------
-BuddyPress Admin Bar
---------------------------------------------------------------*/
-#wpadminbar .quicklinks .ab-top-secondary > li > a, #wpadminbar .quicklinks .ab-top-secondary > li > .ab-empty-item {
-	border-left: none !important;
-}
-#wpadminbar .quicklinks .ab-top-secondary > li {
-	border-left: 1px solid #DF6E79 !important;
-}
-#wpadminbar .quicklinks .ab-top-secondary > li:first-child {
-	border-right: none !important;
-}
-#wpadminbar .quicklinks .ab-top-secondary > li:last-child {
-	border-left: none !important;
-}
-
-/* Mini User Avatar ------------------------------------------*/
-#wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
-	display: none !important;
-}
-#wpadminbar #wp-admin-bar-user-actions.ab-submenu { padding: 9px 0 16px; }
-#wpadminbar #wp-admin-bar-user-info { margin:0px; height:4px; }
-#wp-admin-bar-user-info img.avatar {
- width:50px;
- height:50px;
-}
-
-/* Dropdowns -------------------------------------------------*/
-#wpadminbar .ab-sub-wrapper > .ab-submenu:first-child {
-  border-top: 1px solid #DFDFDF !important;
-}
-#wpadminbar .ab-sub-wrapper > .ab-submenu .ab-submenu {
-	border-top: none !important;
-}
-
-/* Menu Hover ------------------------------------------------*/
-#wpadminbar .ab-top-menu > li:hover > .ab-item, #wpadminbar .ab-top-menu > li.hover > .ab-item,
-#wpadminbar .ab-top-menu > li > .ab-item:focus, #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
-#wpadminbar .ab-top-menu > li > .ab-item:active, #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:active,
-#wpadminbar .ab-top-secondary > li:hover > .ab-item, #wpadminbar .ab-top-secondary > li.hover > .ab-item,
-#wpadminbar .ab-top-secondary > li > .ab-item-focus, #wpadminbar.nojq .quicklinks .ab-top-secondary > li > .ab-item:focus,
-#wpadminbar .ab-top-secondary > li > .ab-item-active, #wpadminbar.nojq .quicklinks .ab-top-secondary > li > .ab-item:active {
-	background: #e11e1e !important;
-}
-
-/* Notifications Indicators ----------------------------------*/
-#wpadminbar .quicklinks li#wp-admin-bar-bp-notifications #ab-pending-notifications.alert,
-#wpadminbar .quicklinks li#wp-admin-bar-my-account a span.count, #wpadminbar .quicklinks li#wp-admin-bar-my-account-with-avatar a span.count, #wpadminbar .quicklinks li#wp-admin-bar-bp-notifications #ab-pending-notifications {
-  background-color: #000 !important;
-}
-#wp-admin-bar-updates > .ab-item .ab-icon,
-#wp-admin-bar-comments > .ab-item .ab-icon,
-#wp-admin-bar-wp-logo > .ab-item .ab-icon,
-#wpadminbar #wp-admin-bar-new-content > .ab-item .ab-icon,
-#wpadminbar #adminbarsearch .adminbar-input { background-image:url('assets/images/admin-bar-sprite.png') !important; }
-#wpadminbar #adminbarsearch .adminbar-input { border-radius: 2px 2px 8px 8px; color:#cc0000 !important; }
-#wpadminbar #adminbarsearch .adminbar-input:focus { color:#222 !important; }
 
 /* Layout */
 #header { padding: 40px 0 0 30px; margin-bottom:1px; border-radius:0px;  background:transparent; height:100px; }
