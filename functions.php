@@ -79,13 +79,36 @@ function modify_some_widgets(){
 }
 add_action( 'widgets_init', 'modify_some_widgets', 9 );
 
-function restrict_admin() {
 
+function restrict_admin() {
 	if ( !current_user_can('edit_posts') && !defined('DOING_AJAX') ) {
 		wp_die( __('Access to the dashboard has been disabled.') );
 	}
-
 }
 add_action( 'admin_init', 'restrict_admin', 1 );
+
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(/wp-content/themes/cbox-mla/assets/images/mla-commons-logo.png);
+            padding-bottom: 0px;
+            background-size:271px 40px;
+        }
+        body.login { background:#fff;}
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return get_bloginfo( 'name' );
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
 
 ?>
