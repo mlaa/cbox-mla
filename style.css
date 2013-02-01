@@ -269,3 +269,8 @@ div.group-button.private { display: none; }
 
 /* Sad hack, part deux, to hide extra "new topic" button */
 #group-navigation #item-buttons { display: none; }
+
+/* Sad hack the third, fourth, and fifth */
+#profile-nav-menu #edit-password { display: none; }
+#request-membership-groups-li { display: none; }
+#wp-admin-bar-my-account-settings-general { display: none; }
