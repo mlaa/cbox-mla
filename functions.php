@@ -110,5 +110,22 @@ function my_login_logo_url_title() {
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
+/* Custom blog avatars, 'cause we roll like that!!! */
+
+// From the Executive Director
+add_filter('bp_get_blog_avatar_36', 'rfeal_blog_avatar');
+
+function rfeal_blog_avatar () {
+        echo bp_core_fetch_avatar (
+                array(
+                        'item_id' => 14,
+                        'type' => 'thumb',
+                        'alt' => 'Profile picture of site author Rosemary Feal',
+                        'width' => 40,
+                        'height' => 40,
+                        'class' => 'avatar'
+                )
+        );
+}
 
 ?>
