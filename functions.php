@@ -128,4 +128,20 @@ function rfeal_blog_avatar () {
         );
 }
 
+// From the President
+add_filter('bp_get_blog_avatar_35', 'mh2349_blog_avatar');
+
+function mh2349_blog_avatar () {
+        echo bp_core_fetch_avatar (
+                array(
+                        'item_id' => 205,
+                        'type' => 'thumb',
+                        'alt' => 'Profile picture of site author Marianne Hirsch',
+                        'width' => 40,
+                        'height' => 40,
+                        'class' => 'avatar'
+                )
+        );
+}
+
 ?>
