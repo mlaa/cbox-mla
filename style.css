@@ -21,10 +21,6 @@ Template: cbox-theme
 
 @import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
 
-/* Load the front-end adminbar styles. BP-Default's adminbar.css will still be used in the WordPress Dashboard. */
-/* "all" text prevents IE7 from loading. buddybar.css is not compatible with IE7 and below. */
-@import url( assets/css/buddybar.css ) all; */
-
 #wrapper { padding:0px !important; margin-top:-20px; }
 body {background:#fff; border-top:0px none;}
 a { color:#0066cc; }
