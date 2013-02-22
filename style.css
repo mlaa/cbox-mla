@@ -20,7 +20,7 @@ Template: cbox-theme
 -------------------------------------------------*/
 
 #wrapper { padding:0px !important; }
-body { background:#fff; border-top:0px none; -webkit-text-size-adjust: auto; }
+body {background:#fff; border-top:0px none;}
 a { color:#0066cc; }
 ul, ol { list-style-position: outside; padding-left:0px; margin-left:1em;}
 .entry ul, .entry ol { margin-left:1.4em;}
@@ -263,8 +263,3 @@ div.group-button.private { display: none; }
 
 /* Sad hack, part deux, to hide extra "new topic" button */
 #group-navigation #item-buttons { display: none; }
-
-/* Sad hack the third, fourth, and fifth */
-#profile-nav-menu #edit-password { display: none; }
-#request-membership-groups-li { display: none; }
-#wp-admin-bar-my-account-settings-general { display: none; }
