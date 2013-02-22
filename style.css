@@ -21,7 +21,7 @@ Template: cbox-theme
 
 @import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
 
-#wrapper { padding:0px !important; margin-top:-20px; }
+#wrapper { padding:0px !important; }
 body {background:#fff; border-top:0px none;}
 a { color:#0066cc; }
 ul, ol { list-style-position: outside; padding-left:0px; margin-left:1em;}
