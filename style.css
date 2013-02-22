@@ -1,8 +1,8 @@
 /*
-Theme Name: MLA Commons Network Home
+Theme Name: MLA Commons
 Theme URI: http://communitystructure.com
-Description: A child theme of Commons In A Box. Powered by the Infinity Theming Engine, this professional, polished theme is designed to be easy to configure without making any sacrifices when it comes to flexibility and power. The CBOX theme features full support for the BuddyPress and bbPress community platforms.
-Version: 1.0-beta1
+Description: A child theme of CBOX Theme.
+Version: 1.0
 Author: Amy Pospiech
 Author URI: http://communitystructure.com
 Tags: buddypress, infinity
@@ -19,10 +19,8 @@ Template: cbox-theme
   exactly like it is shown above!
 -------------------------------------------------*/
 
-@import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
-
 #wrapper { padding:0px !important; }
-body {background:#fff; border-top:0px none;}
+body { background:#fff; border-top:0px none; -webkit-text-size-adjust: auto; }
 a { color:#0066cc; }
 ul, ol { list-style-position: outside; padding-left:0px; margin-left:1em;}
 .entry ul, .entry ol { margin-left:1.4em;}
