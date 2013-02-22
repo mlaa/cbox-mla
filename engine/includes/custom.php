@@ -1,7 +1,7 @@
 <?php
 
 //Custom avatars.
-require_once( 'engine/includes/avatars.php' );
+require_once( 'avatars.php' );
 
 // disable admin bar style that adds 28px to top of screen
 add_theme_support( 'admin-bar', array( 'callback' => '__return_false') );
