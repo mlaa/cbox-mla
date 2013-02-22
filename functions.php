@@ -42,7 +42,7 @@ add_theme_support( 'admin-bar', array( 'callback' => '__return_false') );
 
 
 function modify_some_widgets(){
-	
+
 	register_sidebar(array(
 		'name' => 'Homepage Center Left',
 		'id' => 'homepage-center-left',
@@ -52,7 +52,7 @@ function modify_some_widgets(){
 		'before_title' => '<h4>',
 		'after_title' => '</h4>'
 	));
-	
+
 	register_sidebar(array(
 		'name' => 'Homepage Center Middle',
 		'id' => 'homepage-center-middle',
@@ -62,7 +62,7 @@ function modify_some_widgets(){
 		'before_title' => '<h4>',
 		'after_title' => '</h4>'
 	));
-	
+
 	register_sidebar(array(
 		'name' => 'Homepage Center Right',
 		'id' => 'homepage-center-right',
@@ -74,8 +74,8 @@ function modify_some_widgets(){
 	));
 
 	// Unregsiter CBox sidebar
-	unregister_sidebar( 'homepage-center-widget' );	
-	
+	unregister_sidebar( 'homepage-center-widget' );
+
 }
 add_action( 'widgets_init', 'modify_some_widgets', 9 );
 
