@@ -22,20 +22,11 @@ define( 'INFINITY_DEV_MODE', true );
 define( 'INFINITY_ERROR_REPORTING', true );
 
 /**
- * Set this to a short message to customize the friendly AJAX error
- */
-//define( 'ICE_ERROR_AJAX_MESSAGE', 'Woops! We forgot to feed the server, sorry!' );
-
-/**
- * Set this to an absolute path to a custom friendly fatal error page
- */
-//define( 'ICE_ERROR_PAGE_PATH', '/path/to/my/error.php' );
-
-/**
  * Set this to false to disable caching of dynamically generated
  * CSS and Javascript. Highly recommended for development.
  */
 define( 'ICE_CACHE_EXPORTS', false );
+
 
 // disable admin bar style that adds 28px to top of screen
 add_theme_support( 'admin-bar', array( 'callback' => '__return_false') );
@@ -90,36 +81,25 @@ add_action( 'admin_init', 'restrict_admin', 1 );
 
 /* Custom blog avatars, 'cause we roll like that!!! */
 
-// From the Executive Director
-add_filter('bp_get_blog_avatar_36', 'rfeal_blog_avatar');
-
-function rfeal_blog_avatar () {
-        echo bp_core_fetch_avatar (
-                array(
-                        'item_id' => 14,
-                        'type' => 'thumb',
-                        'alt' => 'Profile picture of site author Rosemary Feal',
-                        'width' => 40,
-                        'height' => 40,
-                        'class' => 'avatar'
-                )
-        );
+function custom_avatar ($id, $name) {
+   echo bp_core_fetch_avatar (
+      array(
+         'item_id' => $id,
+         'type' => 'thumb',
+         'alt' => 'Profile picture of site author ' . $name,
+         'width' => 40,
+         'height' => 40,
+         'class' => 'avatar'
+      )
+   );
 }
+
+// From the Executive Director
+function custom_avatar_14 () { custom_avatar (14, 'Rosemary Feal'); }
+add_filter('bp_get_blog_avatar_36', 'custom_avatar_14');
 
 // From the President
-add_filter('bp_get_blog_avatar_35', 'mh2349_blog_avatar');
-
-function mh2349_blog_avatar () {
-        echo bp_core_fetch_avatar (
-                array(
-                        'item_id' => 205,
-                        'type' => 'thumb',
-                        'alt' => 'Profile picture of site author Marianne Hirsch',
-                        'width' => 40,
-                        'height' => 40,
-                        'class' => 'avatar'
-                )
-        );
-}
+function custom_avatar_205 () { echo custom_avatar (205, 'Marianne Hirsch'); }
+add_filter('bp_get_blog_avatar_35', 'custom_avatar_205');
 
 ?>
