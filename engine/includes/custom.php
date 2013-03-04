@@ -41,6 +41,17 @@ function modify_some_widgets(){
    // Unregsiter CBox sidebar
    unregister_sidebar( 'homepage-center-widget' );
 
+   // Publications
+   register_sidebar( array(
+      'id' => 'publications-sidebar',
+      'name' => 'Publications Sidebar',
+      'description' => 'The publications widget area',
+      'before_widget' => '<article id="%1$s" class="widget %2$s">',
+      'after_widget' => '</article>',
+      'before_title' => '<h4>',
+      'after_title' => '</h4>'
+   ));
+
 }
 add_action( 'widgets_init', 'modify_some_widgets', 9 );
 
