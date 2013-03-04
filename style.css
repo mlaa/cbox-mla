@@ -259,7 +259,11 @@ select {padding:6px 2px 2px;}
 }
 
 /* Sad hack to hide "request membership" buttons */
-div.group-button.private { display: none; }
+div.group-button.private, #request-membership-groups-li { display: none; }
 
 /* Sad hack, part deux, to hide extra "new topic" button */
 #group-navigation #item-buttons { display: none; }
+
+/* Sad hack the third, fourth, and fifth */
+#profile-nav-menu #edit-password { display: none; }
+#wp-admin-bar-my-account-settings-general { display: none; }
