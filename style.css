@@ -217,13 +217,13 @@ select {padding:6px 2px 2px;}
 #footer a {color:#ddd;}
 
 
-@media only screen and (max-width: 880px) { 
+@media only screen and (max-width: 880px) {
 #sidebar .widget_bp_groups_widget h4 { padding-bottom:48px; }
 #sidebar .widget_bp_groups_widget div.item-options {
   margin-top: -60px;
 }
 }
-@media only screen and (max-width: 768px) { 
+@media only screen and (max-width: 768px) {
  #powered-by { margin-right:-10px; margin-left:-10px;}
  #sidebar .widget_bp_groups_widget h4 { padding-bottom:28px; }
  #sidebar .widget_bp_groups_widget div.item-options {
@@ -259,7 +259,7 @@ select {padding:6px 2px 2px;}
 }
 
 /* Sad hack to hide "request membership" buttons */
-div.group-button.private, #request-membership-groups-li { display: none; }
+/* div.group-button.private, #request-membership-groups-li { display: none; } */
 
 /* Sad hack, part deux, to hide extra "new topic" button */
 #group-navigation #item-buttons { display: none; }
