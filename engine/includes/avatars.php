@@ -23,4 +23,8 @@ add_filter('bp_get_blog_avatar_36', 'custom_avatar_14');
 function custom_avatar_205 () { custom_avatar (205, 'Marianne Hirsch'); }
 add_filter('bp_get_blog_avatar_35', 'custom_avatar_205');
 
+// Groups Discussion
+function custom_avatar_153 () { custom_avatar (153, 'Marianne Hirsch'); }
+add_filter('bp_get_blog_avatar_35', 'custom_avatar_153');
+
 ?>
