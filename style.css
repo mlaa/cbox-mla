@@ -83,10 +83,15 @@ ul.item-list { margin:0px; }
 .row .row { max-width:auto; margin:0px; }
 .dir-form {margin-bottom:15px;}
 div#subnav.item-list-tabs {
+padding: 0.75em 2em;
+/*
  border-top:1px solid #0066cc;
  background: #3279c1 repeat url('assets/images/stripe.png');
- }
+*/
+}
+/*
 div#subnav.item-list-tabs ul li a {color:#fff;}
+*/
 div#subnav.item-list-tabs ul li.current a { color:#000; }
 div.dir-search {float:right; position:inherit; width:auto; left:auto;}
 div.dir-search input[type="text"], imput#s { margin-right:-4px;}
@@ -137,12 +142,13 @@ div#container {background:none;}
 #main-menu-wrap { float: left; margin:0px; max-width: 769px; padding:0px; }
 #infinity-base .icext-feature {float: left; width: 281px; position:inherit;}
 
-
+/*
 div#subnav.item-list-tabs { text-shadow:0px 1px 0 rgba(255, 255, 255, 0.3); }
 div#subnav.item-list-tabs label { color:#fff; font-size:90%; }
 div#subnav.item-list-tabs {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
 }
+*/
 select {padding:6px 2px 2px;}
 
 #content .item-title a {font-size:93%;}
@@ -267,3 +273,4 @@ select {padding:6px 2px 2px;}
 /* Sad hack the third, fourth, and fifth */
 #profile-nav-menu #edit-password { display: none; }
 #wp-admin-bar-my-account-settings-general { display: none; }
+
