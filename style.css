@@ -19,7 +19,9 @@ Template: cbox-theme
   exactly like it is shown above!
 -------------------------------------------------*/
 
-#wrapper { padding:0px !important; }
+#wrapper { 
+	padding: 10px; 
+}
 body {background:#fff; border-top:0px none;}
 a { color:#0066cc; }
 ul, ol { list-style-position: outside; padding-left:0px; margin-left:1em;}
@@ -262,6 +264,12 @@ select {padding:6px 2px 2px;}
   font-weight:600;
  }
  #wpadminbar #adminbarsearch .adminbar-input { margin-top:2px; }
+}
+
+/* Limit height of slider */
+.flex-viewport, .flex-viewport img {
+ max-height: 352px !important;
+ max-width: 650px !important;
 }
 
 /* Sad hack to hide "request membership" buttons */
