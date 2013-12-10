@@ -22,7 +22,11 @@ Template: cbox-theme
 #wrapper { 
 	padding: 10px; 
 }
-body {background:#fff; border-top:0px none;}
+body {
+	background:#fff; 
+	border-top:0px none;
+	-webkit-text-size-adjust: auto;
+}
 a { color:#0066cc; }
 ul, ol { list-style-position: outside; padding-left:0px; margin-left:1em;}
 .entry ul, .entry ol { margin-left:1.4em;}
