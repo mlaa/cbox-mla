@@ -270,6 +270,13 @@ select {padding:6px 2px 2px;}
  #wpadminbar #adminbarsearch .adminbar-input { margin-top:2px; }
 }
 
+input.gsc-search-button { 
+	margin-bottom: 15px; /* fix for misaligned google search button */ 
+} 
+form.gsc-search-box { 
+	max-width: 600px; /* make Google Site Search box a little smaller */  
+} 
+
 /* Limit height of slider */
 .flex-viewport, .flex-viewport img {
  max-height: 352px !important;
