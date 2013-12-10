@@ -276,6 +276,10 @@ input.gsc-search-button {
 form.gsc-search-box { 
 	max-width: 600px; /* make Google Site Search box a little smaller */  
 } 
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page { 
+	border-color: transparent; /* attempted fix for pagination highlight issue, not yet working */ 
+	background-color: transparent; /* ditto */   
+} 
 
 /* Limit height of slider */
 .flex-viewport, .flex-viewport img {

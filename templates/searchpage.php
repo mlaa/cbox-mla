@@ -12,11 +12,12 @@
  */
 
 	infinity_get_header();
+	include 'config-private.php'; //load API key from config file 
 ?>
 	<div id="content" role="main" class="<?php do_action( 'content_class' ); ?>">
 		<script>
 		(function() {
-			var cx = '007030779719679965124:hsg42n_jgty';
+			var cx = "<?php echo $gsc_key; ?>"; 
 			var gcse = document.createElement('script');
 			gcse.type = 'text/javascript';
 			gcse.async = true;
