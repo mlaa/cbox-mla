@@ -277,8 +277,24 @@ form.gsc-search-box {
 	max-width: 600px; /* make Google Site Search box a little smaller */  
 } 
 .gsc-results .gsc-cursor-box .gsc-cursor-current-page { 
-	border-color: transparent; /* attempted fix for pagination highlight issue, not yet working */ 
-	background-color: transparent; /* ditto */   
+	border-color: transparent !important; /* attempted fix for pagination highlight issue, not yet working */ 
+	background-color: transparent !important; /* ditto */   
+} 
+.gsc-above-wrapper-area { 
+	border-bottom: none !important; 
+} 
+.gsc-resultsHeader { 
+	display: none; 
+	/* this is causing lots of extranneous spacing 
+	 * and unnecessary borders.
+	 * Hopefully it isn't important!
+	 */ 
+} 
+.gsc-result-info { 
+	line-height: 1em; /* trying to make this less beefy */ 
+} 
+.gsc-above-wrapper-area-container { 
+	margin-bottom: 0; 
 } 
 
 /* Limit height of slider */
