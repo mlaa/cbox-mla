@@ -315,3 +315,12 @@ form.gsc-search-box {
 
 /* Another sad hack to hide membership activities like "so-and-so joined the group Foo" */ 
 body.single-item.groups li.joined_group { display: none; } 
+
+li.groups.activity-item { 
+	padding-top: 35px; /* have no idea why this is so high, but it seems to be what it needs */ 
+	padding-bottom: 10px;
+} 
+
+aside.sidebar { 
+	min-height: none; /* this is giant sometimes, and results in a huge page for no apparent reason */ 
+} 
