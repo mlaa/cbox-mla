@@ -313,3 +313,5 @@ form.gsc-search-box {
 #profile-nav-menu #edit-password { display: none; }
 #wp-admin-bar-my-account-settings-general { display: none; }
 
+/* Another sad hack to hide membership activities like "so-and-so joined the group Foo" */ 
+body.single-item.groups li.joined_group { display: none; } 
