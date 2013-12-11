@@ -1,5 +1,11 @@
 <?php
 
+/* This script adds custom MLA filters to the BuddyPress 
+ * Groups directory, allowing users to filter the groups by type
+ * (committees, discussion groups, etc) and by visibility
+ * (private, public, hidden, etc). 
+ */
+
 /* MLA edits to BP literals */
 
 define ( 'BP_FRIENDS_SLUG', 'contacts' );
@@ -32,22 +38,20 @@ function mla_group_directory_type_filter() {
 	$str .= '<option value="committees">Committees</option>';
 	$str .= '<option value="divisions">Divisions</option>';
 	$str .= '<option value="discussion_groups">Discussion Groups</option>';
-	$str .= '<option value="Other">Other</option>';
+	$str .= '<option value="other">Other</option>';
 	$str .= '</select></li>';
 	echo $str;
 } 
 add_action( 'bp_groups_directory_group_types', 'mla_group_directory_status_filter');
 add_action( 'bp_groups_directory_group_types', 'mla_group_directory_type_filter');
 
-
-class BP_Groups_Status_Filter {
+class BP_Groups_Status_Filter { 
 	protected $status;
 	protected $group_ids = array();
 
 	function __construct( ) {
 
 		$this->status = $_COOKIE['bp-groups-status'];
-		//print_r('<p>Status: '.$this->status.'</p>'); //debugging. Remove this later. 
 		$this->setup_group_ids();
 
 		add_filter( 'bp_groups_get_paged_groups_sql', array( &$this, 'filter_sql' ) );
@@ -73,7 +77,6 @@ class BP_Groups_Status_Filter {
 		$sql_a = explode( 'WHERE', $sql );
 		$new_sql = $sql_a[0] . 'WHERE g.id IN (' . implode( ',', $group_ids ) . ') AND ' . $sql_a[1];
 
-		//print_r("New SQL is: ".$new_sql); // debugging
 		return $new_sql;
 	}
 
@@ -90,7 +93,6 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 
 	function __construct() { 
 		$this->status_type = $_COOKIE['bp-groups-type']; 
-		//print_r('<p>Type: '.$this->status_type.'</p>'); //debugging. Remove this later. 
 		$this->setup_group_ids();
 
 		add_filter( 'bp_groups_get_paged_groups_sql', array( &$this, 'filter_sql' ) );
@@ -102,20 +104,15 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 		switch ( $this->status_type ) { 
 			case "committees": 
 				$sql = $wpdb->prepare($sql_stub, 'M');
-				//echo "<p>Original SQL: " . $sql . "</p>"; 
 				break; 
 			case "divisions": 
 				$sql = $wpdb->prepare($sql_stub, 'D');
-				//echo "<p>Original SQL: " . $sql . "</p>"; 
 				break; 
 			case "discussion_groups": 
 				$sql = $wpdb->prepare($sql_stub, 'G');
-				//echo "<p>Original SQL: " . $sql . "</p>"; 
 				break; 
 			case "other": 
-				echo "Hello world!"; 
-				$sql = $wpdb->prepare("SELECT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid' AND LEFT(meta_value, 1) NOT IN ('G','M','D')"); //this has been empty on the mysql commandline 
-				echo "<p>Original SQL: " . $sql . "</p>"; 
+				$sql = $wpdb->prepare("SELECT DISTINCT group_id from  {$bp->groups->table_name}_groupmeta WHERE group_id NOT IN (SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid')");
 				break; 
 		} 
 		$this->group_ids = wp_parse_id_list( $wpdb->get_col( $sql ) );
@@ -127,7 +124,6 @@ function add_status_filter() {
 	global $status_filter;
 	if($_COOKIE['bp-group-status']!='all')	$status_filter = new BP_Groups_Status_Filter();
 }
-
 function remove_status_filter() {
 	global $status_filter;
 	if($_COOKIE['bp-group-status']!='all') $status_filter->remove_filters();
@@ -210,6 +206,4 @@ function type_filter_js() {
 }
 add_action('wp_footer', 'status_filter_js');
 add_action('wp_footer', 'type_filter_js');
-
-
 ?>
