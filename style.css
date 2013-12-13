@@ -313,8 +313,8 @@ form.gsc-search-box {
 #profile-nav-menu #edit-password { display: none; }
 #wp-admin-bar-my-account-settings-general { display: none; }
 
-/* Another sad hack to hide membership activities like "so-and-so joined the group Foo" */ 
-body.single-item.groups li.joined_group { display: none; } 
+/* Use this to hide membership activities like "so-and-so joined the group Foo" */ 
+/* body.single-item.groups li.joined_group { display: none; } */ 
 
 li.groups.activity-item { 
 	padding-top: 35px; /* have no idea why this is so high, but it seems to be what it needs */ 

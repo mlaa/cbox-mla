@@ -1,6 +1,7 @@
 <?php
+/* This script contains Buddypress customizations for MLA group types. */ 
 
-/* This script adds custom MLA filters to the BuddyPress 
+/* This part adds custom MLA filters to the BuddyPress 
  * Groups directory, allowing users to filter the groups by type
  * (committees, discussion groups, etc) and by visibility
  * (private, public, hidden, etc). 
@@ -145,7 +146,9 @@ add_action('bp_after_groups_loop','remove_type_filter');
 function status_filter_js() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
 	<script type="text/javascript">
+	if (jq.cookie('bp-groups-status')) { 
 		jq('li.filter-status select').val(jq.cookie('bp-groups-status'));
+	}
 	jq('li.filter-status select').change( function() {
 
 		if ( jq('.item-list-tabs li.selected').length )
@@ -176,7 +179,9 @@ function status_filter_js() {
 function type_filter_js() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
 	<script type="text/javascript">
+	if (jq.cookie('bp-groups-status')) { 
 		jq('li.filter-type select').val(jq.cookie('bp-groups-type'));
+	} 
 	jq('li.filter-type select').change( function() {
 
 		if ( jq('.item-list-tabs li.selected').length )
@@ -206,4 +211,112 @@ function type_filter_js() {
 }
 add_action('wp_footer', 'status_filter_js');
 add_action('wp_footer', 'type_filter_js');
-?>
+
+/* This part adds the MLA Group type
+ * (i.e. Committee, Division, Discussion Group)
+ * to the Buddypress Group Type display 
+ */ 
+
+function mla_group_type_filter($type, $group) { 
+	global $groups_template; 
+
+	if ( empty( $group ) )
+		$group =& $groups_template->group;
+
+	$mla_oid = (groups_get_groupmeta($group->id, 'mla_oid')); 
+	if (!empty($mla_oid)) { 
+		$mla_type_let = $mla_oid[0]; 
+		$type = substr($type, 0, -6); //this avoids redundancy like "Discussion Group (Private Group)" 
+		$visibility = " (".$type.")";
+
+		switch($mla_type_let) { 
+			case "M": 
+				$mla_type = "Committee"; 	
+				break; 
+			case "D": 
+				$mla_type = "Division"; 	
+				break; 
+			case "G": 
+				$mla_type = "Discussion Group"; 	
+				break; 
+		} 
+		$type = $mla_type; 
+		$type .= $visibility; 
+	} 
+	return $type; 	
+} 
+add_filter('bp_get_group_type', 'mla_group_type_filter'); 
+
+/* This function filters out membership activities from the group activity stream, 
+ * so that "so-and-so joined the group X" doesn't clutter the activity stream. 
+ */ 
+
+function mla_filter_out_membership_activities($a, $activities, $args){ 
+	/* I don't know what is going wrong here. 
+	 * The loop below appears to edit the activities, but then
+	 * they either aren't passed correctly or the resulting activities list
+	 * isn't displayed correctly. 
+	 */ 
+
+ 
+//	error_log("hello debugging!"); 
+  	error_log(print_r($args)); 	
+	$page = $args['page']; 
+	$per_page = $args['per_page']; 
+	$args['page'] = 1; 
+	$args['per_page'] = 9999; //We have to edit the full list, otherwise we'd just be editing the first 20 items 
+	global $activities_template; 
+	$activities_template = new BP_Activity_Template($args); //rebuild activities based on new args
+	$activities = $activities_template; 
+	$i=0; 
+//	error_log(print_r($activities->activities)); 
+	foreach ($activities->activities as $activity) { 
+//		error_log(print_r($activity)); 
+		if ($activity->type == 'joined_group') { 
+			unset($activities->activities[$i]); //get rid of membership activity items
+			$activities->activity_count = $activities->activity_count - 1; //change the count to reflect this 
+			$activities->total_activity_count = $activities->total_activity_count - 1; 
+		} 
+		++$i; 
+	} 
+	$activities->activities = array_values($activities->activities); 
+	error_log(print_r($activities_template)); 
+  
+	return $activities; // this boolean needs to go through for has_activities() to work 
+	//per http://buddypress.org/support/topic/notice-for-plugin-developers-using-bp_has_activities-filter/
+}
+
+//add_filter('bp_has_activities', 'mla_filter_out_membership_activities', 10, 3); 
+
+/* This rewrites the create_screen function so the 
+ * option to enable forums is automatically checked 
+ * when creating a new group. 
+ */ 
+
+/* Disabling, since I can't get this to work. 
+class MLA_BBP_Forums_Group_Extension extends BBP_Forums_Group_Extension { 
+ 	function create_screen() {
+
+		// bail if not looking at this screen
+		if ( !bp_is_group_creation_step( $this->slug ) )
+			return false;
+
+		$checked = TRUE; 
+//		$checked = bp_get_new_group_enable_forum() || groups_get_groupmeta( bp_get_new_group_id(), 'forum_id' ); ?>
+
+		<h4><?php _e( 'Group Forum', 'bbpress' ); ?></h4>
+
+		<p><?php _e( 'Create a FIXME FIXME to allow members of this group to communicate in a structured, bulletin-board style fashion.', 'bbpress' ); ?></p>
+
+		<div class="checkbox">
+			<label><input type="checkbox" name="bbp-create-group-forum" id="bbp-create-group-forum" value="1"<?php checked( $checked ); ?> /> <?php _e( 'Yes. I want this group to have a forum.', 'bbpress' ); ?></label>
+		</div>
+
+		<?php
+
+		// Verify intent
+		wp_nonce_field( 'groups_create_save_' . $this->slug );
+	}
+} 
+
+ */ 
