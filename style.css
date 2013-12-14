@@ -324,3 +324,18 @@ li.groups.activity-item {
 aside.sidebar { 
 	min-height: none; /* this is giant sometimes, and results in a huge page for no apparent reason */ 
 } 
+
+.gcsc-branding-text { 
+	color: #CC0000; 
+} 
+
+input.gsc-search-button, .gsc-results .gsc-cursor-page.gsc-cursor-current-page { 
+	text-shadow: none !important;  /* text shadow is cheesy here */ 
+} 	
+.gsc-results .gsc-cursor-page.gsc-cursor-current-page { 
+	padding: 0 !important; 
+} 
+
+input.gsc-input { 
+	padding: 7px !important; /* bigger search bar looks nicer */  
+} 

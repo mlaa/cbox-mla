@@ -251,43 +251,6 @@ add_filter('bp_get_group_type', 'mla_group_type_filter');
  * so that "so-and-so joined the group X" doesn't clutter the activity stream. 
  */ 
 
-function mla_filter_out_membership_activities($a, $activities, $args){ 
-	/* I don't know what is going wrong here. 
-	 * The loop below appears to edit the activities, but then
-	 * they either aren't passed correctly or the resulting activities list
-	 * isn't displayed correctly. 
-	 */ 
-
- 
-//	error_log("hello debugging!"); 
-  	error_log(print_r($args)); 	
-	$page = $args['page']; 
-	$per_page = $args['per_page']; 
-	$args['page'] = 1; 
-	$args['per_page'] = 9999; //We have to edit the full list, otherwise we'd just be editing the first 20 items 
-	global $activities_template; 
-	$activities_template = new BP_Activity_Template($args); //rebuild activities based on new args
-	$activities = $activities_template; 
-	$i=0; 
-//	error_log(print_r($activities->activities)); 
-	foreach ($activities->activities as $activity) { 
-//		error_log(print_r($activity)); 
-		if ($activity->type == 'joined_group') { 
-			unset($activities->activities[$i]); //get rid of membership activity items
-			$activities->activity_count = $activities->activity_count - 1; //change the count to reflect this 
-			$activities->total_activity_count = $activities->total_activity_count - 1; 
-		} 
-		++$i; 
-	} 
-	$activities->activities = array_values($activities->activities); 
-	error_log(print_r($activities_template)); 
-  
-	return $activities; // this boolean needs to go through for has_activities() to work 
-	//per http://buddypress.org/support/topic/notice-for-plugin-developers-using-bp_has_activities-filter/
-}
-
-//add_filter('bp_has_activities', 'mla_filter_out_membership_activities', 10, 3); 
-
 /* This rewrites the create_screen function so the 
  * option to enable forums is automatically checked 
  * when creating a new group. 
@@ -320,3 +283,18 @@ class MLA_BBP_Forums_Group_Extension extends BBP_Forums_Group_Extension {
 } 
 
  */ 
+
+/* this is a jQuery hack to check the checkbox on 
+ * Create a Group → 4. Forum → Group Forum → “Yes. I want this Group to have a forum” 
+ * by default. 
+ */ 
+
+function mla_check_create_forum_for_new_group() {
+	if( wp_script_is( 'jquery', 'done' ) ) { ?>
+		<script type="text/javascript">
+		jq('#bbp-create-group-forum').prop('checked', true);
+		</script>
+<?php }
+}
+add_action('wp_footer', 'mla_check_create_forum_for_new_group');
+
