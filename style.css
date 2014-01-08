@@ -19,11 +19,13 @@ Template: cbox-theme
   exactly like it is shown above!
 -------------------------------------------------*/
 
-#wrapper { 
-	padding: 10px; 
+#wrapper {
+	padding: 0;
 }
 body {
-	background:#fff; 
+  font-family:"Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+  font-weight:300;
+	background:#fff;
 	border-top:0px none;
 	-webkit-text-size-adjust: auto;
 }
@@ -38,9 +40,8 @@ ul.contact li { margin-top:-3px; }
 .contact .phone { list-style-image:url(assets/images/phone-icon.png); }
 .contact li .smalltext, .smalltext { font-size: 85%; }
 
-body, #sidebar .bbp-forum-title, #sidebar .bbp-topic-title { font-family:"Helvetica Neue", Arial, Helvetica, Verdana, sans-serif; font-weight:300; }
 body.theme-option { background-image: none; }
-h1, h2, h3, h4, div#object-nav.item-list-tabs li { font-family: 'Rokkitt', serif; }
+
 h5, h6, div#item-nav, div#item-body div#subnav.item-list-tabs ul li, div.item-list-tabs ul li, ul.button-nav li, ul.item-list li div.item-title, div#sidebar div#sidebar-me ul#quicklinks li a, div#message-thread strong, .sf-menu, .bp-widget h4, .bbp-topic-title a, .bbp-forum-title, .bbp-topic-title { font-family:"Helvetica Neue", Arial, Helvetica, Verdana, sans-serif; font-weight:400; }
 .bp-widget h4 {font-weight:500;}
 h5, h6, div.item-list-tabs ul li a { font-weight:600; }
@@ -49,7 +50,7 @@ div#object-nav.item-list-tabs li { font-size:15.5px; }
 .bbp-forum-title, .bbp-topic-title {font-size:100%;}
 
 /* Layout */
-#header { padding: 40px 0 0 30px; margin-bottom:1px; border-radius:0px;  background:transparent; height:100px; }
+#header { padding: 30px 0 0 30px; margin-bottom:1px; border-radius:0px;  background:transparent; height:80px; }
 #header:before { border-radius:0px; }
 #content { margin-top:1px; }
 
@@ -247,8 +248,6 @@ select {padding:6px 2px 2px;}
  body, #sidebar .bbp-forum-title, #sidebar .bbp-topic-title {
   font-weight:400;
  }
- #wpadminbar { font: 600 12px/28px sans-serif !important; }
- #wpadminbar .ab-sub-wrapper * { font: 400 12px/28px sans-serif !important; }
  div#item-nav,
  div#item-body div#subnav.item-list-tabs ul li,
  div.item-list-tabs ul li,
@@ -267,35 +266,34 @@ select {padding:6px 2px 2px;}
  .sf-menu {
   font-weight:600;
  }
- #wpadminbar #adminbarsearch .adminbar-input { margin-top:2px; }
 }
 
-input.gsc-search-button { 
-	margin-bottom: 15px; /* fix for misaligned google search button */ 
-} 
-form.gsc-search-box { 
-	max-width: 600px; /* make Google Site Search box a little smaller */  
-} 
-.gsc-results .gsc-cursor-box .gsc-cursor-current-page { 
-	border-color: transparent !important; /* attempted fix for pagination highlight issue, not yet working */ 
-	background-color: transparent !important; /* ditto */   
-} 
-.gsc-above-wrapper-area { 
-	border-bottom: none !important; 
-} 
-.gsc-resultsHeader { 
-	display: none; 
-	/* this is causing lots of extranneous spacing 
+input.gsc-search-button {
+	margin-bottom: 15px; /* fix for misaligned google search button */
+}
+form.gsc-search-box {
+	max-width: 600px; /* make Google Site Search box a little smaller */
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+	border-color: transparent !important; /* attempted fix for pagination highlight issue, not yet working */
+	background-color: transparent !important; /* ditto */
+}
+.gsc-above-wrapper-area {
+	border-bottom: none !important;
+}
+.gsc-resultsHeader {
+	display: none;
+	/* this is causing lots of extranneous spacing
 	 * and unnecessary borders.
 	 * Hopefully it isn't important!
-	 */ 
-} 
-.gsc-result-info { 
-	line-height: 1em; /* trying to make this less beefy */ 
-} 
-.gsc-above-wrapper-area-container { 
-	margin-bottom: 0; 
-} 
+	 */
+}
+.gsc-result-info {
+	line-height: 1em; /* trying to make this less beefy */
+}
+.gsc-above-wrapper-area-container {
+	margin-bottom: 0;
+}
 
 /* Limit height of slider */
 .flex-viewport, .flex-viewport img {
@@ -313,29 +311,29 @@ form.gsc-search-box {
 #profile-nav-menu #edit-password { display: none; }
 #wp-admin-bar-my-account-settings-general { display: none; }
 
-/* Use this to hide membership activities like "so-and-so joined the group Foo" */ 
-/* body.single-item.groups li.joined_group { display: none; } */ 
+/* Use this to hide membership activities like "so-and-so joined the group Foo" */
+/* body.single-item.groups li.joined_group { display: none; } */
 
-li.groups.activity-item { 
-	padding-top: 35px; /* have no idea why this is so high, but it seems to be what it needs */ 
+li.groups.activity-item {
+	padding-top: 35px; /* have no idea why this is so high, but it seems to be what it needs */
 	padding-bottom: 10px;
-} 
+}
 
-aside.sidebar { 
-	min-height: none; /* this is giant sometimes, and results in a huge page for no apparent reason */ 
-} 
+aside.sidebar {
+	min-height: none; /* this is giant sometimes, and results in a huge page for no apparent reason */
+}
 
-.gcsc-branding-text { 
-	color: #CC0000; 
-} 
+.gcsc-branding-text {
+	color: #CC0000;
+}
 
-input.gsc-search-button, .gsc-results .gsc-cursor-page.gsc-cursor-current-page { 
-	text-shadow: none !important;  /* text shadow is cheesy here */ 
-} 	
-.gsc-results .gsc-cursor-page.gsc-cursor-current-page { 
-	padding: 0 !important; 
-} 
+input.gsc-search-button, .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+	text-shadow: none !important;  /* text shadow is cheesy here */
+}
+.gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+	padding: 0 !important;
+}
 
-input.gsc-input { 
-	padding: 7px !important; /* bigger search bar looks nicer */  
-} 
+input.gsc-input {
+	padding: 7px !important; /* bigger search bar looks nicer */
+}
