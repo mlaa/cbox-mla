@@ -87,6 +87,13 @@ ul.item-list { margin:0px; }
 }
 #sidebar .widget_bp_groups_widget div.item-options a.selected, div.item-options a.selected { color:#222; }
 #flex-slider-wrap-full {padding: 0 15px 0 35px;}
+
+/* fix for difficult-to-read blue links on gray background in slider caption -JR */ 
+.flex-caption a { 
+	color: #ddd; 
+	text-decoration: underline; 
+} 
+
 .row .row { max-width:auto; margin:0px; }
 .dir-form {margin-bottom:15px;}
 div#subnav.item-list-tabs {
@@ -337,3 +344,20 @@ input.gsc-search-button, .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
 input.gsc-input {
 	padding: 7px !important; /* bigger search bar looks nicer */
 }
+
+/* Hack to make prevent .action items from overflowing into next group item -JR */ 
+#groups-list .item { 
+	display: inline-block; 
+	width: 64%
+} 
+
+#groups-list .action { 
+	float: right; 
+	position: inherit; 
+} 
+
+#groups-list .clear { 
+	clear: both; 
+} 
+
+
