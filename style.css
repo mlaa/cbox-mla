@@ -346,18 +346,34 @@ input.gsc-input {
 }
 
 /* Hack to make prevent .action items from overflowing into next group item -JR */ 
+
 #groups-list .item { 
 	display: inline-block; 
-	width: 64%
+	max-width: 66%; 
 } 
 
 #groups-list .action { 
-	float: right; 
 	position: inherit; 
+	float: right; 
+	max-width: 33%; 
+	padding-bottom: 5px; 
 } 
 
 #groups-list .clear { 
 	clear: both; 
 } 
 
+/* Another, more hacky solution, though still effective. Requires less of a structural change. 
+#groups-list .item { 
+	min-height: 100px; 
+} 
+*/
 
+/* Indicate that read-only input fields are not editable by greying them out a little bit -JR */
+#profile-edit-form input.readonly { 
+	background-color: #efefef; 
+	margin-bottom: 10px; /* I don't know why this isn't the same as the other input fields, but it apparently requires declaring it */ 
+} 
+
+#profile-edit-form input.readonly:hover { /* TODO */ 
+} 
