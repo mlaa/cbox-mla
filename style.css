@@ -374,6 +374,3 @@ input.gsc-input {
 	background-color: #efefef; 
 	margin-bottom: 10px; /* I don't know why this isn't the same as the other input fields, but it apparently requires declaring it */ 
 } 
-
-#profile-edit-form input.readonly:hover { /* TODO */ 
-} 
