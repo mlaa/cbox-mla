@@ -298,3 +298,59 @@ function mla_check_create_forum_for_new_group() {
 }
 add_action('wp_footer', 'mla_check_create_forum_for_new_group');
 
+/* disable visual editor entirely, for everyone */ 
+/* add_filter( 'user_can_richedit' , '__return_false', 50 ); */ 
+
+/* allow a few more tags in posts so that users can paste from Microsoft Word and not see any cruft */ 
+function mla_allowed_tags() {
+        return array(
+
+                // Links
+                'a' => array(
+                        'href'     => array(),
+                        'title'    => array(),
+                        'rel'      => array(),
+                        'target'   => array()
+                ),
+
+                // Quotes
+                'blockquote'   => array(
+                        'cite'     => array()
+                ),
+
+                // Code
+                'code'         => array(),
+                'pre'          => array(),
+
+                // Formatting
+                'em'           => array(),
+                'strong'       => array(),
+                'del'          => array(
+                        'datetime' => true,
+                ),
+		// Legacy tags used by Word, begrudgingly included so that users can paste from Word
+		'b'            => array(), 	
+		'i'            => array(),
+		'p'            => array(
+			'align'    => true, 
+		),
+
+                // Lists
+                'ul'           => array(),
+                'ol'           => array(
+                        'start'    => true,
+                ),
+                'li'           => array(),
+
+                // Images
+                'img'          => array(
+                        'src'      => true,
+                        'border'   => true,
+                        'alt'      => true,
+                        'height'   => true,
+                        'width'    => true,
+                )
+        );
+}
+
+add_filter('bbp_kses_allowed_tags','mla_allowed_tags');
