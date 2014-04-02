@@ -376,5 +376,11 @@ input.gsc-input {
 } 
 
 #profile-edit-form p.name { 
-	font-size: 120%; /* slightly larger to make it stand out
+	font-size: 120%; /* slightly larger to make it stand out */ 
 } 
+
+/* corrects 'files' icon not displaying in groups */ 
+li#nav-documents-groups-li a:before { 
+       content: "L"; 
+}        
+
