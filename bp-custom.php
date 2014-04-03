@@ -328,12 +328,23 @@ function mla_allowed_tags() {
                 'del'          => array(
                         'datetime' => true,
                 ),
-		// Legacy tags used by Word, begrudgingly included so that users can paste from Word
+		// Tags used by Word, begrudgingly included so that users can paste from Word
 		'b'            => array(), 	
 		'i'            => array(),
+		'h1'           => array(),
+		'h2'           => array(),
+		'h3'           => array(),
+		'h4'           => array(),
+		'h5'           => array(),
+		'h6'           => array(),
+		'sub'          => array(),
+		'sup'        => array(),
 		'p'            => array(
 			'align'    => true, 
 		),
+		'span'         => array(
+	 		'style'    => true,	
+		), 
 
                 // Lists
                 'ul'           => array(),
