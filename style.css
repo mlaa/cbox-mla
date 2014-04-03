@@ -19,6 +19,7 @@ Template: cbox-theme
   exactly like it is shown above!
 -------------------------------------------------*/
 
+/* --- Structure --- {{{1 */ 
 #wrapper {
 	padding: 0;
 }
@@ -49,7 +50,9 @@ h5, h6, div.item-list-tabs ul li a { font-weight:600; }
 div#object-nav.item-list-tabs li { font-size:15.5px; }
 .bbp-forum-title, .bbp-topic-title {font-size:100%;}
 
-/* Layout */
+/* --- End Structure --- }}} */ 
+
+/* --- Layout --- {{{1 */
 #header { padding: 30px 0 0 30px; margin-bottom:1px; border-radius:0px;  background:transparent; height:80px; }
 #header:before { border-radius:0px; }
 #content { margin-top:1px; }
@@ -59,10 +62,6 @@ div#object-nav.item-list-tabs li { font-size:15.5px; }
 #sidebar.sidebar-left { padding-bottom:0px; }
 ul.item-list li {padding-top:20px;}
 ul.item-list { margin:0px; }
-
-/* Prevent overflow of status update into "add friend" button when logged in */
-.logged-in ul#members-list li .item .item-meta { margin-left:50px;}
-.logged-in ul#members-list li .item { width:85%; }
 
 #sidebar .widget_bp_groups_widget h4 { padding-bottom:28px; }
 #sidebar .widget_bp_groups_widget div.item-options {
@@ -88,24 +87,11 @@ ul.item-list { margin:0px; }
 #sidebar .widget_bp_groups_widget div.item-options a.selected, div.item-options a.selected { color:#222; }
 #flex-slider-wrap-full {padding: 0 15px 0 35px;}
 
-/* fix for difficult-to-read blue links on gray background in slider caption -JR */ 
-.flex-caption a { 
-	color: #ddd; 
-	text-decoration: underline; 
-} 
-
 .row .row { max-width:auto; margin:0px; }
 .dir-form {margin-bottom:15px;}
 div#subnav.item-list-tabs {
-padding: 0.75em 2em;
-/*
- border-top:1px solid #0066cc;
- background: #3279c1 repeat url('assets/images/stripe.png');
-*/
+	padding: 0.75em 2em;
 }
-/*
-div#subnav.item-list-tabs ul li a {color:#fff;}
-*/
 div#subnav.item-list-tabs ul li.current a { color:#000; }
 div.dir-search {float:right; position:inherit; width:auto; left:auto;}
 div.dir-search input[type="text"], imput#s { margin-right:-4px;}
@@ -118,22 +104,23 @@ div.generic-button a { margin:5px 3px 3px; }
 .main-wrap {background:#fff; box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -moz-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); border-top:1px solid #efefef;}
 #commentform {margin-left:0px;}
 
-/* Top Menu */
+/* --- End Layout --- }}} */ 
+
+/* --- Top Menu --- {{{1 */
 #header .sf-menu { left:290px; bottom:12px; width:auto; }
 .sf-menu li.current_page_item a, .sf-menu li.selected a {background:none; color:#000; }
 .sf-menu a, .sf-menu a:hover, .sf-menu a:visited {color: #cc0000;}
 .sf-menu a { border-bottom:0px; border-left:0px; }
 .sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
-    background: none !important;
-    color:#333;
+	background: none !important;
+	color:#333;
 }
 div#container {background:none;}
 
-.main-menu ul a,
-.main-menu ul a:hover,
-#main-menu-wrap a:hover {
-    border-right:1px solid #c5c5c5;
-}
+.main-menu { 
+	padding: 0px; /* fixes misaligned menu items */  
+	margin-left: 10px; /* a little spacing from the logo */  
+} 
 .main-menu ul li#menu-item-151 a,
 .main-menu ul li#menu-item-151 a:hover,
 #main-menu-wrap li#menu-item-151 a:hover,
@@ -148,56 +135,56 @@ div#container {background:none;}
 .base-menu ul li.current-menu-item a,
 .top-wrap .sub-menu { background:transparent none;}
 .base-menu ul a, div.item-list-tabs ul li a, div.item-list-tabs ul li span, #footer-menu ul li a {text-shadow:none;}
-.sf-menu a,
-.sf-menu a:hover { border-right:1px solid #C5C5C5; }
 .top-menu, .top-wrap .sub-menu, .base-menu ul ul { border-bottom:0px none; box-shadow:none; -moz-box-shadow: none; -webkit-box-shadow:none; }
 .top-wrap.row { background:#fff; box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -moz-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15);}
 
 #main-menu-wrap { float: left; margin:0px; max-width: 769px; padding:0px; }
 #infinity-base .icext-feature {float: left; width: 281px; position:inherit;}
 
-/*
-div#subnav.item-list-tabs { text-shadow:0px 1px 0 rgba(255, 255, 255, 0.3); }
-div#subnav.item-list-tabs label { color:#fff; font-size:90%; }
-div#subnav.item-list-tabs {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
-}
-*/
-select {padding:6px 2px 2px;}
+/* --- End Top Menu --- }}} */ 
 
-#content .item-title a {font-size:93%;}
+/* --- Homepage --- {{{1 */ 
+
+select {
+	padding:6px 2px 2px;
+}
+#content .item-title a {
+	font-size:93%;
+}
 #center-homepage {
-  padding: 0 0px 5px;
-  margin: 30px 15px 15px;
+	padding: 0 0px 5px;
+	margin: 30px 15px 15px;
 }
 #center-homepage .widget h4 {
-  background: url("assets/images/stripe.png") #FF8B00;
-  color:#fff;
-  border-radius: 5px 5px 0 0;
-  margin-bottom: 7px;
-  margin-top: 0;
-  padding: 9px 15px 7px;
+	background: url("assets/images/stripe.png") #FF8B00;
+	color:#fff;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: 7px;
+	margin-top: 0;
+	padding: 9px 15px 7px;
 }
-#center-homepage .widget h4 a {color:#fff;}
+#center-homepage .widget h4 a {
+	color:#fff;
+}
 #center-homepage ul {
-  list-style-position: outside;
-  margin: 0 1em 0 28px;
-  padding: 0;
+	list-style-position: outside;
+	margin: 0 1em 0 28px;
+	padding: 0;
 }
 #content #center-homepage .homepage-widget.column {padding:0px;}
 #content #center-homepage .homepage-widget {
-  background: none repeat scroll 0 0 #FAFAFA;
-  border: 1px solid #E6E6E6;
-  border-radius: 6px 6px 2px 2px;
-  margin: 1% 1% 3%;
-  width: 31.33%;
+	background: none repeat scroll 0 0 #FAFAFA;
+	border: 1px solid #E6E6E6;
+	border-radius: 6px 6px 2px 2px;
+	margin: 1% 1% 3%;
+	width: 31.33%;
 }
 #content .homepage-widget {
-  margin: 0 1% 3%;
-  width: 31.33%;
+	margin: 0 1% 3%;
+	width: 31.33%;
 }
 .textwidget {
-  padding: 0 15px;
+	padding: 0 15px;
 }
 #sidebar .textwidget,
 #footer .textwidget { padding:0px; }
@@ -215,10 +202,23 @@ select {padding:6px 2px 2px;}
 .cfcw-content .cfcw-description { margin-top:0px; }
 .cfcw-content .more { font-size:90%; }
 
-/* Footer */
-.footer-wrap { border:0px none; border-top:1px solid #585858; background-position: top center; }
-.footer-wrap.row { width:100%; }
-#footer { padding:0px; text-align:center; background: url('assets/images/stripe.png') repeat #707070; }
+/* --- End Homepage --- }}} */ 
+
+/* --- Footer --- {{{1 */
+	
+.footer-wrap { 
+	border:0px none; 
+	border-top:1px solid #585858; 
+	background-position: top center; 
+}
+.footer-wrap.row { 
+	width:100%; 
+}
+#footer { 
+	padding:0px; 
+	text-align:center; 
+	background-color: #444; 
+}
 #footer .footer-widget {
   color: #A9A9A9;
   font-weight: 400;
@@ -227,15 +227,38 @@ select {padding:6px 2px 2px;}
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   width: 27.33%;
 }
-#footer .widget h4 {border-bottom:0px none; color:#fff; font-size:1.5em; padding-bottom:0px; margin-bottom:.6em;}
+#footer a {
+	color:#ddd;
+}
+#footer .widget h4 {
+	border-bottom:0px none; 
+	font-size:1.5em; 
+	padding-bottom:0px; 
+	margin-bottom:.6em;
+}
+.footer-widgets.row { 
+	max-width:1150px; 
+	margin: 0 auto;  
+	padding:0 2%; 
+	text-align:left; 
+}
+#powered-by { 
+	border: none; 
+} 
+#powered-by a { 
+	color: #ffd8dc; 
+}
+#copyright-info.six {
+	width:100%; 
+	text-align:center;
+	padding: 8px; /* to match top header */ 
+}
+#footer-info {
+	display:none;
+}
+/* --- End Footer --- }}} */
 
-.footer-widgets.row { max-width:1150px; margin: 0 auto;  padding:0 2%; text-align:left; border-left: 1px solid #898989; border-right: 1px solid rgba(0,0,0,.3); box-shadow: -1px 0 0 rgba(0,0,0,.3), 1px 0 0 #898989; background:#707070; }
-#powered-by { position:absolute; width:100%; border-top: 1px solid #5f5f5f; font-size:10px; color:#fff; background-color:#cc0033; padding:.5em 0px .45em; margin:0px; text-align:center; font-weight:normal; text-transform:uppercase; }
-#powered-by a { color: #ffd8dc; }
-#copyright-info.six {width:100%; text-align:center;}
-#footer-info {display:none;}
-#footer a {color:#ddd;}
-
+/* --- Mobile and Responsive Design --- {{{1 */ 
 
 @media only screen and (max-width: 880px) {
 #sidebar .widget_bp_groups_widget h4 { padding-bottom:48px; }
@@ -247,7 +270,7 @@ select {padding:6px 2px 2px;}
  #powered-by { margin-right:-10px; margin-left:-10px;}
  #sidebar .widget_bp_groups_widget h4 { padding-bottom:28px; }
  #sidebar .widget_bp_groups_widget div.item-options {
-  margin-top: -40px;
+  medgarillasargin-top: -40px;
 }
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -275,6 +298,10 @@ select {padding:6px 2px 2px;}
  }
 }
 
+/* --- End Mobile --- }}} */ 
+
+/* --- Google Site Search --- {{{1 */ 
+
 input.gsc-search-button {
 	margin-bottom: 15px; /* fix for misaligned google search button */
 }
@@ -301,6 +328,25 @@ form.gsc-search-box {
 .gsc-above-wrapper-area-container {
 	margin-bottom: 0;
 }
+.gcsc-branding-text {
+	color: #CC0000;
+}
+input.gsc-search-button, .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+	text-shadow: none !important;  /* text shadow is cheesy here */
+}
+.gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+	padding: 0 !important;
+}
+input.gsc-input {
+	padding: 7px !important; /* bigger search bar looks nicer */
+}
+/* --- End Google Site Search --- }}} */ 
+
+/* --- Misc Bugfixes --- {{{1 */ 
+
+/* Prevent overflow of status update into "add friend" button when logged in */
+.logged-in ul#members-list li .item .item-meta { margin-left:50px;}
+.logged-in ul#members-list li .item { width:85%; }
 
 /* Limit height of slider */
 .flex-viewport, .flex-viewport img {
@@ -308,18 +354,12 @@ form.gsc-search-box {
  max-width: 650px !important;
 }
 
-/* Sad hack to hide "request membership" buttons */
-/* div.group-button.private, #request-membership-groups-li { display: none; } */
-
 /* Sad hack, part deux, to hide extra "new topic" button */
 #group-navigation #item-buttons { display: none; }
 
 /* Sad hack the third, fourth, and fifth */
 #profile-nav-menu #edit-password { display: none; }
 #wp-admin-bar-my-account-settings-general { display: none; }
-
-/* Use this to hide membership activities like "so-and-so joined the group Foo" */
-/* body.single-item.groups li.joined_group { display: none; } */
 
 li.groups.activity-item {
 	padding-top: 35px; /* have no idea why this is so high, but it seems to be what it needs */
@@ -330,44 +370,21 @@ aside.sidebar {
 	min-height: none; /* this is giant sometimes, and results in a huge page for no apparent reason */
 }
 
-.gcsc-branding-text {
-	color: #CC0000;
-}
-
-input.gsc-search-button, .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
-	text-shadow: none !important;  /* text shadow is cheesy here */
-}
-.gsc-results .gsc-cursor-page.gsc-cursor-current-page {
-	padding: 0 !important;
-}
-
-input.gsc-input {
-	padding: 7px !important; /* bigger search bar looks nicer */
-}
 
 /* Hack to make prevent .action items from overflowing into next group item -JR */ 
-
 #groups-list .item { 
 	display: inline-block; 
 	max-width: 66%; 
 } 
-
 #groups-list .action { 
 	position: inherit; 
 	float: right; 
 	max-width: 33%; 
 	padding-bottom: 5px; 
 } 
-
 #groups-list .clear { 
 	clear: both; 
 } 
-
-/* Another, more hacky solution, though still effective. Requires less of a structural change. 
-#groups-list .item { 
-	min-height: 100px; 
-} 
-*/
 
 /* Indicate that read-only input fields are not editable by greying them out a little bit -JR */
 #profile-edit-form input.readonly { 
@@ -375,12 +392,13 @@ input.gsc-input {
 	margin-bottom: 10px; /* I don't know why this isn't the same as the other input fields, but it apparently requires declaring it */ 
 } 
 
+/* fix for difficult-to-read blue links on gray background in slider caption -JR */ 
+.flex-caption a { 
+	color: #ddd; 
+	text-decoration: underline; 
+} 
+
 #profile-edit-form p.name { 
 	font-size: 120%; /* slightly larger to make it stand out */ 
 } 
-
-/* corrects 'files' icon not displaying in groups */ 
-li#nav-documents-groups-li a:before { 
-       content: "L"; 
-}        
 
