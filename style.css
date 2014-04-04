@@ -165,8 +165,9 @@ select {
 	margin: 30px 15px 15px;
 }
 #center-homepage .widget h4 {
-	background: url("assets/images/stripe.png") #FF8B00;
+	background: #FF8B00;
 	color:#fff;
+	text-shadow: 1px 1px 1px #DD7B00; /* just makes the white-on-orange a little easier to read now that the stripes are gone */  
 	border-radius: 5px 5px 0 0;
 	margin-bottom: 7px;
 	margin-top: 0;
@@ -213,7 +214,6 @@ select {
 
 /* --- End Homepage --- }}} */ 
 
-
 /* --- Footer --- {{{1 */
 	
 .footer-wrap { 
@@ -230,12 +230,12 @@ select {
 	background-color: #444; 
 }
 #footer .footer-widget {
-  color: #A9A9A9;
-  font-weight: 400;
-  margin: 2% 3% 3%;
-  padding: 0;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  width: 27.33%;
+	color: #A9A9A9;
+	font-weight: 400;
+	margin: 2% 3% 3%;
+	padding: 0;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	width: 27.33%;
 }
 #footer a {
 	color:#ddd;
@@ -252,7 +252,6 @@ select {
 	padding:0 2%; 
 	text-align:left; 
 }
-
 ul.contact { margin-left:1.8em;}
 ul.contact li { 
 	margin-top:-3px; 
@@ -262,7 +261,6 @@ ul.contact li {
 .contact .email { list-style-image:url(assets/images/envelope-icon.png); }
 .contact .phone { list-style-image:url(assets/images/phone-icon.png); }
 .contact li .smalltext, .smalltext { font-size: 85%; }
-
 #powered-by { 
 	border: none; 
 } 
