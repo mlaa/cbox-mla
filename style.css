@@ -112,7 +112,6 @@ div.dir-search input[type="text"], imput#s { margin-right:-4px;}
 .activity-header p {margin-top:0px;}
 .activity-content > p { margin-bottom:0px;}
 div.generic-button a { margin:5px 3px 3px; }
-.main-wrap {background:#fff; box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -moz-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); border-top:1px solid #efefef;}
 #commentform {margin-left:0px;}
 
 /* --- End Layout --- }}} */ 
@@ -146,8 +145,6 @@ div#container {background:none;}
 .base-menu ul li.current-menu-item a,
 .top-wrap .sub-menu { background:transparent none;}
 .base-menu ul a, div.item-list-tabs ul li a, div.item-list-tabs ul li span, #footer-menu ul li a {text-shadow:none;}
-.top-menu, .top-wrap .sub-menu, .base-menu ul ul { border-bottom:0px none; box-shadow:none; -moz-box-shadow: none; -webkit-box-shadow:none; }
-.top-wrap.row { background:#fff; box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -moz-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15);}
 #main-menu-wrap { float: left; margin:0px; max-width: 769px; padding:0px; }
 #infinity-base .icext-feature {float: left; width: 281px; position:inherit;}
 
@@ -418,6 +415,6 @@ aside.sidebar {
 	font-size: 120%; /* slightly larger to make it stand out */ 
 } 
 #pag-bottom { 
-	margin-bottom: 5px; /* pagination links at the bottom are too close to the footer */ 
+	margin-bottom: 7px; /* pagination links at the bottom are too close to the footer */ 
 	border-bottom: none; /* no need for this separator, since it's already at the bottom */ 
 } 
