@@ -24,31 +24,42 @@ Template: cbox-theme
 	padding: 0;
 }
 body {
-  font-family:"Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
-  font-weight:300;
+	font-family:"Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+	font-weight:300;
 	background:#fff;
 	border-top:0px none;
 	-webkit-text-size-adjust: auto;
 }
-a { color:#0066cc; }
-ul, ol { list-style-position: outside; padding-left:0px; margin-left:1em;}
-.entry ul, .entry ol { margin-left:1.4em;}
-
-ul.contact { margin-left:1.8em;}
-ul.contact li { margin-top:-3px; }
-.contact .address { list-style-image:url(assets/images/pin-icon.png); margin-bottom:1em; }
-.contact .email { list-style-image:url(assets/images/envelope-icon.png); margin-bottom:1em; }
-.contact .phone { list-style-image:url(assets/images/phone-icon.png); }
-.contact li .smalltext, .smalltext { font-size: 85%; }
-
-body.theme-option { background-image: none; }
-
-h5, h6, div#item-nav, div#item-body div#subnav.item-list-tabs ul li, div.item-list-tabs ul li, ul.button-nav li, ul.item-list li div.item-title, div#sidebar div#sidebar-me ul#quicklinks li a, div#message-thread strong, .sf-menu, .bp-widget h4, .bbp-topic-title a, .bbp-forum-title, .bbp-topic-title { font-family:"Helvetica Neue", Arial, Helvetica, Verdana, sans-serif; font-weight:400; }
-.bp-widget h4 {font-weight:500;}
-h5, h6, div.item-list-tabs ul li a { font-weight:600; }
-.sf-menu { font-weight:500; text-transform:uppercase; font-size:12.5px; }
-div#object-nav.item-list-tabs li { font-size:15.5px; }
-.bbp-forum-title, .bbp-topic-title {font-size:100%;}
+a {
+	color:#0066cc;
+}
+ul, ol {
+	list-style-position: outside;
+	padding-left:0px;
+	margin-left:1em;
+}
+.entry ul, .entry ol {
+	margin-left:1.4em;
+}
+body.theme-option {
+	background-image: none;
+}
+h5, h6, div#item-nav, div#item-body div#subnav.item-list-tabs ul li, div.item-list-tabs ul li, ul.button-nav li, ul.item-list li div.item-title, div#sidebar div#sidebar-me ul#quicklinks li a, div#message-thread strong, .sf-menu, .bp-widget h4, .bbp-topic-title a, .bbp-forum-title, .bbp-topic-title {
+	font-family:"Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+	font-weight:400;
+}
+.bp-widget h4 {
+	font-weight:500;
+}
+h5, h6, div.item-list-tabs ul li a {
+	font-weight:600;
+}
+div#object-nav.item-list-tabs li {
+	font-size:15.5px;
+}
+.bbp-forum-title, .bbp-topic-title {
+	font-size:100%;
+}
 
 /* --- End Structure --- }}} */ 
 
@@ -65,24 +76,24 @@ ul.item-list { margin:0px; }
 
 #sidebar .widget_bp_groups_widget h4 { padding-bottom:28px; }
 #sidebar .widget_bp_groups_widget div.item-options {
-  background: url('assets/images/stripe.png') #FAFAFA;
-  border-color: #ececec;
-  border-radius: 3px 3px 0 0;
-  border-style: solid solid none;
-  border-width: 1px 1px 0;
-  font-size: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -40px;
-  margin-bottom:0px;
-  padding: 1px 0;
-  text-align: center;
-  float:none;
+	background: url('assets/images/stripe.png') #FAFAFA;
+	border-color: #ececec;
+	border-radius: 3px 3px 0 0;
+	border-style: solid solid none;
+	border-width: 1px 1px 0;
+	font-size: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -40px;
+	margin-bottom:0px;
+	padding: 1px 0;
+	text-align: center;
+	float:none;
 }
 #sidebar .widget_bp_groups_widget div.item-options a {
-  display: inline-block;
-  height: 20px;
-  padding: 0 2px 2px;
+	display: inline-block;
+	height: 20px;
+	padding: 0 2px 2px;
 }
 #sidebar .widget_bp_groups_widget div.item-options a.selected, div.item-options a.selected { color:#222; }
 #flex-slider-wrap-full {padding: 0 15px 0 35px;}
@@ -108,6 +119,7 @@ div.generic-button a { margin:5px 3px 3px; }
 
 /* --- Top Menu --- {{{1 */
 #header .sf-menu { left:290px; bottom:12px; width:auto; }
+.sf-menu { font-weight:500; text-transform:uppercase; font-size:12.5px; }
 .sf-menu li.current_page_item a, .sf-menu li.selected a {background:none; color:#000; }
 .sf-menu a, .sf-menu a:hover, .sf-menu a:visited {color: #cc0000;}
 .sf-menu a { border-bottom:0px; border-left:0px; }
@@ -116,7 +128,6 @@ div.generic-button a { margin:5px 3px 3px; }
 	color:#333;
 }
 div#container {background:none;}
-
 .main-menu { 
 	padding: 0px; /* fixes misaligned menu items */  
 	margin-left: 10px; /* a little spacing from the logo */  
@@ -137,14 +148,12 @@ div#container {background:none;}
 .base-menu ul a, div.item-list-tabs ul li a, div.item-list-tabs ul li span, #footer-menu ul li a {text-shadow:none;}
 .top-menu, .top-wrap .sub-menu, .base-menu ul ul { border-bottom:0px none; box-shadow:none; -moz-box-shadow: none; -webkit-box-shadow:none; }
 .top-wrap.row { background:#fff; box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -moz-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15); -webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.15);}
-
 #main-menu-wrap { float: left; margin:0px; max-width: 769px; padding:0px; }
 #infinity-base .icext-feature {float: left; width: 281px; position:inherit;}
 
 /* --- End Top Menu --- }}} */ 
 
 /* --- Homepage --- {{{1 */ 
-
 select {
 	padding:6px 2px 2px;
 }
@@ -204,6 +213,7 @@ select {
 
 /* --- End Homepage --- }}} */ 
 
+
 /* --- Footer --- {{{1 */
 	
 .footer-wrap { 
@@ -242,6 +252,17 @@ select {
 	padding:0 2%; 
 	text-align:left; 
 }
+
+ul.contact { margin-left:1.8em;}
+ul.contact li { 
+	margin-top:-3px; 
+	margin-bottom: 1em; 
+}
+.contact .address { list-style-image:url(assets/images/pin-icon.png); }
+.contact .email { list-style-image:url(assets/images/envelope-icon.png); }
+.contact .phone { list-style-image:url(assets/images/phone-icon.png); }
+.contact li .smalltext, .smalltext { font-size: 85%; }
+
 #powered-by { 
 	border: none; 
 } 
@@ -385,20 +406,20 @@ aside.sidebar {
 #groups-list .clear { 
 	clear: both; 
 } 
-
 /* Indicate that read-only input fields are not editable by greying them out a little bit -JR */
 #profile-edit-form input.readonly { 
 	background-color: #efefef; 
 	margin-bottom: 10px; /* I don't know why this isn't the same as the other input fields, but it apparently requires declaring it */ 
 } 
-
 /* fix for difficult-to-read blue links on gray background in slider caption -JR */ 
 .flex-caption a { 
 	color: #ddd; 
 	text-decoration: underline; 
 } 
-
 #profile-edit-form p.name { 
 	font-size: 120%; /* slightly larger to make it stand out */ 
 } 
-
+#pag-bottom { 
+	margin-bottom: 5px; /* pagination links at the bottom are too close to the footer */ 
+	border-bottom: none; /* no need for this separator, since it's already at the bottom */ 
+} 
