@@ -33,6 +33,10 @@ body {
 a, .generic-button a {
 	color:#0066cc;
 }
+/* secondary links, should be a little lighter */ 
+.meta a { 
+	color:#0066aa; 
+} 
 ul, ol {
 	list-style-position: outside;
 	padding-left:0px;
@@ -309,8 +313,8 @@ ul.contact li {
  #powered-by { margin-right:-10px; margin-left:-10px;}
  #sidebar .widget_bp_groups_widget h4 { padding-bottom:28px; }
  #sidebar .widget_bp_groups_widget div.item-options {
-  medgarillasargin-top: -40px;
-}
+	 medgarillasargin-top: -40px;
+ }
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
  /* webkit CSS here*/
@@ -405,12 +409,9 @@ li.groups.activity-item {
 	padding-top: 35px; /* have no idea why this is so high, but it seems to be what it needs */
 	padding-bottom: 10px;
 }
-
 aside.sidebar {
 	min-height: none; /* this is giant sometimes, and results in a huge page for no apparent reason */
 }
-
-
 /* Hack to make prevent .action items from overflowing into next group item -JR */ 
 #groups-list .item { 
 	display: inline-block; 
@@ -444,3 +445,4 @@ aside.sidebar {
 #pag-bottom { 
 	margin-bottom: 7px; /* pagination links at the bottom are too close to the footer */ 
 } 
+/* --- End Misc Bugfixes --- }}} */ 
