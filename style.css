@@ -386,6 +386,15 @@ input.gsc-input {
 }
 /* --- End Google Site Search --- }}} */ 
 
+/* --- Advanced Search Form --- {{{1 */ 
+#advanced-search-form input, #advanced-search-form select, #advanced-search-form label { 
+	display: inline-block; /* line them up */ 
+} 
+#advanced-search-form label { 
+	padding: 7px; 
+} 
+/* --- End Advanced Search Form --- }}} */ 
+
 /* --- Misc Bugfixes --- {{{1 */ 
 
 /* Prevent overflow of status update into "add friend" button when logged in */
