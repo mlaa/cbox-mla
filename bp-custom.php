@@ -365,3 +365,41 @@ function mla_allowed_tags() {
 }
 
 add_filter('bbp_kses_allowed_tags','mla_allowed_tags');
+
+
+// Adds "Forums" select option to Advanced Search. 
+// Forums are normally disabled since bp_is_active('forums') returns false, 
+// since Forums are technically disabled in this install of BP? 
+/* this doesn't seem to have any effect. 
+ *function mla_bp_search_form_type_select_add_forums($options) { 
+ *        $options['forums']  = __( 'Forums',  'buddypress' ); 
+ *        return $options; 
+ *} 
+ *add_filter('bp_search_form_type_select_options', 'mla_bp_search_form_type_select_add_forums'); 
+ *
+ */
+
+// Debugging logs. -JR
+if (!function_exists('write_log')) {
+	function write_log ( $log )  {
+		if ( true === WP_DEBUG ) {
+			if ( is_array( $log ) || is_object( $log ) ) {
+				error_log( print_r( $log, true ) );
+			} else {
+				error_log( $log );
+			}
+		}
+	}
+}
+
+/* disabling this for the moment, since it doesn't seem to have any effect. 
+ *function mla_bp_search_forums_redirect() { 
+ *        write_log("Post is: "); 
+ *        write_log($_POST); 
+ *        if ($_POST['search-which'] == 'forums') { 
+ *                write_log("Search-which is indeed 'forums'."); 
+ *        } 
+ *} 
+ *add_action('bp_template_redirect', 'mla_bp_search_forums_redirect'); 
+ */
+
