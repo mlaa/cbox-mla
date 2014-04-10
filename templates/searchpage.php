@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Search Page
  * Infinity Theme: search template
  *
  * @author Bowe Frankema <bowe@presscrew.com>
