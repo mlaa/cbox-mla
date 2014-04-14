@@ -7,7 +7,7 @@ function custom_avatar($avatar, $blogid, $params) {
 		 * 'blog_id' => array(item_id, 'Person Name'),
 		 */ 
 		'36' => array(14, 'Rosemary Feal'),
-		'35' => array(205, 'Marianne Hirsch'),
+		'35' => array(619, 'Margaret W. Ferguson'),
 		'153' => array(205, 'Marianne Hirsch'), 
 	); 
 	if (isset($custom_avatars[$blogid])) { 
