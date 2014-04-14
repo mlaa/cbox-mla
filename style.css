@@ -23,7 +23,7 @@ Template: cbox-theme
  * to allow for shared elements between cbox-mla and 
  * cbox-mla-blog. 
  */ 
-@import url('assets/css/footer.css'); 
+@import url('assets/css/shared.css'); 
 
 /* --- Structure --- {{{1 */ 
 #wrapper {
