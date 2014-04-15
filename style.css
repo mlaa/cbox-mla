@@ -136,6 +136,31 @@ div.dir-search input[type="text"], imput#s { margin-right:-4px;}
 .author-box, .category-box, .tag-box, .info-box, #sidebar, .activity-inner, div.activity-comments form.ac-form, .postthumb img, span.activity, h1#site-title, div#site-title, #inner-sidebar, .sidebar-activity-tabs ul li, div#subnav.item-list-tabs, #top-homepage, .fluid-width-video-wrapper, #bbpress-forums .bbp-breadcrumb, #bbpress-forums li.bbp-footer, .bbp-reply-header { 
 	box-shadow: none; 
 	background: none; 
+	margin: 0; /* corrects negative padding in cbox */ 
+	transition: margin-left 0.5s; 
+} 
+.sidebar-activity-tabs ul li a { 
+	color: #333; 
+} 
+.sidebar-activity-tabs ul li:hover { 
+	margin-left: 15px; 
+	transition: color 0.5s, margin-left 0.5s;  
+} 
+.sidebar-activity-tabs ul li a:hover { 
+	color: #337; 
+} 
+.sidebar-activity-tabs ul li.current, .sidebar-activity-tabs ul li.selected { 
+	background: none; 
+	border: none; 
+	box-shadow: none; 
+	text-shadow: none; 
+	margin-left: 15px; 
+} 
+.sidebar-activity-tabs ul li.current:hover, .sidebar-activity-tabs ul li.selected:hover { 
+	margin-left: 15px; 
+} 
+.sidebar-activity-tabs ul li.current a, .sidebar-activity-tabs ul li.selected a { 
+	color: #337; 
 } 
 .activity-list .activity-content .activity-header, .activity-list .activity-content .comment-header { line-height:1.3em; }
 .activity-header p {margin-top:0px;}
@@ -412,6 +437,9 @@ aside.sidebar {
  */ 
 #subscription-toggle:before { 
     content: "A";
+    position: inherit; /* correction for seemingly unnecessary cbox-theme correction */ 
+    right: 0; 
+    top: 0; 
 }
 /* --- End Misc Bugfixes --- }}} */ 
 
