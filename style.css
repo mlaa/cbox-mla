@@ -397,5 +397,11 @@ aside.sidebar {
 #pag-bottom { 
 	margin-bottom: 7px; /* pagination links at the bottom are too close to the footer */ 
 } 
+
+/* corrects missing Blog icon */ 
+#group-blog:before { 
+	content: "C"; 
+} 
+
 /* --- End Misc Bugfixes --- }}} */ 
 
