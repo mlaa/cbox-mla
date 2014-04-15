@@ -398,7 +398,11 @@ aside.sidebar {
 	margin-bottom: 7px; /* pagination links at the bottom are too close to the footer */ 
 } 
 
-/* corrects missing Blog icon */ 
+/* corrects missing Blog icon 
+ * pull request for this to happen in the cbox theme: 
+ * https://github.com/cuny-academic-commons/cbox-theme/pull/192
+ * Once cbox-theme is corrected, this may be removed. 
+ */ 
 #group-blog:before { 
 	content: "C"; 
 } 
