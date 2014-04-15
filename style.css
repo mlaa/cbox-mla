@@ -383,4 +383,17 @@ input.gsc-input {
 li#nav-documents-groups-li a:before { 
        content: "L"; 
 }        
+.pagination { 
+	border-bottom: none; 
+} 
+#pag-bottom { 
+	margin-bottom: 7px; /* pagination links at the bottom are too close to the footer */ 
+} 
+
+/* corrects missing Blog icon */ 
+#group-blog:before { 
+	content: "C"; 
+} 
+
+/* --- End Misc Bugfixes --- }}} */ 
 
