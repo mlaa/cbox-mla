@@ -406,6 +406,12 @@ aside.sidebar {
 #group-blog:before { 
 	content: "C"; 
 } 
-
+/* corrects collision of subscription link with 
+ * envelope icon. See issue: 
+ * https://github.com/mlaa/cbox-mla/issues/2
+ */ 
+#subscription-toggle:before { 
+    content: "A";
+}
 /* --- End Misc Bugfixes --- }}} */ 
 
