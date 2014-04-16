@@ -15,22 +15,6 @@
 
 <?php if ( bp_has_groups( bp_ajax_querystring( 'groups' ) ) ) : ?>
 
-	<div id="pag-top" class="pagination">
-
-		<div class="pag-count" id="group-dir-count-top">
-
-			<?php bp_groups_pagination_count(); ?>
-
-		</div>
-
-		<div class="pagination-links" id="group-dir-pag-top">
-
-			<?php bp_groups_pagination_links(); ?>
-
-		</div>
-
-	</div>
-
 	<?php do_action( 'bp_before_directory_groups_list' ); ?>
 
 	<ul id="groups-list" class="item-list" role="main">
