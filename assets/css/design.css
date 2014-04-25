@@ -30,8 +30,9 @@ http://infinity.presscrew.com/learn
 
 body {
 	/*background: url("../images/bg-body.gif") repeat transparent;*/
-	background: #kff; 
+	background: #fff; 
 	font: 90%/140% "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+	border-top:0px none;
 	-webkit-text-size-adjust: auto; /* fix for zoom issue */ 
 }
 h2.page-title a,h2.post-title a,h1.page-title a,h1.post-title a {
@@ -43,7 +44,7 @@ h2.page-title,h2.post-title,h1.page-title,h1.post-title {
 	margin-top: 0;
 }
 a {
-	color: #4183C4;
+	color: #0066cc;
 	text-decoration: none;
 	-webkit-transition: color 0.1s linear;
 	-moz-transition: color 0.1s linear;
@@ -51,6 +52,10 @@ a {
 	-ms-transition: color 0.1s linear;
 	transition: color 0.1s linear;
 }
+/* secondary links, should be a little lighter */ 
+.meta a { 
+	color:#0066aa; 
+} 
 a:hover {
 text-decoration: underline;
 }
