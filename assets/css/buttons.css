@@ -1,10 +1,8 @@
 input.button:active,
 .button:active { outline: 0; position: relative; top: 1px; }
-
 .generic-button a:hover {
 	border: none;
 }
-
 a.button, .generic-button, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"],#review_form #submit {
     margin-top: 10px;
     border-top: 1px solid #ccc;
@@ -31,8 +29,19 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
     font-size: 11px;
     padding: 8px 12px;
 }
+/* debuttonize ALL THE THINGS */ 
+.generic-button, .generic-button:hover { 
+	border: none; 
+	background: none; 
+	box-shadow: none; 
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	padding: 0; 
+	margin: 0; 
+	color: inherit; 
+} 
 .generic-button a {
-	color: #444;
+	color:#0066cc;
 }
 a.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active,#review_form #submit:active {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,.3)), color-stop(100%, rgba(255,255,255,.3)));
@@ -370,16 +379,9 @@ a.button:hover, button:hover,#review_form #submit:hover {
     display: inline;
     margin: 0;
 }
-.generic-button, .generic-button:hover { 
-	border: none; 
-	background: none; 
-	box-shadow: none; 
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	padding: 0; 
-	margin: 0; 
-	color: inherit; 
-} 
-.generic-button a {
-	color:#0066cc;
+.bp-user #item-buttons .generic-button a:hover,#profile-nav-menu a:hover {
+	color: #4183C4;
+}
+.bp-user #item-buttons .generic-button a {
+	font-size: 120%;
 }
