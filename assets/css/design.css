@@ -28,7 +28,7 @@ http://infinity.presscrew.com/learn
 --------------------------------------------------------------*/
 body {
 	/*background: url("../images/bg-body.gif") repeat transparent;*/
-	background: #fff; 
+	background: #kff; 
 	font: 90%/140% "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 	-webkit-text-size-adjust: auto; /* fix for zoom issue */ 
 }
@@ -443,3 +443,38 @@ thead:first-child tr th a,thead:first-child tr td a {
 #links-personal-li #links-category-select {
 	display: none;
 }
+
+/* MLA Customizations */ 
+
+/* --- Top Menu --- {{{1 */
+#header .sf-menu { left:290px; bottom:12px; width:auto; }
+.sf-menu { font-weight:500; text-transform:uppercase; font-size:12.5px; }
+.sf-menu li.current_page_item a, .sf-menu li.selected a {background:none; color:#000; }
+.sf-menu a, .sf-menu a:hover, .sf-menu a:visited {color: #cc0000;}
+.sf-menu a { border-bottom:0px; border-left:0px; }
+.sf-menu li:hover, .sf-menu li.sfHover, .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background: none !important;
+	color:#333;
+}
+div#container {background:none;}
+.main-menu { 
+	padding: 0px; /* fixes misaligned menu items */  
+	margin-left: 10px; /* a little spacing from the logo */  
+} 
+.main-menu ul li#menu-item-151 a,
+.main-menu ul li#menu-item-151 a:hover,
+#main-menu-wrap li#menu-item-151 a:hover,
+.main-menu ul li:last-child a,
+.main-menu ul li:last-child a:hover,
+#main-menu-wrap li:last-child a:hover {
+    border-right:0px none;
+}
+.main-menu ul a { border-radius:0px; color:#cc3333; padding:9px 10px 0px; margin-right:0px;}
+.base-menu ul li.current-cat a,
+.base-menu ul li.current_page_item a,
+.base-menu ul li.current-menu-item a,
+.top-wrap .sub-menu { background:transparent none;}
+.base-menu ul a, div.item-list-tabs ul li a, div.item-list-tabs ul li span, #footer-menu ul li a {text-shadow:none;}
+#infinity-base .icext-feature {float: left; width: 281px; position:inherit;}
+
+/* --- End Top Menu --- }}} */ 
