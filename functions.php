@@ -15,20 +15,6 @@ define( 'INFINITY_DEV_MODE', true );
  * (private, public, hidden, etc). 
  */
 
-
-// Debugging logs. -JR
-if (!function_exists('write_log')) {
-	function write_log ( $log )  {
-		if ( true === WP_DEBUG ) {
-			if ( is_array( $log ) || is_object( $log ) ) {
-				error_log( print_r( $log, true ) );
-			} else {
-				error_log( $log );
-			}
-		}
-	}
-}
-
 /* MLA edits to BP literals */
 
 define ( 'BP_FRIENDS_SLUG', 'contacts' );
