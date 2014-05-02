@@ -34,6 +34,9 @@ body {
 	border-top:0px none;
 	-webkit-text-size-adjust: auto; /* fix for zoom issue */ 
 }
+h1, h2, h3, h4 { 
+	font-family: Bitter, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+} 
 h2.page-title a,h2.post-title a,h1.page-title a,h1.post-title a {
 	color: #545454;
 	margin-top: 0;
@@ -66,6 +69,9 @@ text-decoration: underline;
 	background: none;
 	border-radius: 5px 5px 0px 0px;
 }
+h1.icext-header-logo img { 
+	margin-left: 12px; 
+} 
 /* Also add a border radius to our pseudo element for header background */
 #header:before {
 	border-radius: 5px 5px 0px 0px;
@@ -139,9 +145,7 @@ h1#site-title,div#site-title {
 	font-weight: bold;
 	background: url("../images/bg-body.gif") repeat transparent;
 }
-.widget h4,#vertical-activity-tabs h4 {
-	border-bottom: 1px solid #EDEDED;
-}
+
 /* Footer */
 #footer .footer-widget {
 	color: #EFEFEF;
@@ -584,7 +588,6 @@ div#container {background:none;}
 	font-size:1.5em; 
 	padding-bottom:0px; 
 	margin-bottom:.6em;
-	margin-left: 40px; 
 }
 #footer .footer-widgets.row { 
 	max-width:1150px; 
@@ -830,7 +833,6 @@ div#container {background:none;}
 .base-menu ul li.current-menu-item a,
 .top-wrap .sub-menu { background:transparent none;}
 .base-menu ul a, div.item-list-tabs ul li a, div.item-list-tabs ul li span, #footer-menu ul li a {text-shadow:none;}
-#main-menu-wrap { float: left; margin:0px; max-width: 769px; padding:0px; }
 #infinity-base .icext-feature {float: left; width: 281px; position:inherit;}
 
 /* --- End Top Menu --- }}} */ 
