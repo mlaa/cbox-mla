@@ -46,7 +46,7 @@ h2.page-title,h2.post-title,h1.page-title,h1.post-title {
 	margin-top: 0;
 }
 a {
-	color: #0066cc;
+	color: #07d;
 	text-decoration: none;
 	-webkit-transition: color 0.1s linear;
 	-moz-transition: color 0.1s linear;
@@ -442,7 +442,11 @@ select {
 
 #homepage-sidebar-right { padding: 0 50px; }
 #homepage-sidebar-right h4,
-#homepage-sidebar-right h3 { font-size:1.8em; }
+#homepage-sidebar-right h3 { 
+	font-size:1.8em; 
+	margin: 0; 
+	font-weight: 400; 
+}
 #vertical-activity-tabs h4 {border-bottom:0px;}
 #homepage-sidebar .widget_cac_featured_content_widget h3 {  border-bottom:1px solid #EDEDED; padding-bottom:10px; padding-top:10px; }
 #homepage-sidebar div:first-child > h4 { padding-top:5px; margin-top:0px; }
@@ -503,7 +507,7 @@ thead:first-child tr th a,thead:first-child tr td a {
 }
 
 .info-box h3,#bbpress-forums li.bbp-header {
-    color: #FFF;
+	background-color: #fff; 
 }
 .bbp-topic-meta {
     font-size: 85%;

@@ -76,7 +76,6 @@ h1#site-title,div#site-title {
     padding: 10px 10px 10px 0;
 }
 .widget h4,#vertical-activity-tabs h4 {
-	padding-bottom: 10px;
 	padding-top: 10px;
 }
 .authorbox h3 {
@@ -108,6 +107,7 @@ h1#site-title,div#site-title {
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 30px;
+	background-color: #efefef; 
 }
 #top-homepage .flexslider {
 	border: 0px;
