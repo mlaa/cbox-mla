@@ -113,7 +113,7 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 				$sql = $wpdb->prepare($sql_stub, 'G');
 				break; 
 			case "other": 
-				$sql = $wpdb->prepare("SELECT DISTINCT group_id from  {$bp->groups->table_name}_groupmeta WHERE group_id NOT IN (SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid')");
+				$sql = "SELECT DISTINCT group_id from  {$bp->groups->table_name}_groupmeta WHERE group_id NOT IN (SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid')"; 
 				break; 
 		} 
 		$this->group_ids = wp_parse_id_list( $wpdb->get_col( $sql ) );
@@ -217,7 +217,7 @@ add_action('wp_footer', 'type_filter_js');
  * to the Buddypress Group Type display 
  */ 
 
-function mla_group_type_filter($type, $group) { 
+function mla_group_type_filter($type, $group="") { 
 	global $groups_template; 
 
 	if ( empty( $group ) )
