@@ -584,12 +584,16 @@ div#container {background:none;}
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	width: 26%; /* fix for strange webkit column behavior */  
 }
+#footer #footer-widget-left { 
+	margin-left: 6%; /* fix misaligned footer issue */ 
+} 
 #footer a {
 	color:#ddd;
 }
 #footer .widget h4 {
 	border-bottom:0px none; 
 	font-size:1.5em; 
+	font-weight: 400; /* way more legible this way */ 
 	padding-bottom:0px; 
 	margin-bottom:.6em;
 }
