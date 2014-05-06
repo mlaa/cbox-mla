@@ -719,6 +719,15 @@ aside.sidebar {
     right: 0; 
     top: 0; 
 }
+
+/* Hide redundant group forum titles, 
+ * see issue: 
+ * https://github.com/mlaa/cbox-mla/issues/12
+ */ 
+#bbpress-forums > h3 { 
+	display: none; 
+} 
+
 /* --- End Misc Bugfixes --- }}} */ 
 
 /* --- Structure --- {{{1 */ 
