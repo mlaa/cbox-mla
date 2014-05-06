@@ -1,1 +1,2 @@
-*private.php #ignore private files, i.e. api keys
+#ignore private files, i.e. api keys
+*-private.php
