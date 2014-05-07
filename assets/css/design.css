@@ -275,12 +275,14 @@ span.activity {
 	margin-right: 0;
 	padding-left: 14px;
 } 
+#sidebar .sidebar-activity-tabs ul li:hover, #sidebar .sidebar-activity-tabs ul li.current { 
+	background-color: #e1e1e1;
+} 
 .sidebar-activity-tabs ul li a {
 	color: #333;
 	font-weight: bold;
 }
 .sidebar-activity-tabs ul li a:hover {
-	color: #337;
 }
 .sidebar-activity-tabs ul li span,.sidebar-activity-tabs ul li.current span,.sidebar-activity-tabs ul li.selected span {
 	background: none repeat scroll 0 0 #FFFFFF;
@@ -305,14 +307,16 @@ span.activity {
 	border-top: 1px solid #3E3D3D;
 	background: #265079;
 }
-.sidebar-activity-tabs ul.profile-subnav li.current.selected a {
-	color: #009;
-	font-weight: bold;
-}
-.sidebar-activity-tabs ul li.current a,.sidebar-activity-tabs ul li.selected a {
-	color: #009;
-	font-weight: bold;
-}
+/*
+ *.sidebar-activity-tabs ul.profile-subnav li.current.selected a {
+ *        color: #009;
+ *        font-weight: bold;
+ *}
+ *.sidebar-activity-tabs ul li.current a,.sidebar-activity-tabs ul li.selected a {
+ *        color: #009;
+ *        font-weight: bold;
+ *}
+ */
 .sidebar-activity-tabs ul li:hover a {
 	font-weight: bold;
 }
@@ -784,7 +788,12 @@ div#object-nav.item-list-tabs li {
 /* --- End Structure --- }}} */ 
 
 /* --- Layout --- {{{1 */
-#header { padding: 30px 0 0 30px; margin-bottom:1px; border-radius:0px;  background:transparent; height:80px; }
+#header { 
+	padding: 30px 0 0 30px; 
+	margin-bottom:1px; 
+	border-radius:0px;  
+	background:transparent; 
+}
 #header:before { border-radius:0px; }
 #content { margin-top:1px; }
 
