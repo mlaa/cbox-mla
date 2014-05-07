@@ -268,6 +268,13 @@ span.activity {
 #profile-nav-menu a {
 	font-size: 90%;
 }
+#sidebar .sidebar-activity-tabs ul li { 
+	background-color: #efefef;
+	border: 1px solid #fff;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 14px;
+} 
 .sidebar-activity-tabs ul li a {
 	color: #333;
 	font-weight: bold;
@@ -299,11 +306,11 @@ span.activity {
 	background: #265079;
 }
 .sidebar-activity-tabs ul.profile-subnav li.current.selected a {
-	color: #FFF;
+	color: #009;
 	font-weight: bold;
 }
 .sidebar-activity-tabs ul li.current a,.sidebar-activity-tabs ul li.selected a {
-	color: #EFEFEF;
+	color: #009;
 	font-weight: bold;
 }
 .sidebar-activity-tabs ul li:hover a {
@@ -730,6 +737,13 @@ aside.sidebar {
  */ 
 #bbpress-forums > h3 { 
 	display: none; 
+} 
+
+/* de-buttonize blue info area */ 
+#bbpress-forums div.bbp-template-notice.info { 
+	border: inherit;
+	background-color: transparent; 
+	padding: 0; 
 } 
 
 /* --- End Misc Bugfixes --- }}} */ 
