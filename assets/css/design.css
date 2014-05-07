@@ -746,6 +746,10 @@ aside.sidebar {
 	padding: 0; 
 } 
 
+li.bbp-forum-info, li.bbp-topic-title { 
+	width: 68%; /* this needs to be bigger now because we got rid of "voices" */ 
+} 
+
 /* --- End Misc Bugfixes --- }}} */ 
 
 /* --- Structure --- {{{1 */ 
