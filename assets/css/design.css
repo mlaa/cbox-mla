@@ -280,7 +280,6 @@ span.activity {
 } 
 .sidebar-activity-tabs ul li a {
 	color: #333;
-	font-weight: bold;
 }
 .sidebar-activity-tabs ul li a:hover {
 }
@@ -292,10 +291,7 @@ span.activity {
 	font-size: 75%;
 	font-weight: bold;
 }
-.sidebar-activity-tabs ul li.current span,.sidebar-activity-tabs ul li.selected span {
-	background: none repeat scroll 0 0 #333333;
-	color: #999999;
-	border: 1px solid #282828;
+.sidebar-activity-tabs ul li.current span, .sidebar-activity-tabs ul li.selected span {
 }
 #vertical-activity-tabs ul li span {
 	background: transparent;
@@ -318,7 +314,6 @@ span.activity {
  *}
  */
 .sidebar-activity-tabs ul li:hover a {
-	font-weight: bold;
 }
 .sidebar-activity-tabs ul.profile-subnav li:hover {
 	background: #444;
@@ -414,7 +409,8 @@ select {
 #center-homepage .widget h4 {
 	background: #FF8B00;
 	color:#fff;
-	text-shadow: 1px 1px 1px #DD7B00; /* just makes the white-on-orange a little easier to read now that the stripes are gone */  
+	text-shadow: 1px 1px 1px #555; /* just makes the white-on-orange a little easier to read now that the stripes are gone */  
+	font-weight: 400; /* bold white on orange is impossible to read */ /* bold white on orange is impossible to read */   
 	border-radius: 5px 5px 0 0;
 	margin-bottom: 7px;
 	margin-top: 0;
