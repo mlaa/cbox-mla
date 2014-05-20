@@ -731,9 +731,9 @@ aside.sidebar {
  */ 
 #subscription-toggle:before { 
     content: "A";
-    position: inherit; /* correction for seemingly unnecessary cbox-theme correction */ 
-    right: 0; 
-    top: 0; 
+    position: relative;
+    right: 0px;
+    top: 2px;
 }
 
 /* Hide redundant group forum titles, 

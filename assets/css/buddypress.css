@@ -13,7 +13,7 @@ span.highlight, span.activity, div#message p, .generic-button, .activity-list di
     display: inline-block;
     text-decoration: none;
     font: bold 11px/12px;
-    padding: 3px 6px;
+    /*padding: 3px 6px;*/
 }
 .activity-list .activity-header a:first-child { padding: 0px }
 .activity-header p { margin-bottom: 0px }
