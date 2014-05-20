@@ -27,6 +27,8 @@ Infinity combines all the stylesheets into one file called dynamic.css. You can 
 http://infinity.presscrew.com/learn
 --------------------------------------------------------------*/
 
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
+
 body {
 	/*background: url("../images/bg-body.gif") repeat transparent;*/
 	background: #fff; 
@@ -35,7 +37,8 @@ body {
 	-webkit-text-size-adjust: auto; /* fix for zoom issue */ 
 }
 h1, h2, h3, h4 { 
-	font-family: Bitter, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-family: "Bitter", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-weight: 400; 
 } 
 h2.page-title a,h2.post-title a,h1.page-title a,h1.post-title a {
 	color: #545454;
@@ -123,12 +126,12 @@ h1#site-title,div#site-title {
 }
 /* Menus */
 .base-menu ul a,div.item-list-tabs ul li a,div.item-list-tabs ul li span,#footer-menu ul li a {
-	color: #FFF;
+	color: #333; 
 	font-weight: 400;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .base-menu ul a:hover,div.item-list-tabs ul li a:hover,div.item-list-tabs ul li span:hover,#footer-menu ul li a:hover {
-	color: #BBB;
+
 }
 .main-menu {
 	border-radius: 6px 6px 6px 6px;
@@ -751,16 +754,20 @@ li.bbp-forum-info, li.bbp-topic-title {
 } 
 
 /* the strangely misaligned border there is killing me */ 
+#bbpress-forums fieldset.bbp-form { 
+	border: none; 
+} 
 #bbpress-forums fieldset.bbp-form legend { 
-	position: relative; 
-	top: 14px; 
-	width: auto; 
 	border: none; 
 } 
 
 /* editor textbox currently is missing border, confusing */ 
 #bbpress-forums div.wp-editor-container { 
 	border: 1px solid #ddd; 
+} 
+
+div.activity.single-group { 
+	padding: 20px 0; 
 } 
 
 /* --- End Misc Bugfixes --- }}} */ 
