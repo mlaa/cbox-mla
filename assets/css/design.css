@@ -489,8 +489,10 @@ thead:first-child tr th a,thead:first-child tr td a {
 }
 /* Email Nofications */
 .single-item .group-subscription-div {
-	color: green;
 }
+.gemail_icon { 
+	color: green; 
+} 
 
 /*BBPress*/
 #bbpress-forums .bbp-breadcrumb {
