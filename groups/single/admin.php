@@ -239,21 +239,6 @@
 
 		<?php if ( bp_group_has_members( 'per_page=15&exclude_banned=false' ) ) : ?>
 
-			<?php if ( bp_group_member_needs_pagination() ) : ?>
-
-				<div class="pagination no-ajax">
-
-					<div id="member-count" class="pag-count">
-						<?php bp_group_member_pagination_count(); ?>
-					</div>
-
-					<div id="member-admin-pagination" class="pagination-links">
-						<?php bp_group_member_admin_pagination(); ?>
-					</div>
-
-				</div>
-
-			<?php endif; ?>
 
 			<ul id="members-list" class="item-list single-line">
 				<?php while ( bp_group_members() ) : bp_group_the_member(); ?>
