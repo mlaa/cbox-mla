@@ -297,7 +297,7 @@ span.activity {
 /* Second Level */
 #object-nav ul.profile-subnav {
     margin: 15px 0 -12px -30px;
-    padding-left: 30px;
+    padding-left: 15px;
 }
 ul.profile-subnav li {
 	-webkit-box-shadow: none;

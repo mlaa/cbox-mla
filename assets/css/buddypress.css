@@ -208,7 +208,7 @@ div.item-list-tabs ul li.last select {
 li#activity-filter-select label { display: inline-block }
 div.item-list-tabs ul li a, div.item-list-tabs ul li span {
     display: block;
-    padding: 8px 10px;
+    padding: 8px 9px;
     text-decoration: none;
 }
 div.item-list-tabs ul li span { color: #777 }

@@ -327,7 +327,6 @@ span.activity {
 	border-top: 1px solid #1A1A1A;
 }
 ul.profile-subnav li {
-	text-shadow: 0 1px 0 #111111;
 	border-top: 1px solid #444;
 	border-bottom: 1px solid #333;
 	background: none repeat scroll 0 0 #363636;
@@ -342,14 +341,12 @@ ul.profile-subnav li a:before {
 	top: 1px;
 }
 .sidebar-activity-tabs ul li.current ul.profile-subnav li a {
-	color: #AAAAAA;
 	font-weight: normal;
 }
 ul.profile-subnav li.current a:before {
 	color: inherit;
 }
 .sidebar-activity-tabs ul li.current ul.profile-subnav li a:hover {
-	color: #FFF;
 }
 .edit-notifications-button:before {
 	content: "_";
