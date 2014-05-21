@@ -749,7 +749,7 @@ aside.sidebar {
 } 
 
 li.bbp-forum-info, li.bbp-topic-title { 
-	width: 68%; /* this needs to be bigger now because we got rid of "voices" */ 
+	width: 90%; /* this needs to be bigger now because we got rid of "voices" and "freshness" */ 
 } 
 
 /* the strangely misaligned border there is killing me */ 
@@ -762,7 +762,7 @@ li.bbp-forum-info, li.bbp-topic-title {
 
 .single-item #item-meta .group-subscription-div { 
 	clear: none;
-	padding: 18px; 
+	padding: 14px; 
 } 
 
 /* editor textbox currently is missing border, confusing */ 
