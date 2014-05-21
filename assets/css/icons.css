@@ -151,7 +151,7 @@ span.comments a:before {
 /* Some Small Padding tweaks to make the icons look sweet */
 div#item-header div.generic-button,
 div#item-header a.button {
-    padding: 0 8px
+    /*padding: 0 8px*/ /* de-buttonize things */˚
 }
 
 #sidebar .sidebar-activity-tabs ul li a {

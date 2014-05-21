@@ -507,7 +507,7 @@ body.wiki.single-bp_doc #subnav {
 	font-size: 2em;
 }
 .groups #item-buttons .group-button {
-	padding: 2px 7px 5px;
+	/*padding: 2px 7px 5px;*/
 }
 .bbp-pagination {
 	font-size: 90%;
