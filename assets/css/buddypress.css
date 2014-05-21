@@ -504,7 +504,6 @@ table.forum th#th-freshness {
 /* > Activity Stream Posting
 --------------------------------------------------------------*/
 #item-body form#whats-new-form {
-    margin-top: 20px;
     border: none;
 }
 #whats-new-form { margin-bottom: 30px }
