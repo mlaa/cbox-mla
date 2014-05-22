@@ -505,10 +505,15 @@ function change_settings_subnav() {
 
 add_action('bp_setup_nav', 'change_settings_subnav', 5);
 
-
 function remove_general_subnav() {
 	global $bp;
 	bp_core_remove_subnav_item($bp->settings->slug, 'general');
 }
 
 add_action( 'wp', 'remove_general_subnav', 2 );
+
+/* 
+ * Remove redundant email status button in group headings; 
+ * this is handled by the group tab "Email Options" 
+ */
+remove_action ( 'bp_group_header_meta', 'ass_group_subscribe_button' );
