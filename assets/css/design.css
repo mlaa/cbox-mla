@@ -367,7 +367,6 @@ ul.profile-subnav li.current a:before {
 /* ! Misc    */
 /* ======== */
 thead:first-child tr th,thead:first-child tr td {
-	color: #DDD;
 }
 div#invite-list {
 	background: none repeat scroll 0 0 #F5F5F5;
@@ -469,7 +468,6 @@ select {
 /* ! Docs    */
 /* ======== */
 thead:first-child tr th a,thead:first-child tr td a {
-	color: #EFEFEF;
 }
 .docs .doc-tabs {
 	background: none repeat scroll 0 0 #FFFFFF;
