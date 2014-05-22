@@ -517,3 +517,13 @@ add_action( 'wp', 'remove_general_subnav', 2 );
  * this is handled by the group tab "Email Options" 
  */
 remove_action ( 'bp_group_header_meta', 'ass_group_subscribe_button' );
+
+/* 
+ * Remove forum subscribe link. Users are already subscribed to the forums 
+ * when they subscribe to the group. Having more fine-grained control over 
+ * subscriptions is unnecessary and confusing.
+ */ 
+function mla_remove_forum_subscribe_link($link){ 
+	return ""; //making this empty so that it will get rid of the forum subscribe link
+} 
+add_filter( 'bbp_get_forum_subscribe_link', 'mla_remove_forum_subscribe_link');
