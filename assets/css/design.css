@@ -764,7 +764,7 @@ li.bbp-forum-info, li.bbp-topic-title {
 } 
 
 /* editor textbox currently is missing border, confusing */ 
-#bbpress-forums div.wp-editor-container { 
+#bbpress-forums div.wp-editor-container, .wp-editor-container { 
 	border: 1px solid #ddd; 
 } 
 
