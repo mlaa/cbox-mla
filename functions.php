@@ -5,7 +5,6 @@ require_once( 'engine/includes/avatars.php' );
 require_once( 'engine/includes/custom.php' );
 require_once( 'engine/includes/custom-filters.php' );
 
-
 /**
  * Set this to true to put Infinity into developer mode. Developer mode will refresh the dynamic.css on every page load.
  */
@@ -13,14 +12,7 @@ define( 'INFINITY_DEV_MODE', true );
 
 /* This script contains Buddypress customizations for MLA group types. */ 
 
-/* This part adds custom MLA filters to the BuddyPress 
- * Groups directory, allowing users to filter the groups by type
- * (committees, discussion groups, etc) and by visibility
- * (private, public, hidden, etc). 
- */
-
 /* MLA edits to BP literals */
-
 define ( 'BP_FRIENDS_SLUG', 'contacts' );
 
 // Change "en_US" to your locale
@@ -33,44 +25,10 @@ if ( file_exists( WP_LANG_DIR . '/buddypress-' . BPLANG . '.mo' ) ) {
  * so that "so-and-so joined the group X" doesn't clutter the activity stream. 
  */ 
 
-/* This rewrites the create_screen function so the 
- * option to enable forums is automatically checked 
- * when creating a new group. 
- */ 
-
-/* Disabling, since I can't get this to work. 
-class MLA_BBP_Forums_Group_Extension extends BBP_Forums_Group_Extension { 
- 	function create_screen() {
-
-		// bail if not looking at this screen
-		if ( !bp_is_group_creation_step( $this->slug ) )
-			return false;
-
-		$checked = TRUE; 
-//		$checked = bp_get_new_group_enable_forum() || groups_get_groupmeta( bp_get_new_group_id(), 'forum_id' ); ?>
-
-		<h4><?php _e( 'Group Forum', 'bbpress' ); ?></h4>
-
-		<p><?php _e( 'Create a FIXME FIXME to allow members of this group to communicate in a structured, bulletin-board style fashion.', 'bbpress' ); ?></p>
-
-		<div class="checkbox">
-			<label><input type="checkbox" name="bbp-create-group-forum" id="bbp-create-group-forum" value="1"<?php checked( $checked ); ?> /> <?php _e( 'Yes. I want this group to have a forum.', 'bbpress' ); ?></label>
-		</div>
-
-		<?php
-
-		// Verify intent
-		wp_nonce_field( 'groups_create_save_' . $this->slug );
-	}
-} 
-
- */ 
-
 /* this is a jQuery hack to check the checkbox on 
  * Create a Group → 4. Forum → Group Forum → “Yes. I want this Group to have a forum” 
  * by default. 
  */ 
-
 function mla_check_create_forum_for_new_group() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
 		<script type="text/javascript">
