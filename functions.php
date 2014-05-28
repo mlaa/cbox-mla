@@ -38,25 +38,6 @@ function mla_check_create_forum_for_new_group() {
 }
 add_action('wp_footer', 'mla_check_create_forum_for_new_group');
 
-/* This is a quick and dirty jQuery hack to remove the default value
- * for a group's blog subdomain name, (i.e. the suggested subdomain name). 
- * This addresses the issue created here: 
- * https://github.com/boonebgorges/bp-groupblog/issues/27
- * with very long (>63 char) subdomain names. 
- * A pull request was created here: 
- * https://github.com/boonebgorges/bp-groupblog/pull/28
- * Once this issue is addressed and a fix released in CBOX, 
- * this function can be deleted. 
- */
-function mla_dont_suggest_long_subdomain() { 
-	if( wp_script_is( 'jquery', 'done' ) ) { ?>
-		<script type="text/javascript">
-		jq('#blogname').val('');
-		</script>
-<?php }
-} 
-add_action('wp_footer', 'mla_dont_suggest_long_subdomain');
-
 /* disable visual editor entirely, for everyone */ 
 /* add_filter( 'user_can_richedit' , '__return_false', 50 ); */ 
 
