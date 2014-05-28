@@ -449,3 +449,13 @@ a.add_to_cart_button:before {
     font-size: 100%;
     opacity: 0.6;
 }
+
+/* corrects 'files' icon not displaying in groups */
+li#nav-documents-groups-li a:before {
+	       content: "L";
+}
+
+/* corrects 'files' icon displaying with ugly default 'file stack' icon */ 
+li#nav-documents-groups-li, li#nav-documents-personal-li { 
+	background: none; 
+} 
