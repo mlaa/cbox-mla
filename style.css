@@ -395,5 +395,19 @@ li#nav-documents-groups-li a:before {
 	content: "C"; 
 } 
 
+/* makes 'docs' icon different from 'files' icon, 
+ * i.e. makes it a piece of paper instead of an inbox 
+ */ 
+li#nav-docs-groups-li a:before, #user-docs:before { 
+	content: "C"; 
+} 
+/* corrects 'files' icon not displaying in groups */
+li#nav-documents-groups-li a:before {
+	content: "L";
+}
+/* corrects 'files' icon displaying with ugly default 'file stack' icon */
+li#nav-documents-groups-li, li#nav-documents-personal-li {
+	background-image: -moz-linear-gradient(center top , #FFF 0%, #F4F4F4 100%);
+} 
 /* --- End Misc Bugfixes --- }}} */ 
 
