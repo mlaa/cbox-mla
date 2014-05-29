@@ -43,45 +43,6 @@ add_action('wp_footer', 'mla_check_create_forum_for_new_group');
 /* disable visual editor entirely, for everyone */ 
 /* add_filter( 'user_can_richedit' , '__return_false', 50 ); */ 
 
-/*
- * Remove misbehaving forums tab on profile pages.
- */
-function remove_forums_nav() {
-	bp_core_remove_nav_item('forums');
-}
-add_action( 'wp', 'remove_forums_nav', 3 );
-
-/**
- * Removes Forums from Howdy dropdown
- */
-function mlac_remove_forums_from_adminbar( $wp_admin_bar ) {
-	$wp_admin_bar->remove_menu( 'my-account-forums' );
-}
-add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
-
-/* 
- * Hide settings page (we don't want users changing their 
- * e-mail or password).
- */
-function change_settings_subnav() {
-
-	$args = array(
-		'parent_slug' => 'settings',
-		'screen_function' => 'bp_core_screen_notification_settings',
-		'subnav_slug' => 'notifications'
-	);
-
-	bp_core_new_nav_default($args);
-
-}
-add_action('bp_setup_nav', 'change_settings_subnav', 5);
-
-function remove_general_subnav() {
-	global $bp;
-	bp_core_remove_subnav_item($bp->settings->slug, 'general');
-}
-add_action( 'wp', 'remove_general_subnav', 2 );
-
 /* 
  * Remove redundant email status button in group headings; 
  * this is handled by the group tab "Email Options" 
