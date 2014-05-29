@@ -713,13 +713,13 @@ aside.sidebar {
 	margin-bottom: 7px; /* pagination links at the bottom are too close to the footer */ 
 } 
 
-/* corrects missing Blog icon 
- * pull request for this to happen in the cbox theme: 
+/* missing Blog icon merged: 
  * https://github.com/cuny-academic-commons/cbox-theme/pull/192
- * Once cbox-theme is corrected, this may be removed. 
+ * Yet now it conflicts with the docs icon. 
+ * Since "docs" is a more common component, changing this one.  
  */ 
 #group-blog:before { 
-	content: "C"; 
+	content: "|" 
 } 
 /* corrects collision of subscription link with 
  * envelope icon. See issue: 
