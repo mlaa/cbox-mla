@@ -212,6 +212,8 @@ input[type=file] {
 input[type=button], input[type=reset], input[type=submit] {
   width: auto;
   height: auto;
+  box-shadow: none; 
+  background-color: #fafafa; 
 }
 select, input[type=file] {
   height: 27px;
@@ -260,5 +262,4 @@ input[type=file]:focus, input[type=checkbox]:focus, select:focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  outline: 1px dotted #666;
 }

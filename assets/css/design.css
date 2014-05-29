@@ -288,10 +288,8 @@ span.activity {
 .sidebar-activity-tabs ul li a:hover {
 }
 .sidebar-activity-tabs ul li span,.sidebar-activity-tabs ul li.current span,.sidebar-activity-tabs ul li.selected span {
-	background: none repeat scroll 0 0 #FFFFFF;
 	border: 1px solid #DDDDDD;
 	border-radius: 4px 4px 4px 4px;
-	color: #A6A4A3;
 	font-size: 75%;
 	font-weight: bold;
 }

@@ -15,6 +15,9 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
      *background: linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%);
      *border-left: 1px solid #ccc;
      */
+    background: #fafafa; 
+    border: 1px solid #eee; 
+    color: #444; 
     font-weight: bold;
     float: none;
     text-shadow: 0 1px rgba(255, 255, 255, .75);
@@ -180,30 +183,34 @@ a.button:hover, button:hover,#review_form #submit:hover {
     box-shadow: 0 1px 1px #c3c3c3, inset 0 1px 0 #f8909e;
 }
 .button.orange, .orange a, #bpfb_submit {
-    background: #fecc5f;
-    background: -webkit-gradient(linear, left top, left bottom, from(#feda71), to(#febb4a));
-    background: -webkit-linear-gradient(top, #feda71, #febb4a);
-    background: -moz-linear-gradient(top, #feda71, #febb4a);
-    background: -o-linear-gradient(top, #feda71, #febb4a);
-    background: -ms-linear-gradient(top, #feda71, #febb4a);
-    background: linear-gradient(top, #feda71, #febb4a);
-    border-color: #f5b74e #e5a73e #d6982f;
-    color: #996633;
-    text-shadow: 0 1px 0 #fedd9b;
+    /*
+     *background: #fecc5f;
+     *background: -webkit-gradient(linear, left top, left bottom, from(#feda71), to(#febb4a));
+     *background: -webkit-linear-gradient(top, #feda71, #febb4a);
+     *background: -moz-linear-gradient(top, #feda71, #febb4a);
+     *background: -o-linear-gradient(top, #feda71, #febb4a);
+     *background: -ms-linear-gradient(top, #feda71, #febb4a);
+     *background: linear-gradient(top, #feda71, #febb4a);
+     *border-color: #f5b74e #e5a73e #d6982f;
+     *color: #996633;
+     *text-shadow: 0 1px 0 #fedd9b;
+     */
 }
 .button.orange:hover, #bpfb_submit:hover {
-    background: #fecb5e;
-    background: -webkit-gradient(linear, left top, left bottom, from(#fec354), to(#fecd61));
-    background: -webkit-linear-gradient(top, #fec354, #fecd61);
-    background: -moz-linear-gradient(top, #fec354, #fecd61);
-    background: -o-linear-gradient(top, #fec354, #fecd61);
-    background: -ms-linear-gradient(top, #fec354, #fecd61);
-    background: linear-gradient(top, #fec354, #fecd61);
-    border-color: #d29a3a #cc9436 #c89133;
-    text-shadow: 0 1px 0 #fee1a0;
-    -webkit-box-shadow: 0 1px 1px #d4d4d4, inset 0 1px 0 #fed17e;
-    -moz-box-shadow: 0 1px 1px #d4d4d4, inset 0 1px 0 #fed17e;
-    box-shadow: 0 1px 1px #d4d4d4, inset 0 1px 0 #fed17e;
+    /*
+     *background: #fecb5e;
+     *background: -webkit-gradient(linear, left top, left bottom, from(#fec354), to(#fecd61));
+     *background: -webkit-linear-gradient(top, #fec354, #fecd61);
+     *background: -moz-linear-gradient(top, #fec354, #fecd61);
+     *background: -o-linear-gradient(top, #fec354, #fecd61);
+     *background: -ms-linear-gradient(top, #fec354, #fecd61);
+     *background: linear-gradient(top, #fec354, #fecd61);
+     *border-color: #d29a3a #cc9436 #c89133;
+     *text-shadow: 0 1px 0 #fee1a0;
+     *-webkit-box-shadow: 0 1px 1px #d4d4d4, inset 0 1px 0 #fed17e;
+     *-moz-box-shadow: 0 1px 1px #d4d4d4, inset 0 1px 0 #fed17e;
+     *box-shadow: 0 1px 1px #d4d4d4, inset 0 1px 0 #fed17e;
+     */
 }
 .button.green, .gform_footer input.button, .qq-upload-button {
     background: #b7d770;
