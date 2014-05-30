@@ -360,14 +360,14 @@ ul.button-nav li.current a {
 /* > AJAX Loaders
 --------------------------------------------------------------*/
 .ajax-loader {
-    background-image: url( ../images/buddypress/ajax-loader.gif ) !important;
+    background-image: url( assets/images/buddypress/ajax-loader.gif ) !important;
     background-position: 95% 50% !important;
     background-repeat: no-repeat !important;
     padding-right: 25px !important;
     display: none;
 }
 a.loading, li.loading a,#object-nav a.loading, #object-nav li.loading {
-    background-image: url( ../images/buddypress/ajax-loader.gif ) !important;
+    background-image: url( assets/images/buddypress/ajax-loader.gif ) !important;
     background-position: 5% 50% !important;
     background-repeat: no-repeat !important;
     padding-left: 25px !important;
@@ -474,7 +474,7 @@ table.forum tr.sticky td {
 }
 table.forum tr.closed td.td-title {
     padding-left: 35px;
-    background-image: url( ../images/buddypress/closed.png );
+    background-image: url( assets/images/buddypress/closed.png );
     background-position: 15px 50%;
     background-repeat: no-repeat;
 }
@@ -596,7 +596,7 @@ body.activity-permalink .activity-list li.mini .activity-meta {
     margin-bottom: 15px;
     margin-top: 20px;
     padding-left: 25px;
-    background: url( ../images/buddypress/replyto_arrow.gif )7px 0 no-repeat;
+    background: url( assets/images/buddypress/replyto_arrow.gif )7px 0 no-repeat;
 }
 .activity-list li .activity-inreplyto > p {
     margin: 0;
@@ -789,7 +789,7 @@ div.activity-comments div#message {
     margin-bottom: 0;
 }
 div.activity-comments form.loading {
-    background-image: url( ../images/buddypress/ajax-loader.gif );
+    background-image: url( assets/images/buddypress/ajax-loader.gif );
     background-position: 2% 95%;
     background-repeat: no-repeat;
 }
@@ -2056,7 +2056,7 @@ http://infinity.presscrew.com/learn
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 
 body {
-	/*background: url("../images/bg-body.gif") repeat transparent;*/
+	/*background: url("assets/images/bg-body.gif") repeat transparent;*/
 	background: #fff; 
 	font: 90%/140% "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight: 300; 
@@ -2169,11 +2169,11 @@ h1#site-title,div#site-title {
 	border-radius: 6px 6px 6px 6px;
 }
 .main-menu ul a:hover {
-	background: url("../images/bg-body.gif") repeat transparent;
+	background: url("assets/images/bg-body.gif") repeat transparent;
 }
 .base-menu ul li.current-cat a,.base-menu ul li.current_page_item a,.base-menu ul li.current-menu-item a {
 	font-weight: bold;
-	background: url("../images/bg-body.gif") repeat transparent;
+	background: url("assets/images/bg-body.gif") repeat transparent;
 }
 
 /* Footer */
@@ -2270,7 +2270,7 @@ div#subnav.item-list-tabs {
 }
 #sidebar .item-list-tabs li.loading a {
 	background: transparent !important;
-	background-image: url("../images/ajax-loader.gif" ) !important;
+	background-image: url("assets/images/ajax-loader.gif" ) !important;
 	background-repeat: no-repeat !important;
 	background-position: 5px 8px !important;
 }
@@ -2410,7 +2410,7 @@ ul.item-list li {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 .flex-caption {
-	background-image: url("../images/slides-bg.png");
+	background-image: url("assets/images/slides-bg.png");
 	color: #FFF;
 	text-shadow: 0 1px 0 #000000;
 	border-top: 1px solid #545353;
@@ -2640,9 +2640,9 @@ ul.contact li {
 	margin-top:-3px; 
 	margin-bottom: 1em; 
 }
-.contact .address { list-style-image:url(../images/pin-icon.png); }
-.contact .email { list-style-image:url(../images/envelope-icon.png); }
-.contact .phone { list-style-image:url(../images/phone-icon.png); }
+.contact .address { list-style-image:url(assets/images/pin-icon.png); }
+.contact .email { list-style-image:url(assets/images/envelope-icon.png); }
+.contact .phone { list-style-image:url(assets/images/phone-icon.png); }
 .contact li .smalltext, .smalltext { font-size: 85%; }
 #powered-by { 
 	position:absolute; 
@@ -3748,9 +3748,9 @@ ul.contact li {
 	margin-top:-3px; 
 	margin-bottom: 1em; 
 }
-.contact .address { list-style-image:url(../images/pin-icon.png); }
-.contact .email { list-style-image:url(../images/envelope-icon.png); }
-.contact .phone { list-style-image:url(../images/phone-icon.png); }
+.contact .address { list-style-image:url(assets/images/pin-icon.png); }
+.contact .email { list-style-image:url(assets/images/envelope-icon.png); }
+.contact .phone { list-style-image:url(assets/images/phone-icon.png); }
 .contact li .smalltext, .smalltext { font-size: 85%; }
 #powered-by { 
 	border: none; 
@@ -3783,9 +3783,6 @@ body {
   	-webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-}
 h1 {
     font-size: 2em;
     line-height: 1.15em;
