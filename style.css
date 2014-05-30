@@ -484,7 +484,6 @@ div#message p {
   padding-left: 10px; }
 
 span.activity {
-  background: #F9F9F9;
   font-weight: normal;
   margin-top: 6px;
   font-size: 85%; }
@@ -611,9 +610,7 @@ ul.item-list {
       font-size: 100%;
       color: #999; }
     ul.item-list li div.item-desc {
-      font-size: 85%;
-      margin: 10px 0 0 64px;
-      width: 68%; }
+      font-size: 85%; }
     ul.item-list li div.action {
       position: absolute;
       top: 15px;
@@ -644,9 +641,6 @@ div.item-list-tabs {
       list-style: none;
       border: 1px solid #fff;
       border-bottom: none; }
-      div.item-list-tabs ul li a:hover {
-        border: 1px solid #eee;
-        border-bottom: none; }
       div.item-list-tabs ul li.last {
         color: #BFBDBD;
         float: right;
@@ -714,6 +708,10 @@ div#subnav.item-list-tabs {
 
 /* --- End Item Tabs --- }}} */
 /* --- Directories --- {{{ */
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .wiki #content {
+  width: 80%;
+  margin-right: 9%; }
+
 div.dir-search {
   float: right;
   margin-top: -60px;
@@ -1766,12 +1764,12 @@ ul.item-list li img.avatar, #whats-new-avatar img, .item-avatar img {
 
 /* IE8 expects floats to have width or they lose hasLayout */
 div.item-avatar {
-  width: 55px;
-  height: 60px; }
+  width: 65px;
+  height: 65px; }
 
 ul.item-list div.item-avatar {
-  width: 50px;
-  height: 50px; }
+  width: 85px;
+  height: 85px; }
 
 form#whats-new-form #whats-new-avatar {
   width: 60px;
@@ -1784,8 +1782,8 @@ div#item-header ul#group-mods li {
 
 /* end IE8 avatar fixes */
 ul.item-list li img.avatar {
-  width: 40px;
-  height: 40px; }
+  width: 65px;
+  height: 65px; }
 
 .avatar-block, .activity-avatar {
   padding-left: 2px; }
@@ -2474,15 +2472,9 @@ div.activity-meta:hover {
 
 #vertical-activity-tabs ul li a {
   background-color: transparent;
-  color: #777;
-  font-weight: bold;
   text-shadow: none; }
-
-#vertical-activity-tabs ul li a:hover {
-  color: #222; }
-
-#vertical-activity-tabs ul li.selected a {
-  color: #EFEFEF; }
+  #vertical-activity-tabs ul li a:hover {
+    color: #222; }
 
 div.item-list-tabs ul li a span {
   border-radius: 4px 4px 4px 4px;
@@ -2640,7 +2632,7 @@ select {
   padding: 6px 2px 2px; }
 
 #content .item-title a {
-  font-size: 93%; }
+  font-size: 110%; }
 
 #center-homepage {
   padding: 0 0px 5px;
@@ -2976,10 +2968,10 @@ div#object-nav.item-list-tabs li {
 #content.sidebar-left {
   padding-bottom: 0px;
   margin-bottom: 0px;
-  width: 100%; }
+  float: right; }
 
 ul.item-list li {
-  padding-top: 20px;
+  padding-top: 30px;
   border: none;
   /* get rid of dividers between items */ }
 
