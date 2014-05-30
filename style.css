@@ -1,10 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 /* --- Reset and Global --- {{{1 */
 /*
  *The Infinity Reset. If you want to use another one add this to your
  *Child Theme config/infinity.ini
  *infinity-reset-style = off
  */
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block; }
 
@@ -446,14 +446,14 @@ h1#tag-title {
 
 h1#category-title span,
 h1#tag-title span {
-  color: #555; }
+  color: #555555; }
 
 h2.page-title a, h2.post-title a, h1.page-title a, h1.post-title a {
   margin-bottom: 0;
   margin-top: 0; }
 
 h2.page-title a:hover, h2.post-title a:hover, h1.page-title a:hover, h1.post-title a:hover {
-  color: #999; }
+  color: #999999; }
 
 h1 .post-edit-link, h2 .post-edit-link {
   font-size: 27px !important;
@@ -923,7 +923,7 @@ div#sidebar table td, table.forum td {
   text-align: center; }
 
 table tr.alt {
-  background: #FBFBFB; }
+  background: #fbfbfb; }
 
 table.notification-settings {
   margin-bottom: 20px;
@@ -2316,7 +2316,7 @@ http://infinity.presscrew.com/learn
 body {
   /*background: url("assets/images/bg-body.gif") repeat transparent;*/
   background: #fff;
-  font: 90%/140% "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 90%/140% "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 300;
   border-top: 0px none;
   -webkit-text-size-adjust: auto;
@@ -2678,7 +2678,6 @@ select {
   width: 31.33%; }
 
 #content .homepage-widget {
-  margin: 0 1% 3%;
   width: 31.33%; }
 
 .textwidget {
@@ -2977,10 +2976,8 @@ div#object-nav.item-list-tabs li {
 
 #content.sidebar-left {
   padding-bottom: 0px;
-  margin-bottom: 0px; }
-
-#sidebar.sidebar-left {
-  padding-bottom: 0px; }
+  margin-bottom: 0px;
+  width: 100%; }
 
 ul.item-list li {
   padding-top: 20px;
@@ -3050,7 +3047,6 @@ div.dir-search input[type="text"], imput#s {
 
 .author-box, .category-box, .tag-box, .info-box, #sidebar, .activity-inner, div.activity-comments form.ac-form, .postthumb img, span.activity, h1#site-title, div#site-title, #inner-sidebar, .sidebar-activity-tabs ul li, div#subnav.item-list-tabs, #top-homepage, .fluid-width-video-wrapper, #bbpress-forums .bbp-breadcrumb, #bbpress-forums li.bbp-footer, .bbp-reply-header {
   box-shadow: none;
-  background: none;
   margin: 0;
   /* corrects negative padding in cbox */
   transition: margin-left 0.5s; }
@@ -3088,7 +3084,7 @@ div.generic-button a {
 
   #sidebar .widget_bp_groups_widget div.item-options {
     medgarillasargin-top: -40px; } }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
   /* webkit CSS here*/
   body, #sidebar .bbp-forum-title, #sidebar .bbp-topic-title {
     font-weight: 400; }
@@ -3160,7 +3156,7 @@ span.post-tags:before {
   font-size: 140%;
   padding: 0 0.8% 1.5%;
   position: relative;
-  text-shadow: -1px 1px 0 black;
+  text-shadow: -1px 1px 0 #000000;
   top: -8px; }
 
 .format-video .post-title:before {
@@ -3382,7 +3378,7 @@ div#message p:before {
 #bbpress-forums .bbp-forums-list li a:before {
   color: #999999;
   content: "g";
-  text-shadow: 0 -1px 0 #e3e7e7; }
+  text-shadow: 0 -1px 0 #E3E7E7; }
 
 .groups #item-buttons .group-button a:before {
   content: "#";
@@ -3563,3 +3559,5 @@ ul.contact {
   display: none; }
 
 /* --- End Footer --- }}} */
+
+/*# sourceMappingURL=style.css.map */
