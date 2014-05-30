@@ -87,6 +87,5 @@ get_header( 'buddypress' ); ?>
 
 	<?php do_action( 'bp_after_directory_groups_page' ); ?>
 
-<?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer( 'buddypress' ); ?>
 
