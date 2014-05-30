@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'iconSweetsRegular';
-    src: url('../cbox-theme/assets/fonts/iconsweets-webfont.eot');
-    src: url('../cbox-theme/assets/fonts/iconsweets-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../cbox-theme/assets/fonts/iconsweets-webfont.woff') format('woff'),
-         url('../cbox-theme/assets/fonts/iconsweets-webfont.ttf') format('truetype'),
-         url('../cbox-theme/assets/fonts/iconsweets-webfont.svg#iconSweetsRegular') format('svg');
+    src: url('../../../cbox-theme/assets/fonts/iconsweets-webfont.eot');
+    src: url('../../../cbox-theme/assets/fonts/iconsweets-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../cbox-theme/assets/fonts/iconsweets-webfont.woff') format('woff'),
+         url('../../../cbox-theme/assets/fonts/iconsweets-webfont.ttf') format('truetype'),
+         url('../../../cbox-theme/assets/fonts/iconsweets-webfont.svg#iconSweetsRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
