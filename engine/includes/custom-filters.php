@@ -134,29 +134,29 @@ add_action('bp_after_groups_loop','remove_type_filter');
 function status_filter_js() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
 	<script type="text/javascript">
-	if (jq.cookie('bp-groups-status')) { 
-		jq('li.filter-status select').val(jq.cookie('bp-groups-status'));
+	if (jQuery.cookie('bp-groups-status')) { 
+		jQuery('li.filter-status select').val(jQuery.cookie('bp-groups-status'));
 	}
-	jq('li.filter-status select').change( function() {
+	jQuery('li.filter-status select').change( function() {
 
-		if ( jq('.item-list-tabs li.selected').length )
-			var el = jq('.item-list-tabs li.selected');
+		if ( jQuery('.item-list-tabs li.selected').length )
+			var el = jQuery('.item-list-tabs li.selected');
 		else
-			var el = jq(this);
+			var el = jQuery(this);
 
 		var css_id = el.attr('id').split('-');
 		var object = css_id[0];
 		var scope = css_id[1];
-		var status = jq(this).val();
-		var filter = jq('select#groups-order-by').val();
+		var status = jQuery(this).val();
+		var filter = jQuery('select#groups-order-by').val();
 		var search_terms = '';
 
-		jq.cookie('bp-groups-status',status,{ path: '/' });
+		jQuery.cookie('bp-groups-status',status,{ path: '/' });
 
-		if ( jq('.dir-search input').length )
-			search_terms = jq('.dir-search input').val();
+		if ( jQuery('.dir-search input').length )
+			search_terms = jQuery('.dir-search input').val();
 
-		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
+		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jQuery.cookie('bp-' + object + '-extras') );
 
 		return false;
 
@@ -167,29 +167,29 @@ function status_filter_js() {
 function type_filter_js() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
 	<script type="text/javascript">
-	if (jq.cookie('bp-groups-status')) { 
-		jq('li.filter-type select').val(jq.cookie('bp-groups-type'));
+	if (jQuery.cookie('bp-groups-status')) { 
+		jQuery('li.filter-type select').val(jQuery.cookie('bp-groups-type'));
 	} 
-	jq('li.filter-type select').change( function() {
+	jQuery('li.filter-type select').change( function() {
 
-		if ( jq('.item-list-tabs li.selected').length )
-			var el = jq('.item-list-tabs li.selected');
+		if ( jQuery('.item-list-tabs li.selected').length )
+			var el = jQuery('.item-list-tabs li.selected');
 		else
-			var el = jq(this);
+			var el = jQuery(this);
 
 		var css_id = el.attr('id').split('-');
 		var object = css_id[0];
 		var scope = css_id[1];
-		var status = jq(this).val();
-		var filter = jq('select#groups-order-by-type').val();
+		var status = jQuery(this).val();
+		var filter = jQuery('select#groups-order-by-type').val();
 		var search_terms = '';
 
-		jq.cookie('bp-groups-type',status,{ path: '/' });
+		jQuery.cookie('bp-groups-type',status,{ path: '/' });
 
-		if ( jq('.dir-search input').length )
-			search_terms = jq('.dir-search input').val();
+		if ( jQuery('.dir-search input').length )
+			search_terms = jQuery('.dir-search input').val();
 
-		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
+		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jQuery.cookie('bp-' + object + '-extras') );
 
 		return false;
 
