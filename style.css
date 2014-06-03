@@ -709,8 +709,7 @@ div#subnav.item-list-tabs {
 /* --- End Item Tabs --- }}} */
 /* --- Directories --- {{{ */
 .directory.groups #content, .directory.blogs #content, .directory.members #content, .wiki #content {
-  width: 80%;
-  margin-right: 9%; }
+  width: 100%; }
 
 div.dir-search {
   float: right;
@@ -1618,7 +1617,7 @@ a.button:hover, button:hover, #review_form #submit:hover {
   font-size: 120%; }
 
 .row {
-  width: 1150px; }
+  width: 1000px; }
 
 /* Global Padding */
 #content, #sidebar, #content-full, #footer, #header {
@@ -2838,7 +2837,7 @@ aside.sidebar {
 /* Hack to make prevent .action items from overflowing into next group item -JR */
 #groups-list .item {
   display: inline-block;
-  max-width: 66%; }
+  max-width: 60%; }
 #groups-list .action {
   position: inherit;
   float: right;
