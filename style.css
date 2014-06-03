@@ -652,7 +652,8 @@ div.item-list-tabs {
       div.item-list-tabs ul li a {
         display: block;
         padding: 8px 9px;
-        text-decoration: none; }
+        text-decoration: none;
+        color: #444; }
       div.item-list-tabs ul li span {
         display: block;
         padding: 8px 9px;

@@ -549,8 +549,6 @@ div.item-list-tabs {
       list-style: none;
       border: 1px solid #fff;
       border-bottom: none;
-      a:hover {
-      }
       &.last {
         color: #BFBDBD;
         float: right;
@@ -566,7 +564,9 @@ div.item-list-tabs {
       a {
         display: block;
         padding: 8px 9px;
-        text-decoration: none; }
+        text-decoration: none; 
+	color: #444; 
+	}
       span {
         display: block;
         padding: 8px 9px;
