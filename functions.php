@@ -34,7 +34,7 @@ if ( file_exists( WP_LANG_DIR . '/buddypress-' . BPLANG . '.mo' ) ) {
 function mla_check_create_forum_for_new_group() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
 		<script type="text/javascript">
-		jq('#bbp-create-group-forum').prop('checked', true);
+		jQuery('#bbp-create-group-forum').prop('checked', true);
 		</script>
 <?php }
 }
