@@ -622,7 +622,7 @@ div#subnav.item-list-tabs {
 /* --- End Item Tabs --- }}} */ 
 
 /* --- Directories --- {{{ */ 
-.directory.groups #content, .directory.blogs #content, .directory.members #content, .wiki #content { 
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, { 
 	width: 100%; 
 } 
 div.dir-search {
@@ -1767,13 +1767,6 @@ h1#site-title,div#site-title {
 .base-menu .sub-menu { padding-left: 0px !important }
 .top-wrap .base-menu.sub-menu { border-top: 0; }
 
-.main-menu {
-	padding: 5px;
-}
-.main-menu ul a {
-	margin-right: 10px;
-}
-
 /* --- End Menus --- }}} */ 
 
 /* --- Widgets --- {{{ */ 
@@ -2543,62 +2536,6 @@ h1#site-title,div#site-title {
 .main-wrap {
 	background: #FFF;
 }
-/* Global CSS3 Stuff */
-.top-menu,.top-wrap .sub-menu,.item-list-tabs,.footer-wrap,thead:first-child tr th,thead:first-child tr td,.base-menu ul ul,.sidebar-activity-tabs ul li.current,.sidebar-activity-tabs ul li.selected,.docs .toggle-switch,.post-title:before,.doc-content-wrapper .toggle-switch,.mobile-menu-container,.info-box h3, #bbpress-forums li.bbp-header  {
-	/* disabling gradients and boxy looking things for the new minimalist aesthetic */ 
-	/* 
-	 *background-color: #333333; [> for IE <]
-	 *background-image: -webkit-linear-gradient(top, #333333 0%, #222222 100%);
-	 *background-image: -moz-linear-gradient(top, #333333 0%, #222222 100%);
-	 *background-image: -o-linear-gradient(top, #333333 0%, #222222 100%);
-	 *background-image: -ms-linear-gradient(top, #333333 0%, #222222 100%);
-	 *background-image: linear-gradient(top, #333333 0%, #222222 100%);
-	 *background-repeat: repeat-x;
-	 *-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
-	 *box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
-	 *border-bottom: 1px solid #292525;
-	 *border-top: 2px solid #525151;
-	 */
-}
-.author-box,.category-box,.tag-box,.info-box,#sidebar,.activity-inner,div.activity-comments form.ac-form,.postthumb img,span.activity,h1#site-title,div#site-title,#inner-sidebar,.sidebar-activity-tabs ul li,div#subnav.item-list-tabs,#top-homepage,.fluid-width-video-wrapper,#bbpress-forums .bbp-breadcrumb, #bbpress-forums li.bbp-footer, .bbp-reply-header {
-	/* disabling gradients and boxy looking things for the new minimalist aesthetic */ 
-	/*
-	 *background-color: #FAFAFA; [> for IE <]
-	 *background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%);
-	 *background-image: -moz-linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%);
-	 *background-image: -o-linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%);
-	 *background-image: -ms-linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%);
-	 *background-image: linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%);
-	 *-image -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-	 *box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-	 *text-shadow: 0 1px 0 #FFFFFF;
-	 *border: 0px;
-	 */
-}
-/* Menus */
-.base-menu ul a,div.item-list-tabs ul li a,div.item-list-tabs ul li span,#footer-menu ul li a {
-	color: #333; 
-	font-weight: 400;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-.base-menu ul a:hover,div.item-list-tabs ul li a:hover,div.item-list-tabs ul li span:hover,#footer-menu ul li a:hover {
-
-}
-.main-menu {
-	border-radius: 6px 6px 6px 6px;
-	font-size: 115%;
-}
-.main-menu ul a {
-	font-weight: 500;
-	border-radius: 6px 6px 6px 6px;
-}
-.main-menu ul a:hover {
-	background: url("assets/images/bg-body.gif") repeat transparent;
-}
-.base-menu ul li.current-cat a,.base-menu ul li.current_page_item a,.base-menu ul li.current-menu-item a {
-	font-weight: bold;
-	background: url("assets/images/bg-body.gif") repeat transparent;
-}
 
 /* Footer */
 /* WordPress */
@@ -2874,7 +2811,6 @@ select {
 /* --- Top Menu --- {{{1 */
 .sf-menu {
   float: right; 
-  margin-right: 1%; 
   font-weight: 500;
   text-transform: uppercase;
   font-size: 12.5px;
@@ -2908,8 +2844,7 @@ select {
 }
 div#container {background:none;}
 .main-menu {
-  padding: 0px;
-  margin-left: 10px;
+  padding-top: 14px;
   ul {
     li {
       &#menu-item-151 a, &:last-child a {
