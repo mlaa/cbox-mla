@@ -410,11 +410,22 @@ h1 {
   font-size: 2em;
   line-height: 1.15em;
   margin: .5em 0 1em 0; }
+  h1#category-title, h1#tag-title {
+    font-style: normal;
+    color: #999;
+    font-size: 114.3%;
+    line-height: 18px;
+    margin: 0; }
+  h1#category-title span, h1#tag-title span {
+    color: #555555; }
 
 h2 {
   font-size: 1.75em;
   line-height: 1.15em;
   margin: .5em 0 1em 0; }
+
+h2.page-title a:hover, h2.post-title a:hover, h1.page-title a:hover, h1.post-title a:hover {
+  color: #999999; }
 
 h3 {
   font-size: 1.5em;
@@ -436,24 +447,9 @@ h6 {
   line-height: 1.6em;
   margin: 0 0 .5em 0; }
 
-h1#category-title,
-h1#tag-title {
-  font-style: normal;
-  color: #999;
-  font-size: 114.3%;
-  line-height: 18px;
-  margin: 0; }
-
-h1#category-title span,
-h1#tag-title span {
-  color: #555555; }
-
 h2.page-title a, h2.post-title a, h1.page-title a, h1.post-title a {
   margin-bottom: 0;
   margin-top: 0; }
-
-h2.page-title a:hover, h2.post-title a:hover, h1.page-title a:hover, h1.post-title a:hover {
-  color: #999999; }
 
 h1 .post-edit-link, h2 .post-edit-link {
   font-size: 27px !important;
@@ -1484,21 +1480,6 @@ a.button:active, button:active, input[type="submit"]:active, input[type="reset"]
   border-bottom: 1px solid #aaa;
   border: 1px solid #888; }
 
-a.button:hover, button:hover, #review_form #submit:hover {
-  /*
-   *border-top: 1px solid #aaa;
-   *background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,.3)), color-stop(100%, rgba(0,0,0,.3)));
-   *background: -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%);
-   *background: -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%);
-   *background: -o-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%);
-   *background: -ms-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%);
-   *background: linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%);
-   *border-left: 1px solid #aaa;
-   *color: #222;
-   *border: 1px solid #888;
-   *padding: 8px 12px;
-   */ }
-
 .button.full-width, button.full-width, input[type="submit"].full-width, input[type="reset"].full-width, input[type="button"].full-width {
   text-align: center;
   padding-left: 0 !important;
@@ -1515,39 +1496,6 @@ a.button:hover, button:hover, #review_form #submit:hover {
   -moz-border-radius: 3px;
   border-radius: 3px;
   margin-bottom: 2px; }
-
-.button.white, .post-tags a, .widget_tag_cloud a, a.button, .generic-button, a.more-link {
-  /*
-   *background: #f5f5f5;
-   *background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f0f0f0));
-   *background: -webkit-linear-gradient(top, #f9f9f9, #f0f0f0);
-   *background: -moz-linear-gradient(top, #f9f9f9, #f0f0f0);
-   *background: -o-linear-gradient(top, #f9f9f9, #f0f0f0);
-   *background: -ms-linear-gradient(top, #f9f9f9, #f0f0f0);
-   *background: linear-gradient(top, #f9f9f9, #f0f0f0);
-   *border-color: #dedede #d8d8d8 #d3d3d3;
-   *color: #555;
-   *text-shadow: 0 1px 0 #fff;
-   *-webkit-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;
-   *-moz-box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;
-   *box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;
-   */ }
-
-.button.white:hover, .post-tags a:hover, .widget_tag_cloud a:hover, a.button:hover, .generic-button:hover, a.more-link:hover {
-  /*
-   *background: #f4f4f4;
-   *background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#f8f8f8));
-   *background: -webkit-linear-gradient(top, #efefef, #f8f8f8);
-   *background: -moz-linear-gradient(top, #efefef, #f8f8f8);
-   *background: -o-linear-gradient(top, #efefef, #f8f8f8);
-   *background: -ms-linear-gradient(top, #efefef, #f8f8f8);
-   *background: linear-gradient(top, #efefef, #f8f8f8);
-   *border-color: #c7c7c7 #c3c3c3 #bebebe;
-   *text-shadow: 0 1px 0 #fdfdfd;
-   *-webkit-box-shadow: 0 1px 1px #ebebeb, inset 0 1px 0 #f3f3f3;
-   *-moz-box-shadow: 0 1px 1px #ebebeb, inset 0 1px 0 #f3f3f3;
-   *box-shadow: 0 1px 1px #ebebeb, inset 0 1px 0 #f3f3f3;
-   */ }
 
 .button.grey {
   background: #bdbdbd;
@@ -1619,6 +1567,7 @@ a.button:hover, button:hover, #review_form #submit:hover {
 .row {
   width: 1000px; }
 
+/* --- Global Padding --- {{{ */
 /* Global Padding */
 #content, #sidebar, #content-full, #footer, #header {
   padding: 30px; }
@@ -1670,6 +1619,7 @@ h1#site-title, div#site-title {
 #infinity-base .icext-feature {
   position: absolute; }
 
+/* --- End Global Padding --- }}} */
 /* --- Menus --- {{{ */
 .base-menu {
   padding-left: 20px;
@@ -2284,32 +2234,6 @@ body.wiki.single-bp_doc #subnav {
 
 /* --- End Tooltips --- }}} */
 /* --- Layout --- {{{ */
-/* LAYOUT
-+ Global & Wraps
-+ Header
-+ Navigation Menus
-+ Content
-+ Sidebar
-+ Footer
-+ Activity Stream
-+ Groups Directory
-+ Member Directory
-+ Misc.
-
-You can disable the css in this file by adding the following code to your child theme config/infinity.ini file.
-
-cbox-design = off
-
-This allows you to quickly create a custom style for your theme. When you're developing always make sure to turn on Infinity
-developer mode by addding the following to your wp-config or functions.php
-
-define( 'INFINITY_DEV_MODE', true );
-	
-
-
-Infinity combines all the stylesheets into one file called dynamic.css. You can also write CSS using LESS. To learn all about this visit
-http://infinity.presscrew.com/learn
---------------------------------------------------------------*/
 body {
   /*background: url("assets/images/bg-body.gif") repeat transparent;*/
   background: #fff;
@@ -2556,16 +2480,6 @@ span.activity {
   border-top: 1px solid #3E3D3D;
   background: #265079; }
 
-/*
- *.sidebar-activity-tabs ul.profile-subnav li.current.selected a {
- *        color: #009;
- *        font-weight: bold;
- *}
- *.sidebar-activity-tabs ul li.current a,.sidebar-activity-tabs ul li.selected a {
- *        color: #009;
- *        font-weight: bold;
- *}
- */
 .sidebar-activity-tabs ul.profile-subnav li:hover {
   background: #444; }
 
