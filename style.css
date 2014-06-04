@@ -1,4 +1,5 @@
 /* --- Mixins and Colors --- {{{ */
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 /* --- End Mixins --- }}} */
 /* --- Reset and Global --- {{{1 */
 /*
@@ -6,7 +7,6 @@
  *Child Theme config/infinity.ini
  *infinity-reset-style = off
  */
-@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block; }
 
@@ -2754,10 +2754,9 @@ div.item-list-tabs ul li a span {
 ul.item-list li:last-child {
   border-bottom: 0px; }
 
-#subnav.item-list-tabs ul li a {
-  color: #787676;
-  font-weight: bold;
-  text-shadow: none; }
+.item-list-tabs ul li a {
+  font-weight: 400;
+  font-family: "Bitter", "Verdana", serif; }
 
 div#subnav.item-list-tabs {
   border-bottom: 1px solid #E8E8E8;
@@ -3177,9 +3176,6 @@ ul, ol {
 
 .bp-widget h4 {
   font-weight: 500; }
-
-h5, h6, div.item-list-tabs ul li a {
-  font-weight: 600; }
 
 div#object-nav.item-list-tabs li {
   font-size: 15.5px; }
