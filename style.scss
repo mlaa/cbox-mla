@@ -1,3 +1,39 @@
+/* --- Mixins and Colors --- {{{ */ 
+
+$lightgray: #fafafa; 
+$gray: darken($lightgray, 10%);   
+$darkgray: darken($lightgray, 50%); 
+
+@mixin minimalButton { 
+	background-color: $lightgray; 
+	border: 1px solid $gray; 
+	color: $darkgray; 
+	font-size: 11px; 
+	text-decoration: none; 
+	text-shadow: 0 1px rgba(255, 255, 255, .75);
+	a, a:hover, &:hover, &:active { 
+		color: $darkgray; 
+		text-decoration: none; 
+	} 
+	font-weight: bold; 
+	&:hover { 
+		background-color: $gray; 
+	} 
+	&:active { 
+		background-color: $darkgray; 
+		color: $lightgray; 
+	} 
+} 
+
+@mixin borderRadius($radius: 3px) { 
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;  
+	-o-border-radius: $radius; 
+} 
+
+/* --- End Mixins --- }}} */ 
+
 /* --- Reset and Global --- {{{1 */ 
 
 /*
@@ -44,9 +80,9 @@ label { cursor: pointer; }
 legend { border: 0; *margin-left: -7px; padding: 0; }
 button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
 select {
-    background-color: #FFFFFF;
+    background-color: #fff;
     border: 1px solid #C4C1C1;
-    border-radius: 2px 2px 2px 2px;
+    @include borderRadius(2px); 
     color: #777777;
     font-size: 90%;
     font-weight: bold;
@@ -156,9 +192,7 @@ address {
 }
 code, pre {
     padding: 0 3px 2px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    @include borderRadius; 
 }
 code {
     background-color: #fee9cc;
@@ -173,9 +207,7 @@ pre {
   font-size: 85.7%;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  @include borderRadius; 
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -292,6 +324,7 @@ input[type=file]:focus, input[type=checkbox]:focus, select:focus {
 
 /* ----------- End Reset and Global -------------- }}} */ 
 
+
 /* --- Wordpress --- {{{ */ 
 
 /* Imported from wordpress.css 8? 
@@ -372,7 +405,7 @@ img.aligncenter {
 .post .wp-caption {
     background-color: #F9F9F9;
     border: 1px solid #DDDDDD;
-    border-radius: 3px 3px 3px 3px;
+    @include borderRadius; 
     font-size: 90%;
     font-style: italic;
     padding-bottom: 7px;
@@ -432,7 +465,7 @@ ul.page-numbers li span,
     background: none repeat scroll 0 0 #FFFFFF;
     color: inherit;
     border: 1px solid #DDDDDD;
-    border-radius: 4px 4px 4px 4px;
+    @include borderRadius; 
     font-size: 14px;
     font-weight: bold;
     height: 38px;
@@ -456,14 +489,6 @@ background: #444;
 color: #FFF;
 }
 ul.page-numbers li { display: inline }
-.pagination {
-    border-bottom: 1px solid #EAEAEA;
-    height: 16px;
-    padding-left: 0px;
-    padding-bottom: 10px;
-    color: #888888;
-    font-size: 90%;
-}
 .pagination#user-pag,
 .friends .pagination,
 .mygroups .pagination,
@@ -509,9 +534,7 @@ p#breadcrumbs { margin-top: 0px }
     margin-bottom: 20px;
     border: 1px solid #DDDDDD;
     background: #F9F9F9;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
+    @include borderRadius; 
     padding: 10px 20px;
 }
 
@@ -1082,12 +1105,12 @@ div.dir-search {
 
 /* --- Pagination --- {{{ */ 
 div.pagination#user-pag, .friends div.pagination, .mygroups div.pagination, .myblogs div.pagination, noscript div.pagination {
-    background: #f8f8f8;
-    border: none;
-    padding: 8px 15px;
+	background: #f8f8f8;
+	border: none;
+	padding: 8px 15px;
 }
 div.pagination {
-	margin: 20px 0; 
+	margin: 40px 0; 
 	border: none; 
 	.pag-count {
 		float: none;
@@ -1097,26 +1120,23 @@ div.pagination {
 	.pagination-links {
 		float: right;
 		margin-top: -10px;
-		span {
-			padding: 0 5px;
+		span, a {
+			padding: 6px;
 		}
 		a {
-			padding: 0 5px;
-			&:hover {
-				font-weight: bold;
-			}
+			@include minimalButton; 
 		}
 	}
 }
 div.item-options {
-  color: #73C1E6;
-  font-size: 80%;
-  font-weight: bold;
-  text-transform: uppercase;
-  a {
-    padding-bottom: 2px;
-    padding-top: 2px;
-  }
+	color: #73C1E6;
+	font-size: 80%;
+	font-weight: bold;
+	text-transform: uppercase;
+	a {
+		padding-bottom: 2px;
+		padding-top: 2px;
+	}
 }
 div.item-avatar img {
     display: block;
@@ -1170,7 +1190,7 @@ ul.button-nav {
     &.current a {
       background: none repeat scroll 0 0 #EFEFEF;
       border: 1px solid #DDDDDD;
-      border-radius: 3px 3px 3px 3px;
+      @include borderRadius; 
       margin-bottom: 20px;
     }
   }
@@ -1562,7 +1582,7 @@ body.activity-permalink .activity-list li {
 a.bp-primary-action span, #reply-title small a span {
   background: none repeat scroll 0 0 #696868;
   border: 1px solid #FFFFFF;
-  border-radius: 3px 3px 3px 3px;
+  @include borderRadius; 
   color: #EFEFEF;
   font-size: 85%;
   margin-left: 2px;
@@ -1829,7 +1849,7 @@ table#message-threads {
 
 li span.unread-count, tr.unread span.unread-count {
   background: none repeat scroll 0 0 #DD0000;
-  border-radius: 3px 3px 3px 3px;
+  @include borderRadius; 
   color: #FFFFFF;
   font-size: 85%;
   font-weight: bold;
@@ -1978,63 +1998,11 @@ div#new-topic-post {
 
 input.button:active,
 .button:active { outline: 0; position: relative; top: 1px; }
-a.button, .generic-button, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"],#review_form #submit {
-    margin-top: 10px;
-    background: #fafafa; 
-    border: 1px solid #eee; 
-    color: #444; 
-    font-weight: bold;
-    float: none;
-    text-shadow: 0 1px rgba(255, 255, 255, .75);
-    line-height: 21px;
-    margin-bottom: 10px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    text-decoration: none;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 11px;
-}
-/* debuttonize ALL THE THINGS */ 
-.generic-button {
-  border: none;
-  background: none;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  padding: 0;
-  margin: 0;
-  color: inherit;
-  &:hover {
-    border: none;
-    background: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    padding: 0;
-    margin: 0;
-    color: inherit;
-  }
-  a {
-    color: #0066cc;
-    &:hover {
-      border: none;
-    }
-  }
-}
-a.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active,#review_form #submit:active {
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,.3)), color-stop(100%, rgba(255,255,255,.3)));
-    background: -webkit-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(255,255,255,.3) 100%);
-    background: -moz-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(255,255,255,.3) 100%);
-    background: -o-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(255,255,255,.3) 100%);
-    background: -ms-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(255,255,255,.3) 100%);
-    background: linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(255,255,255,.3) 100%);
-    border-right: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
-    border: 1px solid #888;
-}
-a.button:hover, button:hover,#review_form #submit:hover {
+a.button, .generic-button, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"],#review_form #submit, {
+	@include minimalButton; 
+	margin-top: 10px;
+	text-shadow: 0 1px rgba(255, 255, 255, .75);
+	padding: 10px; 
 }
 .button.full-width, button.full-width, input[type="submit"].full-width, input[type="reset"].full-width, input[type="button"].full-width {
     text-align: center;
@@ -2045,12 +2013,7 @@ a.button:hover, button:hover,#review_form #submit:hover {
 .button, .post-tags a, .widget_tag_cloud a, input, textarea{
     display: inline-block;
     text-decoration: none;
-    /*padding: 8px 11px;*/
-    /*color: #555;*/
-    /*border: 1px solid #dedede;*/
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    @include borderRadius; 
     margin-bottom: 2px;
 }
 .button.white, .post-tags a, .widget_tag_cloud a, a.button, .generic-button, a.more-link {
@@ -2239,7 +2202,7 @@ h1#site-title,div#site-title {
   background-color: #efefef;
   .flexslider {
     border: 0px;
-    border-radius: 0px;
+    @include borderRadius(0px); 
     margin: 0 0 60px;
     position: relative;
   }
@@ -2472,7 +2435,7 @@ div.item-options {
 .registration .error {
 	background: #DE3434;
 	border: 1px solid #BB4747;
-	border-radius: 4px;
+	@include borderRadius; 
 	color: white;
 	margin-bottom: 0.5em;
 	padding: 0.3em;
@@ -2546,8 +2509,8 @@ ul.item-list li div.action {
 .doc-tabs li {
   list-style: none outside none;
   a {
-    border-radius: 3px;
-    padding: 10px 15px;
+	  @include borderRadius; 
+	  padding: 10px 15px;
   }
 }
 .single-bp_doc {
@@ -2618,7 +2581,7 @@ thead:first-child tr th, thead:first-child tr td {
   .doc-tabs {
     background: none repeat scroll 0 0 #FFFFFF;
     li a {
-      border-radius: 5px 5px 5px 5px;
+      @include borderRadius(5px);
     }
   }
   .toggle-content {
@@ -2639,7 +2602,7 @@ thead:first-child tr th, thead:first-child tr td {
 .single-topic h1:before,
 .group-forum-topic #bbpress-forums h3:before  {
     background: #4183C4;
-    border-radius: 10px 10px 10px 10px;
+    @include borderRadius(10px); 
     color: #FFFFFF;
     content: "#";
     font-size: 90%;
@@ -2831,9 +2794,7 @@ body.wiki.single-bp_doc #subnav {
   text-align: center;
   text-decoration: none;
   background-color: #000000;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  @include borderRadius(4px); 
 }
 
 .tooltip-arrow {
@@ -2959,10 +2920,10 @@ h1#category-title span,h1#tag-title span {
 #item-header-avatar img.avatar {
 	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-	border-radius: 8px;
+	@include borderRadius(8px); 
 }
 ul.item-list li img.avatar,#whats-new-avatar img,.item-avatar img,.bbp-author-avatar img,.messages .avatar  {
-	border-radius: 3px 3px 3px 3px;
+	@include borderRadius; 
 	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
@@ -2999,7 +2960,7 @@ div.activity-meta:hover {
 	}
 }
 div.item-list-tabs ul li a span {
-	border-radius: 4px 4px 4px 4px;
+	@include borderRadius(4px); 
 	color: #999;
 }
 #subnav ul {
@@ -3028,7 +2989,7 @@ div#subnav.item-list-tabs {
 	background-position: 5px 8px !important;
 }
 span.activity {
-	border-radius: 3px 3px 3px 3px;
+	@include borderRadius; 
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 	color: #777777;
@@ -3070,7 +3031,7 @@ span.activity {
 }
 .sidebar-activity-tabs ul li span,.sidebar-activity-tabs ul li.current span,.sidebar-activity-tabs ul li.selected span {
 	border: 1px solid #DDDDDD;
-	border-radius: 4px 4px 4px 4px;
+	@include borderRadius(4px); 
 	font-size: 75%;
 	font-weight: bold;
 }
@@ -3627,7 +3588,7 @@ span.post-tags:before {
     display: none;
   }
   .entry {
-    border-left: 5px solid #EEEEEE;
+    border-left: 5px solid #eee;
     font-family: "Georgia",serif;
     font-size: 140%;
     line-height: 140%;
@@ -3637,13 +3598,13 @@ span.post-tags:before {
 }
 .post-title:before {
     background: none repeat scroll 0 0 #555555;
-    border-radius: 50% 50% 50% 50%;
-    color: #FFFFFF;
+    @include borderRadius(50%); 
+    color: #fff;
     float: right;
     font-size: 140%;
     padding: 0 0.8% 1.5%;
     position: relative;
-    text-shadow: -1px 1px 0 #000000;
+    text-shadow: -1px 1px 0 #000;
     top: -8px;
 }
 
@@ -3895,7 +3856,7 @@ div#post-mention a.mention:before {
 div#message p {
     background-color: #FEFAEB;
     border: 1px solid #F1F1F1;
-    border-radius: 4px 4px 4px 4px;
+    @include borderRadius(4px); 
     display: block;
     font-size: 12px;
     padding: 10px 15px;
