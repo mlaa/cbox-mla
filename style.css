@@ -1,4 +1,4 @@
-/* --- Mixins and Colors --- {{{ */
+/* --- Mixins --- {{{ */
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 /* --- End Mixins --- }}} */
 /* --- Reset and Global --- {{{1 */
@@ -1140,16 +1140,19 @@ div.item-list-tabs#object-nav {
 
 div#subnav.item-list-tabs {
   background: transparent;
+  padding: 10px;
   border-bottom: 1px solid #E8E8E8;
   border-top: 0 solid;
   font-family: inherit;
   margin-bottom: 20px;
   overflow: hidden; }
   div#subnav.item-list-tabs ul li a {
-    color: #999999; }
+    color: #999;
+    padding: 10px 5px; }
   div#subnav.item-list-tabs ul li.current a {
     background: transparent;
-    color: #444444; }
+    color: #2e2e2e;
+    border: none; }
   div#subnav.item-list-tabs ul li a:hover {
     color: #222;
     background: transparent; }
@@ -1207,6 +1210,7 @@ div.pagination {
       border: 1px solid #ebebeb;
       color: #7a7a7a;
       font-size: 11px;
+      font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
       text-decoration: none;
       text-shadow: 0 1px rgba(255, 255, 255, 0.75);
       font-weight: bold; }
@@ -1446,12 +1450,10 @@ form#whats-new-form {
   border: none;
   margin-bottom: 30px; }
   form#whats-new-form h5 {
-    color: #555555;
     font-size: 1.2em;
-    font-weight: bold;
     line-height: 25px;
     margin: 0px 0 13px 76px;
-    padding: 0 0 0; }
+    padding: 0; }
   form#whats-new-form #whats-new-avatar {
     float: left; }
   form#whats-new-form #whats-new-content {
@@ -1901,6 +1903,7 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
   border: 1px solid #ebebeb;
   color: #7a7a7a;
   font-size: 11px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   font-weight: bold;
@@ -2653,7 +2656,7 @@ body.wiki.single-bp_doc #subnav {
 
 /* --- End Tooltips --- }}} */
 /* --- Layout --- {{{ */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Bitter", "Verdana", serif;
   font-weight: 400; }
 
@@ -3245,12 +3248,6 @@ div.item-options a.selected {
 .dir-form {
   margin-bottom: 15px; }
 
-div#subnav.item-list-tabs {
-  padding: 0.75em 2em; }
-
-div#subnav.item-list-tabs ul li.current a {
-  color: #000; }
-
 div.dir-search {
   float: right;
   position: inherit;
@@ -3319,9 +3316,6 @@ div.generic-button a {
   .bp-widget h4, .widget h4 {
     font-weight: 700 !important;
     border-bottom: none; }
-
-  h5, h6, div.item-list-tabs ul li a {
-    font-weight: 700; }
 
   .sf-menu {
     font-weight: 600; } }
