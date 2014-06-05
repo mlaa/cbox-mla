@@ -6,6 +6,7 @@ $bodyfont: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $lightgray: #fafafa; 
 $gray: darken($lightgray, 6%);   
+$darkergray: darken($lightgray, 10%); 
 $darkgray: darken($lightgray, 50%); 
 $verydarkgray: darken($lightgray, 80%); 
 
@@ -26,7 +27,7 @@ $verydarkgray: darken($lightgray, 80%);
 		background-color: $gray; 
 	} 
 	&:active { 
-		background-color: $darkgray; 
+		background-color: $darkergray; 
 		text-shadow: none; 
 	} 
 } 
@@ -57,7 +58,6 @@ body { margin: 0; /* add your base font-size and line-height here */ }
 button, input, select, textarea { font-family: sans-serif; }
 
 a { text-decoration: none; }
-a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
 abbr[title] { border-bottom: 1px dotted; }
@@ -85,13 +85,9 @@ label { cursor: pointer; }
 legend { border: 0; *margin-left: -7px; padding: 0; }
 button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
 select {
-    background-color: #fff;
-    border: 1px solid #C4C1C1;
-    @include borderRadius(2px); 
-    color: #777777;
+    color: $darkgray;
     font-size: 90%;
-    font-weight: bold;
-    padding: 4px 2px 2px;
+    padding: 4px; 
 }
 button, input { line-height: normal; }
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
@@ -279,10 +275,8 @@ input[type=button], input[type=reset], input[type=submit] {
   background-color: $lightgray; 
 }
 select, input[type=file] {
-  height: 27px;
   *margin-top: 4px;
   /* For IE7, add top margin to align select with labels */
-  line-height: 27px;
 }
 select[multiple], select[size] {
   height: inherit;
@@ -899,7 +893,6 @@ div#item-header {
       color: #777;
       padding-bottom: 10px;
       overflow: hidden;
-      margin: 15px 0 5px 0;
     }
     &#item-actions {
       float: right;
@@ -956,6 +949,8 @@ ul.single-line li { border: none }
 ul.item-list {
 	padding: 0;
 	width: 100%;
+	margin-bottom: 40px; 
+	margin-left: 0; 
 	li {
 		list-style: none outside none;
 		padding: 25px 0;
@@ -966,7 +961,6 @@ ul.item-list {
 		}
 		div.item-title, h4 {
 			font-weight: normal;
-			width: 98%;
 			margin: 0; 
 		}
 		div {
@@ -1029,7 +1023,9 @@ div.item-list-tabs {
 				display: block;
 				padding: 8px 9px;
 				text-decoration: none; 
-				color: #444; 
+				color: $darkgray; 
+				border: 1px solid #fff; /* to keep the hover states from looking jumpy */ 
+				border-bottom: none;
 			}
 			span {
 				display: block;
@@ -1041,16 +1037,18 @@ div.item-list-tabs {
 				display: inline;
 				padding: 0;
 				color: inherit;
-				/*background: none repeat scroll 0 0 #333333;*/
-				/*color: #999999;*/
 				display: inline;
 				font-size: 75%;
 				margin-left: 2px;
-			padding: 2px 5px; }
+				padding: 2px 0 2px 3px;
+			}
 			&.selected a, &.current a, &:hover a {
 				color: #333;
+				background-color: $lightgray; 
 				border: 1px solid #ddd;
 				border-bottom: none; 
+				border-top-right-radius: 3px;
+				border-top-left-radius: 3px;
 			}
 			&.selected span, &.current span, a:hover span {}
 			&.loading a {
@@ -1071,8 +1069,6 @@ div#subnav.item-list-tabs {
 	padding: 10px; 
 	ul li {
 		a {
-			color: #999;
-			padding: 10px 5px; 
 		}
 		&.current a {
 			background: transparent;
@@ -2954,10 +2950,8 @@ ul.item-list li:last-child {
 	font-family: $bitter; 
 }
 div#subnav.item-list-tabs {
-	border-bottom: 1px solid #E8E8E8;
-	border-top: 1px solid #EEEEEE;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+	border: 1px solid #ddd; 
+	background-color: $lightgray; 
 }
 #sidebar .item-list-tabs li.loading a {
 	background: transparent !important;
@@ -3354,10 +3348,9 @@ li.bbp-forum-info, li.bbp-topic-title {
 	border: 1px solid #ddd; 
 } 
 
-div.activity.single-group { 
-	padding: 20px 0; 
+#group-settings-form { 
+ 	margin: 30px 0; 
 } 
-
 /* --- End Misc Bugfixes --- }}} */ 
 
 /* --- Structure --- {{{1 */ 
@@ -3449,7 +3442,6 @@ div.dir-search input[type="text"], imput#s { margin-right:-4px;}
 	box-shadow: none; 
 	margin: 0; /* corrects negative padding in cbox */ 
 	transition: margin-left 0.5s; 
-	background: none; 
 } 
 .activity-list .activity-content .activity-header, .activity-list .activity-content .comment-header { line-height:1.3em; }
 .activity-header p {margin-top:0px;}

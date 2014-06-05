@@ -37,9 +37,6 @@ button, input, select, textarea {
 a {
   text-decoration: none; }
 
-a:focus {
-  outline: thin dotted; }
-
 a:hover, a:active {
   outline: 0; }
 
@@ -138,15 +135,9 @@ button, input, select, textarea {
   *vertical-align: middle; }
 
 select {
-  background-color: #fff;
-  border: 1px solid #C4C1C1;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  color: #777777;
+  color: #7a7a7a;
   font-size: 90%;
-  font-weight: bold;
-  padding: 4px 2px 2px; }
+  padding: 4px; }
 
 button, input {
   line-height: normal; }
@@ -352,10 +343,8 @@ input[type=button], input[type=reset], input[type=submit] {
   background-color: #fafafa; }
 
 select, input[type=file] {
-  height: 27px;
   *margin-top: 4px;
-  /* For IE7, add top margin to align select with labels */
-  line-height: 27px; }
+  /* For IE7, add top margin to align select with labels */ }
 
 select[multiple], select[size] {
   height: inherit; }
@@ -991,8 +980,7 @@ div#item-header {
     font-size: 85%;
     color: #777;
     padding-bottom: 10px;
-    overflow: hidden;
-    margin: 15px 0 5px 0; }
+    overflow: hidden; }
   div#item-header div#item-actions {
     float: right;
     width: 20%;
@@ -1042,7 +1030,9 @@ ul.single-line li {
 
 ul.item-list {
   padding: 0;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 40px;
+  margin-left: 0; }
   ul.item-list li {
     list-style: none outside none;
     padding: 25px 0;
@@ -1052,7 +1042,6 @@ ul.item-list {
       margin: 0 10px 10px 0; }
     ul.item-list li div.item-title, ul.item-list li h4 {
       font-weight: normal;
-      width: 98%;
       margin: 0; }
     ul.item-list li div.item-title span {
       font-size: 100%;
@@ -1103,7 +1092,10 @@ div.item-list-tabs {
         display: block;
         padding: 8px 9px;
         text-decoration: none;
-        color: #444; }
+        color: #7a7a7a;
+        border: 1px solid #fff;
+        /* to keep the hover states from looking jumpy */
+        border-bottom: none; }
       div.item-list-tabs ul li span {
         display: block;
         padding: 8px 9px;
@@ -1113,16 +1105,17 @@ div.item-list-tabs {
         display: inline;
         padding: 0;
         color: inherit;
-        /*background: none repeat scroll 0 0 #333333;*/
-        /*color: #999999;*/
         display: inline;
         font-size: 75%;
         margin-left: 2px;
-        padding: 2px 5px; }
+        padding: 2px 0 2px 3px; }
       div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a, div.item-list-tabs ul li:hover a {
         color: #333;
+        background-color: #fafafa;
         border: 1px solid #ddd;
-        border-bottom: none; }
+        border-bottom: none;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px; }
       div.item-list-tabs ul li.loading a {
         background-position: 88% 50%;
         padding-left: 25px !important; }
@@ -1145,9 +1138,6 @@ div#subnav.item-list-tabs {
   font-family: inherit;
   margin-bottom: 20px;
   overflow: hidden; }
-  div#subnav.item-list-tabs ul li a {
-    color: #999;
-    padding: 10px 5px; }
   div#subnav.item-list-tabs ul li.current a {
     background: transparent;
     color: #2e2e2e;
@@ -1219,7 +1209,7 @@ div.pagination {
       div.pagination .pagination-links a:hover {
         background-color: #ebebeb; }
       div.pagination .pagination-links a:active {
-        background-color: #7a7a7a;
+        background-color: #e1e1e1;
         text-shadow: none; }
 
 div.item-options {
@@ -1905,7 +1895,7 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
   a.button:hover, .generic-button:hover, a.more-link:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, #review_form #submit:hover {
     background-color: #ebebeb; }
   a.button:active, .generic-button:active, a.more-link:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, #review_form #submit:active {
-    background-color: #7a7a7a;
+    background-color: #e1e1e1;
     text-shadow: none; }
 
 .button.full-width, button.full-width, input[type="submit"].full-width, input[type="reset"].full-width, input[type="button"].full-width {
@@ -2754,10 +2744,8 @@ ul.item-list li:last-child {
   font-family: "Bitter", "Verdana", serif; }
 
 div#subnav.item-list-tabs {
-  border-bottom: 1px solid #E8E8E8;
-  border-top: 1px solid #EEEEEE;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
+  border: 1px solid #ddd;
+  background-color: #fafafa; }
 
 #sidebar .item-list-tabs li.loading a {
   background: transparent !important;
@@ -3152,8 +3140,8 @@ li.bbp-forum-info, li.bbp-topic-title {
 #bbpress-forums div.wp-editor-container, .wp-editor-container {
   border: 1px solid #ddd; }
 
-div.activity.single-group {
-  padding: 20px 0; }
+#group-settings-form {
+  margin: 30px 0; }
 
 /* --- End Misc Bugfixes --- }}} */
 /* --- Structure --- {{{1 */
@@ -3255,8 +3243,7 @@ div.dir-search input[type="text"], imput#s {
   box-shadow: none;
   margin: 0;
   /* corrects negative padding in cbox */
-  transition: margin-left 0.5s;
-  background: none; }
+  transition: margin-left 0.5s; }
 
 .activity-list .activity-content .activity-header, .activity-list .activity-content .comment-header {
   line-height: 1.3em; }
