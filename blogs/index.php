@@ -28,7 +28,7 @@ get_header( 'buddypress' ); ?>
 
 			</div><!-- #blog-dir-search -->
 
-			<div class="item-list-tabs" role="navigation">
+			<div class="item-list-tabs main-tabs" role="navigation">
 				<ul>
 					<li class="selected" id="blogs-all"><a href="<?php bp_root_domain(); ?>/<?php bp_blogs_root_slug(); ?>"><?php printf( __( 'All Sites <span>%s</span>', 'buddypress' ), bp_get_total_blog_count() ); ?></a></li>
 

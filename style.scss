@@ -999,6 +999,11 @@ div.item-list-tabs {
 	position: relative;
 	clear: both;
 	background: none repeat scroll;
+	&.main-tabs { 
+		position: relative; 
+		top: 1px; /* move it down 1 pixel to hide bottom border and make it look like a real tab */ 
+		z-index: 1; /* has to be on top for this to work */ 
+	} 
 	ul {
 		width: 100%;
 		overflow: hidden;
@@ -1067,6 +1072,10 @@ div.item-list-tabs#object-nav { margin-top: 0 }
 div#subnav.item-list-tabs {
 	background: transparent;
 	padding: 10px; 
+	&.docs-tabs { 
+		background-color: transparent; 
+		border: none; 
+	} 
 	ul li {
 		a {
 		}
@@ -2950,8 +2959,10 @@ ul.item-list li:last-child {
 	font-family: $bitter; 
 }
 div#subnav.item-list-tabs {
-	border: 1px solid #ddd; 
 	background-color: $lightgray; 
+	border: 1px solid #ddd; 
+	border-bottom-left-radius: 3px; 
+	border-bottom-right-radius: 3px; 
 }
 #sidebar .item-list-tabs li.loading a {
 	background: transparent !important;

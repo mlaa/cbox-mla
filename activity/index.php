@@ -32,7 +32,7 @@ get_header( 'buddypress' ); ?>
 
 			<?php do_action( 'template_notices' ); ?>
 
-			<div class="item-list-tabs activity-type-tabs" role="navigation">
+			<div class="item-list-tabs main-tabs activity-type-tabs" role="navigation">
 				<ul>
 					<?php do_action( 'bp_before_activity_type_tab_all' ); ?>
 

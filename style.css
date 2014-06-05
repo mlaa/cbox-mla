@@ -1068,6 +1068,12 @@ div.item-list-tabs {
   position: relative;
   clear: both;
   background: none repeat scroll; }
+  div.item-list-tabs.main-tabs {
+    position: relative;
+    top: 1px;
+    /* move it down 1 pixel to hide bottom border and make it look like a real tab */
+    z-index: 1;
+    /* has to be on top for this to work */ }
   div.item-list-tabs ul {
     width: 100%;
     overflow: hidden;
@@ -1138,6 +1144,9 @@ div#subnav.item-list-tabs {
   font-family: inherit;
   margin-bottom: 20px;
   overflow: hidden; }
+  div#subnav.item-list-tabs.docs-tabs {
+    background-color: transparent;
+    border: none; }
   div#subnav.item-list-tabs ul li.current a {
     background: transparent;
     color: #2e2e2e;
@@ -2744,8 +2753,10 @@ ul.item-list li:last-child {
   font-family: "Bitter", "Verdana", serif; }
 
 div#subnav.item-list-tabs {
+  background-color: #fafafa;
   border: 1px solid #ddd;
-  background-color: #fafafa; }
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px; }
 
 #sidebar .item-list-tabs li.loading a {
   background: transparent !important;
