@@ -1091,6 +1091,7 @@ div.item-list-tabs {
         color: #BFBDBD;
         font-size: 85%;
         margin-bottom: -4px;
+        margin-left: 1em;
         text-transform: inherit; }
         div.item-list-tabs ul li.last label {
           display: inline; }
@@ -1157,7 +1158,7 @@ div#subnav.item-list-tabs {
 
 /* --- End Item Tabs --- }}} */
 /* --- Directories --- {{{ */
-.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content {
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content {
   width: 100%; }
 
 div.dir-search {
@@ -2647,6 +2648,9 @@ body.wiki.single-bp_doc #subnav {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Bitter", "Verdana", serif;
   font-weight: 400; }
+
+.page h2 {
+  margin-top: 1.5em; }
 
 h2.page-title a, h2.post-title a, h1.page-title a, h1.post-title a {
   color: #545454;
