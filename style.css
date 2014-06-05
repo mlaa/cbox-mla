@@ -1042,7 +1042,6 @@ ul.single-line li {
 
 ul.item-list {
   padding: 0;
-  margin-top: 25px;
   width: 100%; }
   ul.item-list li {
     list-style: none outside none;
@@ -1053,7 +1052,7 @@ ul.item-list {
       margin: 0 10px 10px 0; }
     ul.item-list li div.item-title, ul.item-list li h4 {
       font-weight: normal;
-      width: 100%;
+      width: 98%;
       margin: 0; }
     ul.item-list li div.item-title span {
       font-size: 100%;
@@ -1208,7 +1207,7 @@ div.pagination {
     div.pagination .pagination-links a {
       background-color: #fafafa;
       border: 1px solid #ebebeb;
-      color: #7a7a7a;
+      color: #2e2e2e;
       font-size: 11px;
       font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
       text-decoration: none;
@@ -1221,7 +1220,7 @@ div.pagination {
         background-color: #ebebeb; }
       div.pagination .pagination-links a:active {
         background-color: #7a7a7a;
-        color: #fafafa; }
+        text-shadow: none; }
 
 div.item-options {
   color: #73C1E6;
@@ -1491,10 +1490,6 @@ ul.activity-list > li:first-child {
   padding: 12px 0 0 0; }
   .activity-list li.mini div.activity-meta {
     margin: 0; }
-  .activity-list li.mini .activity-avatar img.avatar, .activity-list li.mini .activity-avatar img.FB_profile_pic {
-    height: 40px;
-    margin-bottom: 20px;
-    width: 40px; }
 .activity-list li.activity_comment .activity-avatar img.avatar, .activity-list li.activity_comment .activity-avatar img.FB_profile_pic {
   width: 40px;
   height: 40px;
@@ -1585,16 +1580,10 @@ body.activity-permalink .activity-list li .activity-header > p {
   text-decoration: underline; }
 
 a.bp-primary-action span, #reply-title small a span {
-  background: none repeat scroll 0 0 #696868;
-  border: 1px solid #FFFFFF;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  color: #EFEFEF;
+  color: #7a7a7a;
   font-size: 85%;
   margin-left: 2px;
-  padding: 2px 4px 0;
-  text-shadow: 0 1px 0 #222222; }
+  padding: 2px 4px 0; }
 
 .activity-list .activity-content span.activity-header-meta a:hover {
   color: inherit;
@@ -1901,7 +1890,7 @@ input.button:active,
 a.button, .generic-button, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"], #review_form #submit {
   background-color: #fafafa;
   border: 1px solid #ebebeb;
-  color: #7a7a7a;
+  color: #2e2e2e;
   font-size: 11px;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
@@ -1917,7 +1906,7 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
     background-color: #ebebeb; }
   a.button:active, .generic-button:active, a.more-link:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, #review_form #submit:active {
     background-color: #7a7a7a;
-    color: #fafafa; }
+    text-shadow: none; }
 
 .button.full-width, button.full-width, input[type="submit"].full-width, input[type="reset"].full-width, input[type="button"].full-width {
   text-align: center;
@@ -2881,7 +2870,6 @@ ul.profile-subnav li.current a:before {
 .flex-caption {
   background-image: url("assets/images/slides-bg.png");
   color: #FFF;
-  text-shadow: 0 1px 0 #fff;
   border-top: 1px solid #545353; }
 
 .flex-caption h2 {
@@ -3264,7 +3252,8 @@ div.dir-search input[type="text"], imput#s {
   box-shadow: none;
   margin: 0;
   /* corrects negative padding in cbox */
-  transition: margin-left 0.5s; }
+  transition: margin-left 0.5s;
+  background: none; }
 
 .activity-list .activity-content .activity-header, .activity-list .activity-content .comment-header {
   line-height: 1.3em; }
@@ -3274,9 +3263,6 @@ div.dir-search input[type="text"], imput#s {
 
 .activity-content > p {
   margin-bottom: 0px; }
-
-div.generic-button a {
-  margin: 5px 3px 3px; }
 
 #commentform {
   margin-left: 0px; }

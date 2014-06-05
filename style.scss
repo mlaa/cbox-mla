@@ -12,7 +12,7 @@ $verydarkgray: darken($lightgray, 80%);
 @mixin minimalButton { 
 	background-color: $lightgray; 
 	border: 1px solid $gray; 
-	color: $darkgray; 
+	color: $verydarkgray; 
 	font-size: 11px; 
 	font-family: $bodyfont; 
 	text-decoration: none; 
@@ -27,7 +27,7 @@ $verydarkgray: darken($lightgray, 80%);
 	} 
 	&:active { 
 		background-color: $darkgray; 
-		color: $lightgray; 
+		text-shadow: none; 
 	} 
 } 
 
@@ -955,7 +955,6 @@ ul.single-line li { border: none }
 .item-avatar { float: left }
 ul.item-list {
 	padding: 0;
-	margin-top: 25px; 
 	width: 100%;
 	li {
 		list-style: none outside none;
@@ -967,7 +966,7 @@ ul.item-list {
 		}
 		div.item-title, h4 {
 			font-weight: normal;
-			width: 100%;
+			width: 98%;
 			margin: 0; 
 		}
 		div {
@@ -1450,48 +1449,41 @@ form#whats-new-form {
 
 /* --- Activity Stream Listing --- {{{ */
 ul.activity-list {
-  li {
-    padding: 20px 0 0 0;
-    overflow: hidden;
-    &.has-comments {
-      padding-bottom: 20px;
-    }
-  }
-  > li:first-child {
-    padding-top: 20px;
-  }
+	li {
+		padding: 20px 0 0 0;
+		overflow: hidden;
+		&.has-comments {
+			padding-bottom: 20px;
+		}
+	}
+	> li:first-child {
+		padding-top: 20px;
+	}
 }
 
 .activity-list li {
-  &.mini {
-    position: relative;
-    padding: 12px 0 0 0;
-    div.activity-meta {
-      margin: 0;
-    }
-    .activity-avatar img {
-      &.avatar, &.FB_profile_pic {
-        height: 40px;
-        margin-bottom: 20px;
-        width: 40px;
-      }
-    }
-  }
-  &.activity_comment .activity-avatar img {
-    &.avatar, &.FB_profile_pic {
-      width: 40px;
-      height: 40px;
-      margin-left: 20px;
-    }
-  }
+	&.mini {
+		position: relative;
+		padding: 12px 0 0 0;
+		div.activity-meta {
+			margin: 0;
+		}
+	}
+	&.activity_comment .activity-avatar img {
+		&.avatar, &.FB_profile_pic {
+			width: 40px;
+			height: 40px;
+			margin-left: 20px;
+		}
+	}
 }
 
 body.activity-permalink .activity-list li .activity-avatar img {
-  &.avatar, &.FB_profile_pic {
-    width: 100px;
-    height: 100px;
-    margin-left: 0;
-  }
+	&.avatar, &.FB_profile_pic {
+		width: 100px;
+		height: 100px;
+		margin-left: 0;
+	}
 }
 
 .activity-list li.mini {
@@ -1601,14 +1593,10 @@ body.activity-permalink .activity-list li {
 }
 
 a.bp-primary-action span, #reply-title small a span {
-  background: none repeat scroll 0 0 #696868;
-  border: 1px solid #FFFFFF;
-  @include borderRadius; 
-  color: #EFEFEF;
+  color: $darkgray;
   font-size: 85%;
   margin-left: 2px;
   padding: 2px 4px 0;
-  text-shadow: 0 1px 0 #222222;
 }
 
 .activity-list .activity-content {
@@ -3089,7 +3077,6 @@ ul.profile-subnav li.current a:before {
 .flex-caption {
 	background-image: url("assets/images/slides-bg.png");
 	color: #FFF;
-	text-shadow: 0 1px 0 #fff;
 	border-top: 1px solid #545353;
 }
 .flex-caption h2 {
@@ -3458,11 +3445,11 @@ div.dir-search input[type="text"], imput#s { margin-right:-4px;}
 	box-shadow: none; 
 	margin: 0; /* corrects negative padding in cbox */ 
 	transition: margin-left 0.5s; 
+	background: none; 
 } 
 .activity-list .activity-content .activity-header, .activity-list .activity-content .comment-header { line-height:1.3em; }
 .activity-header p {margin-top:0px;}
 .activity-content > p { margin-bottom:0px;}
-div.generic-button a { margin:5px 3px 3px; }
 #commentform {margin-left:0px;}
 
 /* --- End Layout --- }}} */ 
