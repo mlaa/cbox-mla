@@ -1015,7 +1015,6 @@ div.item-list-tabs {
 			list-style: none;
 			&.last {
 				color: #BFBDBD;
-				float: right;
 				font-size: 85%;
 				margin-bottom: -4px;
 				text-transform: inherit;
@@ -1035,7 +1034,8 @@ div.item-list-tabs {
 				display: block;
 				padding: 8px 9px;
 				text-decoration: none;
-			color: #777; }
+				color: #777; 
+			}
 			a span {
 				display: inline;
 				padding: 0;

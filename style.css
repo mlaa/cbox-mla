@@ -1089,7 +1089,6 @@ div.item-list-tabs {
       list-style: none; }
       div.item-list-tabs ul li.last {
         color: #BFBDBD;
-        float: right;
         font-size: 85%;
         margin-bottom: -4px;
         text-transform: inherit; }
