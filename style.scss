@@ -13,6 +13,7 @@ $verydarkgray: darken($lightgray, 80%);
 @mixin minimalButton { 
 	background-color: $lightgray; 
 	border: 1px solid $gray; 
+	border-bottom: 2px solid #ddd;
 	color: $verydarkgray; 
 	font-size: 11px; 
 	font-family: $bodyfont; 
@@ -1023,10 +1024,12 @@ div.item-list-tabs {
 				select {
 					display: inline-block;
 					margin-left: 8px;
-			margin-top: 4px; } }
+					margin-top: 4px; 
+				} 
+			}
 			a {
 				display: block;
-				padding: 8px 9px;
+				padding: 8px 7px;
 				text-decoration: none; 
 				color: $darkgray; 
 				border: 1px solid #fff; /* to keep the hover states from looking jumpy */ 
@@ -1050,7 +1053,7 @@ div.item-list-tabs {
 			&.selected a, &.current a, &:hover a {
 				color: #333;
 				background-color: $lightgray; 
-				border: 1px solid #ddd;
+				border: 1px solid #eee;
 				border-bottom: none; 
 				border-top-right-radius: 3px;
 				border-top-left-radius: 3px;
@@ -1060,6 +1063,9 @@ div.item-list-tabs {
 				background-position: 88% 50%;
 				padding-left: 25px !important; 
 			} 
+		} 
+		li.feed a { 
+			border: none; /* this is not a true tab */ 
 		} 
 	} 
 }
@@ -1078,6 +1084,7 @@ div#subnav.item-list-tabs {
 	} 
 	ul li {
 		a {
+			border: none; 
 		}
 		&.current a {
 			background: transparent;
@@ -1549,6 +1556,7 @@ body.activity-permalink .activity-list .activity-avatar img {
 .activity-list .activity-content {
   margin-left: 85px;
   margin-top: -20px;
+  margin-bottom: 10px; 
 }
 
 body.activity-permalink .activity-list li {
@@ -1613,6 +1621,7 @@ a.bp-primary-action span, #reply-title small a span {
   .activity-inner, blockquote {
     background: #FBFBFB;
     border: 1px solid #F4F4F4;
+    border-left: 2px solid #ddd; 
     margin: 15px 0 5px 0px;
     overflow: hidden;
     padding: 10px;
@@ -1707,21 +1716,22 @@ body.activity-permalink div.activity-comments ul li {
 }
 
 div.activity-comments {
-  ul li {
-    p:last-child {
-      margin-bottom: 10px;
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
-    > ul {
-      margin-top: 0;
-      margin-left: 20px;
-    }
-  }
-  > ul > li:first-child {
-    border-top: none;
-  }
+	ul li {
+		p:last-child {
+			margin-bottom: 10px;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+		> ul {
+			margin-top: 0;
+			margin-left: 20px;
+			margin-bottom: 10px; 
+		}
+	}
+	> ul > li:first-child {
+		border-top: none;
+	}
 }
 
 body.activity-permalink div.activity-comments ul li > ul {
@@ -1744,8 +1754,8 @@ div.activity-comments div {
 
 #content div.activity-comments li {
   background: #FBFBFB;
-  border: 1px solid #F4F4F4;
-  padding: 10px 15px;
+  border: none; 
+  padding: 25px 15px 0;
 }
 
 div.acomment-content {
@@ -1770,9 +1780,7 @@ div {
   &.activity-comments {
     form.ac-form {
       background-color: $lightgray;
-      border: 1px solid #F1F1F1;
       display: none;
-      margin: 10px 0 10px 33px;
       padding: 8px;
     }
     li form.ac-form {
@@ -1793,9 +1801,6 @@ div {
       }
       .ac-textarea {
         padding: 8px;
-        border: 1px inset #ccc;
-        background: #fff;
-        margin-bottom: 10px;
       }
       textarea {
         width: 100%;
@@ -1804,15 +1809,13 @@ div {
         color: #555;
         height: 60px;
         border: none;
-        padding: 0;
+        padding: 5px;
       }
       input {
         margin-top: 5px;
       }
       div.ac-reply-avatar {
-        float: left;
-        height: 25px;
-        width: 25px;
+	      display: none; /* users don't need to see their own avatar when posting. */ 
       }
     }
   }
@@ -1825,8 +1828,6 @@ div {
     width: 25px;
   }
   &.activity-comments form div.ac-reply-content {
-    margin-left: 25px;
-    padding-left: 15px;
     color: #888;
     font-size: 85%;
   }
@@ -2100,7 +2101,7 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
 	font-size: 120%;
 }
 .row {
-	width: 1000px;
+	width: 1050px;
 }
 /* --- Global Padding --- {{{ */ 
 /* Global Padding */
@@ -2921,9 +2922,8 @@ h1#category-title span,h1#tag-title span {
 }
 /* BuddyPress */
 #item-header-avatar img.avatar {
-	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-	@include borderRadius(8px); 
+	@include borderRadius; 
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.3)
 }
 ul.item-list li img.avatar,#whats-new-avatar img,.item-avatar img,.bbp-author-avatar img,.messages .avatar  {
 	@include borderRadius; 
@@ -2960,9 +2960,10 @@ ul.item-list li:last-child {
 }
 div#subnav.item-list-tabs {
 	background-color: $lightgray; 
-	border: 1px solid #ddd; 
+	border: 1px solid #eee; 
 	border-bottom-left-radius: 3px; 
 	border-bottom-right-radius: 3px; 
+	border-bottom: 2px solid #ddd; 
 }
 #sidebar .item-list-tabs li.loading a {
 	background: transparent !important;
@@ -2997,10 +2998,10 @@ span.activity {
 	font-size: 90%;
 }
 #sidebar .sidebar-activity-tabs ul li { 
-	background-color: #efefef;
-	border: 1px solid #fff;
-	margin-left: 0;
-	margin-right: 0;
+	background-color: #fafafa;
+	border: 1px solid #eee;
+	border-bottom: 2px solid #ddd; 
+	margin: 3px 0; 
 	padding-left: 14px;
 } 
 #sidebar .sidebar-activity-tabs ul li:hover, #sidebar .sidebar-activity-tabs ul li.current { 
@@ -3504,7 +3505,7 @@ div.dir-search input[type="text"], imput#s { margin-right:-4px;}
 /* --- Icons --- {{{1 */ 
 /* Using some fancy CSS magic to add our icons */
 
-.item-list-tabs * a:before, #item-buttons * a:before, .sidebar-activity-tabs * a:before, .button:before, #message p:before, #subnav * :before, #category-title:before, #tag-title:before, span.post-tags:before, .generic-button a:before, #category-title:before, #tag-title:before, span.post-tags:before, .post-meta-data *:before, .post-title:before, #author-description h3:before, .single_add_to_cart_button:before, .load-more a:before, #whats-new, .main-menu * :before, .link-home h2 a:before, div.link-vote-panel div.clickers a.up:before, #bbpress-forums .bbp-forums-list li a:before, #favorite-toggle:before, #subscription-toggle:before, .single-topic h1:before, .group-forum-topic #bbpress-forums h3:before {
+.item-list-tabs * a:before, #item-buttons * a:before, .sidebar-activity-tabs * a:before, .button:before, #message p:before, #subnav * :before, #category-title:before, #tag-title:before, span.post-tags:before, .generic-button a:before, #category-title:before, #tag-title:before, span.post-tags:before, .post-meta-data *:before, .post-title:before, #author-description h3:before, .single_add_to_cart_button:before, .load-more a:before, #whats-new, .main-menu * :before, .link-home h2 a:before, div.link-vote-panel div.clickers a.up:before, #bbpress-forums .bbp-forums-list li a:before, #favorite-toggle:before, #subscription-toggle:before, .single-topic h1:before, .group-forum-topic #bbpress-forums h3:before, ul.contact li:before {
     font-weight: normal;
     font-family: "iconsweetsRegular";
     color: inherit;
@@ -3688,9 +3689,14 @@ li#following-personal-li a:before {
 
 .delete-activity:before,
 .generic-button.is_friend a:before,
-.generic-button.pending_friend a:before {
+.generic-button.pending_friend a:before,
+.acomment-delete:before {
     content: "X"
 }
+
+.spam-activity:before, .spam-activity-comment:before { 
+	content: "Z"
+} 
 
 .load-more a:before {
 	content: "s"
@@ -3893,6 +3899,18 @@ div#message p:before {
 #join-us-link a:before {
     content: "w"
 }
+
+.contact li { 
+	&.address:before { 
+		content: "G";
+	} 
+	&.email:before { 
+		content: "C";
+	} 
+	&.phone:before { 
+		content: '"';  
+	} 
+} 
 /* WooCommerce Icons */
 a.add_to_cart_button:before {
 	content: "$"
@@ -3985,15 +4003,11 @@ ul.contact {
   li {
     margin-top: -3px;
     margin-bottom: 1em;
-  }
-  .address {
-    list-style-image: url(assets/images/pin-icon.png);
-  }
-  .email {
-    list-style-image: url(assets/images/envelope-icon.png);
-  }
-  .phone {
-    list-style-image: url(assets/images/phone-icon.png);
+    list-style-type: none; 
+    &:before { 
+	    margin-left: -19px; /* effectively makes a hanging indent */ 
+	    color: #ddd; 
+    } 
   }
   li .smalltext {
     font-size: 85%;

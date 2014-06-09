@@ -1096,7 +1096,7 @@ div.item-list-tabs {
           margin-top: 4px; }
       div.item-list-tabs ul li a {
         display: block;
-        padding: 8px 9px;
+        padding: 8px 7px;
         text-decoration: none;
         color: #7a7a7a;
         border: 1px solid #fff;
@@ -1118,13 +1118,16 @@ div.item-list-tabs {
       div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a, div.item-list-tabs ul li:hover a {
         color: #333;
         background-color: #fafafa;
-        border: 1px solid #ddd;
+        border: 1px solid #eee;
         border-bottom: none;
         border-top-right-radius: 3px;
         border-top-left-radius: 3px; }
       div.item-list-tabs ul li.loading a {
         background-position: 88% 50%;
         padding-left: 25px !important; }
+    div.item-list-tabs ul li.feed a {
+      border: none;
+      /* this is not a true tab */ }
 
 li#activity-filter-select label {
   display: inline-block; }
@@ -1146,6 +1149,8 @@ div#subnav.item-list-tabs {
   overflow: hidden; }
   div#subnav.item-list-tabs.docs-tabs {
     background-color: transparent;
+    border: none; }
+  div#subnav.item-list-tabs ul li a {
     border: none; }
   div#subnav.item-list-tabs ul li.current a {
     background: transparent;
@@ -1206,6 +1211,7 @@ div.pagination {
     div.pagination .pagination-links a {
       background-color: #fafafa;
       border: 1px solid #ebebeb;
+      border-bottom: 2px solid #ddd;
       color: #2e2e2e;
       font-size: 11px;
       font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1542,7 +1548,8 @@ body.activity-permalink .activity-list .activity-avatar img {
 
 .activity-list .activity-content {
   margin-left: 85px;
-  margin-top: -20px; }
+  margin-top: -20px;
+  margin-bottom: 10px; }
 
 body.activity-permalink .activity-list li .activity-content {
   font-size: 130%;
@@ -1590,6 +1597,7 @@ a.bp-primary-action span, #reply-title small a span {
 .activity-list .activity-content .activity-inner, .activity-list .activity-content blockquote {
   background: #FBFBFB;
   border: 1px solid #F4F4F4;
+  border-left: 2px solid #ddd;
   margin: 15px 0 5px 0px;
   overflow: hidden;
   padding: 10px; }
@@ -1667,7 +1675,8 @@ div.activity-comments ul li:last-child {
   margin-bottom: 0; }
 div.activity-comments ul li > ul {
   margin-top: 0;
-  margin-left: 20px; }
+  margin-left: 20px;
+  margin-bottom: 10px; }
 div.activity-comments > ul > li:first-child {
   border-top: none; }
 
@@ -1686,8 +1695,8 @@ div.activity-comments div.acomment-content {
 
 #content div.activity-comments li {
   background: #FBFBFB;
-  border: 1px solid #F4F4F4;
-  padding: 10px 15px; }
+  border: none;
+  padding: 25px 15px 0; }
 
 div.acomment-content .time-since, div.acomment-content .activity-delete-link, div.acomment-content .comment-header {
   display: none; }
@@ -1703,9 +1712,7 @@ div.acomment-options a {
   padding: 0 10px; }
 div.activity-comments form.ac-form {
   background-color: #fafafa;
-  border: 1px solid #F1F1F1;
   display: none;
-  margin: 10px 0 10px 33px;
   padding: 8px; }
 div.activity-comments li form.ac-form {
   margin-right: 15px; }
@@ -1719,10 +1726,7 @@ div.activity-comments form.loading {
   background-position: 2% 95%;
   background-repeat: no-repeat; }
 div.activity-comments form .ac-textarea {
-  padding: 8px;
-  border: 1px inset #ccc;
-  background: #fff;
-  margin-bottom: 10px; }
+  padding: 8px; }
 div.activity-comments form textarea {
   width: 100%;
   font-family: inherit;
@@ -1730,13 +1734,12 @@ div.activity-comments form textarea {
   color: #555;
   height: 60px;
   border: none;
-  padding: 0; }
+  padding: 5px; }
 div.activity-comments form input {
   margin-top: 5px; }
 div.activity-comments form div.ac-reply-avatar {
-  float: left;
-  height: 25px;
-  width: 25px; }
+  display: none;
+  /* users don't need to see their own avatar when posting. */ }
 div.acomment-avatar img {
   height: 40px;
   width: 40px; }
@@ -1744,8 +1747,6 @@ div.ac-reply-avatar img {
   height: 25px;
   width: 25px; }
 div.activity-comments form div.ac-reply-content {
-  margin-left: 25px;
-  padding-left: 15px;
   color: #888;
   font-size: 85%; }
 
@@ -1889,6 +1890,7 @@ input.button:active,
 a.button, .generic-button, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"], #review_form #submit {
   background-color: #fafafa;
   border: 1px solid #ebebeb;
+  border-bottom: 2px solid #ddd;
   color: #2e2e2e;
   font-size: 11px;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1989,7 +1991,7 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
   font-size: 120%; }
 
 .row {
-  width: 1000px; }
+  width: 1050px; }
 
 /* --- Global Padding --- {{{ */
 /* Global Padding */
@@ -2714,11 +2716,10 @@ h1#category-title span, h1#tag-title span {
 
 /* BuddyPress */
 #item-header-avatar img.avatar {
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px; }
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
 
 ul.item-list li img.avatar, #whats-new-avatar img, .item-avatar img, .bbp-author-avatar img, .messages .avatar {
   border-radius: 3px;
@@ -2754,9 +2755,10 @@ ul.item-list li:last-child {
 
 div#subnav.item-list-tabs {
   background-color: #fafafa;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px; }
+  border-bottom-right-radius: 3px;
+  border-bottom: 2px solid #ddd; }
 
 #sidebar .item-list-tabs li.loading a {
   background: transparent !important;
@@ -2793,10 +2795,10 @@ span.activity {
   font-size: 90%; }
 
 #sidebar .sidebar-activity-tabs ul li {
-  background-color: #efefef;
-  border: 1px solid #fff;
-  margin-left: 0;
-  margin-right: 0;
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #ddd;
+  margin: 3px 0;
   padding-left: 14px; }
 
 #sidebar .sidebar-activity-tabs ul li:hover, #sidebar .sidebar-activity-tabs ul li.current {
@@ -3309,7 +3311,7 @@ div.dir-search input[type="text"], imput#s {
 /* --- End Mobile --- }}} */
 /* --- Icons --- {{{1 */
 /* Using some fancy CSS magic to add our icons */
-.item-list-tabs * a:before, #item-buttons * a:before, .sidebar-activity-tabs * a:before, .button:before, #message p:before, #subnav * :before, #category-title:before, #tag-title:before, span.post-tags:before, .generic-button a:before, #category-title:before, #tag-title:before, span.post-tags:before, .post-meta-data *:before, .post-title:before, #author-description h3:before, .single_add_to_cart_button:before, .load-more a:before, #whats-new, .main-menu * :before, .link-home h2 a:before, div.link-vote-panel div.clickers a.up:before, #bbpress-forums .bbp-forums-list li a:before, #favorite-toggle:before, #subscription-toggle:before, .single-topic h1:before, .group-forum-topic #bbpress-forums h3:before {
+.item-list-tabs * a:before, #item-buttons * a:before, .sidebar-activity-tabs * a:before, .button:before, #message p:before, #subnav * :before, #category-title:before, #tag-title:before, span.post-tags:before, .generic-button a:before, #category-title:before, #tag-title:before, span.post-tags:before, .post-meta-data *:before, .post-title:before, #author-description h3:before, .single_add_to_cart_button:before, .load-more a:before, #whats-new, .main-menu * :before, .link-home h2 a:before, div.link-vote-panel div.clickers a.up:before, #bbpress-forums .bbp-forums-list li a:before, #favorite-toggle:before, #subscription-toggle:before, .single-topic h1:before, .group-forum-topic #bbpress-forums h3:before, ul.contact li:before {
   font-weight: normal;
   font-family: "iconsweetsRegular";
   color: inherit;
@@ -3457,8 +3459,12 @@ li#following-personal-li a:before {
 
 .delete-activity:before,
 .generic-button.is_friend a:before,
-.generic-button.pending_friend a:before {
+.generic-button.pending_friend a:before,
+.acomment-delete:before {
   content: "X"; }
+
+.spam-activity:before, .spam-activity-comment:before {
+  content: "Z"; }
 
 .load-more a:before {
   content: "s"; }
@@ -3629,6 +3635,13 @@ div#message p:before {
 #join-us-link a:before {
   content: "w"; }
 
+.contact li.address:before {
+  content: "G"; }
+.contact li.email:before {
+  content: "C"; }
+.contact li.phone:before {
+  content: '"'; }
+
 /* WooCommerce Icons */
 a.add_to_cart_button:before {
   content: "$"; }
@@ -3718,13 +3731,12 @@ ul.contact {
   margin-left: 1.8em; }
   ul.contact li {
     margin-top: -3px;
-    margin-bottom: 1em; }
-  ul.contact .address {
-    list-style-image: url(assets/images/pin-icon.png); }
-  ul.contact .email {
-    list-style-image: url(assets/images/envelope-icon.png); }
-  ul.contact .phone {
-    list-style-image: url(assets/images/phone-icon.png); }
+    margin-bottom: 1em;
+    list-style-type: none; }
+    ul.contact li:before {
+      margin-left: -19px;
+      /* effectively makes a hanging indent */
+      color: #ddd; }
   ul.contact li .smalltext {
     font-size: 85%; }
 
