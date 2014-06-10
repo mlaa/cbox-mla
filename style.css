@@ -2221,27 +2221,6 @@ span.activity {
 #profile-nav-menu ul {
   list-style: none outside none; }
 
-.sidebar-activity-tabs ul {
-  list-style: none outside none;
-  margin: 30px 0 0; }
-  .sidebar-activity-tabs ul li {
-    padding-bottom: 3px;
-    padding-top: 5px; }
-    .sidebar-activity-tabs ul li a {
-      display: block;
-      padding-bottom: 10px;
-      padding-right: 0;
-      padding-top: 10px; }
-    .sidebar-activity-tabs ul li.current, .sidebar-activity-tabs ul li.selected {
-      padding: 10px 0 12px 30px; }
-.sidebar-activity-tabs .profile-subnav li.selected {
-  padding-bottom: 3px;
-  padding-left: 30px;
-  padding-top: 5px; }
-.sidebar-activity-tabs ul li.current a, .sidebar-activity-tabs ul li.selected a {
-  margin-bottom: -10px;
-  margin-top: -5px; }
-
 /* --- End Members --- }}} */
 /* Profile Action Buttons */
 .bp-user #item-buttons .generic-button,
@@ -2263,26 +2242,6 @@ span.activity {
   display: inline;
   margin-left: 2px;
   padding: 2px 5px; }
-
-/* Second Level */
-#object-nav ul.profile-subnav {
-  margin: 15px 0 -12px -30px;
-  padding-left: 15px; }
-
-ul.profile-subnav li {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  margin-right: 0px;
-  font-size: 90%; }
-  ul.profile-subnav li a {
-    padding-left: 30px; }
-    ul.profile-subnav li a:before {
-      padding-left: 30px; }
-
-.sidebar-activity-tabs ul li.current ul.profile-subnav li a {
-  padding-bottom: 8px;
-  padding-top: 8px;
-  margin: inherit; }
 
 /* XProfile */
 .field-visibility-settings {
@@ -2508,7 +2467,8 @@ body.wiki.single-bp_doc #subnav {
   font-size: 2em; }
 
 .groups #item-buttons .group-button {
-  /*padding: 2px 7px 5px;*/ }
+  padding-top: 5px;
+  /* hack. Some buttons are longish */ }
 
 .bbp-pagination {
   font-size: 90%; }
@@ -2678,7 +2638,6 @@ a:hover {
   text-decoration: underline; }
 
 .base-menu a:hover, #object-nav a:hover, #subnav a:hover, #logo-menu-wrap a:hover, .sidebar-activity-tabs a:hover, #main-menu-wrap a span:hover {
-  border: none;
   text-decoration: none; }
 
 #header {
@@ -2794,61 +2753,53 @@ span.activity {
 #profile-nav-menu a {
   font-size: 90%; }
 
-#sidebar .sidebar-activity-tabs ul li {
-  background-color: #fafafa;
-  border: 1px solid #eee;
-  border-bottom: 2px solid #ddd;
-  margin: 3px 0;
-  padding-left: 14px; }
-
-#sidebar .sidebar-activity-tabs ul li:hover, #sidebar .sidebar-activity-tabs ul li.current {
-  background-color: #e1e1e1; }
-
-.sidebar-activity-tabs ul li a {
-  color: #333; }
-
-.sidebar-activity-tabs ul li span, .sidebar-activity-tabs ul li.current span, .sidebar-activity-tabs ul li.selected span {
-  border: 1px solid #DDDDDD;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  font-size: 75%;
-  font-weight: bold; }
+#sidebar .sidebar-activity-tabs ul {
+  list-style: none outside none;
+  margin: 30px 0 0; }
+  #sidebar .sidebar-activity-tabs ul li {
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #ddd;
+    margin: 3px 0;
+    padding: 5px 5px 3px 14px; }
+    #sidebar .sidebar-activity-tabs ul li:hover, #sidebar .sidebar-activity-tabs ul li.current {
+      background-color: #e1e1e1; }
+    #sidebar .sidebar-activity-tabs ul li a {
+      display: block;
+      padding-bottom: 10px;
+      padding-right: 0;
+      padding-top: 10px;
+      color: #333;
+      padding-bottom: 8px;
+      padding-top: 4px;
+      text-decoration: none; }
+    #sidebar .sidebar-activity-tabs ul li span, #sidebar .sidebar-activity-tabs ul li.current span, #sidebar .sidebar-activity-tabs ul li.selected span {
+      border: 1px solid #DDDDDD;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      font-size: 75%;
+      font-weight: bold; }
+  #sidebar .sidebar-activity-tabs ul .profile-subnav {
+    margin: 5px;
+    margin-left: 10px; }
+    #sidebar .sidebar-activity-tabs ul .profile-subnav li {
+      padding: 4px;
+      padding-left: 7px; }
+      #sidebar .sidebar-activity-tabs ul .profile-subnav li a {
+        font-size: 80%; }
+      #sidebar .sidebar-activity-tabs ul .profile-subnav li.selected {
+        background-color: #ebebeb; }
+      #sidebar .sidebar-activity-tabs ul .profile-subnav li a:before {
+        content: "+";
+        font-size: 100%;
+        margin-left: 0;
+        padding-right: 7px;
+        position: relative;
+        top: 1px; }
 
 #vertical-activity-tabs ul li span {
   background: transparent; }
-
-.sidebar-activity-tabs .profile-subnav li.selected {
-  border-top: 1px solid #3E3D3D;
-  background: #265079; }
-
-.sidebar-activity-tabs ul.profile-subnav li:hover {
-  background: #444; }
-
-/* Second Level */
-#object-nav ul.profile-subnav {
-  border-bottom: 0 none;
-  border-top: 1px solid #1A1A1A; }
-
-ul.profile-subnav li {
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #333;
-  background: none repeat scroll 0 0 #363636; }
-
-ul.profile-subnav li a:before {
-  color: #4D4D4D;
-  content: "+";
-  font-size: 100%;
-  margin-left: 0;
-  padding-right: 7px;
-  position: relative;
-  top: 1px; }
-
-.sidebar-activity-tabs ul li.current ul.profile-subnav li a {
-  font-weight: normal; }
-
-ul.profile-subnav li.current a:before {
-  color: inherit; }
 
 .edit-notifications-button:before {
   content: "_"; }
@@ -3412,11 +3363,6 @@ span.comments a:before {
   padding: 0 2px 6px 1px; }
 
 /* Some Small Padding tweaks to make the icons look sweet */
-#sidebar .sidebar-activity-tabs ul li a {
-  padding-bottom: 8px;
-  padding-top: 4px;
-  text-decoration: none; }
-
 div#object-nav ul li a {
   padding: 4px 6px 8px !important;
   text-decoration: none; }
