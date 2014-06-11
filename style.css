@@ -1050,7 +1050,6 @@ ul.item-list {
       font-size: 85%; }
     ul.item-list li div.action {
       position: absolute;
-      top: 15px;
       right: 0;
       text-align: right; }
     ul.item-list li div.meta {
@@ -2299,9 +2298,6 @@ div#invite-list {
   width: 160px;
   float: left; }
 
-ul.item-list li div.action {
-  right: 30px; }
-
 /* --- Docs --- {{{ */
 .theme-option div.doc-content {
   border: 0px;
@@ -2407,9 +2403,6 @@ thead:first-child tr th, thead:first-child tr td {
 .bbp-topic-meta a, .bbp-topic-freshness a {
   color: #777; }
 
-#bbpress-forums div.bbp-topic-header, #bbpress-forums div.bbp-reply-header, .bbp-header {
-  color: #777; }
-
 .info-box h3, #bbpress-forums li.bbp-header {
   background-color: #fff; }
 
@@ -2509,9 +2502,6 @@ body.wiki.single-bp_doc #subnav {
 .bbp-reply-content span {
   position: relative;
   top: -2px; }
-  .bbp-reply-content span a {
-    color: #FFF;
-    padding-bottom: 3px; }
 
 .post img.wp-smiley {
   box-shadow: none;
@@ -2748,7 +2738,9 @@ span.activity {
     margin: 3px 0;
     padding: 5px 5px 3px 14px; }
     #sidebar .sidebar-activity-tabs ul li:hover, #sidebar .sidebar-activity-tabs ul li.current {
-      background-color: #e1e1e1; }
+      background-color: #e1e1e1;
+      border-top: 1px solid #ccc;
+      border-left: 1px solid #ccc; }
     #sidebar .sidebar-activity-tabs ul li a {
       display: block;
       padding-bottom: 10px;
@@ -3484,13 +3476,18 @@ div#message p:before {
 
 #favorite-toggle:before {
   content: "h";
-  top: 0; }
+  top: 2px; }
 
 #subscription-toggle:before {
   content: "A";
   position: relative;
-  right: -9px;
-  top: 0; }
+  top: 2px; }
+
+#bbpress-forums li.bbp-header {
+  /* overrides bbpress.css */
+  padding: 0 0 10px;
+  text-align: left;
+  border-top: none; }
 
 #bbpress-forums .bbp-forums-list li a:before {
   color: #999999;
