@@ -1207,8 +1207,7 @@ div.pagination {
     float: right;
     margin-top: -10px; }
     div.pagination .pagination-links span, div.pagination .pagination-links a {
-      padding: 6px; }
-    div.pagination .pagination-links a {
+      padding: 6px;
       background-color: #fafafa;
       border: 1px solid #ebebeb;
       border-bottom: 2px solid #ddd;
@@ -1218,14 +1217,16 @@ div.pagination {
       text-decoration: none;
       text-shadow: 0 1px rgba(255, 255, 255, 0.75);
       font-weight: bold; }
-      div.pagination .pagination-links a a, div.pagination .pagination-links a a:hover, div.pagination .pagination-links a:hover, div.pagination .pagination-links a:active {
+      div.pagination .pagination-links span a, div.pagination .pagination-links span a:hover, div.pagination .pagination-links span:hover, div.pagination .pagination-links span:active, div.pagination .pagination-links a a, div.pagination .pagination-links a a:hover, div.pagination .pagination-links a:hover, div.pagination .pagination-links a:active {
         color: #2e2e2e;
         text-decoration: none; }
-      div.pagination .pagination-links a:hover {
+      div.pagination .pagination-links span:hover, div.pagination .pagination-links a:hover {
         background-color: #ebebeb; }
-      div.pagination .pagination-links a:active {
+      div.pagination .pagination-links span:active, div.pagination .pagination-links a:active {
         background-color: #e1e1e1;
         text-shadow: none; }
+      div.pagination .pagination-links span.current, div.pagination .pagination-links span.dots, div.pagination .pagination-links a.current, div.pagination .pagination-links a.dots {
+        background-color: #ebebeb; }
 
 div.item-options {
   color: #73C1E6;
@@ -2922,45 +2923,28 @@ select {
 
 /* --- End Homepage --- }}} */
 /* --- Top Menu --- {{{1 */
-.sf-menu {
+.main-menu {
+  padding-top: 14px;
   float: right;
   font-weight: 500;
   text-transform: uppercase;
   font-size: 12.5px; }
-  .sf-menu li {
+  .main-menu ul li {
     display: inline-block; }
-    .sf-menu li.current_page_item a, .sf-menu li.selected a {
+    .main-menu ul li.current_page_item a, .main-menu ul li.selected a {
       background: none;
       color: #000; }
-  .sf-menu a {
-    color: #cc0000;
-    border-bottom: 0px;
-    border-left: 0px; }
-    .sf-menu a:hover, .sf-menu a:visited {
-      color: #cc0000; }
-  .sf-menu li:hover, .sf-menu li.sfHover {
-    background: none !important;
-    color: #333; }
-  .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
-    background: none !important;
-    color: #333; }
-
-div#container {
-  background: none; }
-
-.main-menu {
-  padding-top: 14px; }
-  .main-menu ul li#menu-item-151 a, .main-menu ul li:last-child a {
+  .main-menu ul#menu-item-151 a, .main-menu ul:last-child a {
     border-radius: 0px;
     color: #cc3333;
     padding: 9px 10px 0px;
     margin-right: 0px; }
-    .main-menu ul li#menu-item-151 a:hover, .main-menu ul li:last-child a:hover {
+    .main-menu ul#menu-item-151 a:hover, .main-menu ul:last-child a:hover {
       border-radius: 0px;
       color: #cc3333;
       padding: 9px 10px 0px;
       margin-right: 0px; }
-  .main-menu ul a {
+  .main-menu a {
     border-radius: 0px;
     color: #cc3333;
     padding: 9px 10px 0px;

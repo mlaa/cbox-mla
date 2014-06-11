@@ -40,7 +40,6 @@ infinity_get_header();
 	</div>
 
 <?php
-get_sidebar( 'bpdw' );
 
 // load infinity's footer
 infinity_get_footer();
