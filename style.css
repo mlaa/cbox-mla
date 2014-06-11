@@ -1484,12 +1484,11 @@ form#whats-new-form {
 /* --- End Activity Stream Posting --- }}} */
 /* --- Activity Stream Listing --- {{{ */
 ul.activity-list li {
-  padding: 20px 0 0 0;
   overflow: hidden; }
   ul.activity-list li.has-comments {
     padding-bottom: 20px; }
 ul.activity-list > li:first-child {
-  padding-top: 20px; }
+  padding-top: 30px; }
 
 .activity-list li.mini {
   position: relative;
@@ -1654,35 +1653,9 @@ body.activity-permalink div.activity-comments {
   margin-left: 135px;
   background: none; }
 
-div.activity-comments ul {
-  border: none;
-  list-style: none;
-  clear: left;
-  padding: 0; }
-  div.activity-comments ul li {
-    border: none;
-    list-style: none;
-    background: #FBFBFB;
-    border: 1px solid #F4F4F4;
-    padding: 5px; }
-
 body.activity-permalink div.activity-comments ul li {
   border-width: 1px;
   padding: 10px 0 0; }
-
-div.activity-comments ul li p:last-child {
-  margin-bottom: 10px; }
-div.activity-comments ul li:last-child {
-  margin-bottom: 0; }
-div.activity-comments ul li > ul {
-  margin-top: 0;
-  margin-left: 20px;
-  margin-bottom: 10px; }
-div.activity-comments > ul > li:first-child {
-  border-top: none; }
-
-body.activity-permalink div.activity-comments ul li > ul {
-  margin-top: 15px; }
 
 div.activity-comments div.acomment-avatar img {
   float: left;
@@ -1691,13 +1664,24 @@ div.activity-comments div.acomment-avatar img {
   width: 30px; }
 div.activity-comments div.acomment-content {
   font-size: 95%;
-  margin-left: 49px;
+  margin-left: 75px;
   margin-top: 5px; }
-
-#content div.activity-comments li {
-  background: #FBFBFB;
+div.activity-comments div.acomment-options {
+  margin-left: 73px; }
+div.activity-comments ul {
   border: none;
-  padding: 25px 15px 0; }
+  list-style: none;
+  clear: left;
+  padding: 0;
+  padding-left: 20px;
+  border-left: 2px solid #eee; }
+  div.activity-comments ul li {
+    list-style: none;
+    margin: 25px 15px 0;
+    padding: 0; }
+
+body.activity-permalink div.activity-comments ul li > ul {
+  margin-top: 15px; }
 
 div.acomment-content .time-since, div.acomment-content .activity-delete-link, div.acomment-content .comment-header {
   display: none; }
@@ -2782,11 +2766,12 @@ span.activity {
       font-size: 75%;
       font-weight: bold; }
   #sidebar .sidebar-activity-tabs ul .profile-subnav {
-    margin: 5px;
-    margin-left: 10px; }
+    margin: 5px 15px 5px 10px; }
     #sidebar .sidebar-activity-tabs ul .profile-subnav li {
       padding: 4px;
-      padding-left: 7px; }
+      padding-left: 7px;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc; }
       #sidebar .sidebar-activity-tabs ul .profile-subnav li a {
         font-size: 80%; }
       #sidebar .sidebar-activity-tabs ul .profile-subnav li.selected {
@@ -3003,9 +2988,10 @@ div#invite-list {
   display: none; }
 
 li.groups.activity-item {
-  padding-top: 35px;
-  /* have no idea why this is so high, but it seems to be what it needs */
-  padding-bottom: 10px; }
+  /*
+   *padding-top: 35px; [> have no idea why this is so high, but it seems to be what it needs <]
+   *padding-bottom: 10px;
+   */ }
 
 aside.sidebar {
   min-height: none;

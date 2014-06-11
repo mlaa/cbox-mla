@@ -1464,14 +1464,13 @@ form#whats-new-form {
 /* --- Activity Stream Listing --- {{{ */
 ul.activity-list {
 	li {
-		padding: 20px 0 0 0;
 		overflow: hidden;
 		&.has-comments {
 			padding-bottom: 20px;
 		}
 	}
 	> li:first-child {
-		padding-top: 20px;
+		padding-top: 30px;
 	}
 }
 
@@ -1697,19 +1696,6 @@ body.activity-permalink div.activity-comments {
   background: none;
 }
 
-div.activity-comments ul {
-  border: none;
-  list-style: none;
-  li {
-    border: none;
-    list-style: none;
-    background: #FBFBFB;
-    border: 1px solid #F4F4F4;
-    padding: 5px;
-  }
-  clear: left;
-  padding: 0;
-}
 
 body.activity-permalink div.activity-comments ul li {
   border-width: 1px;
@@ -1717,52 +1703,45 @@ body.activity-permalink div.activity-comments ul li {
 }
 
 div.activity-comments {
-	ul li {
-		p:last-child {
-			margin-bottom: 10px;
+	div {
+		&.acomment-avatar img {
+			float: left;
+			margin-right: 10px;
+			height: 30px;
+			width: 30px;
 		}
-		&:last-child {
-			margin-bottom: 0;
+		&.acomment-content {
+			font-size: 95%;
+			margin-left: 75px;
+			margin-top: 5px;
 		}
-		> ul {
-			margin-top: 0;
-			margin-left: 20px;
-			margin-bottom: 10px; 
-		}
+		&.acomment-options { 
+			margin-left: 73px; 
+		} 
 	}
-	> ul > li:first-child {
-		border-top: none;
-	}
+	ul { 
+		border: none;
+		list-style: none;
+		clear: left;
+		padding: 0;
+		padding-left: 20px;
+		border-left: 2px solid #eee;
+		li { 
+			list-style: none;
+			margin: 25px 15px 0; 
+			padding: 0; 
+		}
+	} 
 }
 
 body.activity-permalink div.activity-comments ul li > ul {
   margin-top: 15px;
 }
 
-div.activity-comments div {
-  &.acomment-avatar img {
-    float: left;
-    margin-right: 10px;
-    height: 30px;
-    width: 30px;
-  }
-  &.acomment-content {
-    font-size: 95%;
-    margin-left: 49px;
-    margin-top: 5px;
-  }
-}
-
-#content div.activity-comments li {
-  background: #FBFBFB;
-  border: none; 
-  padding: 25px 15px 0;
-}
-
 div.acomment-content {
-  .time-since, .activity-delete-link, .comment-header {
-    display: none;
-  }
+	.time-since, .activity-delete-link, .comment-header {
+		display: none;
+	}
 }
 
 body.activity-permalink div.activity-comments div.acomment-content {
@@ -2974,11 +2953,12 @@ span.activity {
 		} 
 	}
 	.profile-subnav {
-		margin: 5px; 
-		margin-left: 10px; 
+		margin: 5px 15px 5px 10px; 
 		li {
 			padding: 4px; 
 			padding-left: 7px; 
+			border-bottom: 1px solid #ccc;
+			border-right: 1px solid #ccc;
 			a { 
 				font-size: 80%; 
 			} 
@@ -3179,8 +3159,10 @@ div#invite-list {
 #wp-admin-bar-my-account-settings-general { display: none; }
 
 li.groups.activity-item {
-	padding-top: 35px; /* have no idea why this is so high, but it seems to be what it needs */
-	padding-bottom: 10px;
+	/*
+	 *padding-top: 35px; [> have no idea why this is so high, but it seems to be what it needs <]
+	 *padding-bottom: 10px;
+	 */
 }
 aside.sidebar {
 	min-height: none; /* this is giant sometimes, and results in a huge page for no apparent reason */
