@@ -1031,7 +1031,6 @@ ul.single-line li {
 ul.item-list {
   padding: 0;
   width: 100%;
-  margin-bottom: 40px;
   margin-left: 0; }
   ul.item-list li {
     list-style: none outside none;
@@ -1192,21 +1191,14 @@ div.dir-search {
 
 /* --- End Body, Directories --- }}} */
 /* --- Pagination --- {{{ */
-div.pagination#user-pag, .friends div.pagination, .mygroups div.pagination, .myblogs div.pagination, noscript div.pagination {
-  background: #f8f8f8;
-  border: none;
-  padding: 8px 15px; }
-
 div.pagination {
-  margin: 40px 0;
-  border: none; }
+  clear: both;
+  margin: 35px 0; }
   div.pagination .pag-count {
-    float: none;
-    line-height: 5px;
-    font-style: italic; }
+    display: inline-block; }
   div.pagination .pagination-links {
     float: right;
-    margin-top: -10px; }
+    display: inline-block; }
     div.pagination .pagination-links span, div.pagination .pagination-links a {
       padding: 6px;
       background-color: #fafafa;
@@ -1240,17 +1232,6 @@ div.item-options {
   div.item-options a {
     padding-bottom: 2px;
     padding-top: 2px; }
-
-div.item-avatar img {
-  display: block;
-  float: left;
-  margin: 5px 5px 5px 0; }
-
-.avatar-block {
-  overflow: hidden; }
-
-div#pag-bottom {
-  margin-top: 0; }
 
 /* --- End Pagination --- }}} */
 /* --- Error / Success Messages --- {{{ */
@@ -2836,24 +2817,32 @@ select {
   margin: 0 1em 0 28px;
   padding: 0; }
 
-#content #center-homepage .homepage-widget.column {
-  padding: 0px; }
-
 #content #center-homepage .homepage-widget {
-  background: none repeat scroll 0 0 #fafafa;
-  border: 1px solid #E6E6E6;
-  border-radius: 6px 6px 2px 2px;
+  background-color: #fafafa;
+  border: 1px solid #ebebeb;
   margin: 1% 1% 3%;
   width: 31.33%; }
+  #content #center-homepage .homepage-widget.column {
+    padding: 0px; }
 
-#content .homepage-widget {
+.homepage-widget {
   width: 31.33%; }
+  .homepage-widget .activity-list li:first-child {
+    padding-top: 5px; }
+  .homepage-widget .item-list .item {
+    display: inline;
+    max-width: none; }
+  .homepage-widget .item-list li {
+    padding: 14px 0; }
+  .homepage-widget .item-list .item-avatar {
+    width: 65px;
+    height: 65px; }
+  .homepage-widget .item-list img.avatar {
+    width: 50px;
+    height: 50px; }
 
 .textwidget {
   padding: 0 15px; }
-
-#sidebar {
-  box-shadow: none; }
 
 #sidebar .textwidget,
 #footer .textwidget {
