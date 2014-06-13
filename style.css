@@ -1829,10 +1829,31 @@ ul#topic-post-list {
 
 div.admin-links {
   position: absolute;
-  top: 15px;
+  top: 25px;
   right: 25px;
-  color: #888;
   font-size: 85%; }
+  div.admin-links a {
+    background-color: #fafafa;
+    border: 1px solid #ebebeb;
+    border-bottom: 2px solid #ddd;
+    color: #2e2e2e;
+    font-size: 11px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 10px; }
+    div.admin-links a a, div.admin-links a a:hover, div.admin-links a:hover, div.admin-links a:active {
+      color: #2e2e2e;
+      text-decoration: none; }
+    div.admin-links a:hover {
+      background-color: #ebebeb; }
+    div.admin-links a:active {
+      background-color: #e1e1e1;
+      text-shadow: none; }
 
 div#topic-meta {
   position: relative;
@@ -2921,7 +2942,8 @@ select {
     .main-menu ul#menu-item-151 a:hover, .main-menu ul:last-child a:hover {
       border-radius: 0px;
       padding: 9px 10px 0px;
-      margin-right: 0px; }
+      margin-right: 0px;
+      color: #000; }
   .main-menu a {
     border-radius: 0px;
     padding: 9px 10px 0px;
@@ -3039,6 +3061,9 @@ li.bbp-forum-info, li.bbp-topic-title {
 div.bbp-template-notice p {
   padding: 0;
   margin: 0; }
+
+#bp-group-documents ul#bp-group-documents-list li {
+  padding-left: 50px; }
 
 /* --- End Misc Bugfixes --- }}} */
 /* --- Structure --- {{{1 */
