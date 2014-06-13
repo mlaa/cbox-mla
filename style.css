@@ -1217,7 +1217,10 @@ div.pagination {
       font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
       text-decoration: none;
       text-shadow: 0 1px rgba(255, 255, 255, 0.75);
-      font-weight: bold; }
+      font-weight: bold;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px; }
       div.pagination .pagination-links span a, div.pagination .pagination-links span a:hover, div.pagination .pagination-links span:hover, div.pagination .pagination-links span:active, div.pagination .pagination-links a a, div.pagination .pagination-links a a:hover, div.pagination .pagination-links a:hover, div.pagination .pagination-links a:active {
         color: #2e2e2e;
         text-decoration: none; }
@@ -1883,6 +1886,9 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   font-weight: bold;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   margin-top: 10px;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   padding: 10px; }
@@ -2736,6 +2742,12 @@ span.activity {
     border-bottom: 2px solid #ddd;
     margin: 3px 0;
     padding: 5px 5px 3px 14px; }
+    #sidebar .sidebar-activity-tabs ul li:first-child {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
+    #sidebar .sidebar-activity-tabs ul li:last-child {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px; }
     #sidebar .sidebar-activity-tabs ul li:hover, #sidebar .sidebar-activity-tabs ul li.current {
       background-color: #e1e1e1;
       border-top: 1px solid #ccc;

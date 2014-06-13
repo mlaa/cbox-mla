@@ -31,6 +31,7 @@ $verydarkgray: darken($lightgray, 80%);
 		background-color: $darkergray; 
 		text-shadow: none; 
 	} 
+	@include borderRadius; 
 } 
 
 @mixin borderRadius($radius: 3px) { 
@@ -2924,6 +2925,14 @@ span.activity {
 		border-bottom: 2px solid #ddd;
 		margin: 3px 0;
 		padding: 5px 5px 3px 14px; 
+		&:first-child { 
+			border-top-left-radius: 3px; 
+			border-top-right-radius: 3px; 
+		} 
+		&:last-child { 
+			border-bottom-left-radius: 3px; 
+			border-bottom-right-radius: 3px; 
+		} 
 		&:hover, &.current {
 			background-color: #e1e1e1;
 			border-top: 1px solid #ccc;
