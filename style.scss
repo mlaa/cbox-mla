@@ -965,23 +965,26 @@ ul.item-list {
 			margin: 0; 
 		}
 		div {
-			&.item-title span {
-				font-size: 100%;
-				color: #999; 
-			}
-			&.item-desc {
-				font-size: 85%;
-			}
-			&.action {
-				position: absolute;
-				right: 0;
-				text-align: right; 
-			}
-			&.meta {
-				margin-top: 10px;
-				color: #888;
-				font-size: 85%; 
+			&.item { 
+				display: inline-block; 
+				max-width: 75%; 
+				&.item-title span {
+					font-size: 100%;
+					color: #999; 
+				}
+				&.item-desc {
+					font-size: 85%;
+				}
+				&.meta {
+					margin-top: 10px;
+					color: #888;
+					font-size: 85%; 
+				} 
 			} 
+			&.action {
+				display: inline-block; 
+				float: right; 
+			}
 		}
 		h5 span.small {
 			font-weight: normal;
@@ -1108,6 +1111,10 @@ div#subnav.item-list-tabs {
 .directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content { 
 	width: 100%; 
 } 
+
+.item-list {
+} 
+
 div.dir-search {
   float: right;
   margin-top: -60px;
@@ -2865,9 +2872,6 @@ div.item-list-tabs ul li a span {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-ul.item-list li:last-child {
-	border-bottom: 0px;
-}
 .item-list-tabs ul li a {
 	font-weight: 400; 
 	font-family: $bitter; 
@@ -3131,10 +3135,6 @@ div#invite-list {
 	border: 1px solid #E4E4E4;
 }
 
-/* Prevent overflow of status update into "add friend" button when logged in */
-.logged-in ul#members-list li .item .item-meta { margin-left:50px;}
-.logged-in ul#members-list li .item { width:85%; }
-
 /* Limit height of slider */
 .flex-viewport, .flex-viewport img {
  max-height: 352px !important;
@@ -3148,31 +3148,6 @@ div#invite-list {
 #profile-nav-menu #edit-password { display: none; }
 #wp-admin-bar-my-account-settings-general { display: none; }
 
-li.groups.activity-item {
-	/*
-	 *padding-top: 35px; [> have no idea why this is so high, but it seems to be what it needs <]
-	 *padding-bottom: 10px;
-	 */
-}
-aside.sidebar {
-	min-height: none; /* this is giant sometimes, and results in a huge page for no apparent reason */
-}
-/* Hack to make prevent .action items from overflowing into next group item -JR */ 
-#groups-list {
-  .item {
-    display: inline-block;
-    max-width: 60%;
-  }
-  .action {
-    position: inherit;
-    float: right;
-    max-width: 33%;
-    padding-bottom: 5px;
-  }
-  .clear {
-    clear: both;
-  }
-}
 /* Indicate that read-only input fields are not editable by greying them out a little bit -JR */
 #profile-edit-form input.readonly { 
 	background-color: #efefef; 
