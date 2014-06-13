@@ -782,7 +782,7 @@ h2.page-title a:hover, h2.post-title a:hover, h1.page-title a:hover, h1.post-tit
 h3 {
     font-size: 1.5em;
     line-height: 1.15em;
-    margin: .5em 0 1em 0;
+    margin: .1em 0; 
 }
 h4 {
     font-size: 1.25em;
@@ -1639,23 +1639,30 @@ body.activity-permalink .activity-content {
 }
 
 .activity-list {
-  .activity-content img.thumbnail {
-    float: left;
-    margin: 0 10px 5px 0;
-    border: 2px solid #eee;
-  }
-  li.load-more {
-    margin: 15px 0;
-    padding: 10px 15px;
-    background: #f0f0f0;
-    text-align: center;
-    font-size: 1.2em;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    min-height: 40px;
-    a {
-      color: #555555;
-    }
+	.activity-content img.thumbnail {
+		float: left;
+		margin: 0 10px 5px 0;
+		border: 2px solid #eee;
+	}
+	li.load-more {
+	  text-align: center;
+	  padding: 0; 
+	  a {
+		  margin: 15px 0;
+		  padding: 10px 15px;
+		  font-size: 1.2em;
+		  background: $lightgray;
+		  border-right: 1px solid #ddd;
+		  border-bottom: 1px solid #ddd;
+		  color: $verydarkgray;
+		  display: block; 
+		  width: 100%; 
+		  height: 100%; 
+		  &:hover { 
+			  text-decoration: none; 
+			  background-color: $gray; 
+		  } 
+	  }
   }
 }
 
@@ -2507,20 +2514,12 @@ thead:first-child tr th, thead:first-child tr td {
 
 
 /*BBPress*/
+.bbp-pagination-links a, .bbp-pagination-links span.current { 
+	@include minimalButton; 
+} 
 #bbpress-forums .bbp-breadcrumb {
     border-bottom: 1px solid #EAEAEA;
     border-top: 1px solid #F9F9F9;
-}
-.single-topic h1:before,
-.group-forum-topic #bbpress-forums h3:before  {
-    background: #4183C4;
-    @include borderRadius(10px); 
-    color: #FFFFFF;
-    content: "#";
-    font-size: 90%;
-    margin-right: 5px;
-    padding: 0 8px 7px;
-    text-shadow: 0 1px 0 #4F5256;
 }
 .bbp-topic-meta a,.bbp-topic-freshness a {
     color: #777;
@@ -2931,12 +2930,14 @@ span.activity {
 		li {
 			padding: 4px; 
 			padding-left: 7px; 
+			border-top: 1px solid #ddd;
+			border-left: 1px solid #ddd;
 			border-bottom: 1px solid #ccc;
 			border-right: 1px solid #ccc;
 			a { 
 				font-size: 80%; 
 			} 
-			&.selected { 
+			&.selected, &:hover { 
 				background-color: $gray; 
 			} 
 			a:before {
@@ -3176,12 +3177,9 @@ select {
     top: 2px;
 }
 
-/* Hide redundant group forum titles, 
- * see issue: 
- * https://github.com/mlaa/cbox-mla/issues/12
- */ 
-#bbpress-forums > h3 { 
-	display: none; 
+
+#bbpress-forums div.bbp-topic-tags { 
+	float: none; 
 } 
 
 /* de-buttonize blue info area */ 
@@ -3214,6 +3212,15 @@ li.bbp-forum-info, li.bbp-topic-title {
 
 #group-settings-form { 
  	margin: 30px 0; 
+} 
+
+.ass_members_status { 
+	display: none; /* just disabling group member email status area for now because it's ugly */  
+} 
+
+div.bbp-template-notice p { 
+ 	padding: 0; 
+	margin: 0; 
 } 
 /* --- End Misc Bugfixes --- }}} */ 
 
@@ -3357,7 +3364,7 @@ div.dir-search input[type="text"], imput#s { margin-right:-4px;}
 /* --- Icons --- {{{1 */ 
 /* Using some fancy CSS magic to add our icons */
 
-.item-list-tabs * a:before, #item-buttons * a:before, .sidebar-activity-tabs * a:before, .button:before, #message p:before, #subnav * :before, #category-title:before, #tag-title:before, span.post-tags:before, .generic-button a:before, #category-title:before, #tag-title:before, span.post-tags:before, .post-meta-data *:before, .post-title:before, #author-description h3:before, .single_add_to_cart_button:before, .load-more a:before, #whats-new, .main-menu * :before, .link-home h2 a:before, div.link-vote-panel div.clickers a.up:before, #bbpress-forums .bbp-forums-list li a:before, #favorite-toggle:before, #subscription-toggle:before, .single-topic h1:before, .group-forum-topic #bbpress-forums h3:before, ul.contact li:before {
+.item-list-tabs * a:before, #item-buttons * a:before, .sidebar-activity-tabs * a:before, .button:before, #message p:before, #subnav * :before, #category-title:before, #tag-title:before, span.post-tags:before, .generic-button a:before, #category-title:before, #tag-title:before, span.post-tags:before, .post-meta-data *:before, .post-title:before, #author-description h3:before, .single_add_to_cart_button:before, .load-more a:before, #whats-new, .main-menu * :before, .link-home h2 a:before, div.link-vote-panel div.clickers a.up:before, #bbpress-forums .bbp-forums-list li a:before, .group-forum-topic #bbpress-forums h3:before, #favorite-toggle:before, #subscription-toggle:before, .single-topic h1:before, ul.contact li:before {
     font-weight: normal;
     font-family: "iconsweetsRegular";
     color: inherit;

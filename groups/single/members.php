@@ -15,10 +15,12 @@
 
 				</a>
 
-				<h5><?php bp_group_member_link(); ?></h5>
-				<span class="activity"><?php bp_group_member_joined_since(); ?></span>
+				<div class="item"> 
+					<h5><?php bp_group_member_link(); ?></h5>
+					<span class="activity"><?php bp_group_member_joined_since(); ?></span>
 
-				<?php do_action( 'bp_group_members_list_item' ); ?>
+					<?php do_action( 'bp_group_members_list_item' ); ?>
+				</div><!-- end .item --> 
 
 				<?php if ( bp_is_active( 'friends' ) ) : ?>
 

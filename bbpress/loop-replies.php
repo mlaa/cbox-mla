@@ -17,9 +17,12 @@
 
 			<?php if ( !bbp_show_lead_topic() ) : ?>
 
-				<span class="generic-button"> 
-					<?php bbp_topic_subscription_link(array('before'=>'')); ?>
-				</span> 
+				<?php if ( bbp_topic_subscription_link( array( 'before'=>'' ) ) ): ?> 
+					<span class="generic-button"> 
+						<?php bbp_topic_subscription_link( array( 'before'=>'' ) ); ?>
+					</span> 
+				<?php endif; ?> 
+
 				<span class="generic-button">
 					<?php bbp_user_favorites_link(); ?>
 				</span> 

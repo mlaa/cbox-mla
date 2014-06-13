@@ -64,3 +64,10 @@ add_filter( 'bbp_get_forum_subscribe_link', 'mla_remove_forum_subscribe_link');
  * a lot, and users can still change their email subscription settings in "email settings." 
  */ 
 remove_action ( 'bp_directory_groups_actions', 'ass_group_subscribe_button' );
+
+/* Remove forum title, since in our use cases forum titles have the same names as
+ * their parent groups, and users see a redundant title on group forums pages. 
+ */
+function mla_remove_forum_title($title) { 
+} 
+add_filter( 'bbp_get_forum_title', 'mla_remove_forum_title' ); 
