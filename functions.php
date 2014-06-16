@@ -71,3 +71,16 @@ remove_action ( 'bp_directory_groups_actions', 'ass_group_subscribe_button' );
 function mla_remove_forum_title($title) { 
 } 
 add_filter( 'bbp_get_forum_title', 'mla_remove_forum_title' ); 
+
+/* 
+ * Remove profile group tab from edit profile page when there's only one profile
+ * group. I just says "Profile" and is kind of confusing. 
+ */ 
+function mla_remove_profile_group_tab($tabs, $groups) { 
+	if ( count( $groups ) > 1 ) { 
+		return $tabs; 
+	} else { 
+		return; 
+	} 
+} 
+add_filter( 'xprofile_filter_profile_group_tabs', 'mla_remove_profile_group_tab' ); 
