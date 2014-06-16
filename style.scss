@@ -1108,7 +1108,7 @@ div#subnav.item-list-tabs {
 /* --- End Item Tabs --- }}} */ 
 
 /* --- Directories --- {{{ */ 
-.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content { 
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content, .bp-docs #content{ 
 	width: 100%; 
 } 
 
@@ -3876,8 +3876,12 @@ ul.contact {
     margin-bottom: 1em;
     list-style-type: none; 
     &:before { 
-	    margin-left: -19px; /* effectively makes a hanging indent */ 
+	    margin-left: -24px; /* effectively makes a hanging indent */ 
 	    color: #ddd; 
+	    font-size: 24px; 
+	    position: relative; 
+	    top: 4px; 
+	    font-weight: 400; 
     } 
   }
   li .smalltext {
