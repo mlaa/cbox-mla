@@ -35,6 +35,5 @@ infinity_get_header();
 			</div><!-- #search-bar -->
 	</div>
 <?php
-infinity_get_sidebar();
 infinity_get_footer();
 ?>
