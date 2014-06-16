@@ -3180,12 +3180,9 @@ select {
     right: 0px;
     top: 2px;
 }
-
-
 #bbpress-forums div.bbp-topic-tags { 
 	float: none; 
 } 
-
 /* de-buttonize blue info area */ 
 #bbpress-forums div.bbp-template-notice.info { 
 	border: inherit;
@@ -3197,9 +3194,6 @@ li.bbp-forum-info, li.bbp-topic-title {
 	width: 90%; /* this needs to be bigger now because we got rid of "voices" and "freshness" */ 
 } 
 
-/* the strangely misaligned border there is killing me */ 
-#bbpress-forums fieldset.bbp-form { 
-} 
 #bbpress-forums fieldset.bbp-form legend { 
 	border: none; 
 	width: auto; 
@@ -3227,11 +3221,23 @@ div.bbp-template-notice p {
 	margin: 0; 
 } 
 
-#bp-group-documents ul#bp-group-documents-list li {
-	padding-left: 50px;
-}
-
 /* --- End Misc Bugfixes --- }}} */ 
+
+
+/* --- BP Group Documents ("Files") --- {{{ */ 
+#bp-group-documents { 
+	#subnav { 
+		padding: 10px; 
+	} 
+	ul#bp-group-documents-list li {
+		padding-left: 50px;
+	}
+	div.pagination {
+		clear: none;
+		margin: 0px;
+	} 
+} 
+/* --- End BP Group Documents ("Files") --- }}} */ 
 
 /* --- Structure --- {{{1 */ 
 #wrapper {
