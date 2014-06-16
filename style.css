@@ -1149,7 +1149,8 @@ div#subnav.item-list-tabs {
   overflow: hidden; }
   div#subnav.item-list-tabs.docs-tabs {
     background-color: transparent;
-    border: none; }
+    border: none;
+    padding: 0; }
   div#subnav.item-list-tabs ul li a {
     border: none; }
   div#subnav.item-list-tabs ul li.current a {
@@ -1166,13 +1167,18 @@ div#subnav.item-list-tabs {
   width: 100%; }
 
 div.dir-search {
-  float: right;
-  margin-top: -60px;
-  width: 50%;
+  margin-top: -42px;
   text-align: right; }
   div.dir-search input[type=text] {
     display: inline-block;
-    margin-right: 10px; }
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-top: 2px solid #ddd;
+    border-left: 2px solid #ddd;
+    width: 200px; }
+  div.dir-search input[type=submit] {
+    display: none;
+    /* users can press enter instead of clicking "submit */ }
   div.dir-search label {
     display: inline-block; }
 
@@ -1193,7 +1199,7 @@ div.dir-search {
 /* --- Pagination --- {{{ */
 div.pagination {
   clear: both;
-  margin: 35px 0; }
+  margin: 25px 0; }
   div.pagination .pag-count {
     display: inline-block; }
   div.pagination .pagination-links {
@@ -2292,9 +2298,7 @@ div#item-header div#item-header-content {
   margin-left: 0; }
 
 #item-header-avatar img {
-  width: auto;
-  /* fixes display in IE8 */
-  float: none; }
+  width: 100%; }
 
 thead:first-child tr th, thead:first-child tr td {
   padding-left: 10px;
@@ -2305,7 +2309,7 @@ thead:first-child tr th, thead:first-child tr td {
   border: 0px;
   padding: 0px; }
 .theme-option .toggle-content {
-  border-color: #CCCCCC;
+  border-color: #ccc;
   border-image: none;
   border-radius: 0 0 5px 5px; }
 
@@ -2319,21 +2323,27 @@ thead:first-child tr th, thead:first-child tr td {
   margin-bottom: -25px;
   margin-top: 25px; }
 
-.doc-tabs li {
+.bp-docs .doc-tabs li {
   list-style: none outside none; }
-  .doc-tabs li a {
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    padding: 10px 15px; }
+  .bp-docs .doc-tabs li.current a, .bp-docs .doc-tabs li a:hover {
+    background-color: #fafafa;
+    color: #2e2e2e;
+    font-weight: 400;
+    border: 1px solid #ddd;
+    border-bottom: none; }
+  .bp-docs .doc-tabs li a {
+    border-top-right-radius: 3px;
+    border-top-left-radius: jpx;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    color: #7a7a7a;
+    font-family: Bitter; }
 
 .single-bp_doc .content-column {
   float: none !important; }
 .single-bp_doc .doc-tabs {
-  margin-right: 20px;
-  margin-top: -20px;
-  overflow: hidden;
-  margin-bottom: 20px; }
+  border-bottom: 1px solid #ddd; }
 .single-bp_doc .toggle-switch {
   padding: 8px 12px; }
 .single-bp_doc divsingle-bp_doc-info-header {
@@ -2356,8 +2366,10 @@ thead:first-child tr th, thead:first-child tr td {
 thead:first-child tr th, thead:first-child tr td {
   width: 0; }
 
-#bp-create-doc-button {
-  padding: 2px 10px 7px; }
+.bp-docs #bp-create-doc-button {
+  padding: 2px 10px 7px;
+  float: none;
+  margin: 0; }
 
 .doc-content-wrapper .toggle-switch {
   padding: 8px 10px; }
@@ -3058,6 +3070,10 @@ div.bbp-template-notice p {
   padding: 0;
   margin: 0; }
 
+.blog-button.visit {
+  display: none;
+  /* temporary hack to remove redundant "Visit Site" button */ }
+
 /* --- End Misc Bugfixes --- }}} */
 /* --- BP Group Documents ("Files") --- {{{ */
 #bp-group-documents #subnav {
@@ -3106,9 +3122,6 @@ div#object-nav.item-list-tabs li {
     padding-bottom: 0px;
     margin-bottom: 0px;
     float: right; }
-  #content.blog-button.visit {
-    display: none;
-    /* temporary hack to remove redundant "Visit Site" button */ }
 
 #top-homepage {
   margin: -30px -30px 10px;
@@ -3149,15 +3162,6 @@ div.item-options a.selected {
 
 .dir-form {
   margin-bottom: 15px; }
-
-div.dir-search {
-  float: right;
-  position: inherit;
-  width: auto;
-  left: auto; }
-
-div.dir-search input[type="text"], imput#s {
-  margin-right: -4px; }
 
 #object-nav ul.profile-subnav {
   border-top: 0px none; }
