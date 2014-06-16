@@ -3028,20 +3028,17 @@ select {
 
 #bbpress-forums div.bbp-topic-tags {
   float: none; }
-
-/* de-buttonize blue info area */
 #bbpress-forums div.bbp-template-notice.info {
   border: inherit;
   background-color: transparent;
   padding: 0; }
+#bbpress-forums fieldset.bbp-form legend {
+  border: none;
+  width: auto; }
 
 li.bbp-forum-info, li.bbp-topic-title {
   width: 90%;
   /* this needs to be bigger now because we got rid of "voices" and "freshness" */ }
-
-#bbpress-forums fieldset.bbp-form legend {
-  border: none;
-  width: auto; }
 
 .single-item #item-meta .group-subscription-div {
   clear: none; }
@@ -3105,19 +3102,17 @@ div#object-nav.item-list-tabs li {
 
 #content {
   margin-top: 1px; }
+  #content.sidebar-left {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    float: right; }
+  #content.blog-button.visit {
+    display: none;
+    /* temporary hack to remove redundant "Visit Site" button */ }
 
 #top-homepage {
   margin: -30px -30px 10px;
   padding-top: 50px; }
-
-#content.sidebar-left {
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  float: right; }
-
-.blog-button.visit {
-  display: none;
-  /* temporary hack to remove redundant "Visit Site" button */ }
 
 #sidebar .widget_bp_groups_widget h4 {
   padding-bottom: 28px; }
