@@ -1988,7 +1988,7 @@ div#new-topic-post {
 
 input.button:active,
 .button:active { outline: 0; position: relative; top: 1px; }
-a.button, .generic-button, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"],#review_form #submit, {
+a.button, .generic-button, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"],#review_form #submit, #favorite-toggle, #subscription-toggle {
 	@include minimalButton; 
 	margin-top: 10px;
 	text-shadow: 0 1px rgba(255, 255, 255, .75);
@@ -3711,7 +3711,7 @@ div#message p:before {
 }
 #bbpress-forums li.bbp-header { 
 	/* overrides bbpress.css */ 
-	padding: 0 0 10px;  
+	padding: 15px 0;  
 	text-align: left; 
 	border-top: none; 
 } 
