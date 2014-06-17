@@ -2358,7 +2358,7 @@ thead:first-child tr th, thead:first-child tr td {
 #content #bp-create-doc-button {
   padding: 2px 10px 7px;
   float: none;
-  margin: 0; }
+  margin: 15px 0; }
 
 #content #bp-docs-pagination {
   padding: 25px; }
@@ -2389,7 +2389,18 @@ thead:first-child tr th, thead:first-child tr td {
   background: transparent;
   padding: 0; }
 
-/*BBPress*/
+/*Third Pary Plugin Fixes*/
+#links-personal-li #links-order-select,
+#links-personal-li #links-category-select {
+  display: none; }
+
+/* --- End Docs --- }}} */
+/* --- Wiki --- {{{ */
+body.wiki.single-bp_doc #subnav {
+  display: none; }
+
+/* --- End Wiki --- }}} */
+/* --- BBPress ("Forums") --- {{{ */
 .bbp-pagination-links a, .bbp-pagination-links span.current {
   background-color: #fafafa;
   border: 1px solid #ebebeb;
@@ -2412,41 +2423,21 @@ thead:first-child tr th, thead:first-child tr td {
     background-color: #e1e1e1;
     text-shadow: none; }
 
-#bbpress-forums .bbp-breadcrumb {
-  border-bottom: 1px solid #EAEAEA;
-  border-top: 1px solid #F9F9F9; }
-
-.bbp-topic-meta a, .bbp-topic-freshness a {
-  color: #777; }
-
 .info-box h3, #bbpress-forums li.bbp-header {
   background-color: #fff; }
 
 .bbp-topic-meta {
   font-size: 85%; }
 
+.bbp-topic-meta a, .bbp-topic-freshness a {
+  color: #777; }
+
 .bbp-breadcrumb-current, .bbp-topic-meta, .bbp-pagination {
   color: #999; }
-
-#bbpress-forums div.odd, #bbpress-forums ul.odd {
-  background-color: #FFFFFF; }
-
-/*Third Pary Plugin Fixes*/
-#links-personal-li #links-order-select,
-#links-personal-li #links-category-select {
-  display: none; }
-
-/* --- End Docs --- }}} */
-/* --- Wiki --- {{{ */
-body.wiki.single-bp_doc #subnav {
-  display: none; }
 
 /* BBPress Bleeding */
 .groups.forums #item-header {
   display: none; }
-
-#bbpress-forums {
-  font-size: inherit; }
 
 /* BBPress Styling */
 #bbpress-forums ul.bbp-lead-topic, #bbpress-forums ul.bbp-topics, #bbpress-forums ul.bbp-forums, #bbpress-forums ul.bbp-replies {
@@ -2456,9 +2447,6 @@ body.wiki.single-bp_doc #subnav {
 
 .bbPress h1 {
   margin-bottom: 15px; }
-
-.group-forum-topic #bbpress-forums h3 {
-  font-size: 2em; }
 
 .bbp-pagination {
   font-size: 90%; }
@@ -2474,36 +2462,50 @@ body.wiki.single-bp_doc #subnav {
   float: none;
   margin: 0 2px; }
 
-#bbpress-forums .bbp-forum-title, .bbp-topic-title {
-  font-size: 120%;
-  font-weight: 500; }
-
-#bbpress-forums li.bbp-body ul.forum, #bbpress-forums li.bbp-body ul.topic {
-  border-top: 1px solid #F4F4F4;
-  overflow: hidden;
-  padding: 25px 0 10px 10px; }
-#bbpress-forums .bbp-forums-list {
-  border-left: 0px; }
-  #bbpress-forums .bbp-forums-list li {
-    display: block;
-    font-size: 90%;
-    padding-top: 5px; }
-#bbpress-forums .bbp-header .bbp-topic-title {
-  font-size: 100%; }
-#bbpress-forums .bbp-forum-content p {
-  font-size: 90%;
-  padding-left: 20px;
-  padding-top: 10px; }
-#bbpress-forums .bbp-breadcrumb {
-  float: none;
-  font-size: 90%;
-  margin-bottom: 15px;
-  margin-top: 15px;
-  padding-bottom: 0;
-  padding-top: 0;
-  position: relative; }
-  #bbpress-forums .bbp-breadcrumb p {
+#bbpress-forums {
+  font-size: inherit; }
+  #bbpress-forums div.odd, #bbpress-forums #bbpress-forums ul.odd {
+    background-color: #fff; }
+  #bbpress-forums .bbp-forum-title, #bbpress-forums .bbp-topic-title {
+    font-size: 120%;
+    font-weight: 500; }
+  #bbpress-forums li.bbp-body ul.forum, #bbpress-forums li.bbp-body ul.topic {
+    border-top: 1px solid #F4F4F4;
+    overflow: hidden;
+    padding: 25px 0 10px 10px; }
+  #bbpress-forums .bbp-forums-list {
+    border-left: 0px; }
+    #bbpress-forums .bbp-forums-list li {
+      display: block;
+      font-size: 90%;
+      padding-top: 5px; }
+  #bbpress-forums .bbp-header .bbp-topic-title {
     font-size: 100%; }
+  #bbpress-forums .bbp-forum-content p {
+    font-size: 90%;
+    padding-left: 20px;
+    padding-top: 10px; }
+  #bbpress-forums .bbp-breadcrumb {
+    border-bottom: 1px solid #EAEAEA;
+    border-top: 1px solid #F9F9F9;
+    float: none;
+    font-size: 90%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative; }
+    #bbpress-forums .bbp-breadcrumb p {
+      font-size: 100%; }
+  #bbpress-forums div.bbp-topic-tags {
+    float: none; }
+  #bbpress-forums div.bbp-template-notice.info {
+    border: inherit;
+    background-color: transparent;
+    padding: 0; }
+  #bbpress-forums fieldset.bbp-form legend {
+    border: none;
+    width: auto; }
 
 #cse-search-form .gsc-input {
   padding: 10px; }
@@ -2521,7 +2523,6 @@ body.wiki.single-bp_doc #subnav {
   margin-top: -3px;
   width: auto; }
 
-/* --- End Wiki --- }}} */
 /* --- Tooltips --- {{{ */
 .admin-bar-showing .tooltip.bottom {
   margin-top: -28px; }
@@ -2936,8 +2937,7 @@ select {
   font-size: 12.5px; }
   .main-menu ul li {
     display: inline-block; }
-    .main-menu ul li.current_page_item a, .main-menu ul li.selected a {
-      background: none;
+    .main-menu ul li.current_page_item a, .main-menu ul li.current-menu-item a, .main-menu ul li.selected a {
       color: #000; }
   .main-menu ul#menu-item-151 a, .main-menu ul:last-child a {
     border-radius: 0px;
@@ -3030,16 +3030,6 @@ select {
   position: relative;
   right: 0px;
   top: 2px; }
-
-#bbpress-forums div.bbp-topic-tags {
-  float: none; }
-#bbpress-forums div.bbp-template-notice.info {
-  border: inherit;
-  background-color: transparent;
-  padding: 0; }
-#bbpress-forums fieldset.bbp-form legend {
-  border: none;
-  width: auto; }
 
 li.bbp-forum-info, li.bbp-topic-title {
   width: 90%;
@@ -3595,44 +3585,37 @@ li#nav-documents-groups-li, li#nav-documents-personal-li {
   padding: 0px;
   text-align: center;
   background-color: #444; }
-
-#footer .widget h4 {
-  border-bottom: 1px solid #3E3C3C;
-  color: #FFF; }
-
-#footer .footer-widget {
-  color: #EFEFEF;
-  font-weight: 400;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  width: 33%;
-  color: #A9A9A9;
-  font-weight: 400;
-  margin: 2% 3% 3%;
-  padding: 0;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  width: 26%;
-  /* fix for strange webkit column behavior */ }
-
-#footer #footer-widget-left {
-  margin-left: 6%;
-  /* fix misaligned footer issue */ }
-
-#footer a {
-  color: #ddd; }
-
-#footer .widget h4 {
-  border-bottom: 0px none;
-  font-size: 1.5em;
-  font-weight: 400;
-  /* way more legible this way */
-  padding-bottom: 0px;
-  margin-bottom: .6em; }
-
-#footer .footer-widgets.row {
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 0 2%;
-  text-align: left; }
+  #footer .widget h4 {
+    border-bottom: 1px solid #3E3C3C;
+    color: #FFF; }
+  #footer .footer-widget {
+    color: #EFEFEF;
+    font-weight: 400;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    width: 33%;
+    color: #A9A9A9;
+    font-weight: 400;
+    margin: 2% 3% 3%;
+    padding: 0;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    width: 26%; }
+  #footer #footer-widget-left {
+    margin-left: 6%;
+    /* fix misaligned footer issue */ }
+  #footer a {
+    color: #ddd; }
+  #footer .widget h4 {
+    border-bottom: 0px none;
+    font-size: 1.5em;
+    font-weight: 400;
+    /* way more legible this way */
+    padding-bottom: 0px;
+    margin-bottom: .6em; }
+  #footer .footer-widgets.row {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 2%;
+    text-align: left; }
 
 ul.contact {
   margin-left: 1.8em; }

@@ -2479,7 +2479,7 @@ thead:first-child tr th, thead:first-child tr td {
 #content #bp-create-doc-button {
 	padding: 2px 10px 7px;
 	float: none; 
-	margin: 0; 
+	margin: 15px 0; 
 }
 #content #bp-docs-pagination { 
 	padding: 25px; 
@@ -2520,30 +2520,6 @@ thead:first-child tr th, thead:first-child tr td {
 	}
 }
 
-/*BBPress*/
-.bbp-pagination-links a, .bbp-pagination-links span.current { 
-	@include minimalButton; 
-} 
-#bbpress-forums .bbp-breadcrumb {
-    border-bottom: 1px solid #EAEAEA;
-    border-top: 1px solid #F9F9F9;
-}
-.bbp-topic-meta a,.bbp-topic-freshness a {
-    color: #777;
-}
-
-.info-box h3,#bbpress-forums li.bbp-header {
-	background-color: #fff; 
-}
-.bbp-topic-meta {
-    font-size: 85%;
-}
-.bbp-breadcrumb-current,.bbp-topic-meta,.bbp-pagination {
-	color: #999;
-}
-#bbpress-forums div.odd,#bbpress-forums ul.odd {
-    background-color: #FFFFFF;
-}
 /*Third Pary Plugin Fixes*/
 #links-personal-li #links-order-select,
 #links-personal-li #links-category-select {
@@ -2556,12 +2532,29 @@ thead:first-child tr th, thead:first-child tr td {
 body.wiki.single-bp_doc #subnav {
 	display: none;
 }
+
+/* --- End Wiki --- }}} */ 
+
+/* --- BBPress ("Forums") --- {{{ */ 
+.bbp-pagination-links a, .bbp-pagination-links span.current { 
+	@include minimalButton; 
+} 
+.info-box h3,#bbpress-forums li.bbp-header {
+	background-color: #fff; 
+}
+.bbp-topic-meta {
+    font-size: 85%;
+}
+.bbp-topic-meta a,.bbp-topic-freshness a {
+	color: #777;
+}
+.bbp-breadcrumb-current,.bbp-topic-meta,.bbp-pagination {
+	color: #999;
+}
+
 /* BBPress Bleeding */
 .groups.forums #item-header {
 	display: none;
-}
-#bbpress-forums {
-	font-size: inherit;
 }
 /* BBPress Styling */
 #bbpress-forums ul.bbp-lead-topic,#bbpress-forums ul.bbp-topics,#bbpress-forums ul.bbp-forums,#bbpress-forums ul.bbp-replies {
@@ -2569,73 +2562,81 @@ body.wiki.single-bp_doc #subnav {
     border: 0;
     background: transparent;
 }
-
 .bbPress h1 {
     margin-bottom: 15px;
-}
-
-.group-forum-topic #bbpress-forums h3 {
-	font-size: 2em;
 }
 .bbp-pagination {
 	font-size: 90%;
 }
-
 .bbp-topic-meta {
     font-size: 85%;
 }
-
 .bbp-topic-freshness {
     width: 15%;
 }
-
 #bbpress-forums p.bbp-topic-meta img.avatar,#bbpress-forums ul.bbp-reply-revision-log img.avatar,#bbpress-forums ul.bbp-topic-revision-log img.avatar,#bbpress-forums div.bbp-template-notice img.avatar,#bbpress-forums .widget_display_topics img.avatar,#bbpress-forums .widget_display_replies img.avatar,#bbpress-forums p.bbp-topic-meta img.avatar {
     border: 0;
     float: none;
     margin: 0 2px;
 }
-
-#bbpress-forums .bbp-forum-title, .bbp-topic-title {
-  font-size: 120%;
-  font-weight: 500;
-}
-
 #bbpress-forums {
-  li.bbp-body ul {
-    &.forum, &.topic {
-      border-top: 1px solid #F4F4F4;
-      overflow: hidden;
-      padding: 25px 0 10px 10px;
-    }
-  }
-  .bbp-forums-list {
-    border-left: 0px;
-    li {
-      display: block;
-      font-size: 90%;
-      padding-top: 5px;
-    }
-  }
-  .bbp-header .bbp-topic-title {
-    font-size: 100%;
-  }
-  .bbp-forum-content p {
-    font-size: 90%;
-    padding-left: 20px;
-    padding-top: 10px;
-  }
-  .bbp-breadcrumb {
-    float: none;
-    font-size: 90%;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding-bottom: 0;
-    padding-top: 0;
-    position: relative;
-    p { 
-	    font-size: 100%;
-    } 
-  }
+	font-size: inherit;
+	div.odd,#bbpress-forums ul.odd {
+		background-color: #fff;
+	}
+	.bbp-forum-title, .bbp-topic-title {
+		font-size: 120%;
+		font-weight: 500;
+	}
+	li.bbp-body ul {
+		&.forum, &.topic {
+			border-top: 1px solid #F4F4F4;
+			overflow: hidden;
+			padding: 25px 0 10px 10px;
+		}
+	}
+	.bbp-forums-list {
+		border-left: 0px;
+		li {
+			display: block;
+			font-size: 90%;
+			padding-top: 5px;
+		}
+	}
+	.bbp-header .bbp-topic-title {
+		font-size: 100%;
+	}
+	.bbp-forum-content p {
+		font-size: 90%;
+		padding-left: 20px;
+		padding-top: 10px;
+	}
+	.bbp-breadcrumb {
+		border-bottom: 1px solid #EAEAEA;
+		border-top: 1px solid #F9F9F9;
+		float: none;
+		font-size: 90%;
+		margin-bottom: 15px;
+		margin-top: 15px;
+		padding-bottom: 0;
+		padding-top: 0;
+		position: relative;
+		p { 
+			font-size: 100%;
+		} 
+	}
+	div.bbp-topic-tags { 
+		float: none; 
+	} 
+	div.bbp-template-notice.info { 
+		border: inherit;
+		background-color: transparent; 
+		padding: 0; 
+	} 
+	fieldset.bbp-form legend { 
+		border: none; 
+		width: auto; 
+	} 
 }
 
 #cse-search-form .gsc-input {
@@ -2657,7 +2658,6 @@ body.wiki.single-bp_doc #subnav {
     margin-top: -3px;
     width: auto;
 }
-/* --- End Wiki --- }}} */ 
 
 /* --- Tooltips --- {{{ */ 
 
@@ -3089,8 +3089,7 @@ select {
 	ul {
 		li {
 			display: inline-block; 
-			&.current_page_item a, &.selected a {
-				background: none;
+			&.current_page_item a, &.current-menu-item a, &.selected a {
 				color: #000;
 			}
 		}
@@ -3187,20 +3186,6 @@ select {
     right: 0px;
     top: 2px;
 }
-#bbpress-forums { 
-	div.bbp-topic-tags { 
-		float: none; 
-	} 
-	div.bbp-template-notice.info { 
-		border: inherit;
-		background-color: transparent; 
-		padding: 0; 
-	} 
-	fieldset.bbp-form legend { 
-		border: none; 
-		width: auto; 
-	} 
-} 
 li.bbp-forum-info, li.bbp-topic-title { 
 	width: 90%; /* this needs to be bigger now because we got rid of "voices" and "freshness" */ 
 } 
@@ -3834,85 +3819,87 @@ li#nav-documents-groups-li, li#nav-documents-personal-li {
 .footer-wrap.row { 
 	width:100%; 
 }
-#footer { 
-	padding:0px; 
-	text-align:center; 
-	background-color: #444; 
-}
-#footer .widget h4 {
-	border-bottom: 1px solid #3E3C3C;
-	color: #FFF;
-}
-#footer .footer-widget {
-	color: #EFEFEF;
-	font-weight: 400;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	width: 33%;
-	color: #A9A9A9;
-	font-weight: 400;
-	margin: 2% 3% 3%;
-	padding: 0;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	width: 26%; /* fix for strange webkit column behavior */  
-}
-#footer #footer-widget-left { 
-	margin-left: 6%; /* fix misaligned footer issue */ 
-} 
-#footer a {
-	color:#ddd;
-}
-#footer .widget h4 {
-	border-bottom:0px none; 
-	font-size:1.5em; 
-	font-weight: 400; /* way more legible this way */ 
-	padding-bottom:0px; 
-	margin-bottom:.6em;
-}
-#footer .footer-widgets.row { 
-	max-width:1150px; 
-	margin: 0 auto;  
-	padding:0 2%; 
-	text-align:left; 
+#footer {
+	padding: 0px;
+	text-align: center;
+	background-color: #444;
+	.widget h4 {
+		border-bottom: 1px solid #3E3C3C;
+		color: #FFF;
+	}
+	.footer-widget {
+		color: #EFEFEF;
+		font-weight: 400;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		width: 33%;
+		color: #A9A9A9;
+		font-weight: 400;
+		margin: 2% 3% 3%;
+		padding: 0;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		width: 26%;
+	}
+	#footer-widget-left {
+		margin-left: 6%;
+		/* fix misaligned footer issue */
+	}
+	a {
+		color: #ddd;
+	}
+	.widget h4 {
+		border-bottom: 0px none;
+		font-size: 1.5em;
+		font-weight: 400;
+		/* way more legible this way */
+		padding-bottom: 0px;
+		margin-bottom: .6em;
+	}
+	.footer-widgets.row {
+		max-width: 1150px;
+		margin: 0 auto;
+		padding: 0 2%;
+		text-align: left;
+	}
 }
 ul.contact {
-  margin-left: 1.8em;
-  li {
-    margin-top: -3px;
-    margin-bottom: 1em;
-    list-style-type: none; 
-    &:before { 
-	    margin-left: -24px; /* effectively makes a hanging indent */ 
-	    color: #ddd; 
-	    font-size: 24px; 
-	    position: relative; 
-	    top: 4px; 
-	    font-weight: 400; 
-    } 
-  }
-  li .smalltext {
-    font-size: 85%;
-  }
+	margin-left: 1.8em;
+	li {
+		margin-top: -3px;
+		margin-bottom: 1em;
+		list-style-type: none; 
+		&:before { 
+			margin-left: -24px; /* effectively makes a hanging indent */ 
+			color: #ddd; 
+			font-size: 24px; 
+			position: relative; 
+			top: 4px; 
+			font-weight: 400; 
+		} 
+	}
+	li .smalltext {
+		font-size: 85%;
+	}
 }
 
 .smalltext {
-  font-size: 85%;
+	font-size: 85%;
 }
 #powered-by {
-  min-height: inherit;
-  position: absolute;
-  width: 100%;
-  border-top: 1px solid #5f5f5f;
-  font-size: 10px;
-  color: #fff;
-  background-color: #333;
-  padding: .5em 0px .45em;
-  margin: 0px;
-  text-align: center;
-  font-weight: normal;
-  text-transform: uppercase;
-  a {
-    color: #aaa;
-  }
+	min-height: inherit;
+	position: absolute;
+	width: 100%;
+	border-top: 1px solid #5f5f5f;
+	font-size: 10px;
+	color: #fff;
+	background-color: #333;
+	padding: .5em 0px .45em;
+	margin: 0px;
+	text-align: center;
+	font-weight: normal;
+	text-transform: uppercase;
+	a {
+		color: #aaa;
+	}
 }
 #copyright-info.six {
 	width:100%; 
