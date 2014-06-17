@@ -564,9 +564,7 @@ ul.page-numbers li {
 .friends .pagination,
 .mygroups .pagination,
 .myblogs .pagination {
-  background: #F9F9F9;
-  border: none;
-  padding: 8px 15px; }
+  padding: 15px 0; }
 
 /*Post Meta */
 .post-meta-data,
@@ -2220,13 +2218,8 @@ span.activity {
 /* --- End Members --- }}} */
 /* Profile Action Buttons */
 .bp-user #item-buttons .generic-button,
-
-#profile-nav-menu { 
-	display: none; /* hack to remove redundant profile menu items. */ 
-	a { 
-		margin: 10px; 
-	} 
-} 
+#profile-nav-menu a {
+  margin: 10px; }
 
 #item-buttons {
   text-align: center; }
@@ -2362,10 +2355,13 @@ thead:first-child tr th, thead:first-child tr td {
 thead:first-child tr th, thead:first-child tr td {
   width: 0; }
 
-.bp-docs #bp-create-doc-button {
+#content #bp-create-doc-button {
   padding: 2px 10px 7px;
   float: none;
   margin: 0; }
+
+#content #bp-docs-pagination {
+  padding: 25px; }
 
 .doc-content-wrapper .toggle-switch {
   padding: 8px 10px; }
@@ -2390,7 +2386,8 @@ thead:first-child tr th, thead:first-child tr td {
   border: 1px solid #DDD;
   border-radius: 0px 0px 3px 3px; }
 .docs div.docs-info-header {
-  background: transparent; }
+  background: transparent;
+  padding: 0; }
 
 /*BBPress*/
 .bbp-pagination-links a, .bbp-pagination-links span.current {
@@ -2731,11 +2728,14 @@ span.activity {
   background: none repeat scroll 0 0 #F8F8F8;
   border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
-  padding-top: 30px; }
+  padding-top: 30px;
+  margin: 20px 0; }
 
 #profile-nav-menu {
   margin-bottom: -35px;
-  margin-top: -10px; }
+  margin-top: -10px;
+  display: none;
+  /* hack to hide redundant profile nav menu */ }
   #profile-nav-menu a {
     margin: 5px 0;
     padding: 6px 10px; }
@@ -2969,12 +2969,13 @@ select {
 
 /* --- End Top Menu --- }}} */
 /* --- Advanced Search Form --- {{{1 */
-#advanced-search-form input, #advanced-search-form select, #advanced-search-form label {
-  display: inline-block;
-  /* line them up */ }
-
-#advanced-search-form label {
-  padding: 7px; }
+#advanced-search-form {
+  margin-bottom: 50px; }
+  #advanced-search-form input, #advanced-search-form select, #advanced-search-form label {
+    display: inline-block;
+    /* line them up */ }
+  #advanced-search-form label {
+    padding: 7px; }
 
 /* --- End Advanced Search Form --- }}} */
 /* --- Misc Bugfixes --- {{{1 */

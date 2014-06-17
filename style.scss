@@ -494,9 +494,7 @@ ul.page-numbers li { display: inline }
 .friends .pagination,
 .mygroups .pagination,
 .myblogs .pagination {
-    background: #F9F9F9;
-    border: none;
-    padding: 8px 15px;
+    padding: 15px 0;
 }
 /*Post Meta */
 .post-meta-data,
@@ -2478,47 +2476,49 @@ thead:first-child tr th,thead:first-child tr td {
 thead:first-child tr th, thead:first-child tr td {
     width: 0;
 }
-.bp-docs #bp-create-doc-button {
+#content #bp-create-doc-button {
 	padding: 2px 10px 7px;
 	float: none; 
 	margin: 0; 
 }
+#content #bp-docs-pagination { 
+	padding: 25px; 
+} 
 .doc-content-wrapper .toggle-switch {
 	padding: 8px 10px;
 }
 .bp-docs-attachment-drawer {
-  > ul {
-    padding-left: 20px;
-  }
-  h4 {
-    font-size: 1.0em;
-  }
+	> ul {
+		padding-left: 20px;
+	}
+	h4 {
+		font-size: 1.0em;
+	}
 }
 .doc-attachments {
-  > ul, #doc-attachments-ul li {
-    padding-left: 0;
-  }
-  h3 {
-    font-size: 1.25em;
-  }
+	> ul, #doc-attachments-ul li {
+		padding-left: 0;
+	}
+	h3 {
+		font-size: 1.25em;
+	}
 }
-
 .docs {
-  .doc-tabs {
-    background: none repeat scroll 0 0 #FFFFFF;
-    li a {
-      @include borderRadius(5px);
-    }
-  }
-  .toggle-content {
-    border: 1px solid #DDD;
-    border-radius: 0px 0px 3px 3px;
-  }
-  div.docs-info-header {
-    background: transparent;
-  }
+	.doc-tabs {
+		background: none repeat scroll 0 0 #FFFFFF;
+		li a {
+			@include borderRadius(5px);
+		}
+	}
+	.toggle-content {
+		border: 1px solid #DDD;
+		border-radius: 0px 0px 3px 3px;
+	}
+	div.docs-info-header {
+		background: transparent;
+		padding: 0; 
+	}
 }
-
 
 /*BBPress*/
 .bbp-pagination-links a, .bbp-pagination-links span.current { 
@@ -2882,10 +2882,12 @@ span.activity {
 	border-bottom: 1px solid #DDDDDD;
 	padding-bottom: 10px;
 	padding-top: 30px;
+	margin: 20px 0; 
 }
 #profile-nav-menu {
 	margin-bottom: -35px;
 	margin-top: -10px;
+	display: none; /* hack to hide redundant profile nav menu */  
 	a { 
 		margin: 5px 0; 
 		padding: 6px 10px; 
@@ -3123,11 +3125,14 @@ select {
 /* --- End Top Menu --- }}} */ 
 
 /* --- Advanced Search Form --- {{{1 */ 
-#advanced-search-form input, #advanced-search-form select, #advanced-search-form label { 
-	display: inline-block; /* line them up */ 
-} 
-#advanced-search-form label { 
-	padding: 7px; 
+#advanced-search-form { 
+	margin-bottom: 50px; 
+	input, select, label { 
+		display: inline-block; /* line them up */ 
+	} 
+	label { 
+		padding: 7px; 
+	} 
 } 
 /* --- End Advanced Search Form --- }}} */ 
 
