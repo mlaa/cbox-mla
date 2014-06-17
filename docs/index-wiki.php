@@ -15,6 +15,7 @@ infinity_get_header();
 		?>
 
 		<div class="wiki-home">
+		<h3><?php _e('Wiki', 'buddypress-docs-wiki') ?></h3> 
 			<div class="wiki-home-sidebar" id="wiki-top">
 				<?php dynamic_sidebar( 'wiki-top' ) ?>
 			</div>
