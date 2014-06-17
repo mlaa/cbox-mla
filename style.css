@@ -870,7 +870,7 @@ h2.page-title a:hover, h2.post-title a:hover, h1.page-title a:hover, h1.post-tit
 h3 {
   font-size: 1.5em;
   line-height: 1.15em;
-  margin: .1em 0; }
+  margin: .5em 0; }
 
 h4 {
   font-size: 1.25em;
@@ -1161,7 +1161,7 @@ div#subnav.item-list-tabs {
 
 /* --- End Item Tabs --- }}} */
 /* --- Directories --- {{{ */
-.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content, .bp-docs #content {
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content, .bp-docs #content, .forum-search #content {
   width: 100%; }
 
 div.dir-search {
@@ -1834,7 +1834,7 @@ ul#topic-post-list {
 div.admin-links {
   position: absolute;
   top: 25px;
-  right: 25px;
+  right: 30px;
   font-size: 85%; }
   div.admin-links a {
     background-color: #fafafa;
@@ -2221,8 +2221,12 @@ span.activity {
 #profile-nav-menu a {
   margin: 10px; }
 
-#item-buttons {
-  text-align: center; }
+#profile-sidebar #item-buttons {
+  background-color: #ebebeb;
+  padding: 11px 25px;
+  border-left: 1px solid #ccc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
 
 /* Profile Navigation and Groups Navigation */
 /* First Level */
@@ -2757,7 +2761,7 @@ span.activity {
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px; }
     #sidebar .sidebar-activity-tabs ul li:hover, #sidebar .sidebar-activity-tabs ul li.current {
-      background-color: #e1e1e1;
+      background-color: #ebebeb;
       border-top: 1px solid #ccc;
       border-left: 1px solid #ccc; }
     #sidebar .sidebar-activity-tabs ul li a {
@@ -2788,7 +2792,7 @@ span.activity {
       #sidebar .sidebar-activity-tabs ul .profile-subnav li a {
         font-size: 80%; }
       #sidebar .sidebar-activity-tabs ul .profile-subnav li.selected, #sidebar .sidebar-activity-tabs ul .profile-subnav li:hover {
-        background-color: #ebebeb; }
+        background-color: #f0f0f0; }
       #sidebar .sidebar-activity-tabs ul .profile-subnav li a:before {
         content: "+";
         font-size: 100%;
@@ -3060,12 +3064,26 @@ div.bbp-template-notice p {
 /* --- End Misc Bugfixes --- }}} */
 /* --- BP Group Documents ("Files") --- {{{ */
 #bp-group-documents #subnav {
-  padding: 10px; }
+  padding: 10px;
+  margin: 15px 0; }
+#bp-group-documents ul#bp-group-documents-list {
+  margin-bottom: 0; }
+#bp-group-documents div#bp-group-documents-edit {
+  padding-right: 0;
+  padding-left: 0; }
+#bp-group-documents .bp-group-documents-icon {
+  margin-left: 0px;
+  margin-top: -3px;
+  position: inherit; }
+#bp-group-documents .bp-group-documents-title {
+  font-size: 17px; }
+#bp-group-documents #bp-group-documents-sorting {
+  margin-top: 5px; }
 #bp-group-documents ul#bp-group-documents-list li {
-  padding-left: 50px; }
+  padding-left: 32px; }
 #bp-group-documents div.pagination {
   clear: none;
-  margin: 0px; }
+  margin: 7px; }
 
 /* --- End BP Group Documents ("Files") --- }}} */
 /* --- Structure --- {{{1 */

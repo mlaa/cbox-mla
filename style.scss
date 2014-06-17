@@ -780,7 +780,7 @@ h2.page-title a:hover, h2.post-title a:hover, h1.page-title a:hover, h1.post-tit
 h3 {
     font-size: 1.5em;
     line-height: 1.15em;
-    margin: .1em 0; 
+    margin: .5em 0; 
 }
 h4 {
     font-size: 1.25em;
@@ -1107,7 +1107,7 @@ div#subnav.item-list-tabs {
 /* --- End Item Tabs --- }}} */ 
 
 /* --- Directories --- {{{ */ 
-.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content, .bp-docs #content{ 
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content, .bp-docs #content, .forum-search #content { 
 	width: 100%; 
 } 
 
@@ -1953,7 +1953,7 @@ ul#topic-post-list {
 div.admin-links {
     position: absolute;
     top: 25px;
-    right: 25px;
+    right: 30px;
     font-size: 85%;
     a { 
 	    @include minimalButton;
@@ -2320,8 +2320,12 @@ span.activity {
 #profile-nav-menu a {
 	margin: 10px; 
 }
-#item-buttons { 
-	text-align: center; 
+#profile-sidebar #item-buttons { 
+	background-color: $gray;
+	padding: 11px 25px;
+	border-left: 1px solid #ccc;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 } 
 /* Profile Navigation and Groups Navigation */
 /* First Level */
@@ -2911,7 +2915,7 @@ span.activity {
 			border-bottom-right-radius: 3px; 
 		} 
 		&:hover, &.current {
-			background-color: #e1e1e1;
+			background-color: $gray;
 			border-top: 1px solid #ccc;
 			border-left: 1px solid #ccc;
 		}
@@ -2945,7 +2949,7 @@ span.activity {
 				font-size: 80%; 
 			} 
 			&.selected, &:hover { 
-				background-color: $gray; 
+				background-color: lighten($gray, 2%); 
 			} 
 			a:before {
 				content: "+";
@@ -3221,13 +3225,32 @@ div.bbp-template-notice p {
 #bp-group-documents { 
 	#subnav { 
 		padding: 10px; 
+		margin: 15px 0; 
+	} 
+	ul#bp-group-documents-list { 
+		margin-bottom: 0; 
+	} 
+	div#bp-group-documents-edit { 
+		padding-right: 0; 
+		padding-left: 0; 
+	} 
+	.bp-group-documents-icon { 
+		margin-left: 0px; 
+		margin-top: -3px; 
+		position: inherit; 
+	} 
+	.bp-group-documents-title { 
+		font-size: 17px; 
+	} 
+	#bp-group-documents-sorting { 
+		margin-top: 5px; 
 	} 
 	ul#bp-group-documents-list li {
-		padding-left: 50px;
+		padding-left: 32px;
 	}
 	div.pagination {
 		clear: none;
-		margin: 0px;
+		margin: 7px;
 	} 
 } 
 /* --- End BP Group Documents ("Files") --- }}} */ 
