@@ -1886,7 +1886,7 @@ input.button:active,
   position: relative;
   top: 1px; }
 
-a.button, .generic-button, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"], #review_form #submit, #favorite-toggle, #subscription-toggle {
+a.button, .generic-button a, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"], #review_form #submit, #favorite-toggle, #subscription-toggle {
   background-color: #fafafa;
   border: 1px solid #ebebeb;
   border-bottom: 2px solid #ddd;
@@ -1902,12 +1902,12 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
   margin-top: 10px;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   padding: 10px; }
-  a.button a, a.button a:hover, a.button:hover, a.button:active, .generic-button a, .generic-button a:hover, .generic-button:hover, .generic-button:active, a.more-link a, a.more-link a:hover, a.more-link:hover, a.more-link:active, button a, button a:hover, button:hover, button:active, input[type="submit"] a, input[type="submit"] a:hover, input[type="submit"]:hover, input[type="submit"]:active, input[type="reset"] a, input[type="reset"] a:hover, input[type="reset"]:hover, input[type="reset"]:active, input[type="button"] a, input[type="button"] a:hover, input[type="button"]:hover, input[type="button"]:active, #review_form #submit a, #review_form #submit a:hover, #review_form #submit:hover, #review_form #submit:active, #favorite-toggle a, #favorite-toggle a:hover, #favorite-toggle:hover, #favorite-toggle:active, #subscription-toggle a, #subscription-toggle a:hover, #subscription-toggle:hover, #subscription-toggle:active {
+  a.button a, a.button a:hover, a.button:hover, a.button:active, .generic-button a a, .generic-button a a:hover, .generic-button a:hover, .generic-button a:active, a.more-link a, a.more-link a:hover, a.more-link:hover, a.more-link:active, button a, button a:hover, button:hover, button:active, input[type="submit"] a, input[type="submit"] a:hover, input[type="submit"]:hover, input[type="submit"]:active, input[type="reset"] a, input[type="reset"] a:hover, input[type="reset"]:hover, input[type="reset"]:active, input[type="button"] a, input[type="button"] a:hover, input[type="button"]:hover, input[type="button"]:active, #review_form #submit a, #review_form #submit a:hover, #review_form #submit:hover, #review_form #submit:active, #favorite-toggle a, #favorite-toggle a:hover, #favorite-toggle:hover, #favorite-toggle:active, #subscription-toggle a, #subscription-toggle a:hover, #subscription-toggle:hover, #subscription-toggle:active {
     color: #2e2e2e;
     text-decoration: none; }
-  a.button:hover, .generic-button:hover, a.more-link:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, #review_form #submit:hover, #favorite-toggle:hover, #subscription-toggle:hover {
+  a.button:hover, .generic-button a:hover, a.more-link:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, #review_form #submit:hover, #favorite-toggle:hover, #subscription-toggle:hover {
     background-color: #ebebeb; }
-  a.button:active, .generic-button:active, a.more-link:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, #review_form #submit:active, #favorite-toggle:active, #subscription-toggle:active {
+  a.button:active, .generic-button a:active, a.more-link:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, #review_form #submit:active, #favorite-toggle:active, #subscription-toggle:active {
     background-color: #e1e1e1;
     text-shadow: none; }
 
@@ -1985,12 +1985,6 @@ a.button, .generic-button, a.more-link, button, input[type="submit"], input[type
 #archives-subject ul {
   display: inline;
   margin: 0; }
-
-.bp-user #item-buttons .generic-button a:hover, #profile-nav-menu a:hover {
-  color: #4183C4; }
-
-.bp-user #item-buttons .generic-button a {
-  font-size: 120%; }
 
 .row {
   width: 1050px; }
@@ -2226,14 +2220,16 @@ span.activity {
 /* --- End Members --- }}} */
 /* Profile Action Buttons */
 .bp-user #item-buttons .generic-button,
-#profile-nav-menu a {
-  background: none repeat scroll 0 0 transparent;
-  border: 0 none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  display: block;
-  margin-bottom: -18px;
-  padding: 3px 8px; }
+
+#profile-nav-menu { 
+	display: none; /* hack to remove redundant profile menu items. */ 
+	a { 
+		margin: 10px; 
+	} 
+} 
+
+#item-buttons {
+  text-align: center; }
 
 /* Profile Navigation and Groups Navigation */
 /* First Level */
@@ -2466,10 +2462,6 @@ body.wiki.single-bp_doc #subnav {
 
 .group-forum-topic #bbpress-forums h3 {
   font-size: 2em; }
-
-.groups #item-buttons .group-button {
-  padding-top: 5px;
-  /* hack. Some buttons are longish */ }
 
 .bbp-pagination {
   font-size: 90%; }
@@ -2744,9 +2736,9 @@ span.activity {
 #profile-nav-menu {
   margin-bottom: -35px;
   margin-top: -10px; }
-
-#profile-nav-menu a {
-  font-size: 90%; }
+  #profile-nav-menu a {
+    margin: 5px 0;
+    padding: 6px 10px; }
 
 #sidebar .sidebar-activity-tabs ul {
   list-style: none outside none;
