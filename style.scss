@@ -1813,23 +1813,36 @@ div {
 
 /* --- Private Message Threads --- {{{ */
 table#message-threads {
-  border: 0 none;
-  font-size: 95%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  padding: 0;
-  th + th, td + td {
-    border-left: 0px solid #f2f2f2;
-  }
-  tr.unread td {
-    background: #FFF9DB;
-    border-top: 1px solid #FFE8C4;
-    border-bottom: 1px solid #FFE8C4;
-    font-weight: bold;
-    span.activity {
-      background: white;
-    }
-  }
+	border: 0 none;
+	font-size: 95%;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 0;
+	th + th, td + td {
+		border-left: 0px solid #f2f2f2;
+	}
+	tr.unread td {
+		background: #FFF9DB;
+		border-top: 1px solid #FFE8C4;
+		border-bottom: 1px solid #FFE8C4;
+		font-weight: bold;
+		span.activity {
+			background: white;
+		}
+	}
+	.thread-avatar {
+		width: 8%;
+	}
+	.thread-options { 
+		text-align: right; 
+	}
+	.button {
+		font-size: 85%;
+		left: 10px;
+		line-height: 21px;
+		padding: 0 7px;
+		position: relative;
+	} 
 }
 
 li span.unread-count, tr.unread span.unread-count {
@@ -1852,7 +1865,6 @@ div.item-list-tabs ul li a span.unread-count {
   height: 45px;
   width: 45px;
 }
-
 .messages {
   th, td {
     border-top: 1px solid #F4F4F4;
@@ -1861,74 +1873,50 @@ div.item-list-tabs ul li a span.unread-count {
     text-align: left;
   }
 }
-
 div.messages-options-nav {
-  background: transparent;
-  border-bottom: 1px solid #DDDDDD;
-  border-top: 1px solid #DDDDDD;
-  font-size: 85%;
-  padding: 8px 15px;
-  text-align: right;
-  select {
-    float: right;
-  }
+	text-align: right;
 }
-
-#message-threads .thread-options { 
-	text-align: right; 
-	.button {
-		font-size: 85%;
-		left: 10px;
-		line-height: 21px;
-		padding: 0 7px;
-		position: relative;
-	} 
-}
-
 div#message-thread {
-  div {
-    &.message-box {
-      margin: 0 -20px;
-      padding: 15px;
-    }
-    &.alt {
-      background: #f4f4f4;
-    }
-  }
-  p#message-recipients {
-    margin: 10px 0 20px 0;
-  }
-  img.avatar {
-    float: left;
-    margin: 0 10px 0 0;
-    vertical-align: middle;
-  }
-  strong {
-    margin: 0;
-    font-size: 110%;
-    a {
-      text-decoration: none;
-    }
-    span.activity {
-      margin: 4px 0 0 10px;
-    }
-  }
-  div {
-    &.message-metadata {
-      overflow: hidden;
-    }
-    &.message-content {
-      margin-left: 55px;
-    }
-    &.message-options {
-      text-align: right;
-    }
-  }
+	div {
+		&.message-box {
+			margin: 0 -20px;
+			padding: 15px;
+		}
+		&.alt {
+			background: #f4f4f4;
+		}
+	}
+	p#message-recipients {
+		margin: 10px 0 20px 0;
+	}
+	img.avatar {
+		float: left;
+		margin: 0 10px 0 0;
+		vertical-align: middle;
+	}
+	strong {
+		margin: 0;
+		font-size: 110%;
+		a {
+			text-decoration: none;
+		}
+		span.activity {
+			margin: 4px 0 0 10px;
+		}
+	}
+	div {
+		&.message-metadata {
+			overflow: hidden;
+		}
+		&.message-content {
+			margin-left: 55px;
+		}
+		&.message-options {
+			text-align: right;
+		}
+	}
 }
 
-#message-threads .thread-avatar {
-  width: 8%;
-}
 
 
 

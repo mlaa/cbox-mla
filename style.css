@@ -1743,6 +1743,16 @@ table#message-threads {
     font-weight: bold; }
     table#message-threads tr.unread td span.activity {
       background: white; }
+  table#message-threads .thread-avatar {
+    width: 8%; }
+  table#message-threads .thread-options {
+    text-align: right; }
+  table#message-threads .button {
+    font-size: 85%;
+    left: 10px;
+    line-height: 21px;
+    padding: 0 7px;
+    position: relative; }
 
 li span.unread-count, tr.unread span.unread-count {
   background: none repeat scroll 0 0 #DD0000;
@@ -1771,23 +1781,7 @@ div.item-list-tabs ul li a span.unread-count {
   text-align: left; }
 
 div.messages-options-nav {
-  background: transparent;
-  border-bottom: 1px solid #DDDDDD;
-  border-top: 1px solid #DDDDDD;
-  font-size: 85%;
-  padding: 8px 15px;
   text-align: right; }
-  div.messages-options-nav select {
-    float: right; }
-
-#message-threads .thread-options {
-  text-align: right; }
-  #message-threads .thread-options .button {
-    font-size: 85%;
-    left: 10px;
-    line-height: 21px;
-    padding: 0 7px;
-    position: relative; }
 
 div#message-thread div.message-box {
   margin: 0 -20px;
@@ -1813,9 +1807,6 @@ div#message-thread div.message-content {
   margin-left: 55px; }
 div#message-thread div.message-options {
   text-align: right; }
-
-#message-threads .thread-avatar {
-  width: 8%; }
 
 /* --- End Private Message Threads --- }}} */
 /* --- Group Forum Topics --- {{{ */
