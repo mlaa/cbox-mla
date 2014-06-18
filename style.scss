@@ -781,6 +781,7 @@ h3 {
     font-size: 1.5em;
     line-height: 1.15em;
     margin: .5em 0; 
+    display: inline-block; 
 }
 h4 {
     font-size: 1.25em;
@@ -1107,13 +1108,12 @@ div#subnav.item-list-tabs {
 /* --- End Item Tabs --- }}} */ 
 
 /* --- Directories --- {{{ */ 
-.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .page #content, .bp-docs #content, .forum-search #content { 
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .bp-docs #content, .forum-search #content { 
 	width: 100%; 
 } 
 
 div.dir-search {
-	margin-top: -42px;
-	text-align: right;
+	float: right; 
 	input[type=text] {
 		display: inline-block;
 		box-shadow: none;
@@ -1874,12 +1874,15 @@ div.messages-options-nav {
   }
 }
 
-.thread-options .button {
-  font-size: 85%;
-  left: 10px;
-  line-height: 21px;
-  padding: 0 7px;
-  position: relative;
+#message-threads .thread-options { 
+	text-align: right; 
+	.button {
+		font-size: 85%;
+		left: 10px;
+		line-height: 21px;
+		padding: 0 7px;
+		position: relative;
+	} 
 }
 
 div#message-thread {
@@ -1926,6 +1929,8 @@ div#message-thread {
 #message-threads .thread-avatar {
   width: 8%;
 }
+
+
 
 /* --- End Private Message Threads --- }}} */
 
@@ -3338,6 +3343,7 @@ div.item-options a.selected {
 	box-shadow: none; 
 	margin: 0; /* corrects negative padding in cbox */ 
 	transition: margin-left 0.5s; 
+	background: none; 
 } 
 .activity-list .activity-content .activity-header, .activity-list .activity-content .comment-header { line-height:1.3em; }
 .activity-header p {margin-top:0px;}
