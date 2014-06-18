@@ -1114,6 +1114,13 @@ div#subnav.item-list-tabs {
 
 div.dir-search {
 	float: right; 
+	&:before { 
+		font-family: dashIcons; 
+		content: ""; 
+		position: relative;
+		left: 29px;
+		top: 3px; 
+	} 
 	input[type=text] {
 		display: inline-block;
 		box-shadow: none;
@@ -1121,6 +1128,7 @@ div.dir-search {
 		border-top: 2px solid #ddd; 
 		border-left: 2px solid #ddd; 
 		width: 200px; 
+		padding-left: 28px; 
 	}
 	input[type=submit] { 
 		display: none; /* users can press enter instead of clicking "submit */ 
@@ -2315,10 +2323,18 @@ span.activity {
 }
 #profile-sidebar #item-buttons { 
 	background-color: $gray;
-	padding: 11px 25px;
 	border-left: 1px solid #ccc;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	.generic-button { 
+		margin: 10px 35px; 
+		&:first-child { 
+			margin-top: 25px;
+		} 
+		&:last-child { 
+			margin-bottom: 25px; 
+		} 
+	} 
 } 
 /* Profile Navigation and Groups Navigation */
 /* First Level */
@@ -3126,6 +3142,9 @@ select {
 	input, select, label { 
 		display: inline-block; /* line them up */ 
 	} 
+	input[type=submit] { 
+		margin-left: 15px; 
+	}
 	label { 
 		padding: 7px; 
 	} 

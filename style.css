@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* --- Mixins --- {{{ */
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 /* --- End Mixins --- }}} */
@@ -1167,13 +1168,20 @@ div#subnav.item-list-tabs {
 
 div.dir-search {
   float: right; }
+  div.dir-search:before {
+    font-family: dashIcons;
+    content: "";
+    position: relative;
+    left: 29px;
+    top: 3px; }
   div.dir-search input[type=text] {
     display: inline-block;
     box-shadow: none;
     border: 1px solid #eee;
     border-top: 2px solid #ddd;
     border-left: 2px solid #ddd;
-    width: 200px; }
+    width: 200px;
+    padding-left: 28px; }
   div.dir-search input[type=submit] {
     display: none;
     /* users can press enter instead of clicking "submit */ }
@@ -2216,10 +2224,15 @@ span.activity {
 
 #profile-sidebar #item-buttons {
   background-color: #ebebeb;
-  padding: 11px 25px;
   border-left: 1px solid #ccc;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
+  #profile-sidebar #item-buttons .generic-button {
+    margin: 10px 35px; }
+    #profile-sidebar #item-buttons .generic-button:first-child {
+      margin-top: 25px; }
+    #profile-sidebar #item-buttons .generic-button:last-child {
+      margin-bottom: 25px; }
 
 /* Profile Navigation and Groups Navigation */
 /* First Level */
@@ -2971,6 +2984,8 @@ select {
   #advanced-search-form input, #advanced-search-form select, #advanced-search-form label {
     display: inline-block;
     /* line them up */ }
+  #advanced-search-form input[type=submit] {
+    margin-left: 15px; }
   #advanced-search-form label {
     padding: 7px; }
 
