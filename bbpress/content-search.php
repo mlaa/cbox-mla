@@ -17,8 +17,6 @@
 
 	<?php if ( bbp_has_search_results() ) : ?>
 
-		 <?php bbp_get_template_part( 'pagination', 'search' ); ?>
-
 		 <?php bbp_get_template_part( 'loop',       'search' ); ?>
 
 		 <?php bbp_get_template_part( 'pagination', 'search' ); ?>
