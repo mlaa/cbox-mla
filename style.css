@@ -834,17 +834,9 @@ p.form-allowed-tags {
 /* --- End Wordpress --- }}} */
 /* --- Typography and Global Elements --- {{{1 */
 body {
-  font: 90%/140% "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #fff;
   color: #444;
-  /* Fix for webkit rendering */
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: auto;
-  /* fix for zoom issue */
   border-top: 0px none; }
 
 h1 {
@@ -3949,7 +3941,7 @@ body {
     box-shadow: none;
     width: 55%; } }
 /* --- End iPad Portrait --- }}} */
-/* --- Smartphone (any) --- {{{2 */
+/* --- Smartphones --- {{{2 */
 @media only screen and (max-width: 480px) {
   body {
     width: 100%; }
@@ -3969,40 +3961,6 @@ body {
   .mobile-menu-container select {
     box-shadow: none;
     width: 45%; } }
-/* --- End Smartphone (any) --- }}} */
-/* --- iPhone --- {{{2 */
-@media only screen and (max-width: 320px) {
-  #sidebar {
-    width: 100% !important; }
-
-  form#groups-directory-form h3 a {
-    display: block;
-    margin-top: 0.6em; }
-
-  #user-header-nav {
-    display: none !important; }
-
-  form#whats-new-form div#whats-new-avatar {
-    display: none; }
-
-  form#whats-new-form h5 {
-    margin: 0 0 0 0px; }
-
-  form#whats-new-form #whats-new-content {
-    margin-left: 0px;
-    padding-left: 0px; }
-
-  body.activity-permalink .activity-list li .activity-content {
-    margin-left: 0; }
-
-  body.activity-permalink .activity-list li.mini .activity-meta {
-    left: 0; }
-
-  .mobile-menu-container select {
-    box-shadow: none;
-    width: 40%; } }
-/* --- End iPhone --- }}} */
-/* --- Smartphones --- {{{2 */
 @media only screen and (max-width: 480px) {
   div.item-list-tabs ul li.last {
     float: none;
@@ -4031,6 +3989,36 @@ body {
 
   div.item-list-tabs {
     height: auto !important; }
+
+  .mobile-menu-container select {
+    box-shadow: none;
+    width: 40%; } }
+@media only screen and (max-width: 320px) {
+  #sidebar {
+    width: 100% !important; }
+
+  form#groups-directory-form h3 a {
+    display: block;
+    margin-top: 0.6em; }
+
+  #user-header-nav {
+    display: none !important; }
+
+  form#whats-new-form div#whats-new-avatar {
+    display: none; }
+
+  form#whats-new-form h5 {
+    margin: 0 0 0 0px; }
+
+  form#whats-new-form #whats-new-content {
+    margin-left: 0px;
+    padding-left: 0px; }
+
+  body.activity-permalink .activity-list li .activity-content {
+    margin-left: 0; }
+
+  body.activity-permalink .activity-list li.mini .activity-meta {
+    left: 0; }
 
   .mobile-menu-container select {
     box-shadow: none;
