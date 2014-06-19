@@ -1,8 +1,20 @@
 /* --- Mixins --- {{{ */ 
-@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
-$headingfont: "Bitter", "Verdana", serif; 
-$bodyfont: "Droid Sans", "Open Sans", Helvetica, sans-serif; 
+
+/* 
+ * Old fonts. 
+ */ 
+//@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
+//@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+//$headingfont: "Bitter", "Verdana", serif; 
+//$bodyfont: "Droid Sans", "Open Sans", Helvetica, sans-serif; 
+
+/* 
+ * New fonts. 
+ */ 
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic);
+$headingfont: "Roboto Slab", Bitter, Verdana, serif; 
+$bodyfont: Roboto, "Droid Sans", "Open Sans", Helvetica, sans-serif; 
 
 $lightgray: #fafafa; 
 $gray: darken($lightgray, 6%);   
@@ -94,6 +106,8 @@ $verydarkgray: darken($lightgray, 80%);
 		}
 		&.loading a {
 			background-position: 88% 50%;
+			position: relative;
+			top: 2px;
 		} 
 		.feed a { 
 			border: none; /* this is not a true tab */ 
@@ -1276,9 +1290,10 @@ ul.button-nav {
 }
 a.loading, li.loading a,#object-nav a.loading, #object-nav li.loading {
     background-image: url( assets/images/buddypress/ajax-loader.gif ) !important;
-    background-position: 5% 50% !important;
+    background-position: 7% 50% !important;
     background-repeat: no-repeat !important;
     padding-left: 25px !important;
+    padding: 14px 10px 15px 30px !important;
 }
 /* --- End AJAX Loaders --- }}} */
 
@@ -1533,77 +1548,76 @@ ul.activity-list {
 
 
 .activity-list .activity-content {
-  .activity-header, .comment-header {
-    color: #888888;
-    font-size: 85%;
-    line-height: 180%;
-  }
-  .activity-header img.avatar {
-    float: none !important;
-    margin: 0 5px -8px 0 !important;
-  }
-  a:first-child:focus {
-    outline: none;
-  }
-  span {
-    &.time-since {
-      color: #bbbbbb;
-    }
-    &.activity-header-meta a {
-      background: none;
-      padding: 0;
-      font-size: 85%;
-      margin: 0;
-      border: none;
-      color: #777;
-      text-decoration: underline;
-    }
-  }
+	.activity-header, .comment-header {
+		color: #888888;
+		font-size: 85%;
+		line-height: 180%;
+	}
+	.activity-header img.avatar {
+		float: none !important;
+		margin: 0 5px -8px 0 !important;
+	}
+	a:first-child:focus {
+		outline: none;
+	}
+	span {
+		&.time-since {
+			color: #bbbbbb;
+		}
+		&.activity-header-meta a {
+			background: none;
+			padding: 0;
+			font-size: 85%;
+			margin: 0;
+			border: none;
+			color: #777;
+			text-decoration: underline;
+		}
+	}
+	span.activity-header-meta a:hover {
+		color: inherit;
+		text-decoration: none;
+	}
+	.activity-inner, blockquote {
+		background: #FBFBFB;
+		border: 1px solid #F4F4F4;
+		border-left: 2px solid #ddd; 
+		margin: 15px 0 5px 0px;
+		overflow: hidden;
+		padding: 10px;
+		font-size: 80%; 
+	}
+	.activity-inner { 
+		p {
+			margin: 0;
+		}
+		img {
+			max-width: 100% !important;
+			height: auto;
+		}
+	} 
 }
 
 a.bp-primary-action span, #reply-title small a span {
-  color: $darkgray;
-  font-size: 85%;
-  margin-left: 2px;
-  padding: 2px 4px 0;
+	color: $darkgray;
+	font-size: 85%;
+	margin-left: 2px;
+	padding: 2px 4px 0;
 }
 
-.activity-list .activity-content {
-  span.activity-header-meta a:hover {
-    color: inherit;
-    text-decoration: none;
-  }
-  .activity-inner, blockquote {
-    background: #FBFBFB;
-    border: 1px solid #F4F4F4;
-    border-left: 2px solid #ddd; 
-    margin: 15px 0 5px 0px;
-    overflow: hidden;
-    padding: 10px;
-    font-size: 75%; 
-  }
-  .activity-inner p {
-    margin: 0;
-  }
-}
-
-.activity-inner img {
-  max-width: 100% !important;
-  height: auto;
-}
 
 body.activity-permalink .activity-content {
-  .activity-inner, blockquote {
-    margin-top: 5px;
-  }
+	.activity-inner, blockquote {
+		margin-top: 5px;
+	}
 }
 
 /* Backwards compatibility. */
 
 .activity-inner > {
-  .activity-inner, blockquote {
-    margin: 0 !important;
-  }
+	.activity-inner, blockquote {
+		margin: 0 !important;
+	}
 }
 
 .activity-list {
@@ -3353,7 +3367,10 @@ div#object-nav ul li a {
 }
 
 /* Stream Icons. no shorthand CSS to maintain hover effects */
-li#activity-all a:before {
+li#activity-all a:before, 
+li#groups-all a:before, 
+li#members-all a:before, 
+li#blogs-all a:before, {
     content: "s"
 }
 
@@ -3363,7 +3380,10 @@ li#activity-favorites a:before,
     content: "h"
 }
 
-li#activity-friends a:before {
+li#activity-friends a:before, 
+li#groups-personal a:before, 
+li#members-personal a:before,
+li#blogs-personal a:before {
     content: "a"
 }
 

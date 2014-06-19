@@ -1,7 +1,13 @@
 @charset "UTF-8";
 /* --- Mixins --- {{{ */
-@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+/* 
+ * Old fonts. 
+ */
+/* 
+ * New fonts. 
+ */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic);
 /* --- End Mixins --- }}} */
 /* --- Reset and Global --- {{{1 */
 /*
@@ -838,7 +844,7 @@ p.form-allowed-tags {
 /* --- End Wordpress --- }}} */
 /* --- Typography and Global Elements --- {{{1 */
 body {
-  font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
+  font-family: Roboto, "Droid Sans", "Open Sans", Helvetica, sans-serif;
   line-height: 1.2em;
   background: #fff;
   color: #444; }
@@ -1104,7 +1110,7 @@ div.item-list-tabs {
         padding: 12px 10px;
         text-decoration: none;
         color: #7a7a7a;
-        font-family: "Bitter", "Verdana", serif;
+        font-family: "Roboto Slab", Bitter, Verdana, serif;
         border: 1px solid #fff;
         /* to keep the hover states from looking jumpy */
         border-bottom: none;
@@ -1131,13 +1137,15 @@ div.item-list-tabs {
         border-top-right-radius: 3px;
         border-top-left-radius: 3px; }
       div.item-list-tabs ul li.loading a {
-        background-position: 88% 50%; }
+        background-position: 88% 50%;
+        position: relative;
+        top: 2px; }
       div.item-list-tabs ul li .feed a {
         border: none;
         /* this is not a true tab */ }
     div.item-list-tabs ul li a {
       font-weight: 400;
-      font-family: "Bitter", "Verdana", serif; }
+      font-family: "Roboto Slab", Bitter, Verdana, serif; }
       div.item-list-tabs ul li a span {
         border-radius: 4px;
         -moz-border-radius: 4px;
@@ -1242,7 +1250,7 @@ div.pagination {
       border-bottom: 2px solid #ddd;
       color: #2e2e2e;
       font-size: 11px;
-      font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
+      font-family: Roboto, "Droid Sans", "Open Sans", Helvetica, sans-serif;
       text-decoration: none;
       text-shadow: 0 1px rgba(255, 255, 255, 0.75);
       font-weight: bold;
@@ -1324,9 +1332,10 @@ ul.button-nav {
 
 a.loading, li.loading a, #object-nav a.loading, #object-nav li.loading {
   background-image: url(assets/images/buddypress/ajax-loader.gif) !important;
-  background-position: 5% 50% !important;
+  background-position: 7% 50% !important;
   background-repeat: no-repeat !important;
-  padding-left: 25px !important; }
+  padding-left: 25px !important;
+  padding: 14px 10px 15px 30px !important; }
 
 /* --- End AJAX Loaders --- }}} */
 /* --- Input Forms --- {{{ */
@@ -1545,13 +1554,6 @@ ul.activity-list > li:first-child {
   border: none;
   color: #777;
   text-decoration: underline; }
-
-a.bp-primary-action span, #reply-title small a span {
-  color: #7a7a7a;
-  font-size: 85%;
-  margin-left: 2px;
-  padding: 2px 4px 0; }
-
 .activity-list .activity-content span.activity-header-meta a:hover {
   color: inherit;
   text-decoration: none; }
@@ -1562,13 +1564,18 @@ a.bp-primary-action span, #reply-title small a span {
   margin: 15px 0 5px 0px;
   overflow: hidden;
   padding: 10px;
-  font-size: 75%; }
+  font-size: 80%; }
 .activity-list .activity-content .activity-inner p {
   margin: 0; }
-
-.activity-inner img {
+.activity-list .activity-content .activity-inner img {
   max-width: 100% !important;
   height: auto; }
+
+a.bp-primary-action span, #reply-title small a span {
+  color: #7a7a7a;
+  font-size: 85%;
+  margin-left: 2px;
+  padding: 2px 4px 0; }
 
 body.activity-permalink .activity-content .activity-inner, body.activity-permalink .activity-content blockquote {
   margin-top: 5px; }
@@ -1640,7 +1647,7 @@ div.activity-comments {
     border-bottom: 2px solid #ddd;
     color: #2e2e2e;
     font-size: 11px;
-    font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
+    font-family: Roboto, "Droid Sans", "Open Sans", Helvetica, sans-serif;
     text-decoration: none;
     text-shadow: 0 1px rgba(255, 255, 255, 0.75);
     font-weight: bold;
@@ -1786,7 +1793,7 @@ div.admin-links {
     border-bottom: 2px solid #ddd;
     color: #2e2e2e;
     font-size: 11px;
-    font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
+    font-family: Roboto, "Droid Sans", "Open Sans", Helvetica, sans-serif;
     text-decoration: none;
     text-shadow: 0 1px rgba(255, 255, 255, 0.75);
     font-weight: bold;
@@ -1834,7 +1841,7 @@ a.button, .generic-button a, a.more-link, button, input[type="submit"], input[ty
   border-bottom: 2px solid #ddd;
   color: #2e2e2e;
   font-size: 11px;
-  font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
+  font-family: Roboto, "Droid Sans", "Open Sans", Helvetica, sans-serif;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   font-weight: bold;
@@ -2267,7 +2274,7 @@ thead:first-child tr th, thead:first-child tr td {
     padding: 12px 10px;
     text-decoration: none;
     color: #7a7a7a;
-    font-family: "Bitter", "Verdana", serif;
+    font-family: "Roboto Slab", Bitter, Verdana, serif;
     border: 1px solid #fff;
     /* to keep the hover states from looking jumpy */
     border-bottom: none;
@@ -2294,7 +2301,9 @@ thead:first-child tr th, thead:first-child tr td {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px; }
   .bp-docs .doc-tabs li.loading a {
-    background-position: 88% 50%; }
+    background-position: 88% 50%;
+    position: relative;
+    top: 2px; }
   .bp-docs .doc-tabs li .feed a {
     border: none;
     /* this is not a true tab */ }
@@ -2381,7 +2390,7 @@ body.wiki.single-bp_doc #subnav {
   border-bottom: 2px solid #ddd;
   color: #2e2e2e;
   font-size: 11px;
-  font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
+  font-family: Roboto, "Droid Sans", "Open Sans", Helvetica, sans-serif;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   font-weight: bold;
@@ -2572,7 +2581,7 @@ body.wiki.single-bp_doc #subnav {
 /* --- End Tooltips --- }}} */
 /* --- Layout --- {{{ */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Bitter", "Verdana", serif;
+  font-family: "Roboto Slab", Bitter, Verdana, serif;
   font-weight: 400; }
 
 .page h2 {
@@ -2718,7 +2727,7 @@ span.activity {
       padding-bottom: 8px;
       padding-top: 4px;
       text-decoration: none;
-      font-family: "Bitter", "Verdana", serif; }
+      font-family: "Roboto Slab", Bitter, Verdana, serif; }
       #sidebar .sidebar-activity-tabs ul li a:before {
         padding-right: 6px; }
     #sidebar .sidebar-activity-tabs ul li span, #sidebar .sidebar-activity-tabs ul li.current span, #sidebar .sidebar-activity-tabs ul li.selected span {
@@ -3249,7 +3258,10 @@ div#object-nav ul li a {
   display: none !important; }
 
 /* Stream Icons. no shorthand CSS to maintain hover effects */
-li#activity-all a:before {
+li#activity-all a:before,
+li#groups-all a:before,
+li#members-all a:before,
+li#blogs-all a:before {
   content: "s"; }
 
 li#activity-favorites a:before,
@@ -3257,7 +3269,10 @@ li#activity-favorites a:before,
 .button.unfav:before {
   content: "h"; }
 
-li#activity-friends a:before {
+li#activity-friends a:before,
+li#groups-personal a:before,
+li#members-personal a:before,
+li#blogs-personal a:before {
   content: "a"; }
 
 li#activity-groups a:before,
