@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* --- Mixins --- {{{ */
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 /* --- End Mixins --- }}} */
 /* --- Reset and Global --- {{{1 */
 /*
@@ -834,10 +835,10 @@ p.form-allowed-tags {
 /* --- End Wordpress --- }}} */
 /* --- Typography and Global Elements --- {{{1 */
 body {
-  font: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
+  line-height: 1.2em;
   background: #fff;
-  color: #444;
-  border-top: 0px none; }
+  color: #444; }
 
 h1 {
   font-size: 2em;
@@ -1230,7 +1231,7 @@ div.pagination {
       border-bottom: 2px solid #ddd;
       color: #2e2e2e;
       font-size: 11px;
-      font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
       text-decoration: none;
       text-shadow: 0 1px rgba(255, 255, 255, 0.75);
       font-weight: bold;
@@ -1605,7 +1606,8 @@ a.bp-primary-action span, #reply-title small a span {
   border-left: 2px solid #ddd;
   margin: 15px 0 5px 0px;
   overflow: hidden;
-  padding: 10px; }
+  padding: 10px;
+  font-size: 75%; }
 .activity-list .activity-content .activity-inner p {
   margin: 0; }
 
@@ -1855,7 +1857,7 @@ div.admin-links {
     border-bottom: 2px solid #ddd;
     color: #2e2e2e;
     font-size: 11px;
-    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
     text-decoration: none;
     text-shadow: 0 1px rgba(255, 255, 255, 0.75);
     font-weight: bold;
@@ -1903,7 +1905,7 @@ a.button, .generic-button a, a.more-link, button, input[type="submit"], input[ty
   border-bottom: 2px solid #ddd;
   color: #2e2e2e;
   font-size: 11px;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   font-weight: bold;
@@ -2468,7 +2470,7 @@ body.wiki.single-bp_doc #subnav {
   border-bottom: 2px solid #ddd;
   color: #2e2e2e;
   font-size: 11px;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
   text-decoration: none;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   font-weight: bold;
@@ -2970,7 +2972,7 @@ select {
   float: right;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 12.5px; }
+  font-size: 80%; }
   .main-menu ul li {
     display: inline-block; }
     .main-menu ul li.current_page_item a, .main-menu ul li.current-menu-item a, .main-menu ul li.selected a {
@@ -3110,7 +3112,7 @@ div.bbp-template-notice p {
   margin-top: -3px;
   position: inherit; }
 #bp-group-documents .bp-group-documents-title {
-  font-size: 17px; }
+  font-size: 120%; }
 #bp-group-documents #bp-group-documents-sorting {
   margin-top: 5px; }
 #bp-group-documents ul#bp-group-documents-list li {
@@ -3707,6 +3709,9 @@ ul.contact {
 /* --- Mobile and Responsive Design --- {{{1 */
 body {
   min-width: inherit; }
+
+.mobile-menu-container {
+  display: none; }
 
 @media only screen and (max-width: 1050px) {
   #infinity-base div.item-options {
