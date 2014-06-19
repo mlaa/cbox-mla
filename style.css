@@ -3705,6 +3705,13 @@ ul.contact {
     font-weight: 600; } }
 /* --- End Browser-Specific --- }}} */
 /* --- Mobile and Responsive Design --- {{{1 */
+body {
+  min-width: inherit; }
+
+@media only screen and (max-width: 1050px) {
+  #infinity-base div.item-options {
+    float: none;
+    margin-top: 0; } }
 @media only screen and (max-width: 880px) {
   #sidebar .widget_bp_groups_widget h4 {
     padding-bottom: 48px; }
@@ -3712,53 +3719,55 @@ ul.contact {
   #sidebar .widget_bp_groups_widget div.item-options {
     margin-top: -60px; } }
 @media only screen and (max-width: 768px) {
-  #powered-by {
-    margin-right: -10px;
-    margin-left: -10px; }
-
-  #sidebar .widget_bp_groups_widget h4 {
-    padding-bottom: 28px; }
-
-  #sidebar .widget_bp_groups_widget div.item-options {
-    medgarillasargin-top: -40px; }
-
-  #footer .footer-widgets.row {
-    text-align: center; } }
-.mobile-menu-container {
-  display: none; }
-  .mobile-menu-container select {
-    width: 60%;
-    box-shadow: none; }
-  .mobile-menu-container a.button {
-    position: absolute;
-    right: 10px;
-    top: -1px;
-    font-size: 75%;
-    padding: 2px 8px;
-    text-transform: uppercase; }
-    .mobile-menu-container a.button:hover {
-      opacity: 0.8;
-      color: #DDD; }
-    .mobile-menu-container a.button[href="#sidebar"] {
-      display: none;
-      /* no need for the "Show Sidebar" button anymore, since there aren't really sidebars */ }
-    .mobile-menu-container a.button #loginlogout {
-      right: 10px; }
-
-/* --- iPad Landscape --- {{{2 */
-@media only screen and (max-width: 1050px) {
-  #infinity-base div.item-options {
-    float: none;
-    margin-top: 0; } }
-body {
-  min-width: inherit; }
-
-@media only screen and (max-width: 768px) {
   html {
     margin-top: 0 !important; }
 
   body {
     margin-top: -28px; }
+
+  .button {
+    display: block; }
+
+  button.button {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .mobile-menu-container {
+    width: 100%;
+    z-index: 100;
+    background: #222;
+    border-bottom: 1px solid #292525;
+    border-top: 2px solid #525151;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+    display: block;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    position: fixed;
+    top: 1px;
+    height: 50px; }
+    .mobile-menu-container select {
+      width: 60%;
+      box-shadow: none; }
+    .mobile-menu-container a.button {
+      position: absolute;
+      right: 10px;
+      top: -1px;
+      font-size: 75%;
+      padding: 2px 8px;
+      text-transform: uppercase; }
+      .mobile-menu-container a.button:hover {
+        opacity: 0.8;
+        color: #DDD; }
+      .mobile-menu-container a.button[href="#sidebar"] {
+        display: none;
+        /* no need for the "Show Sidebar" button anymore, since there aren't really sidebars */ }
+      .mobile-menu-container a.button #loginlogout {
+        right: 10px; }
 
   #wpadminbar,
   .twipsy {
@@ -3837,35 +3846,26 @@ body {
     margin-top: 75px;
     height: 100px; }
 
-  .mobile-menu-container {
-    width: 100%;
-    z-index: 100;
-    background: #222;
-    border-bottom: 1px solid #292525;
-    border-top: 2px solid #525151;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
-    display: block;
-    margin-left: -10px;
+  #powered-by {
     margin-right: -10px;
-    margin-top: -1px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    position: fixed;
-    top: 1px;
-    height: 50px; }
+    margin-left: -10px; }
 
-  .mobile-menu-container select {
-    box-shadow: none;
-    width: 60%; } }
-/* --- End iPad Landscape --- }}} */
+  #sidebar .widget_bp_groups_widget h4 {
+    padding-bottom: 28px; }
+
+  #sidebar .widget_bp_groups_widget div.item-options {
+    medgarillasargin-top: -40px; }
+
+  #footer .footer-widgets.row {
+    text-align: center; } }
 /* --- iPad Portrait --- {{{2 */
 @media only screen and (max-width: 640px) {
   div.dir-search {
     float: none;
     width: auto;
     text-align: left;
-    margin: 1.25em 0 0; }
+    margin: 1.25em 0 0;
+    position: inherit; }
 
   div#item-header div#item-header-content {
     margin-left: 0px; }
@@ -3905,10 +3905,6 @@ body {
     margin-top: 8px;
     width: 224px; }
 
-  div.dir-search {
-    float: none;
-    margin: 1.25em 0 0; }
-
   ul.item-list li div.action {
     padding-left: 64px;
     position: relative;
@@ -3919,17 +3915,6 @@ body {
 
   .activity-list li.mini {
     display: none; }
-
-  div.dir-search {
-    position: inherit; }
-
-  ul.item-list li div.action {
-    padding-left: 64px;
-    position: relative;
-    right: auto;
-    text-align: left;
-    top: 1em;
-    margin-bottom: 1.25em; }
 
   .activity-list .activity-content {
     margin-left: 0; }
@@ -3960,8 +3945,8 @@ body {
 
   .mobile-menu-container select {
     box-shadow: none;
-    width: 45%; } }
-@media only screen and (max-width: 480px) {
+    width: 45%; }
+
   div.item-list-tabs ul li.last {
     float: none;
     margin: 0.3em 0.6em; }
@@ -4024,15 +4009,6 @@ body {
     box-shadow: none;
     width: 40%; } }
 /* --- End Smartphones --- }}} */
-/* Buttons */
-@media only screen and (max-width: 767px) {
-  .button {
-    display: block; }
-
-  button.button {
-    width: 100%;
-    padding-left: 0px;
-    padding-right: 0px; } }
 /* --- End Mobile --- }}} */
 
 /*# sourceMappingURL=style.css.map */
