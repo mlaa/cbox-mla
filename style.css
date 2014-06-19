@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* --- Mixins --- {{{ */
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 /* --- End Mixins --- }}} */
 /* --- Reset and Global --- {{{1 */
 /*
@@ -389,6 +389,9 @@ input[type=file]:focus, input[type=checkbox]:focus, select:focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none; }
+
+.clear {
+  clear: both; }
 
 /* ----------- End Reset and Global -------------- }}} */
 /* --- Wordpress --- {{{ */
@@ -1019,39 +1022,45 @@ ul.single-line li {
 #sidebar .item-meta {
   position: relative; }
 
-.item-avatar {
-  float: left; }
-
 ul.item-list {
   padding: 0;
   width: 100%;
   margin-left: 0; }
   ul.item-list li {
     list-style: none outside none;
-    padding: 25px 0;
+    padding: 20px 0;
     position: relative; }
-    ul.item-list li img.avatar {
-      float: left;
-      margin: 0 10px 10px 0; }
-    ul.item-list li div.item-title, ul.item-list li h4 {
+    ul.item-list li:hover {
+      background-color: #fafafa; }
+    ul.item-list li.load-more {
+      background-color: transparent; }
+    ul.item-list li .item-title, ul.item-list li h4 {
       font-weight: normal;
       margin: 0; }
-    ul.item-list li div.item {
+    ul.item-list li .item-avatar {
       display: inline-block;
-      max-width: 75%; }
-      ul.item-list li div.item.item-title span {
-        font-size: 100%;
+      width: 8%; }
+      ul.item-list li .item-avatar img.avatar {
+        width: 75px;
+        height: 75px; }
+    ul.item-list li .item {
+      display: inline-block;
+      width: 75%;
+      vertical-align: middle;
+      margin-left: 20px; }
+      ul.item-list li .item .item-title span {
         color: #999; }
-      ul.item-list li div.item.item-desc {
+      ul.item-list li .item .item-desc {
         font-size: 85%; }
-      ul.item-list li div.item.meta {
+      ul.item-list li .item .meta {
         margin-top: 10px;
-        color: #888;
-        font-size: 85%; }
-    ul.item-list li div.action {
+        font-size: 85%;
+        color: #999; }
+    ul.item-list li .action {
       display: inline-block;
-      float: right;
-      margin-top: 23px; }
+      width: 14%;
+      text-align: right;
+      vertical-align: middle; }
     ul.item-list li h5 span.small {
       font-weight: normal;
       font-size: 85%; }
@@ -1091,14 +1100,15 @@ div.item-list-tabs {
           margin-top: 4px; }
       div.item-list-tabs ul li a {
         display: block;
-        padding: 8px 7px;
+        padding: 12px 10px;
         text-decoration: none;
         color: #7a7a7a;
         font-family: "Bitter", "Verdana", serif;
         border: 1px solid #fff;
         /* to keep the hover states from looking jumpy */
         border-bottom: none;
-        background: none; }
+        background: none;
+        margin-right: 3px; }
         div.item-list-tabs ul li a span {
           display: inline;
           padding: 0;
@@ -1125,14 +1135,14 @@ div.item-list-tabs {
       div.item-list-tabs ul li .feed a {
         border: none;
         /* this is not a true tab */ }
-  div.item-list-tabs ul li a {
-    font-weight: 400;
-    font-family: "Bitter", "Verdana", serif; }
-    div.item-list-tabs ul li a span {
-      border-radius: 4px;
-      -moz-border-radius: 4px;
-      -webkit-border-radius: 4px;
-      color: #999; }
+    div.item-list-tabs ul li a {
+      font-weight: 400;
+      font-family: "Bitter", "Verdana", serif; }
+      div.item-list-tabs ul li a span {
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        color: #999; }
 
 #sidebar .item-list-tabs li.loading a {
   background: transparent !important;
@@ -1153,11 +1163,10 @@ div.item-list-tabs#object-nav {
 div#subnav.item-list-tabs {
   background-color: #fafafa;
   border: 1px solid #eee;
+  border-bottom: 2px solid #ddd;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border-bottom: 2px solid #ddd;
   padding: 10px;
-  border-bottom: 1px solid #E8E8E8;
   font-family: inherit;
   margin-bottom: 20px; }
   div#subnav.item-list-tabs.docs-tabs {
@@ -1209,7 +1218,9 @@ div.dir-search {
   .dir-form h3 .button {
     margin-bottom: 0;
     margin-top: 0;
-    padding: 2px 12px; }
+    padding: 2px 12px;
+    position: relative;
+    top: -7px; }
   .dir-form .info-box {
     float: left;
     margin-top: 10px; }
@@ -1493,83 +1504,27 @@ ul.activity-list li {
   overflow: hidden; }
   ul.activity-list li.has-comments {
     padding-bottom: 20px; }
+  ul.activity-list li .activity-avatar {
+    display: inline-block;
+    vertical-align: top; }
+  ul.activity-list li .activity-content {
+    display: inline-block;
+    width: 86%;
+    margin-left: 2%; }
+  ul.activity-list li.activity_comment .activity-avatar img.avatar, ul.activity-list li.activity_comment .activity-avatar img.FB_profile_pic {
+    width: 100px;
+    height: 100px;
+    margin-left: 0; }
+  ul.activity-list li .ac-form {
+    padding: 20px; }
+    ul.activity-list li .ac-form img.avatar {
+      width: 60px;
+      height: 60px; }
+    ul.activity-list li .ac-form div {
+      display: inline-block;
+      vertical-align: top; }
 ul.activity-list > li:first-child {
   padding-top: 30px; }
-
-.activity-list li.mini {
-  position: relative;
-  padding: 12px 0 0 0; }
-  .activity-list li.mini div.activity-meta {
-    margin: 0; }
-.activity-list li.activity_comment .activity-avatar img.avatar, .activity-list li.activity_comment .activity-avatar img.FB_profile_pic {
-  width: 40px;
-  height: 40px;
-  margin-left: 20px; }
-
-body.activity-permalink .activity-list li .activity-avatar img.avatar, body.activity-permalink .activity-list li .activity-avatar img.FB_profile_pic {
-  width: 100px;
-  height: 100px;
-  margin-left: 0; }
-
-.activity-list li.mini .activity-content {
-  margin-right: 175px; }
-  .activity-list li.mini .activity-content p {
-    margin: 3px 0 0;
-    float: left;
-    width: 84%; }
-.activity-list li.mini .activity-meta {
-  position: absolute;
-  right: 0;
-  top: 15px; }
-
-body.activity-permalink .activity-list li.mini .activity-meta {
-  position: absolute;
-  right: 15px; }
-
-.activity-list li.mini .activity-comments {
-  clear: left;
-  font-size: 100%;
-  margin-top: 30px; }
-.activity-list li .activity-inreplyto {
-  color: #A6A6A6;
-  font-size: 85%;
-  margin-bottom: 15px;
-  margin-top: 20px;
-  padding-left: 25px;
-  background: url(assets/images/buddypress/replyto_arrow.gif) 7px 0 no-repeat; }
-  .activity-list li .activity-inreplyto > p {
-    margin: 0;
-    display: inline; }
-  .activity-list li .activity-inreplyto blockquote, .activity-list li .activity-inreplyto div.activity-inner {
-    background: none;
-    border: none;
-    display: inline;
-    padding: 0;
-    margin: 0;
-    overflow: hidden; }
-
-body.activity-permalink .activity-list .activity-avatar img {
-  width: 100px;
-  height: 100px; }
-
-.activity-list .activity-content {
-  margin-left: 85px;
-  margin-top: -20px;
-  margin-bottom: 10px; }
-
-body.activity-permalink .activity-list li .activity-content {
-  font-size: 130%;
-  line-height: 150%;
-  margin-left: 106px;
-  margin-right: 0;
-  margin-top: -25px;
-  min-height: 35px;
-  padding: 15px; }
-body.activity-permalink .activity-list li .activity-header > p {
-  margin-left: -35px;
-  padding: 5px 0 0 38px;
-  height: 35px;
-  margin-bottom: 0; }
 
 .activity-list .activity-content .activity-header, .activity-list .activity-content .comment-header {
   color: #888888;
@@ -1643,6 +1598,8 @@ body.activity-permalink .activity-content .activity-inner, body.activity-permali
     .activity-list li.load-more a:hover {
       text-decoration: none;
       background-color: #ebebeb; }
+    .activity-list li.load-more a.loading {
+      color: #ebebeb; }
 
 /* --- End Activity Stream Listing --- }}} */
 /* --- Activity Stream Comments --- {{{ */
@@ -1654,13 +1611,6 @@ body.activity-permalink .activity-content .activity-inner, body.activity-permali
 div.activity-meta {
   clear: left; }
 
-div.activity-comments {
-  position: relative;
-  margin: 0 0 0 75px;
-  width: auto;
-  overflow: hidden;
-  /* IE fix */ }
-
 body.activity-permalink div.activity-comments {
   width: auto;
   margin-left: 135px;
@@ -1670,28 +1620,53 @@ body.activity-permalink div.activity-comments ul li {
   border-width: 1px;
   padding: 10px 0 0; }
 
-div.activity-comments div.acomment-avatar img {
-  float: left;
-  margin-right: 10px;
-  height: 30px;
-  width: 30px; }
-div.activity-comments div.acomment-content {
-  font-size: 95%;
-  margin-left: 75px;
-  margin-top: 5px; }
-div.activity-comments div.acomment-options {
-  margin-left: 73px; }
-div.activity-comments ul {
-  border: none;
-  list-style: none;
-  clear: left;
-  padding: 0;
-  padding-left: 20px;
-  border-left: 2px solid #eee; }
-  div.activity-comments ul li {
+div.activity-comments {
+  margin: 0 0 0 75px;
+  width: auto; }
+  div.activity-comments .acomment-avatar {
+    float: left; }
+    div.activity-comments .acomment-avatar img.avatar {
+      width: 60px;
+      height: 60px; }
+  div.activity-comments .acomment-meta, div.activity-comments .acomment-content, div.activity-comments .acomment-options {
+    margin-left: 75px; }
+  div.activity-comments .acomment-meta {
+    font-size: 85%; }
+  div.activity-comments .acomment-content {
+    font-size: 75%; }
+  div.activity-comments .acomment-options a {
+    background-color: #fafafa;
+    border: 1px solid #ebebeb;
+    border-bottom: 2px solid #ddd;
+    color: #2e2e2e;
+    font-size: 11px;
+    font-family: "Droid Sans", "Open Sans", Helvetica, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 3px 6px; }
+    div.activity-comments .acomment-options a a, div.activity-comments .acomment-options a a:hover, div.activity-comments .acomment-options a:hover, div.activity-comments .acomment-options a:active {
+      color: #2e2e2e;
+      text-decoration: none; }
+    div.activity-comments .acomment-options a:hover {
+      background-color: #ebebeb; }
+    div.activity-comments .acomment-options a:active {
+      background-color: #e1e1e1;
+      text-shadow: none; }
+  div.activity-comments ul {
+    border: none;
     list-style: none;
-    margin: 25px 15px 0;
-    padding: 0; }
+    clear: left;
+    padding: 0;
+    padding-left: 20px;
+    border-left: 2px solid #eee; }
+    div.activity-comments ul li {
+      list-style: none;
+      margin: 25px 15px 0;
+      padding: 0; }
 
 body.activity-permalink div.activity-comments ul li > ul {
   margin-top: 15px; }
@@ -1701,52 +1676,6 @@ div.acomment-content .time-since, div.acomment-content .activity-delete-link, di
 
 body.activity-permalink div.activity-comments div.acomment-content {
   font-size: 120%; }
-
-div.activity-comments div.acomment-meta {
-  font-size: 85%;
-  color: #888; }
-div.acomment-options a {
-  font-size: 80%;
-  padding: 0 10px; }
-div.activity-comments form.ac-form {
-  background-color: #fafafa;
-  display: none;
-  padding: 8px; }
-div.activity-comments li form.ac-form {
-  margin-right: 15px; }
-div.activity-comments form.root {
-  margin-left: 0; }
-div.activity-comments div#message {
-  margin-top: 15px;
-  margin-bottom: 0; }
-div.activity-comments form.loading {
-  background-image: url(assets/images/buddypress/ajax-loader.gif);
-  background-position: 2% 95%;
-  background-repeat: no-repeat; }
-div.activity-comments form .ac-textarea {
-  padding: 8px; }
-div.activity-comments form textarea {
-  width: 100%;
-  font-family: inherit;
-  font-size: 85%;
-  color: #555;
-  height: 60px;
-  border: none;
-  padding: 5px; }
-div.activity-comments form input {
-  margin-top: 5px; }
-div.activity-comments form div.ac-reply-avatar {
-  display: none;
-  /* users don't need to see their own avatar when posting. */ }
-div.acomment-avatar img {
-  height: 40px;
-  width: 40px; }
-div.ac-reply-avatar img {
-  height: 25px;
-  width: 25px; }
-div.activity-comments form div.ac-reply-content {
-  color: #888;
-  font-size: 85%; }
 
 /* --- End Activity Stream Comments --- }}} */
 /* --- Private Message Threads --- {{{ */
@@ -2142,15 +2071,6 @@ ul.item-list li img.avatar, #whats-new-avatar img, .item-avatar img {
   width: 50px;
   height: auto; }
 
-/* IE8 expects floats to have width or they lose hasLayout */
-div.item-avatar {
-  width: 65px;
-  height: 65px; }
-
-ul.item-list div.item-avatar {
-  width: 85px;
-  height: 85px; }
-
 form#whats-new-form #whats-new-avatar {
   width: 60px;
   height: 60px; }
@@ -2160,10 +2080,9 @@ div#item-header ul#group-mods li {
   width: 34px;
   height: 34px; }
 
-/* end IE8 avatar fixes */
 ul.item-list li img.avatar {
-  width: 65px;
-  height: 65px; }
+  width: 75px;
+  height: 75px; }
 
 .avatar-block, .activity-avatar {
   padding-left: 2px; }
@@ -2188,14 +2107,6 @@ ul.item-list li img.avatar {
 
 /* --- End Avatars --- }}} */
 /* --- Activity Stream --- {{{ */
-div.activity-meta {
-  margin-bottom: 0; }
-
-.activity-list li.mini .activity-meta {
-  position: absolute;
-  right: 20px;
-  top: 10px; }
-
 #subnav ul {
   border-top: 0px;
   padding: 0; }
@@ -2353,14 +2264,15 @@ thead:first-child tr th, thead:first-child tr td {
       margin-top: 4px; }
   .bp-docs .doc-tabs li a {
     display: block;
-    padding: 8px 7px;
+    padding: 12px 10px;
     text-decoration: none;
     color: #7a7a7a;
     font-family: "Bitter", "Verdana", serif;
     border: 1px solid #fff;
     /* to keep the hover states from looking jumpy */
     border-bottom: none;
-    background: none; }
+    background: none;
+    margin-right: 3px; }
     .bp-docs .doc-tabs li a span {
       display: inline;
       padding: 0;
@@ -2806,7 +2718,10 @@ span.activity {
       color: #333;
       padding-bottom: 8px;
       padding-top: 4px;
-      text-decoration: none; }
+      text-decoration: none;
+      font-family: "Bitter", "Verdana", serif; }
+      #sidebar .sidebar-activity-tabs ul li a:before {
+        padding-right: 6px; }
     #sidebar .sidebar-activity-tabs ul li span, #sidebar .sidebar-activity-tabs ul li.current span, #sidebar .sidebar-activity-tabs ul li.selected span {
       border: 1px solid #DDDDDD;
       border-radius: 4px;
@@ -2915,12 +2830,9 @@ select {
     max-width: none; }
   .homepage-widget .item-list li {
     padding: 14px 0; }
-  .homepage-widget .item-list .item-avatar {
-    width: 65px;
-    height: 65px; }
   .homepage-widget .item-list img.avatar {
-    width: 50px;
-    height: 50px; }
+    width: 95px;
+    height: 95px; }
 
 .textwidget {
   padding: 0 15px; }
