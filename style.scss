@@ -94,7 +94,6 @@ $verydarkgray: darken($lightgray, 80%);
 		}
 		&.loading a {
 			background-position: 88% 50%;
-			padding-left: 25px !important; 
 		} 
 		.feed a { 
 			border: none; /* this is not a true tab */ 
@@ -1027,6 +1026,7 @@ ul.item-list {
 		.item-avatar { 
 			display: inline-block; 
 			width: 8%; 
+			vertical-align: top; 
 			img.avatar {
 				width: 75px; 
 				height: 75px; 
@@ -3350,10 +3350,6 @@ div#object-nav ul li a {
 
 .loading a:before {
     display: none !important
-}
-
-div.item-list-tabs ul li.loading a {
-    padding-top: 9px !important
 }
 
 /* Stream Icons. no shorthand CSS to maintain hover effects */

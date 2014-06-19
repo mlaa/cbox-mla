@@ -1039,7 +1039,8 @@ ul.item-list {
       margin: 0; }
     ul.item-list li .item-avatar {
       display: inline-block;
-      width: 8%; }
+      width: 8%;
+      vertical-align: top; }
       ul.item-list li .item-avatar img.avatar {
         width: 75px;
         height: 75px; }
@@ -1130,8 +1131,7 @@ div.item-list-tabs {
         border-top-right-radius: 3px;
         border-top-left-radius: 3px; }
       div.item-list-tabs ul li.loading a {
-        background-position: 88% 50%;
-        padding-left: 25px !important; }
+        background-position: 88% 50%; }
       div.item-list-tabs ul li .feed a {
         border: none;
         /* this is not a true tab */ }
@@ -2294,8 +2294,7 @@ thead:first-child tr th, thead:first-child tr td {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px; }
   .bp-docs .doc-tabs li.loading a {
-    background-position: 88% 50%;
-    padding-left: 25px !important; }
+    background-position: 88% 50%; }
   .bp-docs .doc-tabs li .feed a {
     border: none;
     /* this is not a true tab */ }
@@ -3248,9 +3247,6 @@ div#object-nav ul li a {
 
 .loading a:before {
   display: none !important; }
-
-div.item-list-tabs ul li.loading a {
-  padding-top: 9px !important; }
 
 /* Stream Icons. no shorthand CSS to maintain hover effects */
 li#activity-all a:before {
