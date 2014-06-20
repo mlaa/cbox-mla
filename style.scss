@@ -23,6 +23,7 @@ $darkgray: darken($lightgray, 50%);
 $verydarkgray: darken($lightgray, 80%); 
 
 @mixin minimalButton { 
+	display: inline-block; 
 	background-color: $lightgray; 
 	border: 1px solid $gray; 
 	border-bottom: 2px solid #ddd;
@@ -1063,7 +1064,6 @@ ul.item-list {
 		} 
 		.action {
 			float: right; 
-			margin-top: 2.5%; 
 		}
 		h5 span.small {
 			font-weight: normal;
@@ -1150,7 +1150,7 @@ div#subnav.item-list-tabs {
 /* --- End Item Tabs --- }}} */ 
 
 /* --- Directories --- {{{ */ 
-.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .bp-docs #content, .forum-search #content, .page-template #content, .topic-tag #content { 
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .single-bp_doc #content, .forum-search #content, .page-template #content, .topic-tag #content { 
 	width: 100%; 
 } 
 
@@ -1189,6 +1189,7 @@ div.dir-search {
 		padding: 2px 12px;
 		position: relative;
 		top: -6px; 
+		display: inline-block; 
 	}
 	.info-box {
 		float: left;
@@ -1202,6 +1203,11 @@ div.dir-search {
 div.pagination {
 	clear: both; 
 	margin: 25px 0; 
+	&#pag-bottom { 
+		.pag-count { 
+			padding: 10px 0; 
+		}
+	} 
 	.pag-count {
 		display: inline-block; 
 	}
@@ -1994,7 +2000,7 @@ a.button, .generic-button a, a.more-link, button, input[type="submit"], input[ty
 /* --- Global Padding --- {{{ */ 
 /* Global Padding */
 #content,#sidebar,#content-full,#footer,#header{
-	padding: 30px;
+	padding: 20px;
 }
 /* Global Negative Horizontal Padding */
 #bbpress-forums,
@@ -2047,10 +2053,6 @@ h1#site-title,div#site-title {
 /* --- End Global Padding --- }}} */ 
 
 /* --- Menus --- {{{ */ 
-.base-menu {
-    padding-left: 20px;
-    padding-right: 20px;
-}
 #main-menu-wrap .sub-menu { margin: 8px 0 0 }
 .base-menu .sub-menu { padding-left: 0px !important }
 .top-wrap .base-menu.sub-menu { border-top: 0; }
@@ -2227,12 +2229,14 @@ span.activity {
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	.generic-button { 
-		margin: 10px 32px; 
+		margin: 0px 32px; 
+		a { 
+			padding: 5px 10px; 
+		} 
 		&:first-child { 
-			margin-top: 25px;
 		} 
 		&:last-child { 
-			margin-bottom: 25px; 
+			margin-bottom: 10px; 
 		} 
 	} 
 } 
@@ -2383,6 +2387,7 @@ thead:first-child tr th, thead:first-child tr td {
 	padding: 2px 10px 7px;
 	float: none; 
 	margin: 15px 0; 
+	display: inline-block; 
 }
 #content #bp-docs-pagination { 
 	padding: 25px; 
@@ -2969,9 +2974,8 @@ select {
 .main-menu {
 	padding-top: 14px;
 	float: right; 
-	font-weight: 500;
 	text-transform: uppercase;
-	font-size: 80%; 
+	font-size: 90%; 
 	ul {
 		li {
 			display: inline-block; 
@@ -2979,22 +2983,13 @@ select {
 				color: #000;
 			}
 		}
-		&#menu-item-151 a, &:last-child a {
-			border-radius: 0px;
-			padding: 9px 10px 0px;
+		&:last-child a {
+			padding-right: 0; 
 			margin-right: 0px;
-			&:hover {
-				border-radius: 0px;
-				padding: 9px 10px 0px;
-				margin-right: 0px;
-				color: #000; 
-			}
 		}
 	}
 	a {
-		border-radius: 0px;
-		padding: 9px 10px 0px;
-		margin-right: 0px;
+		padding: 9px 0 0 20px;
 	}
 }
 
@@ -3128,7 +3123,6 @@ div.bbp-template-notice p {
 		font-size: 120%; 
 	} 
 	#bp-group-documents-sorting { 
-		margin-top: 5px; 
 	} 
 	ul#bp-group-documents-list li {
 		padding-left: 32px;
@@ -3166,13 +3160,7 @@ div#object-nav.item-list-tabs li {
 
 /* --- Layout --- {{{1 */
 #header {
-	padding: 30px 0 0 30px;
 	margin-bottom: 1px;
-	border-radius: 0px;
-	background: transparent;
-	&:before {
-		border-radius: 0px;
-	}
 }
 #content { 
 	margin-top: 1px; 
@@ -3849,6 +3837,20 @@ body {
 	body {
 		margin-top: -28px;
 	}
+	#content { 
+		padding: 0 30px; 
+	} 
+	.groups, .my-account { 
+		#content { 
+			padding: 5; 
+		} 
+		#sidebar { 
+			padding: 5px; 
+		} 
+		ul.activity-list li .activity-content { 
+			width: 79%; 
+		} 
+	} 
 	.button { 
 		display: block 
 	}
@@ -3902,12 +3904,12 @@ body {
 	#sidebar { 
 		min-height: auto !important;
 	}
-	body #wrapper { 
-		margin: 0 10px 10px; 
-	}
 	.main-menu select.mobileMenu {
 		float: right;
 	}
+	div.item-list-tabs.main-tabs { 
+		font-size: 85%; 
+	} 
 	.callout-box,
 	.flex-caption,
 	#feature-box h3 { display: none }
@@ -3945,7 +3947,6 @@ body {
 		border: none;
 	}
 	#item-header-avatar img.avatar {
-		width: 40%;
 	}
 	.activity-list .activity-content {
 		margin-left: 0;
@@ -3954,7 +3955,7 @@ body {
 		display: none;
 	}
 	#header {
-		margin-top: 75px;
+		margin-top: 25px;
 		height: 100px;
 	}
 	#powered-by { margin-right:-10px; margin-left:-10px;}
@@ -3962,8 +3963,28 @@ body {
 	#sidebar .widget_bp_groups_widget div.item-options {
 		medgarillasargin-top: -40px;
 	}
-	#footer .footer-widgets.row { 
-		text-align: center;
+	#footer { 
+		.footer-widgets.row { 
+			padding: 0; 
+		} 
+		.footer-widget { 
+			text-align: center;
+			margin: 0; 
+			width: 100%; 
+			ul li { 
+				list-style-type: none; 
+				line-height: 1.5em; 
+			} 
+		} 
+		.widget h4 { 
+			margin: 0;
+			padding: 0.5em;
+			background-color: #3A3A3A;
+			border: 1px solid #373737;
+		} 
+		#footer-widget-left { 
+			margin: 0; 
+		} 
 	} 
 }
 /* --- iPad Portrait --- {{{2 */ 
