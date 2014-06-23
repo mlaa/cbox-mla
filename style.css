@@ -1847,7 +1847,7 @@ input.button:active,
   position: relative;
   top: 1px; }
 
-a.button, .generic-button a, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"], #review_form #submit, #favorite-toggle, #subscription-toggle {
+a.button, .generic-button a, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"], #review_form #submit, #favorite-toggle, #subscription-toggle, a.action {
   display: inline-block;
   background-color: #fafafa;
   border: 1px solid #ebebeb;
@@ -1864,12 +1864,12 @@ a.button, .generic-button a, a.more-link, button, input[type="submit"], input[ty
   margin-top: 10px;
   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
   padding: 10px; }
-  a.button a, a.button a:hover, a.button:hover, a.button:active, .generic-button a a, .generic-button a a:hover, .generic-button a:hover, .generic-button a:active, a.more-link a, a.more-link a:hover, a.more-link:hover, a.more-link:active, button a, button a:hover, button:hover, button:active, input[type="submit"] a, input[type="submit"] a:hover, input[type="submit"]:hover, input[type="submit"]:active, input[type="reset"] a, input[type="reset"] a:hover, input[type="reset"]:hover, input[type="reset"]:active, input[type="button"] a, input[type="button"] a:hover, input[type="button"]:hover, input[type="button"]:active, #review_form #submit a, #review_form #submit a:hover, #review_form #submit:hover, #review_form #submit:active, #favorite-toggle a, #favorite-toggle a:hover, #favorite-toggle:hover, #favorite-toggle:active, #subscription-toggle a, #subscription-toggle a:hover, #subscription-toggle:hover, #subscription-toggle:active {
+  a.button a, a.button a:hover, a.button:hover, a.button:active, .generic-button a a, .generic-button a a:hover, .generic-button a:hover, .generic-button a:active, a.more-link a, a.more-link a:hover, a.more-link:hover, a.more-link:active, button a, button a:hover, button:hover, button:active, input[type="submit"] a, input[type="submit"] a:hover, input[type="submit"]:hover, input[type="submit"]:active, input[type="reset"] a, input[type="reset"] a:hover, input[type="reset"]:hover, input[type="reset"]:active, input[type="button"] a, input[type="button"] a:hover, input[type="button"]:hover, input[type="button"]:active, #review_form #submit a, #review_form #submit a:hover, #review_form #submit:hover, #review_form #submit:active, #favorite-toggle a, #favorite-toggle a:hover, #favorite-toggle:hover, #favorite-toggle:active, #subscription-toggle a, #subscription-toggle a:hover, #subscription-toggle:hover, #subscription-toggle:active, a.action a, a.action a:hover, a.action:hover, a.action:active {
     color: #2e2e2e;
     text-decoration: none; }
-  a.button:hover, .generic-button a:hover, a.more-link:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, #review_form #submit:hover, #favorite-toggle:hover, #subscription-toggle:hover {
+  a.button:hover, .generic-button a:hover, a.more-link:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, #review_form #submit:hover, #favorite-toggle:hover, #subscription-toggle:hover, a.action:hover {
     background-color: #ebebeb; }
-  a.button:active, .generic-button a:active, a.more-link:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, #review_form #submit:active, #favorite-toggle:active, #subscription-toggle:active {
+  a.button:active, .generic-button a:active, a.more-link:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, #review_form #submit:active, #favorite-toggle:active, #subscription-toggle:active, a.action:active {
     background-color: #e1e1e1;
     text-shadow: none; }
 
@@ -2788,7 +2788,7 @@ span.activity {
 .edit-profile-button:before {
   content: "9"; }
 
-#nav-announcements-groups-li a:before {
+#nav-announcements-groups-li a:before, #notifications-personal-li a:before {
   content: "6"; }
 
 /* --- End Layout --- }}} */
@@ -3519,7 +3519,8 @@ li#nav-documents-groups-li, li#nav-documents-personal-li {
 #footer {
   padding: 0px;
   text-align: center;
-  background-color: #444; }
+  background-color: #444;
+  width: 100%; }
   #footer .widget h4 {
     border-bottom: 1px solid #3E3C3C;
     color: #FFF; }

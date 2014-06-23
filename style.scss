@@ -1915,7 +1915,7 @@ div#new-topic-post {
 
 input.button:active,
 .button:active { outline: 0; position: relative; top: 1px; }
-a.button, .generic-button a, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"],#review_form #submit, #favorite-toggle, #subscription-toggle {
+a.button, .generic-button a, a.more-link, button, input[type="submit"], input[type="reset"], input[type="button"],#review_form #submit, #favorite-toggle, #subscription-toggle, a.action {
 	@include minimalButton; 
 	margin-top: 10px;
 	text-shadow: 0 1px rgba(255, 255, 255, .75);
@@ -2871,7 +2871,7 @@ span.activity {
 .edit-profile-button:before {
 	content: "9";
 }
-#nav-announcements-groups-li a:before {
+#nav-announcements-groups-li a:before, #notifications-personal-li a:before {
     content: "6"
 }
 
@@ -3701,6 +3701,7 @@ li#nav-documents-groups-li, li#nav-documents-personal-li {
 	padding: 0px;
 	text-align: center;
 	background-color: #444;
+	width: 100%; 
 	.widget h4 {
 		border-bottom: 1px solid #3E3C3C;
 		color: #FFF;
