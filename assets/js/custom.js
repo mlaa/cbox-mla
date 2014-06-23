@@ -16,3 +16,16 @@ jQuery(document).ready(function($) {
 	});
 
 });
+
+// a jQuery hack to make a sticky footer, so that some pages 
+// (like our Advanced Search page) don't show whitespace after the footer
+
+jQuery(document).ready(function() {
+	var bodyHeight = jQuery("body").height();
+	var vwptHeight = jQuery(window).height();
+	var footerHeight = jQuery("#footer").height();
+	if (vwptHeight > bodyHeight) {
+		var vwptDelta = vwptHeight - bodyHeight; 
+		jQuery(".main-wrap").css({ 'padding-bottom' : vwptDelta });
+	}
+});
