@@ -25,7 +25,8 @@ jQuery(document).ready(function() {
 	var vwptHeight = jQuery(window).height();
 	var footerHeight = jQuery("#footer").height();
 	if (vwptHeight > bodyHeight) {
-		var vwptDelta = vwptHeight - bodyHeight; 
+		var vwptDelta = vwptHeight - bodyHeight - 97; 
+		// I don't know why this calculation is off by 97, but it is.j
 		jQuery(".main-wrap").css({ 'padding-bottom' : vwptDelta });
 	}
 });
