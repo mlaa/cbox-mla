@@ -1064,6 +1064,14 @@ ul.item-list {
 		} 
 		.action {
 			float: right; 
+			text-align: right; 
+			.group-subscription-div { 
+				padding-top: 8px; 
+				padding-right: 2px; 
+			} 
+			.gemail_icon { 
+				background-position: 0 1px !important; 
+			} 
 		}
 		h5 span.small {
 			font-weight: normal;
@@ -2931,8 +2939,10 @@ select {
 		font-size: 85%; 
 	} 
 	.item-list { 
+		.item { 
+			margin-left: 61px; 
+		} 
 		.item, .item-meta { 
-			margin-left: 0; 
 			display: block;
 			width: auto; 
 		} 
@@ -2954,8 +2964,6 @@ select {
 		} 
 	} 
 } 
-.textwidget {
-}
 #sidebar .textwidget,
 #footer .textwidget { padding:0px; }
 
@@ -3020,10 +3028,6 @@ select {
 /* --- End Advanced Search Form --- }}} */ 
 
 /* --- Misc Bugfixes --- {{{1 */ 
-
-.gemail_icon { 
-	color: green; 
-} 
 
 /* Limit height of slider */
 .flex-viewport, .flex-viewport img {

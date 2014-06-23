@@ -1062,7 +1062,13 @@ ul.item-list {
         font-size: 85%;
         color: #999; }
     ul.item-list li .action {
-      float: right; }
+      float: right;
+      text-align: right; }
+      ul.item-list li .action .group-subscription-div {
+        padding-top: 8px;
+        padding-right: 2px; }
+      ul.item-list li .action .gemail_icon {
+        background-position: 0 1px !important; }
     ul.item-list li h5 span.small {
       font-weight: normal;
       font-size: 85%; }
@@ -2838,8 +2844,9 @@ select {
     padding-top: 5px; }
   .home-page .homepage-widget p {
     font-size: 85%; }
+  .home-page .homepage-widget .item-list .item {
+    margin-left: 61px; }
   .home-page .homepage-widget .item-list .item, .home-page .homepage-widget .item-list .item-meta {
-    margin-left: 0;
     display: block;
     width: auto; }
   .home-page .homepage-widget .item-list li {
@@ -2928,9 +2935,6 @@ select {
 
 /* --- End Advanced Search Form --- }}} */
 /* --- Misc Bugfixes --- {{{1 */
-.gemail_icon {
-  color: green; }
-
 /* Limit height of slider */
 .flex-viewport, .flex-viewport img {
   max-height: 352px !important;

@@ -60,10 +60,58 @@ function mla_remove_forum_subscribe_link($link){
 add_filter( 'bbp_get_forum_subscribe_link', 'mla_remove_forum_subscribe_link');
 
 /* 
- * Remove subscription link from groups directory. Cleans up the interface
- * a lot, and users can still change their email subscription settings in "email settings." 
+ * Remove subscription link from groups directory. 
+ * Because we're about to rewrite it!
+ * Get ready for the magic.  
  */ 
 remove_action ( 'bp_directory_groups_actions', 'ass_group_subscribe_button' );
+
+function mla_ass_group_subscribe_button() {
+	global $bp, $groups_template;
+
+	if( ! empty( $groups_template ) ) {
+		$group =& $groups_template->group;
+	}
+	else {
+		$group = groups_get_current_group();
+	}
+
+	if ( !is_user_logged_in() || !empty( $group->is_banned ) || !$group->is_member )
+		return;
+
+	// if we're looking at someone elses list of groups hide the subscription
+	if ( bp_displayed_user_id() && ( bp_loggedin_user_id() != bp_displayed_user_id() ) )
+		return;
+
+	$group_status = ass_get_group_subscription_status( bp_loggedin_user_id(), $group->id );
+
+	if ( $group_status == 'no' )
+		$group_status = NULL;
+
+	$status_desc = __('Your email status is ', 'bp-ass');
+	$link_text = __('change', 'bp-ass');
+	$gemail_icon_class = ' gemail_icon';
+	$sep = '';
+
+	if ( !$group_status ) {
+		//$status_desc = '';
+		$link_text = __('Get email updates', 'bp-ass');
+		$sep = '';
+	}
+
+	$status = ass_subscribe_translate( $group_status );
+
+	$notifications_url = home_url().'/groups/'.groups_get_slug($group->id).'/notifications/'; 
+	?>
+
+	<div class="group-subscription-div">
+		<a class="group-subscription-options-link" id="gsublink-<?php echo $group->id; ?>" href="<?php echo $notifications_url; ?>" title="<?php _e('Change your email subscription options for this group','bp-ass');?>"><span class="group-subscription-status<?php echo $gemail_icon_class ?>" id="gsubstat-<?php echo $group->id; ?>"><?php echo $status; ?></span> <?php echo $sep; ?></a>
+	</div>
+
+	<?php
+}
+
+add_action ( 'bp_directory_groups_actions', 'mla_ass_group_subscribe_button' );
 
 /* Remove forum title, since in our use cases forum titles have the same names as
  * their parent groups, and users see a redundant title on group forums pages. 
