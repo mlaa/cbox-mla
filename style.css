@@ -2825,7 +2825,7 @@ select {
 
 #center-homepage {
   padding: 0 0px 5px;
-  margin: 30px 15px 15px; }
+  margin: 30px 15px 0; }
   #center-homepage .widget h4 {
     background: #FF8B00;
     color: #fff;
@@ -2846,6 +2846,8 @@ select {
     border: 1px solid #ebebeb;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px; }
+    #center-homepage .homepage-widget a {
+      font-size: 95%; }
     #center-homepage .homepage-widget.column {
       padding: 0px; }
 
@@ -3568,6 +3570,8 @@ li#nav-documents-groups-li, li#nav-documents-personal-li {
     margin: 0 auto;
     padding: 0 2%;
     text-align: left; }
+  #footer ul {
+    padding-left: 10px; }
 
 ul.contact {
   margin-left: 1.8em; }
