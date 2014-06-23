@@ -3022,6 +3022,10 @@ div.bbp-template-notice p {
   display: none;
   /* temporary hack to remove redundant "Visit Site" button */ }
 
+.bp-user.notifications #subnav {
+  display: none;
+  /* this subnav is empty at the moment. Temporary hack. */ }
+
 /* --- End Misc Bugfixes --- }}} */
 /* --- BP Group Documents ("Files") --- {{{ */
 #bp-group-documents #subnav {
@@ -3640,16 +3644,6 @@ body {
 .mobile-menu-container {
   display: none; }
 
-@media only screen and (max-width: 1050px) {
-  #infinity-base div.item-options {
-    float: none;
-    margin-top: 0; } }
-@media only screen and (max-width: 880px) {
-  #sidebar .widget_bp_groups_widget h4 {
-    padding-bottom: 48px; }
-
-  #sidebar .widget_bp_groups_widget div.item-options {
-    margin-top: -60px; } }
 @media only screen and (max-width: 768px) {
   html {
     margin-top: 0 !important; }
@@ -3660,9 +3654,13 @@ body {
   #content {
     padding: 0 30px; }
 
+  #sidebar {
+    float: left; }
+
   .groups #content, .my-account #content {
-    padding: 5; }
+    padding: 15px; }
   .groups #sidebar, .my-account #sidebar {
+    width: 25%;
     padding: 5px; }
   .groups ul.activity-list li .activity-content, .my-account ul.activity-list li .activity-content {
     width: 79%; }
@@ -3845,9 +3843,6 @@ body {
     margin: 2px;
     width: 30px !important; }
 
-  .activity-header p {
-    line-height: 280% !important; }
-
   .activity-list .activity-content .activity-header img.avatar {
     display: none; }
 
@@ -3932,12 +3927,70 @@ body {
     box-shadow: none;
     width: 40%; } }
 @media only screen and (max-width: 320px) {
-  #sidebar {
+  body {
+    font-size: 95%; }
+
+  .column {
     width: 100% !important; }
 
-  form#groups-directory-form h3 a {
-    display: block;
-    margin-top: 0.6em; }
+  div.dir-search {
+    text-align: center;
+    margin-left: -0.9em; }
+
+  .directory h3 {
+    margin-left: 0.5em; }
+
+  div.item-list-tabs .main-tabs {
+    font-size: 100%; }
+  div.item-list-tabs ul li a {
+    border-radius: 0;
+    border: 1px solid #eee;
+    margin-right: 0; }
+    div.item-list-tabs ul li a.selected {
+      border-radius: 0; }
+    div.item-list-tabs ul li a.loading {
+      position: inherit; }
+
+  div#subnav.item-list-tabs ul {
+    text-align: center; }
+    div#subnav.item-list-tabs ul li {
+      display: block;
+      float: none !important; }
+
+  #logo-menu-wrap img {
+    max-width: none; }
+
+  .dir-form h3 {
+    text-align: center; }
+    .dir-form h3 .button {
+      position: inherit;
+      margin-top: 20px; }
+
+  div.item-list-tabs ul li {
+    text-align: center;
+    float: none; }
+    div.item-list-tabs ul li a.selected {
+      border: 1px solid #ddd; }
+
+  ul.item-list li .item-avatar img.avatar, ul.item-list li .activity-avatar img.avatar {
+    width: 55px;
+    height: 55px; }
+  ul.item-list li .item {
+    margin-left: 5px; }
+  ul.item-list li .action {
+    float: left;
+    padding-left: 61px;
+    margin-top: 5px;
+    text-align: left; }
+
+  #content ul.activity-list li .activity-content {
+    width: 73%; }
+
+  div.pagination {
+    text-align: center; }
+    div.pagination .pagination-links {
+      float: none;
+      margin: 10px; }
 
   #user-header-nav {
     display: none !important; }
@@ -3960,7 +4013,17 @@ body {
 
   .mobile-menu-container select {
     box-shadow: none;
-    width: 40%; } }
+    width: 40%; }
+
+  #bp-group-documents #subnav {
+    text-align: center; }
+  #bp-group-documents #bp-group-documents-sorting {
+    float: none; }
+  #bp-group-documents #bp-group-documents-list .admin-links {
+    padding-top: 10px;
+    position: static; }
+  #bp-group-documents .bbp-header, #bp-group-documents .bbp-topic-reply-count {
+    display: none; } }
 /* --- End Smartphones --- }}} */
 /* --- End Mobile --- }}} */
 
