@@ -1137,7 +1137,7 @@ div#subnav.item-list-tabs {
 	ul li {
 		a {
 			border: none; 
-			font-size: 85%;
+			font-size: 90%;
 			margin: 0;
 			padding: 4px 7px;
 		}
@@ -1206,6 +1206,28 @@ div.dir-search {
 }
 
 /* --- End Body, Directories --- }}} */ 
+
+/* --- Group Admin --- {{{ */ 
+
+#group-settings-form { 
+	#admins-list, #members-list { 
+		li { 
+			display: table-row; 
+		} 
+		.avatar, h5 { 
+			display: table-cell; 
+			.button { 
+				padding: 5px; 
+			} 
+		} 
+		h5 { 
+			padding: 8px 11px;
+			padding-bottom: 20px;
+		} 
+	} 
+} 
+
+/* --- End Group Admin --- }}} */ 
 
 /* --- Pagination --- {{{ */ 
 div.pagination {
