@@ -3037,6 +3037,10 @@ select {
 
 /* --- Misc Bugfixes --- {{{1 */ 
 
+#bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer { 
+	background: none; /* don't know why this has a gray bg by default */ 
+} 
+
 /* Limit height of slider */
 .flex-viewport, .flex-viewport img {
  max-height: 352px !important;
@@ -3834,7 +3838,6 @@ ul.contact {
 /* --- Mobile and Responsive Design --- {{{1 */ 
 
 body { 
-	min-width: 960px; 
 }
 .mobile-menu-container {
 	display: none;
@@ -3851,7 +3854,6 @@ body {
 	}
 	body {
 		margin-top: -28px;
-		min-width: unset; 
 	}
 	.row { 
 		min-width: unset; 
@@ -3865,14 +3867,21 @@ body {
 	.sidebar-left #item-nav { 
 		display: block; /* bring it back */ 
 	} 
-	div.item-list-tabs ul li { 
-	      	float: none; 
-		a { 
-			text-align: center; 
-			margin-left: 10%; 
-			margin-right: 10%; 
+	div.item-list-tabs ul { 
+		text-align: center; 
+		li { 
+			float: none; 
+			display: inline-block; 
+			a { 
+				text-align: center; 
+				margin-left: 10%; 
+				margin-right: 10%; 
+			} 
 		} 
 	} 	
+	#content .widget .item-list li { 
+		clear: both; 
+	} 
 	#infinity-base .icext-feature { 
 		width: 100%; 
 	} 
@@ -3883,12 +3892,15 @@ body {
 		display: none; /* hide the group admins for now */ 
 	} 
 	ul.item-list li .item { 
-		width: auto; 
+		width: unset; 
 	} 
 	div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a, div.item-list-tabs ul li:hover a, div.item-list-tabs ul li:only-child a { 
 		border: 1px solid #eee; 
 	} 
 	.bbp-header, .bbp-topic-reply-count { 
+		display: none; 
+	} 
+	.ac-reply-avatar { 
 		display: none; 
 	} 
 	.groups, .my-account { 
@@ -3901,7 +3913,8 @@ body {
 			font-size: 90%; 
 		} 
 		ul.activity-list li .activity-content { 
-			width: 79%; 
+			display: block; 
+			width: auto; 
 		} 
 	} 
 	.activity-list { 
@@ -3918,6 +3931,19 @@ body {
 			width: 75%; 
 		} 
 	}
+	ul.item-list { 
+		.item-avatar { 
+			width: 18%; 
+			img { 
+				width: 100% !important; 
+				height: 100% !important; 
+			} 
+		} 
+		li .item {
+			margin-left: 2%;
+			width: 75%; 
+		} 
+	} 
 	.button { 
 		display: block 
 	}
@@ -3933,7 +3959,7 @@ body {
 	ul.activity-list { 
 		li .activity-content { 
 			display: unset; 
-			.activity-header, .activity-inner, .comment-header, > p { 
+			.activity-header, .activity-inner, .comment-header, > p, .activity-meta { 
 				margin-left: 20% !important; 
 			} 
 		} 
