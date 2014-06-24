@@ -1,5 +1,7 @@
 <?php get_header( 'buddypress' ); ?>
 
+<?php get_sidebar( 'buddypress' ); ?>
+
 	<div id="content" role="main" class="<?php do_action( 'content_class' ); ?>">
 		<div class="padder">
 
@@ -12,6 +14,18 @@
 				<?php locate_template( array( 'groups/single/group-header.php' ), true ); ?>
 
 			</div><!-- #item-header -->
+
+			<div id="item-nav">
+				<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
+					<ul>
+
+						<?php bp_get_options_nav(); ?>
+
+						<?php do_action( 'bp_group_options_nav' ); ?>
+
+					</ul>
+				</div>
+			</div><!-- #item-nav -->
 
 			<div id="item-body">
 
@@ -98,5 +112,4 @@
 		</div><!-- .padder -->
 	</div><!-- #content -->
 
-<?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer( 'buddypress' ); ?>

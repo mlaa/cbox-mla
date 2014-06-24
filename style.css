@@ -1,20 +1,12 @@
 @charset "UTF-8";
 /* --- Mixins --- {{{ */
 /* 
- * Old fonts. 
- */
-/* 
- * New fonts. 
+ * Fonts
  */
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic);
 /* --- End Mixins --- }}} */
 /* --- Reset and Global --- {{{1 */
-/*
- *The Infinity Reset. If you want to use another one add this to your
- *Child Theme config/infinity.ini
- *infinity-reset-style = off
- */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block; }
 
@@ -401,8 +393,6 @@ input[type=file]:focus, input[type=checkbox]:focus, select:focus {
 
 /* ----------- End Reset and Global -------------- }}} */
 /* --- Wordpress --- {{{ */
-/* Imported from wordpress.css 8? 
-
 /* Post Meta */
 span.edit-link {
   margin-left: 1px;
@@ -3648,6 +3638,10 @@ body {
 .mobile-menu-container {
   display: none; }
 
+.sidebar-left #item-nav {
+  display: none;
+  /* don't need a horizontal tab bar and a vertical one */ }
+
 /* --- Tablets --- {{{2 */
 @media only screen and (max-width: 768px) {
   html {
@@ -3664,10 +3658,37 @@ body {
     padding: 0 30px; }
 
   #sidebar {
-    float: left; }
-    #sidebar .sidebar-activity-tabs ul li a {
-      padding: 0% 2% 6% 0% !important;
-      overflow: hidden; }
+    display: none; }
+
+  .sidebar-left #item-nav {
+    display: block;
+    /* bring it back */ }
+
+  div.item-list-tabs ul li {
+    float: none; }
+    div.item-list-tabs ul li a {
+      text-align: center;
+      margin-left: 10%;
+      margin-right: 10%; }
+
+  #infinity-base .icext-feature {
+    width: 100%; }
+
+  #infinity-base .icext-feature a, div#item-header div#item-header-content, #item-buttons {
+    text-align: center; }
+
+  #item-header #item-actions {
+    display: none;
+    /* hide the group admins for now */ }
+
+  ul.item-list li .item {
+    width: auto; }
+
+  div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a, div.item-list-tabs ul li:hover a, div.item-list-tabs ul li:only-child a {
+    border: 1px solid #eee; }
+
+  .bbp-header, .bbp-topic-reply-count {
+    display: none; }
 
   .groups #content, .my-account #content {
     padding: 15px; }
@@ -3701,9 +3722,9 @@ body {
     margin-bottom: 2%; }
 
   ul.activity-list li .activity-content {
-    width: 100%; }
-    ul.activity-list li .activity-content .activity-header, ul.activity-list li .activity-content .comment-header, ul.activity-list li .activity-content > p {
-      margin-left: 20%; }
+    display: unset; }
+    ul.activity-list li .activity-content .activity-header, ul.activity-list li .activity-content .activity-inner, ul.activity-list li .activity-content .comment-header, ul.activity-list li .activity-content > p {
+      margin-left: 20% !important; }
 
   .mobile-menu-container {
     width: 100%;
