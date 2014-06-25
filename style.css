@@ -3637,6 +3637,9 @@ ul.contact {
     font-weight: 600; } }
 /* --- End Browser-Specific --- }}} */
 /* --- Mobile and Responsive Design --- {{{1 */
+body {
+  min-width: 960px; }
+
 .mobile-menu-container {
   display: none; }
 
@@ -3651,12 +3654,15 @@ ul.contact {
 
   body {
     margin-top: -28px;
-    min-width: unset;
+    min-width: initial;
     overflow-x: hidden;
     /* Temporary hack. kept getting like 2% extra space. Scrollbar issue? */ }
 
   #content {
     padding: 3%; }
+
+  #content.sidebar-left {
+    margin: 0; }
 
   #sidebar {
     display: none;
@@ -3668,7 +3674,7 @@ ul.contact {
     margin: 2%; }
 
   /* stop floating things already */
-  div#item-header ul li, div.item-list-tabs ul li, div.dir-search {
+  div#item-header ul li, div.item-list-tabs ul li, div.dir-search, #content.sidebar-left {
     float: none; }
 
   div.dir-search {
@@ -3676,8 +3682,12 @@ ul.contact {
     /* don't know why, but this is misaligned */ }
 
   /* center ALL THE THINGS */
-  #infinity-base .icext-feature a, div#item-header div#item-header-content, #item-buttons, .dir-form {
+  #infinity-base .icext-feature a, div#item-header div#item-header-content, #item-buttons, .dir-form, .activity h3 {
     text-align: center; }
+
+  .activity h3 {
+    display: block;
+    /* needed to get above centering to work */ }
 
   div.item-list-tabs ul {
     text-align: center; }
@@ -3697,7 +3707,7 @@ ul.contact {
     /* hide the group admins for now */ }
 
   ul.item-list li .item {
-    width: unset; }
+    width: initial; }
 
   div.item-list-tabs ul li {
     vertical-align: top; }
@@ -3753,7 +3763,7 @@ ul.contact {
     margin-bottom: 2%; }
 
   ul.activity-list li .activity-content {
-    display: unset; }
+    display: initial; }
     ul.activity-list li .activity-content .activity-header, ul.activity-list li .activity-content .activity-inner, ul.activity-list li .activity-content .comment-header, ul.activity-list li .activity-content > p, ul.activity-list li .activity-content .activity-meta {
       margin-left: 20% !important; }
 

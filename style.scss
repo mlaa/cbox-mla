@@ -3838,6 +3838,7 @@ ul.contact {
 /* --- Mobile and Responsive Design --- {{{1 */ 
 
 body { 
+	min-width: 960px; 
 }
 .mobile-menu-container {
 	display: none;
@@ -3854,13 +3855,16 @@ body {
 	}
 	body {
 		margin-top: -28px;
-		min-width: unset; 
+		min-width: initial; 
 		overflow-x: hidden; /* Temporary hack. kept getting like 2% extra space. Scrollbar issue? */ 
 	}
 	.row { 
 	} 
-	#content { 
+	#content, { 
 		padding: 3%; 
+	} 
+	#content.sidebar-left { 
+		margin: 0; 
 	} 
 	#sidebar { 
 		display: none; /* no sidebars because we're doing the horizontal #item-nav instead */ 
@@ -3870,15 +3874,18 @@ body {
 		margin: 2%; 
 	} 
 	/* stop floating things already */ 
-	div#item-header ul li, div.item-list-tabs ul li, div.dir-search { 
+	div#item-header ul li, div.item-list-tabs ul li, div.dir-search, #content.sidebar-left { 
 		float: none; 
 	} 
 	div.dir-search { 
 		margin-left: -15px; /* don't know why, but this is misaligned */ 
 	} 
 	/* center ALL THE THINGS */ 
-	#infinity-base .icext-feature a, div#item-header div#item-header-content, #item-buttons, .dir-form { 
+	#infinity-base .icext-feature a, div#item-header div#item-header-content, #item-buttons, .dir-form, .activity h3 { 
 		text-align: center; 
+	} 
+	.activity h3 { 
+		display: block; /* needed to get above centering to work */ 
 	} 
 	div.item-list-tabs ul { 
 		text-align: center; 
@@ -3899,7 +3906,7 @@ body {
 		display: none; /* hide the group admins for now */ 
 	} 
 	ul.item-list li .item { 
-		width: unset; 
+		width: initial; 
 	} 
 	div.item-list-tabs ul li { 
 		vertical-align: top; 
@@ -3971,7 +3978,7 @@ body {
 	} 
 	ul.activity-list { 
 		li .activity-content { 
-			display: unset; 
+			display: initial; 
 			.activity-header, .activity-inner, .comment-header, > p, .activity-meta { 
 				margin-left: 20% !important; 
 			} 

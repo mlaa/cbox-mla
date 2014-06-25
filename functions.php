@@ -132,3 +132,18 @@ function mla_remove_profile_group_tab($tabs, $groups) {
 	} 
 } 
 add_filter( 'xprofile_filter_profile_group_tabs', 'mla_remove_profile_group_tab' ); 
+
+//debugging
+if(!function_exists('_log')){
+	function _log( $message ) {
+		if( WP_DEBUG === true ){
+			if( is_array( $message ) || is_object( $message ) ){
+				error_log( print_r( $message, true ) );
+			} else {
+				error_log( $message );
+			}
+		}
+	}
+}
+_log("Bp_nav is: "); 
+_log($bp); 
