@@ -972,8 +972,7 @@ div#item-header {
   div#item-header div#item-meta {
     font-size: 85%;
     color: #777;
-    padding-bottom: 10px;
-    text-align: justify; }
+    padding-bottom: 10px; }
   div#item-header div#item-actions {
     float: right;
     width: 20%;
@@ -3025,8 +3024,10 @@ div.bbp-template-notice p {
 /* --- End Misc Bugfixes --- }}} */
 /* --- BP Group Documents ("Files") --- {{{ */
 #bp-group-documents #subnav {
-  padding: 10px;
-  margin: 15px 0; }
+  padding: 15px 10px 10px;
+  margin: 15px 0;
+  overflow: auto;
+  /* makes it so that it takes into account floating elements when calculating height */ }
 #bp-group-documents ul#bp-group-documents-list {
   margin-bottom: 0; }
 #bp-group-documents div#bp-group-documents-edit {
@@ -3649,39 +3650,47 @@ ul.contact {
     margin-top: 0 !important; }
 
   body {
-    margin-top: -28px; }
-
-  .row {
-    min-width: unset; }
+    margin-top: -28px;
+    min-width: unset;
+    overflow-x: hidden;
+    /* Temporary hack. kept getting like 2% extra space. Scrollbar issue? */ }
 
   #content {
-    padding: 0 30px; }
+    padding: 3%; }
 
   #sidebar {
-    display: none; }
+    display: none;
+    /* no sidebars because we're doing the horizontal #item-nav instead */ }
 
   .sidebar-left #item-nav {
     display: block;
-    /* bring it back */ }
+    /* bringing it back */
+    margin: 2%; }
+
+  /* stop floating things already */
+  div#item-header ul li, div.item-list-tabs ul li, div.dir-search {
+    float: none; }
+
+  div.dir-search {
+    margin-left: -15px;
+    /* don't know why, but this is misaligned */ }
+
+  /* center ALL THE THINGS */
+  #infinity-base .icext-feature a, div#item-header div#item-header-content, #item-buttons, .dir-form {
+    text-align: center; }
 
   div.item-list-tabs ul {
     text-align: center; }
     div.item-list-tabs ul li {
-      float: none;
       display: inline-block; }
       div.item-list-tabs ul li a {
-        text-align: center;
-        margin-left: 10%;
-        margin-right: 10%; }
+        text-align: center; }
 
   #content .widget .item-list li {
     clear: both; }
 
   #infinity-base .icext-feature {
     width: 100%; }
-
-  #infinity-base .icext-feature a, div#item-header div#item-header-content, #item-buttons {
-    text-align: center; }
 
   #item-header #item-actions {
     display: none;
@@ -3690,21 +3699,24 @@ ul.contact {
   ul.item-list li .item {
     width: unset; }
 
-  div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a, div.item-list-tabs ul li:hover a, div.item-list-tabs ul li:only-child a {
-    border: 1px solid #eee; }
+  div.item-list-tabs ul li {
+    vertical-align: top; }
+    div.item-list-tabs ul li a {
+      margin: 0; }
+    div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a, div.item-list-tabs ul li:hover a, div.item-list-tabs ul li:only-child a {
+      border: 1px solid #eee;
+      /* Border all the way around this time. Tabs are going to be more like buttons now. */
+      border-top-right-radius: 0;
+      border-top-left-radius: 0; }
+    div.item-list-tabs ul li .profile-subnav li.selected a, div.item-list-tabs ul li .profile-subnav li.current a, div.item-list-tabs ul li .profile-subnav:hover a {
+      background-color: #ebebeb; }
 
-  .bbp-header, .bbp-topic-reply-count {
-    display: none; }
-
-  .ac-reply-avatar {
+  /* hide some stuff */
+  .bbp-header, .bbp-topic-reply-count, .ac-reply-avatar {
     display: none; }
 
   .groups #content, .my-account #content {
-    padding: 15px; }
-  .groups #sidebar, .my-account #sidebar {
-    width: 25%;
-    padding: 5px;
-    font-size: 90%; }
+    padding: 4%; }
   .groups ul.activity-list li .activity-content, .my-account ul.activity-list li .activity-content {
     display: block;
     width: auto; }
@@ -3719,14 +3731,14 @@ ul.contact {
     margin-left: 0;
     width: 75%; }
 
-  ul.item-list .item-avatar {
+  ul.item-list li .item-avatar {
     width: 18%; }
-    ul.item-list .item-avatar img {
+    ul.item-list li .item-avatar img {
       width: 100% !important;
       height: 100% !important; }
   ul.item-list li .item {
     margin-left: 2%;
-    width: 75%; }
+    width: 66%; }
 
   .button {
     display: block; }
@@ -3753,9 +3765,7 @@ ul.contact {
     border-top: 2px solid #525151;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
     display: block;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -1px;
+    margin-top: -4px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
@@ -3848,16 +3858,6 @@ ul.contact {
   #header {
     margin-top: 25px;
     height: 100px; }
-
-  #powered-by {
-    margin-right: -10px;
-    margin-left: -10px; }
-
-  #sidebar .widget_bp_groups_widget h4 {
-    padding-bottom: 28px; }
-
-  #sidebar .widget_bp_groups_widget div.item-options {
-    medgarillasargin-top: -40px; }
 
   #footer .footer-widgets.row {
     padding: 0; }
