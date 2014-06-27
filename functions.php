@@ -32,7 +32,8 @@ if (file_exists(WP_LANG_DIR . '/buddypress-' . BPLANG . '.mo')) {
  */ 
 
 /* this is a jQuery hack to check the checkbox on 
- * Create a Group → 4. Forum → Group Forum → “Yes. I want this Group to have a forum” 
+ * Create a Group → 4. Forum → Group Forum → 
+ * “Yes. I want this Group to have a forum” 
  * by default. 
  */ 
 function mla_check_create_forum_for_new_group() {
@@ -138,18 +139,22 @@ function mla_remove_profile_group_tab($tabs, $groups) {
 add_filter('xprofile_filter_profile_group_tabs', 'mla_remove_profile_group_tab'); 
 
 /** 
- * Remove "announcements" tab. 
+ * Remove "What's new in ___, Jonathan?" 
+ * Taken from BP-Group-Announcements. 
  */ 
-function mla_remove_announcements_tab() {
-	bp_core_remove_subnav_item(bp_get_current_group_slug(), 'send-invites');
-} 
-add_action('wp_footer', 'mla_remove_announcements_tab'); 
+// Disable the activity update form on the group home page. Props r-a-y
+ add_action( 'bp_before_group_activity_post_form', create_function( '', 'ob_start();' ), 9999 );
+ add_action( 'bp_after_group_activity_post_form', create_function( '', 'ob_end_clean();' ), 0 );
 
 //debugging
 if (!function_exists('_log')) {
+	/**
+	 * Just writes objects, arrays, and other useful things
+	 * to the debug.log. 
+	 */ 
 	function _log($message) {
 		if (WP_DEBUG === true) {
-			if(is_array($message) || is_object($message)){
+			if (is_array($message) || is_object($message)) {
 				error_log(print_r($message, true));
 			} else {
 				error_log($message);
@@ -157,5 +162,3 @@ if (!function_exists('_log')) {
 		}
 	}
 }
-//_log("Helloooo!"); 
-//_log($bp->bp_nav); 
