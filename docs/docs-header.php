@@ -2,14 +2,15 @@
 
 <?php /* Subnavigation on user pages is handled by BP's core functions */ ?>
 <?php if ( !bp_is_user() ) : ?>
-	<div class="item-list-tabs no-ajax docs-tabs" id="subnav" role="navigation">
 		<?php if ( 'minimal' == bp_docs_get_theme() ){ 
 			bp_docs_create_button();  // no tabs in the minimal theme 
 		} else { 
-			bp_docs_tabs( bp_docs_current_user_can_create_in_context() ); 
+			?><div class="item-list-tabs no-ajax docs-tabs" id="subnav" role="navigation">
+				<?php bp_docs_tabs( bp_docs_current_user_can_create_in_context() );?> 
+			</div><!-- .item-list-tabs -->
+			<?php 
 		} 
 		?>
-	</div><!-- .item-list-tabs -->
 <?php endif ?>
 
 <?php do_action( 'bp_docs_before_doc_header_content' ) ?>
