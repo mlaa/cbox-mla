@@ -3022,6 +3022,9 @@ div.bbp-template-notice p {
   display: none;
   /* this subnav is empty at the moment. Temporary hack. */ }
 
+h3:empty {
+  display: none; }
+
 /* --- End Misc Bugfixes --- }}} */
 /* --- BP Group Documents ("Files") --- {{{ */
 #bp-group-documents #subnav {
