@@ -3321,7 +3321,7 @@ li#invite-groups-li a:before {
 
 li#home-groups-li a:before,
 li#link-home-personal-li a:before {
-  content: "0"; }
+  content: "S"; }
 
 li#nav-docs-groups-li a:before,
 #user-docs:before {
