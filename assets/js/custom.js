@@ -30,3 +30,13 @@ jQuery(document).ready(function() {
 		jQuery(".main-wrap").css({ 'padding-bottom' : vwptDelta });
 	}
 });
+
+// a dirty hack to remove bbpress titles that don't actually contain anything
+// (because I removed the redundant titles in functions.php)
+jQuery(document).ready(function($) { 
+	if ( "" == $('#bbpress-forums > h3').val() ) { 
+		$('h3').height('0px').css('margin',0); 
+	} 
+});  
+
+
