@@ -1231,12 +1231,15 @@ div.dir-search {
 #group-settings-form #admins-list li, #group-settings-form #members-list li {
   display: table-row; }
 #group-settings-form #admins-list .avatar, #group-settings-form #admins-list h5, #group-settings-form #members-list .avatar, #group-settings-form #members-list h5 {
-  display: table-cell; }
+  display: table-cell;
+  margin: 10% 0; }
   #group-settings-form #admins-list .avatar .button, #group-settings-form #admins-list h5 .button, #group-settings-form #members-list .avatar .button, #group-settings-form #members-list h5 .button {
-    padding: 5px; }
+    padding: 5px;
+    margin-top: 1%; }
 #group-settings-form #admins-list h5, #group-settings-form #members-list h5 {
-  padding: 8px 11px;
-  padding-bottom: 20px; }
+  vertical-align: top;
+  padding: 0 3%;
+  width: 100%; }
 
 /* --- End Group Admin --- }}} */
 /* --- Pagination --- {{{ */

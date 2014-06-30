@@ -113,7 +113,7 @@
 			<input type="radio" name="group-invite-status" value="admins"<?php bp_group_show_invite_status_setting( 'admins' ); ?> /> 
 			<strong><?php _e( 'Group admins only', 'buddypress' ); ?></strong> 
 		</label> 
- 	</div> 
+	</div> 
 
 	<hr /> 
 	<?php endif; ?>
@@ -191,14 +191,14 @@
 			
 			<?php while ( bp_members() ) : bp_the_member(); ?>
 			<li>
-				<?php echo bp_core_fetch_avatar( array( 'item_id' => bp_get_member_user_id(), 'type' => 'thumb', 'width' => 30, 'height' => 30, 'alt' => __( 'Profile picture of %s', 'buddypress' ) ) ); ?>
+				<?php echo bp_core_fetch_avatar( array( 'item_id' => bp_get_member_user_id(), 'type' => 'thumb', 'alt' => __( 'Profile picture of %s', 'buddypress' ) ) ); ?>
 				<h5>
 					<a href="<?php bp_member_permalink(); ?>"> <?php bp_member_name(); ?></a>
 					<span class="small">
 						<a class="button confirm admin-demote-to-member" href="<?php bp_group_member_demote_link( bp_get_member_user_id() ); ?>"><?php _e( 'Demote to Member', 'buddypress' ); ?></a>
 					</span>			
 				</h5>		
-			</li>
+		</li>
 			<?php endwhile; ?>
 		
 		</ul>
@@ -216,7 +216,7 @@
 				
 					<?php while ( bp_members() ) : bp_the_member(); ?>					
 					<li>
-						<?php echo bp_core_fetch_avatar( array( 'item_id' => bp_get_member_user_id(), 'type' => 'thumb', 'width' => 30, 'height' => 30, 'alt' => __( 'Profile picture of %s', 'buddypress' ) ) ); ?>
+						<?php echo bp_core_fetch_avatar( array( 'item_id' => bp_get_member_user_id(), 'type' => 'thumb', 'alt' => __( 'Profile picture of %s', 'buddypress' ) ) ); ?>
 						<h5>
 							<a href="<?php bp_member_permalink(); ?>"> <?php bp_member_name(); ?></a>
 							<span class="small">
@@ -244,7 +244,7 @@
 				<?php while ( bp_group_members() ) : bp_group_the_member(); ?>
 
 					<li class="<?php bp_group_member_css_class(); ?>">
-						<?php bp_group_member_avatar_mini(); ?>
+						<?php bp_group_member_avatar_thumb(); ?>
 
 						<h5>
 							<?php bp_group_member_link(); ?>

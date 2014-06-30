@@ -1196,13 +1196,16 @@ div.dir-search {
 		} 
 		.avatar, h5 { 
 			display: table-cell; 
+			margin: 10% 0; 
 			.button { 
 				padding: 5px; 
+				margin-top: 1%; 
 			} 
 		} 
 		h5 { 
-			padding: 8px 11px;
-			padding-bottom: 20px;
+			vertical-align: top; 
+			padding: 0 3%;
+			width: 100%; 
 		} 
 	} 
 } 
