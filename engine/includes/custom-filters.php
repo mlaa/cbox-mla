@@ -27,6 +27,7 @@ function mla_group_directory_type_filter() {
 	$str .= '<option value="committees">Committees</option>';
 	$str .= '<option value="divisions">Divisions</option>';
 	$str .= '<option value="discussion_groups">Discussion Groups</option>';
+	$str .= '<option value="prospective_forums">Prospective Forums</option>';
 	$str .= '<option value="other">Other</option>';
 	$str .= '</select></li>';
 	echo $str;
@@ -99,6 +100,9 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 				break; 
 			case "discussion_groups": 
 				$sql = $wpdb->prepare($sql_stub, 'G');
+				break; 
+			case "prospective_forums": 
+				$sql = $wpdb->prepare($sql_stub, 'F');
 				break; 
 			case "other": 
 				$sql = "SELECT DISTINCT group_id from  {$bp->groups->table_name}_groupmeta WHERE group_id NOT IN (SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid')";
