@@ -1663,10 +1663,19 @@ body.activity-permalink .activity-content {
 			  text-decoration: none; 
 			  background-color: $gray; 
 		  } 
-		  &.loading { 
-			  color: $gray; 
-		  } 
 	  }
+	  &.loading { 
+		  a { 
+			  background-image: none !important;  
+			  &:before { 
+				  display: inline !important; 
+				  content: url('assets/images/buddypress/ajax-loader.gif'); 
+				  padding-right: 8px; 
+				  position: relative;
+				  top: 0px; 
+			  } 
+		  } 
+	  } 
   }
 }
 
@@ -3393,7 +3402,7 @@ div#object-nav ul li a {
 }
 
 .loading a:before {
-    display: none !important
+    display: none; 
 }
 
 /* Stream Icons. no shorthand CSS to maintain hover effects */

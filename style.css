@@ -1616,8 +1616,14 @@ body.activity-permalink .activity-content .activity-inner, body.activity-permali
     .activity-list li.load-more a:hover {
       text-decoration: none;
       background-color: #ebebeb; }
-    .activity-list li.load-more a.loading {
-      color: #ebebeb; }
+  .activity-list li.load-more.loading a {
+    background-image: none !important; }
+    .activity-list li.load-more.loading a:before {
+      display: inline !important;
+      content: url("assets/images/buddypress/ajax-loader.gif");
+      padding-right: 8px;
+      position: relative;
+      top: 0px; }
 
 /* --- End Activity Stream Listing --- }}} */
 /* --- Activity Stream Comments --- {{{ */
@@ -3261,7 +3267,7 @@ div#object-nav ul li a {
   text-decoration: none; }
 
 .loading a:before {
-  display: none !important; }
+  display: none; }
 
 /* Stream Icons. no shorthand CSS to maintain hover effects */
 li#activity-all a:before,
