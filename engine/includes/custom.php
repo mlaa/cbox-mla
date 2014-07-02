@@ -49,6 +49,12 @@ function modify_some_widgets(){
       'after_title' => '</h4>'
    ));
 
+   register_sidebar( array(
+      'id' => 'help-dropdown',
+      'name' => 'Help Dropdown',
+      'description' => 'The dropdown menu displayed when the help menu item is clicked.',
+   ));
+
 }
 add_action( 'widgets_init', 'modify_some_widgets', 9 );
 

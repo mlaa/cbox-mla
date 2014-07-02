@@ -562,8 +562,6 @@ ul.page-numbers li { display: inline }
 .comment-meta,
 .comment-options,
 p#breadcrumbs {
-    border-bottom: 1px solid #EFEFEF;
-    border-top: 1px solid #EFEFEF;
     color: #AAAAAA;
     font-size: 11.5px;
     margin-top: 10px;
@@ -1236,6 +1234,20 @@ div.pagination {
 		}
 	}
 }
+ul.page-numbers { 
+	float: right; 
+	padding: 6px; 
+	li {  
+		span, a { 
+			padding: 6px; 
+			@include minimalButton; 
+			&.current { 
+				background-color: $gray; 
+			} 
+		} 
+	} 
+} 
+
 div.item-options {
 	color: #73C1E6;
 	font-size: 80%;
@@ -3026,6 +3038,38 @@ select {
 .base-menu ul li.current-cat a, .base-menu ul li.current_page_item a, .base-menu ul li.current-menu-item a, .base-menu ul a, div.item-list-tabs ul li a, div.item-list-tabs ul li span, #footer-menu ul li a {text-shadow:none;}
 .top-wrap .sub-menu { background:transparent none;}
 #infinity-base .icext-feature {float: left; width: 281px; position:inherit;}
+
+#helpdropdown { 
+	display: none; 
+	width: 272px; 
+	background-color: $lightgray; 
+	border: 1px solid $gray; 
+	padding: 20px;
+	z-index: 2;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+	&:before { 
+		content: "";
+		position: absolute;
+		top: -15px;
+		right: 115px;
+		width: 0;
+		border-width: 0 15px 15px;
+		border-style: solid;
+		border-color: $gray transparent;
+		z-index: 5; 
+	} 
+	&.right:before { 
+		right: 0;
+	} 
+	h5 { 
+		margin: 1% 0;
+	} 
+	ul { 
+		margin: 3%;
+		margin-left: 10%; 
+	} 
+} 
+
 
 /* --- End Top Menu --- }}} */ 
 

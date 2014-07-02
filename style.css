@@ -570,8 +570,6 @@ ul.page-numbers li {
 .comment-meta,
 .comment-options,
 p#breadcrumbs {
-  border-bottom: 1px solid #EFEFEF;
-  border-top: 1px solid #EFEFEF;
   color: #AAAAAA;
   font-size: 11.5px;
   margin-top: 10px;
@@ -1278,6 +1276,35 @@ div.pagination {
         text-shadow: none; }
       div.pagination .pagination-links span.current, div.pagination .pagination-links span.dots, div.pagination .pagination-links a.current, div.pagination .pagination-links a.dots {
         background-color: #ebebeb; }
+
+ul.page-numbers {
+  float: right;
+  padding: 6px; }
+  ul.page-numbers li span, ul.page-numbers li a {
+    padding: 6px;
+    display: inline-block;
+    background-color: #fafafa;
+    border: 1px solid #ebebeb;
+    border-bottom: 2px solid #ddd;
+    color: #2e2e2e;
+    font-size: 11px;
+    font-family: proxima-nova, Helvetica, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px; }
+    ul.page-numbers li span a, ul.page-numbers li span a:hover, ul.page-numbers li span:hover, ul.page-numbers li span:active, ul.page-numbers li a a, ul.page-numbers li a a:hover, ul.page-numbers li a:hover, ul.page-numbers li a:active {
+      color: #2e2e2e;
+      text-decoration: none; }
+    ul.page-numbers li span:hover, ul.page-numbers li a:hover {
+      background-color: #ebebeb; }
+    ul.page-numbers li span:active, ul.page-numbers li a:active {
+      background-color: #e1e1e1;
+      text-shadow: none; }
+    ul.page-numbers li span.current, ul.page-numbers li a.current {
+      background-color: #ebebeb; }
 
 div.item-options {
   color: #73C1E6;
@@ -2930,6 +2957,32 @@ select {
   float: left;
   width: 281px;
   position: inherit; }
+
+#helpdropdown {
+  display: none;
+  width: 272px;
+  background-color: #fafafa;
+  border: 1px solid #ebebeb;
+  padding: 20px;
+  z-index: 2;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
+  #helpdropdown:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 115px;
+    width: 0;
+    border-width: 0 15px 15px;
+    border-style: solid;
+    border-color: #ebebeb transparent;
+    z-index: 5; }
+  #helpdropdown.right:before {
+    right: 0; }
+  #helpdropdown h5 {
+    margin: 1% 0; }
+  #helpdropdown ul {
+    margin: 3%;
+    margin-left: 10%; }
 
 /* --- End Top Menu --- }}} */
 /* --- Advanced Search Form --- {{{1 */
