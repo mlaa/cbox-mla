@@ -22,8 +22,10 @@
 					<li id="<?php bp_group_invite_item_id(); ?>">
 						<?php bp_group_invite_user_avatar(); ?>
 
-						<h4><?php bp_group_invite_user_link(); ?></h4>
-						<span class="activity"><?php bp_group_invite_user_last_active(); ?></span>
+						<div class="item"> 
+							<h4><?php bp_group_invite_user_link(); ?></h4>
+							<span class="activity"><?php bp_group_invite_user_last_active(); ?></span>
+						</div><!-- .item --> 
 
 						<?php do_action( 'bp_group_send_invites_item' ); ?>
 
