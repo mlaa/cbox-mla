@@ -59,7 +59,7 @@ jQuery(document).ready(function($) {
 		$('#helpdropdown').toggleClass('right', isSmallWindow);
 		$('#helpdropdown').css({
 			position: 'absolute',
-			top: '88px',
+			top: '86px',
 			right: rightoffset + 'px',
 		});
 		if (helpMenuIsVisible) { 

@@ -6,15 +6,11 @@
 $headingfont: proxima-nova, Verdana, sans-serif; 
 $bodyfont: proxima-nova, Helvetica, sans-serif; 
 
-/*
- * Colors
- */ 
 $lightgray: #fafafa; 
 $gray: darken($lightgray, 6%);   
 $darkergray: darken($lightgray, 10%); 
 $darkgray: darken($lightgray, 50%); 
 $verydarkgray: darken($lightgray, 80%); 
-$mlablue: #07d; 
 
 @mixin minimalButton { 
 	display: inline-block; 
@@ -2715,7 +2711,7 @@ h2.page-title,h2.post-title,h1.page-title,h1.post-title {
 	margin-top: 0;
 }
 a {
-	color: $mlablue;
+	color: #07d;
 	text-decoration: none;
 	-webkit-transition: color 0.1s linear;
 	-moz-transition: color 0.1s linear;
@@ -3014,29 +3010,32 @@ select {
 
 /* --- Top Menu --- {{{1 */
 .main-menu {
-	padding-top: 17px;
+	padding-top: 14px;
 	float: right; 
 	text-transform: uppercase;
 	font-size: 90%; 
-	$menuspacing: 13px;  
 	ul {
-		margin-right: -$menuspacing; /* aligns the menu items flush right without altering the spacing */ 
 		li {
 			display: inline-block; 
-			&.current_page_item a, &.current-menu-item a, &.selected a, a:hover {
+			&.current_page_item a, &.current-menu-item a, &.selected a {
 				color: #000;
 			}
-			a {
-				padding: 8px $menuspacing;
-			}
+		}
+		&:last-child a {
+			padding-right: 0; 
+			margin-right: 0px;
 		}
 	}
-	#menu-item-2166 a { /* the help menu */ 
-		border: 2px solid #f2f8fd;  
-		@include borderRadius(8px); 
-	} 
+	a {
+		padding: 9px 0 0 20px;
+	}
 }
 
+#main-menu-wrap li {
+  &#menu-item-151 a:hover, &:last-child a:hover {
+    border-right: 0px none;
+  }
+}
 .base-menu ul li.current-cat a, .base-menu ul li.current_page_item a, .base-menu ul li.current-menu-item a, .base-menu ul a, div.item-list-tabs ul li a, div.item-list-tabs ul li span, #footer-menu ul li a {text-shadow:none;}
 .top-wrap .sub-menu { background:transparent none;}
 #infinity-base .icext-feature {float: left; width: 281px; position:inherit;}
