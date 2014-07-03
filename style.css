@@ -1171,7 +1171,7 @@ div#subnav.item-list-tabs {
     border: none;
     font-size: 90%;
     margin: 0;
-    padding: 4px 7px; }
+    padding: 4px 12px; }
   div#subnav.item-list-tabs ul li.current a {
     background: transparent;
     color: #2e2e2e;
