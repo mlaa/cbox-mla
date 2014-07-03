@@ -3,6 +3,9 @@
 /* 
  * Fonts
  */
+/*
+ * Colors
+ */
 /* --- End Mixins --- }}} */
 /* --- Reset and Global --- {{{1 */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
@@ -2647,7 +2650,7 @@ h2.page-title, h2.post-title, h1.page-title, h1.post-title {
   margin-top: 0; }
 
 a {
-  color: #07d;
+  color: #0077dd;
   text-decoration: none;
   -webkit-transition: color 0.1s linear;
   -moz-transition: color 0.1s linear;
@@ -2931,22 +2934,25 @@ select {
 /* --- End Homepage --- }}} */
 /* --- Top Menu --- {{{1 */
 .main-menu {
-  padding-top: 14px;
+  padding-top: 17px;
   float: right;
   text-transform: uppercase;
   font-size: 90%; }
-  .main-menu ul li {
-    display: inline-block; }
-    .main-menu ul li.current_page_item a, .main-menu ul li.current-menu-item a, .main-menu ul li.selected a {
-      color: #000; }
-  .main-menu ul:last-child a {
-    padding-right: 0;
-    margin-right: 0px; }
-  .main-menu a {
-    padding: 9px 0 0 20px; }
-
-#main-menu-wrap li#menu-item-151 a:hover, #main-menu-wrap li:last-child a:hover {
-  border-right: 0px none; }
+  .main-menu ul {
+    margin-right: -13px;
+    /* aligns the menu items flush right without altering the spacing */ }
+    .main-menu ul li {
+      display: inline-block; }
+      .main-menu ul li.current_page_item a, .main-menu ul li.current-menu-item a, .main-menu ul li.selected a, .main-menu ul li a:hover {
+        color: #000; }
+      .main-menu ul li a {
+        padding: 8px 13px; }
+  .main-menu #menu-item-2166 a {
+    /* the help menu */
+    border: 2px solid #f2f8fd;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px; }
 
 .base-menu ul li.current-cat a, .base-menu ul li.current_page_item a, .base-menu ul li.current-menu-item a, .base-menu ul a, div.item-list-tabs ul li a, div.item-list-tabs ul li span, #footer-menu ul li a {
   text-shadow: none; }
