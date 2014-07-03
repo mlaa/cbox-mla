@@ -2052,7 +2052,8 @@ h1#site-title, div#site-title {
 /* --- End Menus --- }}} */
 /* --- Widgets --- {{{ */
 .widget {
-  margin: 0 0 20px; }
+  margin: 0 0 20px;
+  list-style-type: none; }
   .widget h4 {
     padding-top: 10px; }
 
