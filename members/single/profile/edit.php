@@ -1,11 +1,14 @@
 <?php do_action( 'bp_before_profile_edit_content' );
 
 if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) ) :
+	$profile_group_count = bp_profile_groups(); 
 	while ( bp_profile_groups() ) : bp_the_profile_group(); ?>
 
 <form action="<?php bp_the_profile_group_edit_form_action(); ?>" method="post" id="profile-edit-form" class="standard-form <?php bp_the_profile_group_slug(); ?>">
 
 	<?php do_action( 'bp_before_profile_field_content' ); ?>
+
+	<?php if( $profile_group_count > 1): ?> 
 
 		<h4><?php printf( __( "Editing '%s' Profile Group", "buddypress" ), bp_get_the_profile_group_name() ); ?></h4>
 
@@ -16,6 +19,8 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 
 			</ul>
 		<?php endif; ?> 
+
+	<?php endif; ?> 
 
 		<div class="clear"></div>
 
