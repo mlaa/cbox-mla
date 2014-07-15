@@ -15,6 +15,7 @@
     - disable and remove “Sitewide Wiki” plugin
     - Dashboard → Appearance → Menus: remove “wiki” from “CBOX submenu” and “Inside Header Navigation” 
  * deactivate and remove BP-Group-Announcements plugin
+ * remove UserVoice plugin
  * get [forked version of BP-Docs](https://github.com/mlaa/buddypress-docs) and switch it to minimal theme
  * “Homepage Left” widget: use “(BuddyPress) MLA Groups” widget 
     - uncheck “link widget title”

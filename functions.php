@@ -20,6 +20,7 @@ define('INFINITY_DEV_MODE', true);
 
 /* MLA edits to BP literals */
 define('BP_FRIENDS_SLUG', 'contacts');
+define('BP_BLOGS_SLUG', 'sites');
 
 // Change "en_US" to your locale
 define('BPLANG', 'en_US');
