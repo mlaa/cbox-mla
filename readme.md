@@ -8,6 +8,26 @@
  * Group announcements have been removed. Group administrators who wish to make announcements may do so by making forum posts.  
  * The "Docs" plugin has been redesigned in a new, minimal style that transforms formerly tabular data into easier-to-read prose.  
 
+# Content Changes for Minimal Theme Rollout
+
+ * edit HTML on “Publications” page, remove `<b>` tags and `<strong>` tags. This makes font weights more consistent. 
+ * remove wiki 
+    - disable and remove “Sitewide Wiki” plugin
+    - Dashboard → Appearance → Menus: remove “wiki” from “CBOX submenu” and “Inside Header Navigation” 
+ * deactivate and remove BP-Group-Announcements plugin
+ * get forked version of BP-Docs and switch it to minimal theme
+    - https://github.com/mlaa/buddypress-docs
+ * “Homepage Left” widget: use “(BuddyPress) MLA Groups” widget 
+    - uncheck “link widget title”
+    - max groups: 8
+ * “Homepage Center” widget: use “(BuddyPress) Recently Active Members” widget
+    - max members: 40
+ * “Homepage Right” widget: use “Recent Networkwide Blog Posts” 
+    - uncheck “link widget title”
+    - max posts to show: 3
+ * “Groups Sidebar,” “Member Sidebar,” “Activity Sidebar,” “Sitewide Sidebar” widgets: use blank “Text” widget
+ * “Help Dropdown” widget: use Katina’s HTML text
+
 # Commons-in-a-Box MLA Child Theme
 
 This theme was developed for [_MLA Commons_][1]. It functions as a child 
