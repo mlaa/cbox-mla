@@ -3867,30 +3867,6 @@ ul.contact {
 }
 /* --- End Footer --- }}} */
 
-/* --- Browser-Specific --- {{{1 */ 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-	body, #sidebar .bbp-forum-title, #sidebar .bbp-topic-title {
-		font-weight:400;
-	}
-	div#item-nav,
-	div#item-body div#subnav.item-list-tabs ul li,
-	div.item-list-tabs ul li,
-	ul.button-nav li,
-	ul.item-list li div.item-title,
-	div#sidebar div#sidebar-me ul#quicklinks li a,
-	div#message-thread strong {
-		font-weight:500;
-	}
-	.bp-widget h4, .widget h4 {
-		font-weight:700 !important;
-		border-bottom: none; 
-	}
-	.sf-menu {
-		font-weight:600;
-	}
-}
-/* --- End Browser-Specific --- }}} */ 
-
 /* --- Mobile and Responsive Design --- {{{1 */ 
 
 body { 
