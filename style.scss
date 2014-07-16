@@ -3174,6 +3174,13 @@ h3:empty {
 	display: none;
 } 
 
+/* Don't display "MLA Commons" under "My Sites."
+ * It doesn't do any harm, it's just redundant.
+ */ 
+#wp-admin-bar-blog-1 { 
+	display: none; 
+} 
+
 /* --- End Misc Bugfixes --- }}} */ 
 
 
