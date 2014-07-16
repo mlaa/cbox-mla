@@ -2054,8 +2054,6 @@ h1#site-title, div#site-title {
 .widget {
   margin: 0 0 20px;
   list-style-type: none; }
-  .widget h4 {
-    padding-top: 10px; }
 
 #vertical-activity-tabs h4 {
   padding-top: 10px; }
@@ -2912,10 +2910,6 @@ select {
   padding-bottom: 10px;
   padding-top: 10px; }
 
-#homepage-sidebar div:first-child > h4 {
-  padding-top: 5px;
-  margin-top: 0px; }
-
 .cfcw-content {
   padding: 0 15px; }
 
@@ -3147,13 +3141,14 @@ div#object-nav.item-list-tabs li {
   margin: -30px -30px 10px;
   padding-top: 35px; }
   #top-homepage #homepage-sidebar-right {
-    padding: 0 30px; }
+    padding: 5px 15px; }
     #top-homepage #homepage-sidebar-right h4, #top-homepage #homepage-sidebar-right h3 {
       font-size: 1.8em;
       margin: 0;
       font-weight: 400; }
     #top-homepage #homepage-sidebar-right ul {
-      padding: 0 10px; }
+      margin: 5px;
+      margin-left: 30px; }
 
 #sidebar .widget_bp_groups_widget h4 {
   padding-bottom: 28px; }
@@ -3535,6 +3530,9 @@ div#message p:before {
 
 #bp-adminbar-account-menu a:before {
   content: "a"; }
+
+.login h1 a {
+  background-image: none; }
 
 .login-form-link a:before {
   content: "y"; }

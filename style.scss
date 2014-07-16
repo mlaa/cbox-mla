@@ -2097,9 +2097,6 @@ h1#site-title,div#site-title {
 .widget {
   margin: 0 0 20px;
   list-style-type: none; 
-  h4 {
-    padding-top: 10px;
-  }
 }
 #vertical-activity-tabs h4 {
   padding-top: 10px;
@@ -2999,7 +2996,6 @@ select {
 
 #vertical-activity-tabs h4 {border-bottom:0px;}
 #homepage-sidebar .widget_cac_featured_content_widget h3 {  border-bottom:1px solid #EDEDED; padding-bottom:10px; padding-top:10px; }
-#homepage-sidebar div:first-child > h4 { padding-top:5px; margin-top:0px; }
 
 .cfcw-content { padding:0 15px;}
 .cfcw-content .cfcw-title {margin-bottom:0px;}
@@ -3254,14 +3250,15 @@ div#object-nav.item-list-tabs li {
 	margin: -30px -30px 10px; 
 	padding-top: 35px;
 	#homepage-sidebar-right { 
-		padding: 0 30px; 
+		padding: 5px 15px; 
 		h4, h3 { 
 			font-size:1.8em; 
 			margin: 0; 
 			font-weight: 400; 
 		}
 		ul { 
-			padding: 0 10px; 
+			margin: 5px; 
+			margin-left: 30px; 
 		} 
 	}
 }
@@ -3704,6 +3701,10 @@ div#message p:before {
     content: "a"
 }
 
+.login h1 a { 
+	background-image: none; 
+
+} 
 .login-form-link a:before {
     content: "y"
 }
