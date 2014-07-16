@@ -18,7 +18,7 @@ infinity_get_header();
 
 			<div id="search-bar" role="search">
 
-			<h1><?php echo __( 'Advanced Search', 'buddypress' ); ?></h1>  
+			<h1><?php echo __( 'Search', 'buddypress' ); ?></h1>  
 				<form action="<?php echo bp_search_form_action(); ?>" method="post" id="advanced-search-form"> 
 					<input type="text" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" placeholder="Search for:" />
 
