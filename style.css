@@ -1442,6 +1442,7 @@ form#send-invite-form {
   margin-right: 20px; }
 #send-invite-form #friend-list li .activity {
   margin-left: 10px;
+  margin-bottom: 5px;
   vertical-align: middle; }
 #send-invite-form #friend-list li .action {
   margin-top: 10px; }
