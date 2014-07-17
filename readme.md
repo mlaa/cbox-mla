@@ -29,6 +29,10 @@
     - max posts to show: 3
  * “Groups Sidebar,” “Member Sidebar,” “Activity Sidebar,” “Sitewide Sidebar” widgets: use blank “Text” widget
  * “Help Dropdown” widget: use Katina’s HTML text
+ * install Typekit
+    - install Typekit plugin network-wide
+    - enter embed code in Dashboard -> Settings -> Typekit: http://commons.mla.org/wp-admin/options-general.php?page=typekit-admin.php
+    - do the same for subdomains news.commons, faq.commons
 
 # Commons-in-a-Box MLA Child Theme
 
