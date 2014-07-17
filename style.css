@@ -1436,6 +1436,16 @@ form#send-invite-form {
     #invite-list ul li {
       list-style: none; }
 
+#send-invite-form #friend-list li .avatar, #send-invite-form #friend-list li h4 {
+  display: inline-block; }
+#send-invite-form #friend-list li .avatar {
+  margin-right: 20px; }
+#send-invite-form #friend-list li .activity {
+  margin-left: 10px;
+  vertical-align: middle; }
+#send-invite-form #friend-list li .action {
+  margin-top: 10px; }
+
 .action .button {
   padding: 3px 8px;
   font-size: 75%; }

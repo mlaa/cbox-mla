@@ -1418,6 +1418,22 @@ form {
   }
 }
 
+#send-invite-form #friend-list li { 
+	.avatar, h4 { 
+		display: inline-block; 
+	} 
+	.avatar { 
+		margin-right: 20px; 
+	} 
+	.activity { 
+		margin-left: 10px;
+		vertical-align: middle; 
+	} 
+	.action { 
+		margin-top: 10px; 
+	} 
+} 
+
 .action .button {
 	padding: 3px 8px;
 	font-size: 75%;
