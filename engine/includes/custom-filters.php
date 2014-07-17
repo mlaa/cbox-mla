@@ -231,6 +231,9 @@ function mla_group_type_filter($type, $group="") {
 			case "G": 
 				$mla_type = "Discussion Group"; 	
 				break; 
+			case "F": 
+				$mla_type = "Prospective Forum";
+				break;
 		} 
 		$type = $mla_type; 
 		$type .= $visibility; 
