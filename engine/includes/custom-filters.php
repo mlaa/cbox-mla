@@ -6,18 +6,6 @@
  * (committees, discussion groups, etc) and by visibility
  * (private, public, hidden, etc). 
  */
-
-/* MLA edits to BP literals */
-
-define ( 'BP_FRIENDS_SLUG', 'contacts' );
-
-// Change "en_US" to your locale
-define( 'BPLANG', 'en_US' );
-if ( file_exists( WP_LANG_DIR . '/buddypress-' . BPLANG . '.mo' ) ) {
-	load_textdomain( 'buddypress', WP_LANG_DIR . '/buddypress-' . BPLANG . '.mo' );
-}
-
-
 // [COMMUNITY STRUCTURE] Add private/public filter to group lists
 
 function mla_group_directory_status_filter() {
@@ -117,7 +105,7 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 				$sql = $wpdb->prepare($sql_stub, 'F');
 				break; 
 			case "other": 
-				$sql = "SELECT DISTINCT group_id from  {$bp->groups->table_name}_groupmeta WHERE group_id NOT IN (SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid')"; 
+				$sql = "SELECT DISTINCT group_id from  {$bp->groups->table_name}_groupmeta WHERE group_id NOT IN (SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid')";
 				break; 
 		} 
 		$this->group_ids = wp_parse_id_list( $wpdb->get_col( $sql ) );
@@ -243,6 +231,9 @@ function mla_group_type_filter($type, $group="") {
 			case "G": 
 				$mla_type = "Discussion Group"; 	
 				break; 
+			case "F": 
+				$mla_type = "Prospective Forum";
+				break;
 		} 
 		$type = $mla_type; 
 		$type .= $visibility; 
@@ -251,121 +242,3 @@ function mla_group_type_filter($type, $group="") {
 } 
 add_filter('bp_get_group_type', 'mla_group_type_filter'); 
 
-/* This function filters out membership activities from the group activity stream, 
- * so that "so-and-so joined the group X" doesn't clutter the activity stream. 
- */ 
-
-/* This rewrites the create_screen function so the 
- * option to enable forums is automatically checked 
- * when creating a new group. 
- */ 
-
-/* Disabling, since I can't get this to work. 
-class MLA_BBP_Forums_Group_Extension extends BBP_Forums_Group_Extension { 
- 	function create_screen() {
-
-		// bail if not looking at this screen
-		if ( !bp_is_group_creation_step( $this->slug ) )
-			return false;
-
-		$checked = TRUE; 
-//		$checked = bp_get_new_group_enable_forum() || groups_get_groupmeta( bp_get_new_group_id(), 'forum_id' ); ?>
-
-		<h4><?php _e( 'Group Forum', 'bbpress' ); ?></h4>
-
-		<p><?php _e( 'Create a FIXME FIXME to allow members of this group to communicate in a structured, bulletin-board style fashion.', 'bbpress' ); ?></p>
-
-		<div class="checkbox">
-			<label><input type="checkbox" name="bbp-create-group-forum" id="bbp-create-group-forum" value="1"<?php checked( $checked ); ?> /> <?php _e( 'Yes. I want this group to have a forum.', 'bbpress' ); ?></label>
-		</div>
-
-		<?php
-
-		// Verify intent
-		wp_nonce_field( 'groups_create_save_' . $this->slug );
-	}
-} 
-
- */ 
-
-/* this is a jQuery hack to check the checkbox on 
- * Create a Group → 4. Forum → Group Forum → “Yes. I want this Group to have a forum” 
- * by default. 
- */ 
-
-function mla_check_create_forum_for_new_group() {
-	if( wp_script_is( 'jquery', 'done' ) ) { ?>
-		<script type="text/javascript">
-		jq('#bbp-create-group-forum').prop('checked', true);
-		</script>
-<?php }
-}
-add_action('wp_footer', 'mla_check_create_forum_for_new_group');
-
-/* disable visual editor entirely, for everyone */ 
-/* add_filter( 'user_can_richedit' , '__return_false', 50 ); */ 
-
-/* allow a few more tags in posts so that users can paste from Microsoft Word and not see any cruft */ 
-function mla_allowed_tags() {
-        return array(
-
-                // Links
-                'a' => array(
-                        'href'     => array(),
-                        'title'    => array(),
-                        'rel'      => array(),
-                        'target'   => array()
-                ),
-
-                // Quotes
-                'blockquote'   => array(
-                        'cite'     => array()
-                ),
-
-                // Code
-                'code'         => array(),
-                'pre'          => array(),
-
-                // Formatting
-                'em'           => array(),
-                'strong'       => array(),
-                'del'          => array(
-                        'datetime' => true,
-                ),
-		// Tags used by Word, begrudgingly included so that users can paste from Word
-		'b'            => array(), 	
-		'i'            => array(),
-		'h1'           => array(),
-		'h2'           => array(),
-		'h3'           => array(),
-		'h4'           => array(),
-		'h5'           => array(),
-		'h6'           => array(),
-		'sub'          => array(),
-		'sup'        => array(),
-		'p'            => array(
-			'align'    => true, 
-		),
-		'span'         => array(
-	 		'style'    => true,	
-		), 
-
-                // Lists
-                'ul'           => array(),
-                'ol'           => array(
-                        'start'    => true,
-                ),
-                'li'           => array(),
-
-                // Images
-                'img'          => array(
-                        'src'      => true,
-                        'border'   => true,
-                        'alt'      => true,
-                        'height'   => true,
-                        'width'    => true,
-                )
-        );
-}
-
-add_filter('bbp_kses_allowed_tags','mla_allowed_tags');
