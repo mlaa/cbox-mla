@@ -33,6 +33,8 @@
     - install Typekit plugin network-wide
     - enter embed code in Dashboard -> Settings -> Typekit: http://commons.mla.org/wp-admin/options-general.php?page=typekit-admin.php
     - do the same for subdomains news.commons, faq.commons
+ * make Forums the default group landing page: 
+    - Network Dashboard -> Commons in a Box -> Settings -> Group Forum Default Tab: check 'On a group page, set the default tab to "Forum" instead of "Activity".' 
 
 # Commons-in-a-Box MLA Child Theme
 
