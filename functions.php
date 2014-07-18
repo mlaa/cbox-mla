@@ -182,20 +182,6 @@ function remove_general_subnav() {
 
 add_action( 'wp', 'remove_general_subnav', 2 );
 
-/**
- * Provide full HTML in Atom feed post <title>s.
- */
-
-function better_atom_titles( $title ) {
-	_log("Title was: "); 
-	_log($title); 
-	remove_filter( 'the_title_rss', 'strip_tags' );
-	remove_filter( 'the_title_rss', 'esc_html' );
-	_log("Title is: "); 
-	_log($title); 
-}
-add_filter( 'atom_head', 'better_atom_titles' );
-
 /*
  * Remove misbehaving forums tab on profile pages.
  */
@@ -212,4 +198,3 @@ function mlac_remove_forums_from_adminbar( $wp_admin_bar ) {
 	$wp_admin_bar->remove_menu( 'my-account-forums' );
 }
 add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
-
