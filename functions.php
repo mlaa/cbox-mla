@@ -147,23 +147,6 @@ add_filter('xprofile_filter_profile_group_tabs', 'mla_remove_profile_group_tab')
 add_action( 'bp_before_group_activity_post_form', create_function( '', 'ob_start();' ), 9999 );
 add_action( 'bp_after_group_activity_post_form', create_function( '', 'ob_end_clean();' ), 0 );
 
-//debugging
-if (!function_exists('_log')) {
-	/**
-	 * Just writes objects, arrays, and other useful things
-	 * to the debug.log. 
-	 */ 
-	function _log($message) {
-		if (WP_DEBUG === true) {
-			if (is_array($message) || is_object($message)) {
-				error_log(print_r($message, true));
-			} else {
-				error_log($message);
-			}
-		}
-	}
-}
-
 /** 
  * Remove admin bar profile items, since they're already represented by 
  * members/user/profile tabs. Also, the dropdown is a little clunky. 
@@ -198,3 +181,35 @@ function remove_general_subnav() {
 }
 
 add_action( 'wp', 'remove_general_subnav', 2 );
+
+/**
+ * Provide full HTML in Atom feed post <title>s.
+ */
+
+function better_atom_titles( $title ) {
+	_log("Title was: "); 
+	_log($title); 
+	remove_filter( 'the_title_rss', 'strip_tags' );
+	remove_filter( 'the_title_rss', 'esc_html' );
+	_log("Title is: "); 
+	_log($title); 
+}
+add_filter( 'atom_head', 'better_atom_titles' );
+
+/*
+ * Remove misbehaving forums tab on profile pages.
+ */
+
+function remove_forums_nav() {
+	bp_core_remove_nav_item('forums');
+}
+add_action( 'wp', 'remove_forums_nav', 3 );
+
+/**
+ * Removes Forums from Howdy dropdown
+ */
+function mlac_remove_forums_from_adminbar( $wp_admin_bar ) {
+	$wp_admin_bar->remove_menu( 'my-account-forums' );
+}
+add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
+
