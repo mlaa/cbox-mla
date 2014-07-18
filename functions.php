@@ -144,8 +144,8 @@ add_filter('xprofile_filter_profile_group_tabs', 'mla_remove_profile_group_tab')
  * Taken from BP-Group-Announcements. 
  */ 
 // Disable the activity update form on the group home page. Props r-a-y
- add_action( 'bp_before_group_activity_post_form', create_function( '', 'ob_start();' ), 9999 );
- add_action( 'bp_after_group_activity_post_form', create_function( '', 'ob_end_clean();' ), 0 );
+add_action( 'bp_before_group_activity_post_form', create_function( '', 'ob_start();' ), 9999 );
+add_action( 'bp_after_group_activity_post_form', create_function( '', 'ob_end_clean();' ), 0 );
 
 //debugging
 if (!function_exists('_log')) {
@@ -174,3 +174,27 @@ function mla_remove_admin_bar_profile_items() {
 	$wp_admin_bar->remove_menu('my-account-buddypress');
 }
 add_action('wp_before_admin_bar_render', 'mla_remove_admin_bar_profile_items', 0);
+
+/* 
+ * Hide settings page (we don't want users changing their 
+ * e-mail or password).
+ */
+function change_settings_subnav() {
+
+	$args = array(
+		'parent_slug' => 'settings',
+		'screen_function' => 'bp_core_screen_notification_settings',
+		'subnav_slug' => 'notifications'
+	);
+
+	bp_core_new_nav_default($args);
+
+}
+add_action('bp_setup_nav', 'change_settings_subnav', 5);
+
+function remove_general_subnav() {
+	global $bp;
+	bp_core_remove_subnav_item($bp->settings->slug, 'general');
+}
+
+add_action( 'wp', 'remove_general_subnav', 2 );
