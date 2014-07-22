@@ -22,15 +22,13 @@
  * deactivate and remove BP-Group-Announcements plugin
  * remove UserVoice plugin
  * get [forked version of BP-Docs](https://github.com/mlaa/buddypress-docs) and switch it to minimal theme
- * “Homepage Left” widget: use “(BuddyPress) MLA Groups” widget 
-    - uncheck “link widget title”
-    - max groups: 8
- * “Homepage Center” widget: use “(BuddyPress) Recently Active Members” widget
+ * “Homepage Middle” widget: use “(BuddyPress) Recently Active Members” widget
     - max members: 40
  * “Homepage Right” widget: use “Recent Networkwide Blog Posts” 
     - uncheck “link widget title”
     - max posts to show: 3
- * “Groups Sidebar,” “Member Sidebar,” “Activity Sidebar,” “Sitewide Sidebar” widgets: use blank “Text” widget
+ * “Groups Sidebar,” “Member Sidebar,” “Activity Sidebar,” “Blog Sidebar," "Sitewide Sidebar" widgets: use blank “Text” widget
+ * change template for Publications page to Publications template
  * “Help Dropdown” widget: use Katina’s HTML text
  * make Forums the default group landing page: 
     - Network Dashboard -> Commons in a Box -> Settings -> Group Forum Default Tab: check 'On a group page, set the default tab to "Forum" instead of "Activity".' 
