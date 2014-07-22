@@ -1,2 +1,3 @@
 #ignore private files, i.e. api keys
 *-private.php
+.sass-cache
