@@ -18,7 +18,10 @@ define('INFINITY_DEV_MODE', true);
 
 /* This script contains Buddypress customizations for MLA group types. */ 
 
-/* MLA edits to BP literals */
+/* MLA edits to BP literals. 
+/* These don't seem to have any effect, since slugs appear to be handled by WP pages, 
+ * but I'll keep these in just in case they affect something else elsewhere.
+ */ 
 define('BP_FRIENDS_SLUG', 'contacts');
 define('BP_BLOGS_SLUG', 'sites');
 
