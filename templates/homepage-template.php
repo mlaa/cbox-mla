@@ -10,15 +10,6 @@
  */
     infinity_get_header();
 ?>
-<script type="text/javascript">
-  var uvOptions = {};
-  (function() {
-    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/PqeUIaF0M9uV0ye3mLFxQ.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-  })();
-</script>
-
 <div id="content" role="main" class="column sixteen">
 	<div id="top-homepage" class="row">
 		<div id="flex-slider-wrap-full" class="column ten">
