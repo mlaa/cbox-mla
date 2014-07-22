@@ -38,6 +38,12 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
+	<!-- TypeKit Embed Code --> 
+		<script type="text/javascript" src="//use.typekit.net/wed8osd.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<!-- End TypeKit Embed Code --> 
+
 	<?php
 		wp_head();
 		do_action( 'close_head' );
