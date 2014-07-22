@@ -14,8 +14,9 @@
  * remove wiki 
     - disable and remove “Sitewide Wiki” plugin
     - Dashboard → Appearance → Menus: remove “wiki” from “CBOX submenu” and “Inside Header Navigation” 
+    - remove wiki page from Dashboard -> Pages
  * change "blogs" to "sites" 
-    - Dashboard → Appearance → Menus → "Inside Header Navigation": change "blogs" to "sites"   
+    - Dashboard → Appearance → Menus → "Inside Header Navigation" and "CBOX Submenu": change "blogs" to "sites" 
     - MLA Commons -> Dashboard -> Pages -> edit "Blogs" page: change title and slug from "blogs" to "sites"
        - add Nginx redirect for /blogs slug
  * deactivate and remove BP-Group-Announcements plugin
@@ -31,10 +32,6 @@
     - max posts to show: 3
  * “Groups Sidebar,” “Member Sidebar,” “Activity Sidebar,” “Sitewide Sidebar” widgets: use blank “Text” widget
  * “Help Dropdown” widget: use Katina’s HTML text
- * install Typekit
-    - install Typekit plugin network-wide
-    - enter embed code in Dashboard -> Settings -> Typekit: http://commons.mla.org/wp-admin/options-general.php?page=typekit-admin.php
-    - do the same for subdomains news.commons, faq.commons
  * make Forums the default group landing page: 
     - Network Dashboard -> Commons in a Box -> Settings -> Group Forum Default Tab: check 'On a group page, set the default tab to "Forum" instead of "Activity".' 
  * pull in changes from master branch of cbox-mla-blog repo to update blog theme for News and FAQ sites
