@@ -18,7 +18,7 @@
  * change "blogs" to "sites" 
     - Dashboard → Appearance → Menus → "Inside Header Navigation" and "CBOX Submenu": change "blogs" to "sites" 
     - MLA Commons -> Dashboard -> Pages -> edit "Blogs" page: change title and slug from "blogs" to "sites"
-       - add Nginx redirect for /blogs slug
+      - Create new page with title and slug "blogs" and use "Sites Redirect" template.
  * deactivate and remove BP-Group-Announcements plugin
  * remove UserVoice plugin
  * get [forked version of BP-Docs](https://github.com/mlaa/buddypress-docs) and switch it to minimal theme
