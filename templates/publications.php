@@ -18,12 +18,6 @@
 			do_action( 'close_content' );
 		?>
 	</div>
-	<aside id="sidebar" role="complementary" class="<?php do_action( 'sidebar_class' ); ?>">
-	<!-- sidebar -->
-		<?php
-			dynamic_sidebar( 'Publications Sidebar' );
-		?>
-	</aside>
 <?php
 	infinity_get_footer();
 ?>
