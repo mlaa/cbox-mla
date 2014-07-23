@@ -20,6 +20,7 @@
     - MLA Commons -> Dashboard -> Pages -> edit "Blogs" page: change title and slug from "blogs" to "sites"
       - Create new page with title and slug "blogs" and use "Sites Redirect" template.
  * deactivate and remove BP-Group-Announcements plugin
+ * network-deactive and remove TM-Replace-Howdy plugin
  * remove UserVoice plugin
  * get [forked version of BP-Docs](https://github.com/mlaa/buddypress-docs) and switch it to minimal theme
  * “Homepage Middle” widget: use “(BuddyPress) Recently Active Members” widget
