@@ -4173,6 +4173,9 @@ body {
 			font-size: 23px; 
 			margin: 0; 
 		} 
+		.credits { 
+			display: none;
+		} 
 	} 
 	.flex-container { 
 		display: none; /* don't show the version with images */ 

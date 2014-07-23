@@ -3954,6 +3954,8 @@ body {
     .mobile-slider h3 {
       font-size: 23px;
       margin: 0; }
+    .mobile-slider .credits {
+      display: none; }
 
   .flex-container {
     display: none;
