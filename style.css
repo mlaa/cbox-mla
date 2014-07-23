@@ -3698,6 +3698,10 @@ body {
 .mobile-menu-container {
   display: none; }
 
+.mobile-slider {
+  display: none;
+  /* only show this on phones */ }
+
 .sidebar-left #item-nav {
   display: none;
   /* don't need a horizontal tab bar and a vertical one */ }
@@ -3921,7 +3925,7 @@ body {
 
   #header {
     margin-top: 25px;
-    height: 100px; }
+    height: 80px; }
 
   #footer .footer-widgets.row {
     padding: 0; }
@@ -3941,6 +3945,19 @@ body {
     margin: 0; } }
 /* --- Tablets --- }}} */
 /* --- Phones --- {{{2 */
+/* 500px is about where the slider starts to act strangely */
+@media only screen and (max-width: 500px) {
+  .mobile-slider {
+    display: block;
+    /* show the text-only version */
+    margin-left: -20px; }
+    .mobile-slider h3 {
+      font-size: 23px;
+      margin: 0; }
+
+  .flex-container {
+    display: none;
+    /* don't show the version with images */ } }
 @media only screen and (max-width: 320px) {
   #sidebar .sidebar-activity-tabs ul li a {
     visibility: hidden;
