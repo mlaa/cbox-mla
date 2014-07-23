@@ -150,17 +150,6 @@ add_filter('xprofile_filter_profile_group_tabs', 'mla_remove_profile_group_tab')
 add_action( 'bp_before_group_activity_post_form', create_function( '', 'ob_start();' ), 9999 );
 add_action( 'bp_after_group_activity_post_form', create_function( '', 'ob_end_clean();' ), 0 );
 
-/** 
- * Remove admin bar profile items, since they're already represented by 
- * members/user/profile tabs. Also, the dropdown is a little clunky. 
- * See https://github.com/mlaa/cbox-mla/issues/27
- */ 
-function mla_remove_admin_bar_profile_items() {
-	global $wp_admin_bar;
-	$wp_admin_bar->remove_menu('my-account-buddypress');
-}
-add_action('wp_before_admin_bar_render', 'mla_remove_admin_bar_profile_items', 0);
-
 /* 
  * Hide settings page (we don't want users changing their 
  * e-mail or password).
