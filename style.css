@@ -1037,7 +1037,8 @@ ul.item-list {
       display: inline-block;
       width: 68%;
       vertical-align: middle;
-      margin-left: 20px; }
+      margin-left: 20px;
+      overflow-wrap: break-word; }
       ul.item-list li .item .item-title span {
         color: #999; }
       ul.item-list li .item .item-desc {
