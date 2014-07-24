@@ -3957,10 +3957,11 @@ body {
     .mobile-slider h3 {
       font-size: 23px;
       margin: 0; }
+    .mobile-slider .credits {
+      display: none; }
 
-  .flex-container {
-    display: none;
-    /* don't show the version with images */ } }
+  .flex-container, .widget_mla_bp_groups_widget, .widget_bp_core_recently_active_widget, .widget_cbox_bp_blogs_recent_posts_widget {
+    display: none; } }
 @media only screen and (max-width: 320px) {
   #sidebar .sidebar-activity-tabs ul li a {
     visibility: hidden;
