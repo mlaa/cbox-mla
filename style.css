@@ -3949,6 +3949,12 @@ body {
     margin: 0; } }
 /* --- Tablets --- }}} */
 /* --- Phones --- {{{2 */
+/* 650px is where the subnav filters act strangely */
+@media only screen and (max-width: 650px) {
+  div#subnav.item-list-tabs ul li {
+    margin-left: 0px !important;
+    float: none !important;
+    display: block; } }
 /* 500px is about where the slider starts to act strangely */
 @media only screen and (max-width: 500px) {
   .mobile-slider {
