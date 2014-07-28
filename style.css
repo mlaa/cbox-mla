@@ -3770,7 +3770,7 @@ body {
     /* hide the group admins for now */ }
 
   ul.item-list li .item {
-    width: initial; }
+    width: 59%; }
 
   div.item-list-tabs ul li {
     vertical-align: top; }
@@ -3954,7 +3954,10 @@ body {
   div#subnav.item-list-tabs ul li {
     margin-left: 0px !important;
     float: none !important;
-    display: block; } }
+    display: block; }
+
+  ul.item-list li .item {
+    width: 50%; } }
 /* 500px is about where the slider starts to act strangely */
 @media only screen and (max-width: 500px) {
   .mobile-slider {
