@@ -190,3 +190,11 @@ function mlac_remove_forums_from_adminbar( $wp_admin_bar ) {
 	$wp_admin_bar->remove_menu( 'my-account-forums' );
 }
 add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
+
+// force reload css on new versions
+function my_wp_default_styles($styles)
+{
+        //use epoch time for version
+        $styles->default_version = date('U');
+}
+add_action("wp_default_styles", "my_wp_default_styles");
