@@ -35,6 +35,7 @@
     - Network Dashboard -> Commons in a Box -> Settings -> Group Forum Default Tab: check 'On a group page, set the default tab to "Forum" instead of "Activity".' 
  * pull in changes from master branch of cbox-mla-blog repo to update blog theme for News and FAQ sites
  * Commons Dashboard -> Feature Slider -> edit slides -> wrap photo credits in `<span class="credits">` 
+ * Delete caches! 
 
 # Commons-in-a-Box MLA Child Theme
 
