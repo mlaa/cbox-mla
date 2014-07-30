@@ -1025,7 +1025,7 @@ ul.item-list {
 		} 
 		.item { 
 			display: inline-block; 
-			width: 68%; 
+			max-width: 68%; 
 			vertical-align: middle;
 			margin-left: 20px;
 			overflow-wrap: break-word;
@@ -1114,6 +1114,9 @@ div#subnav.item-list-tabs {
 		padding: 0; 
 	} 
 	ul li {
+		&.feed a { 
+			padding-top: 7px; 
+		} 
 		a {
 			border: none; 
 			font-size: 90%;
