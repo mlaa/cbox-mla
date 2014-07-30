@@ -1168,6 +1168,8 @@ div#subnav.item-list-tabs {
     background-color: transparent;
     border: none;
     padding: 0; }
+  div#subnav.item-list-tabs ul li.feed a {
+    padding-top: 7px; }
   div#subnav.item-list-tabs ul li a {
     border: none;
     font-size: 90%;

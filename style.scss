@@ -1114,6 +1114,9 @@ div#subnav.item-list-tabs {
 		padding: 0; 
 	} 
 	ul li {
+		&.feed a { 
+			padding-top: 7px; 
+		} 
 		a {
 			border: none; 
 			font-size: 90%;
