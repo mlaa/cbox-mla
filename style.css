@@ -1184,7 +1184,7 @@ div#subnav.item-list-tabs {
     border: none;
     font-size: 90%;
     margin: 0;
-    padding: 4px 12px; }
+    padding: 4px 9px; }
   div#subnav.item-list-tabs ul li.current a {
     background: transparent;
     color: #2e2e2e;
@@ -2138,6 +2138,8 @@ h1#site-title, div#site-title {
     color: #fff; }
     .flex-caption h3 a {
       color: #fff; }
+  .flex-caption .credits {
+    font-size: 80%; }
 
 /* --- End HomePage --- }}} */
 /* --- Avatars --- {{{ */
