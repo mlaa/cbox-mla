@@ -2134,9 +2134,10 @@ h1#site-title, div#site-title {
   .flex-caption h3 {
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 1.6em; }
+    font-size: 1.6em;
+    color: #fff; }
     .flex-caption h3 a {
-      color: #FFF; }
+      color: #fff; }
 
 /* --- End HomePage --- }}} */
 /* --- Avatars --- {{{ */
