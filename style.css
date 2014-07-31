@@ -1247,6 +1247,8 @@ div.dir-search {
   #group-settings-form #admins-list .avatar .button, #group-settings-form #admins-list h5 .button, #group-settings-form #members-list .avatar .button, #group-settings-form #members-list h5 .button {
     padding: 5px;
     margin-top: 1%; }
+#group-settings-form #admins-list .avatar, #group-settings-form #members-list .avatar {
+  max-width: none; }
 #group-settings-form #admins-list h5, #group-settings-form #members-list h5 {
   vertical-align: top;
   padding: 0 3%;
