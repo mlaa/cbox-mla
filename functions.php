@@ -198,15 +198,3 @@ function my_wp_default_styles($styles)
         $styles->default_version = "2.0.1";
 }
 add_action("wp_default_styles", "my_wp_default_styles");
-
-/* This adds a `title` attribute to thumbnail images which it copies from 
- * images' alt text. Not super standard but it accomplishes what we want 
- * from the feature slider area. 
- */ 
-function mla_thumbnail_html( $attr ) { 
-	if ( ! isset( $attr['title'] ) ) { 
-		$attr['title'] = $attr['alt'];
-	} 
-	return $attr; 
-} 
-add_filter( 'wp_get_attachment_image_attributes', 'mla_thumbnail_html', 10 ); 
