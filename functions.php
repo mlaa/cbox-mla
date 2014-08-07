@@ -195,7 +195,7 @@ add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
 function my_wp_default_styles($styles)
 {
         //use epoch time for version
-        $styles->default_version = "2.0.0";
+        $styles->default_version = "2.0.1";
 }
 add_action("wp_default_styles", "my_wp_default_styles");
 
