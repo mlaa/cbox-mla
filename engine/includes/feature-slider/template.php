@@ -32,6 +32,10 @@ $query_args = array();
 
 $query_args['order'] = 'ASC';
 
+if ( ! isset( $prefix ) ) { 
+	$prefix = ''; 
+} 
+
 $posts_per_page = infinity_option_get( 'cbox_flex_slider_amount' );
 if ( ! empty( $posts_per_page ) ) {
 	$query_args['posts_per_page'] = (int) infinity_option_get( 'cbox_flex_slider_amount' );
