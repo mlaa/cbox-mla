@@ -2504,6 +2504,17 @@ thead:first-child tr th, thead:first-child tr td {
 	}
 }
 
+#doc-associated-group, #doc-settings, #doc-parent, #doc-permissions-edit { 
+	/* Hide advanced settings for docs. Have to 
+	 * hide these in CSS, since they're set with AJAX 
+	 * and sent via POST. 
+	 */ 
+	display: none; 
+} 
+#doc-permissions-less { 
+	margin-top: 3px; 
+} 
+
 /*Third Pary Plugin Fixes*/
 #links-personal-li #links-order-select,
 #links-personal-li #links-category-select {
