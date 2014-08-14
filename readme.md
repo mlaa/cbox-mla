@@ -14,6 +14,10 @@ Language Association.
 [1]: http://commons.mla.org
 [2]: https://github.com/cuny-academic-commons/cbox-theme
 
+# Changes in Version 2.1.0 
+
+ * Buddypress-docs has a cleaned-up interface. It no longer gives users the arguably unnecessary options of changing the associated group of a doc, or of changing its access rights or parent doc.  
+
 # Changes in Version 2.0 
 
  * The site has been given a new, flat theme. Gradients, textures, and 3D buttons have been replaced by simple, minimalistic elements. The colorscheme has been also simplified, favoring desaturated colors and grayscale over the bright reds and oranges of the previous theme. 
