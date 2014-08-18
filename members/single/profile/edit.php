@@ -164,6 +164,8 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 
 	<?php do_action( 'bp_after_profile_field_content' ); ?>
 
+	<?php locate_template( array( 'cacap/portfolio.php' ), true ); ?> 
+
 	<div class="submit">
 		<input type="submit" name="profile-group-edit-submit" id="profile-group-edit-submit" value="<?php _e( 'Save Changes', 'buddypress' ); ?> " />
 	</div>

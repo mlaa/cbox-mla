@@ -46,3 +46,5 @@
 <?php endif; ?>
 
 <?php do_action( 'bp_after_profile_loop_content' ); ?>
+
+<?php locate_template( array( 'cacap/body.php'  ), true ); ?> 
