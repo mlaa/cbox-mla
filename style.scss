@@ -1,3 +1,14 @@
+/*
+Theme Name: CBOX-MLA 
+Theme URI: http://github.com/mlaa/cbox-mla
+Description: A child theme of CBOX Theme, designed for the MLA Commons (http://commons.mla.org). 
+Version: 2.0
+Author: The Modern Language Association
+Author URI: http://mla.org
+Tags: buddypress, infinity
+Template: cbox-theme
+*/
+
 /* --- Mixins --- {{{ */ 
 
 /* 
@@ -1025,7 +1036,7 @@ ul.item-list {
 		} 
 		.item { 
 			display: inline-block; 
-			width: 68%; 
+			max-width: 68%; 
 			vertical-align: middle;
 			margin-left: 20px;
 			overflow-wrap: break-word;
@@ -1114,11 +1125,14 @@ div#subnav.item-list-tabs {
 		padding: 0; 
 	} 
 	ul li {
+		&.feed a { 
+			padding-top: 7px; 
+		} 
 		a {
 			border: none; 
 			font-size: 90%;
 			margin: 0;
-			padding: 4px 12px;
+			padding: 4px 9px;
 		}
 		&.current a {
 			background: transparent;
@@ -1200,6 +1214,9 @@ div.dir-search {
 				padding: 5px; 
 				margin-top: 1%; 
 			} 
+		} 
+		.avatar { 
+			max-width: none;
 		} 
 		h5 { 
 			vertical-align: top; 
@@ -2158,23 +2175,27 @@ h1#site-title,div#site-title {
 }
 
 .flex-caption {
-  bottom: 0;
-  position: absolute;
-  width: inherit;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  p {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  h3 {
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 1.6em; 
-    a {
-      color: #FFF;
-    }
-  }
+	bottom: 0;
+	position: absolute;
+	width: inherit;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	p {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	h3 {
+		padding-left: 15px;
+		padding-right: 15px;
+		font-size: 1.6em; 
+		color: #fff; 
+		a {
+			color: #fff; 
+		}
+	}
+	.credits { 
+		font-size: 80%; 
+	} 
 }
 
 /* --- End HomePage --- }}} */ 

@@ -1,4 +1,14 @@
 @charset "UTF-8";
+/*
+Theme Name: CBOX-MLA 
+Theme URI: http://github.com/mlaa/cbox-mla
+Description: A child theme of CBOX Theme, designed for the MLA Commons (http://commons.mla.org). 
+Version: 2.0
+Author: The Modern Language Association
+Author URI: http://mla.org
+Tags: buddypress, infinity
+Template: cbox-theme
+*/
 /* --- Mixins --- {{{ */
 /* 
  * Fonts
@@ -1035,7 +1045,7 @@ ul.item-list {
         height: 75px; }
     ul.item-list li .item {
       display: inline-block;
-      width: 68%;
+      max-width: 68%;
       vertical-align: middle;
       margin-left: 20px;
       overflow-wrap: break-word; }
@@ -1168,11 +1178,13 @@ div#subnav.item-list-tabs {
     background-color: transparent;
     border: none;
     padding: 0; }
+  div#subnav.item-list-tabs ul li.feed a {
+    padding-top: 7px; }
   div#subnav.item-list-tabs ul li a {
     border: none;
     font-size: 90%;
     margin: 0;
-    padding: 4px 12px; }
+    padding: 4px 9px; }
   div#subnav.item-list-tabs ul li.current a {
     background: transparent;
     color: #2e2e2e;
@@ -1235,6 +1247,8 @@ div.dir-search {
   #group-settings-form #admins-list .avatar .button, #group-settings-form #admins-list h5 .button, #group-settings-form #members-list .avatar .button, #group-settings-form #members-list h5 .button {
     padding: 5px;
     margin-top: 1%; }
+#group-settings-form #admins-list .avatar, #group-settings-form #members-list .avatar {
+  max-width: none; }
 #group-settings-form #admins-list h5, #group-settings-form #members-list h5 {
   vertical-align: top;
   padding: 0 3%;
@@ -2122,9 +2136,12 @@ h1#site-title, div#site-title {
   .flex-caption h3 {
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 1.6em; }
+    font-size: 1.6em;
+    color: #fff; }
     .flex-caption h3 a {
-      color: #FFF; }
+      color: #fff; }
+  .flex-caption .credits {
+    font-size: 80%; }
 
 /* --- End HomePage --- }}} */
 /* --- Avatars --- {{{ */

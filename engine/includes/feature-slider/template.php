@@ -32,6 +32,10 @@ $query_args = array();
 
 $query_args['order'] = 'ASC';
 
+if ( ! isset( $prefix ) ) { 
+	$prefix = ''; 
+} 
+
 $posts_per_page = infinity_option_get( 'cbox_flex_slider_amount' );
 if ( ! empty( $posts_per_page ) ) {
 	$query_args['posts_per_page'] = (int) infinity_option_get( 'cbox_flex_slider_amount' );
@@ -86,9 +90,7 @@ $slider_query = new WP_Query( $query_args );
 
 			<div class="mobile-caption">
 				<h3>
-					<a href="<?php echo $slide_url; ?>">
-						<?php the_title_attribute();?>
-					</a>
+					<?php the_title_attribute();?>
 				</h3>
 				<?php echo $slider_excerpt; ?>
 			</div>
@@ -140,9 +142,7 @@ if( $slider_query->have_posts() ) :
 			<?php if ( $hide_caption == "no" ): /* Hide the caption if box is checked */ ?>
 				<div class="flex-caption">
 					<h3>
-						<a href="<?php echo $slide_url; ?>">
-							<?php the_title_attribute();?>
-						</a>
+						<?php the_title_attribute();?>
 					</h3>
 					<?php echo $slider_excerpt; ?>
 				</div>
