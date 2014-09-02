@@ -2738,7 +2738,7 @@ h1#category-title span, h1#tag-title span {
   color: #555; }
 
 /* BuddyPress */
-#item-header-avatar img.avatar {
+#item-header-avatar img.avatar, .cacap-avatar img.avatar {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -4009,5 +4009,3 @@ body {
       visibility: visible; } }
 /* --- End Phones --- }}} */
 /* --- End Mobile --- }}} */
-
-/*# sourceMappingURL=style.css.map */
