@@ -10,7 +10,6 @@ require_once 'engine/includes/allowed-tags.php';
 require_once 'engine/includes/avatars.php';
 require_once 'engine/includes/custom.php';
 require_once 'engine/includes/custom-filters.php';
-require_once 'engine/includes/portfolio.php';
 
 /**
  * Set this to true to put Infinity into developer mode. Developer mode will refresh the dynamic.css on every page load.
