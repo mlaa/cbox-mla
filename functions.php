@@ -200,3 +200,9 @@ function my_wp_default_styles( $styles )
 	$styles->default_version = '2.0.2';
 }
 add_action( 'wp_default_styles', 'my_wp_default_styles' );
+
+function mla_fix_blog_search_count($val) { 
+	$val['total'] = count( $val['blogs'] ); 
+	return $val; 
+}
+add_filter( 'bp_blogs_get_blogs', 'mla_fix_blog_search_count'); 
