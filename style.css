@@ -2227,12 +2227,17 @@ span.activity {
   list-style: none outside none; }
 
 /* --- CACAP Portfolio / Profile --- {{{2 */
+.cacap-bp-profile-fields {
+  width: 900px; }
+
 #cacap-user-widget-new {
   background-color: #efefef;
+  border-bottom: 2px solid #eee;
+  border-top: 2px solid #eee;
   width: 100%;
   padding: 10px 0; }
   #cacap-user-widget-new #cacap-user-widget-new-content {
-    width: 940px;
+    width: 900px;
     margin: 0 auto; }
   #cacap-user-widget-new #cacap-new-widget-types {
     overflow: hidden;
