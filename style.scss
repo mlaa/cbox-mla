@@ -2292,6 +2292,83 @@ span.activity {
 	list-style: none outside none;
 }
 
+/* --- CACAP Portfolio / Profile --- {{{2 */ 
+
+#cacap-user-widget-new {
+	background-color: #efefef;
+	width: 100%;
+	padding: 10px 0;
+
+	#cacap-user-widget-new-content {
+		width: 940px;
+		margin: 0 auto;
+	}
+
+	#cacap-new-widget-types {
+		overflow: hidden;
+		height: 100px;
+
+		a {
+			text-decoration: none;
+		}
+
+		li {
+			@include minimalButton; 
+			@include borderRadius(5px); 
+			float: left;
+			width: 100px;
+			display: block;
+			text-align: center;
+			height: 90%;
+			margin-right: 10px;
+			padding: 3px;
+			padding-top: 17px;
+			cursor: pointer;
+
+			&.cacap-has-max {
+				opacity: .4;
+
+				.cacap-has-max-tooltip {
+					position: absolute;
+					font-size: .9em;
+					height: 1.4em;
+					background: #fff;
+					border: 1px solid #666;
+					opacity: 2;
+					color: #000;
+					display: none;
+				}
+
+				&:hover {
+					cursor: default;
+					background-color: #FAFAFA; 
+
+					.cacap-has-max-tooltip {
+						display: block;
+					}
+
+					a {
+						cursor: default;
+						color: #333; 
+					}
+				}
+			}
+
+			.cacap-widget-type-name {
+				margin-top: 3px;
+				display: block;
+				color: #333; 
+			}
+			.cacap-plus { 
+				font-size: 60px; 
+				color: #333; 
+			} 
+		}
+	}
+}
+
+/* --- End CACAP Portfolio / Profile --- }}} */ 
+
 /* --- End Members --- }}} */
 
 /* Profile Action Buttons */
