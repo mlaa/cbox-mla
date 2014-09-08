@@ -200,3 +200,11 @@ function my_wp_default_styles( $styles )
 	$styles->default_version = '2.0.2';
 }
 add_action( 'wp_default_styles', 'my_wp_default_styles' );
+
+function mla_remove_name_from_edit_profile($cols) { 
+	// Assuming "1" is going to be "name." 
+	// We have to rebuild the array, too. 
+	$cols['left'] = array_values( array_diff( $cols['left'], array( 1 ) ) ); 
+	return $cols; 
+} 
+add_filter('cacap_header_edit_columns', 'mla_remove_name_from_edit_profile'); 
