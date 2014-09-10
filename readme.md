@@ -2,6 +2,7 @@
 
  * [x] remove photo credits from slider posts (they're handled by the alt text now)
    - Katina's done this on production 
+ * [ ] upgrade WP to 4.0
  * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
  * [ ] fetch and check out the buddypress-docs branch `mla`. This branch has the feature that will allow us to disable attachments but show existing attachments. 
  * [ ] check out CACAP from our repo: `git clone https://github.com/mlaa/cac-advanced-profiles.git`
