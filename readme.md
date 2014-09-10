@@ -4,6 +4,14 @@
    - Katina's done this on production 
  * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
  * [ ] fetch and check out the buddypress-docs branch `mla`. This branch has the feature that will allow us to disable attachments but show existing attachments. 
+ * [ ] check out CACAP from our repo: `git clone https://github.com/mlaa/cac-advanced-profiles.git`
+ * [ ] get CACAP dependencies via git submodules: `git submodule update --init --recursive` 
+ * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Public): drag the following fields to their places: 
+   - Institutional or Other Affiliation -> Brief Descriptor
+   - Title -> About You
+ * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Edit Mode): make sure fields are in this order: 
+   - Left column: Name, Institutional or Other Affiliation
+   - Right column: Title
 
 # Commons-in-a-Box MLA Child Theme
 
