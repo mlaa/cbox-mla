@@ -14,6 +14,10 @@
    - Left column: Name, Institutional or Other Affiliation
    - Right column: Title
 
+##Optional Changes
+ * [ ] apply [Buddypress patch #5858](https://buddypress.trac.wordpress.org/ticket/5858), which fixes #104 with site searches incorrectly reporting the number of results. 
+ * [ ] apply [Buddypress patch #5872](https://buddypress.trac.wordpress.org/ticket/5872), which adds auto-linking ability for semicolon-separated lists in xprofile
+
 # Commons-in-a-Box MLA Child Theme
 
 This theme was developed for [_MLA Commons_][1]. It functions as a child 
