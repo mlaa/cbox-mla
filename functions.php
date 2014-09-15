@@ -200,3 +200,15 @@ function my_wp_default_styles( $styles )
 	$styles->default_version = '2.0.2';
 }
 add_action( 'wp_default_styles', 'my_wp_default_styles' );
+
+function mla_is_group_committee() { 
+	// if mla_oid starts with "M," it's a committee
+	return ('M' == substr( groups_get_groupmeta( bp_get_current_group_id(), 'mla_oid' ), 0, 1 ) ) ? true : false; 
+} 
+
+function mla_remove_membership_request_from_committees() {
+	if ( mla_is_group_committee() ) { 
+		bp_core_remove_subnav_item( bp_get_current_group_slug(), 'request-membership' ); 
+	} 
+}
+add_filter( 'bp_setup_nav', 'mla_remove_membership_request_from_committees' ); 
