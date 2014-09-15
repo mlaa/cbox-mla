@@ -208,3 +208,15 @@ function mla_remove_name_from_edit_profile($cols) {
 	return $cols; 
 } 
 add_filter('cacap_header_edit_columns', 'mla_remove_name_from_edit_profile'); 
+
+function mla_is_group_committee() { 
+	// if mla_oid starts with "M," it's a committee
+	return ('M' == substr( groups_get_groupmeta( bp_get_current_group_id(), 'mla_oid' ), 0, 1 ) ) ? true : false; 
+} 
+
+function mla_remove_membership_request_from_committees() {
+	if ( mla_is_group_committee() ) { 
+		bp_core_remove_subnav_item( bp_get_current_group_slug(), 'request-membership' ); 
+	} 
+}
+add_filter( 'bp_setup_nav', 'mla_remove_membership_request_from_committees' ); 
