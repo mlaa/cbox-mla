@@ -13,6 +13,11 @@
  * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Edit Mode): make sure fields are in this order: 
    - Left column: Name, Institutional or Other Affiliation
    - Right column: Title
+ * [ ] Network Dashboard -> Users -> Profile Fields -> Title -> Edit: 
+   - description: e.g. "Adjunct Instructor" 
+ * [ ] Network Dashboard -> Users -> Profile Fields -> Institutional or Other Affiliation -> Edit: 
+   - description: e.g. "College of Yoknapatawpha" 
+
 
 ##Optional Changes
  * [ ] apply [Buddypress patch #5858](https://buddypress.trac.wordpress.org/ticket/5858), which fixes #104 with site searches incorrectly reporting the number of results. 
