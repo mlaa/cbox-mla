@@ -1260,9 +1260,11 @@ div.pagination {
   clear: both;
   margin: 25px 0; }
   div.pagination#pag-bottom .pag-count {
-    padding: 10px 0; }
+    padding: 10px 0;
+    margin-top: 10px; }
   div.pagination .pag-count {
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 10px; }
   div.pagination .pagination-links {
     float: right;
     display: inline-block; }
@@ -3228,7 +3230,8 @@ h3:empty {
   padding-left: 32px; }
 #bp-group-documents div.pagination {
   clear: none;
-  margin: 7px; }
+  margin: 7px;
+  margin-bottom: 45px; }
 
 /* --- End BP Group Documents ("Files") --- }}} */
 /* --- Structure --- {{{1 */
