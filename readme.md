@@ -14,9 +14,9 @@
    - Left column: Name, Institutional or Other Affiliation
    - Right column: Title
  * [ ] Network Dashboard -> Users -> Profile Fields -> Title -> Edit: 
-   - description: e.g. "Adjunct Instructor" 
+   - description: e.g. &quot;Adjunct Instructor&quot; 
  * [ ] Network Dashboard -> Users -> Profile Fields -> Institutional or Other Affiliation -> Edit: 
-   - description: e.g. "College of Yoknapatawpha" 
+   - description: e.g. &quot;College of Yoknapatawpha&quot; 
 
 
 ##Optional Changes
