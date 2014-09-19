@@ -21,7 +21,6 @@
 
 ##Optional Changes
  * [ ] apply [Buddypress patch #5858](https://buddypress.trac.wordpress.org/ticket/5858), which fixes #104 with site searches incorrectly reporting the number of results. 
- * [ ] apply [Buddypress patch #5872](https://buddypress.trac.wordpress.org/ticket/5872), which adds auto-linking ability for semicolon-separated lists in xprofile
 
 # Commons-in-a-Box MLA Child Theme
 

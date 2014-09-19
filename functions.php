@@ -220,3 +220,60 @@ function mla_remove_membership_request_from_committees() {
 	} 
 }
 add_filter( 'bp_setup_nav', 'mla_remove_membership_request_from_committees' ); 
+
+
+// remove default profile link handling so we can override it below
+remove_filter( 'bp_get_the_profile_field_value', 'xprofile_filter_link_profile_data' );
+
+// Custom xprofile interest linkifier that accepts semicolons as delimiters. 
+function mla_xprofile_filter_link_profile_data( $field_value, $field_type = 'textbox' ) {
+
+	if ( 'datebox' === $field_type ) {
+		return $field_value;
+	}
+
+	if ( ! strpos( $field_value, ',' ) && !strpos( $field_value, ';' )  && ( count( explode( ' ', $field_value ) ) > 5 ) ) { 
+		return $field_value;
+	}
+
+	if ( strpos( $field_value, ';' ) ) { 
+		$list_type = 'semicolon'; 
+		$values = explode( ';', $field_value ); // semicolon-separated lists
+	} else { 
+		$list_type = 'comma'; 
+		$values = explode( ',', $field_value ); // comma-separated lists
+	}  
+
+	if ( ! empty( $values ) ) {
+		foreach ( (array) $values as $value ) {
+			$value = trim( $value );
+
+			// If the value is a URL, skip it and just make it clickable.
+			if ( preg_match( '@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', $value ) ) {
+				$new_values[] = make_clickable( $value );
+
+			// Is not clickable
+			} else {
+
+				// More than 5 spaces
+				if ( count( explode( ' ', $value ) ) > 5 ) {
+					$new_values[] = $value;
+
+				// Less than 5 spaces
+				} else {
+					$search_url   = add_query_arg( array( 's' => urlencode( $value ) ), bp_get_members_directory_permalink() );
+					$new_values[] = '<a href="' . esc_url( $search_url ) . '" rel="nofollow">' . $value . '</a>';
+				}
+			}
+		}
+
+		if ( 'semicolon' == $list_type ) { 
+			$values = implode( '; ', $new_values ); 
+		} else { 
+			$values = implode( ', ', $new_values );
+		}  
+	}
+
+	return $values;
+}
+add_filter( 'bp_get_the_profile_field_value', 'mla_xprofile_filter_link_profile_data', 9, 2 );
