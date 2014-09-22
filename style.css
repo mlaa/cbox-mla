@@ -1195,7 +1195,7 @@ div#subnav.item-list-tabs {
 
 /* --- End Item Tabs --- }}} */
 /* --- Directories --- {{{ */
-.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .single-bp_doc #content, .forum-search #content, .page-template #content, .topic-tag #content, .post-type-archive-bp_doc #content, .create-blog #content {
+.directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .single-bp_doc #content, .forum-search #content, .page-template #content, .topic-tag #content, .post-type-archive-bp_doc #content, .create-blog #content, .page-id-5466 #content {
   width: 100%; }
 
 div.dir-search {
@@ -2668,11 +2668,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1.5em; }
 
 h2.page-title a, h2.post-title a, h1.page-title a, h1.post-title a {
-  color: #545454;
+  color: #222;
   margin-top: 0; }
 
 h2.page-title, h2.post-title, h1.page-title, h1.post-title {
-  color: #545454;
+  color: #222;
   margin-top: 0; }
 
 a {
