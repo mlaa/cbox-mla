@@ -248,9 +248,9 @@ function mla_xprofile_filter_link_profile_data( $field_value, $field_type = 'tex
 		foreach ( (array) $values as $value ) {
 			$value = trim( $value );
 
-			// remove periods and <br>s at the ends of interest lists, 
+			// remove <br>s at the ends of interest lists, 
 			// so that the final search term works
-			$value = preg_replace( '/\.?\<br \/\>$/', '', $value );  
+			$value = preg_replace( '/\<br \/\>$/', '', $value );  
 
 			// If the value is a URL, skip it and just make it clickable.
 			if ( preg_match( '@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', $value ) ) {
@@ -265,10 +265,17 @@ function mla_xprofile_filter_link_profile_data( $field_value, $field_type = 'tex
 
 				// Less than 5 spaces
 				} else {
-					if ( preg_match( '/\.$/', $value ) ) { 
+					if ( preg_match( '/\.$/', $value ) ) { // if it ends in a period
 						$value = preg_replace( '/\.$/', '', $value ); // remove the period at the end
 						$search_url   = add_query_arg( array( 's' => urlencode( $value ) ), bp_get_members_directory_permalink() );
 						$new_values[] = '<a href="' . esc_url( $search_url ) . '" rel="nofollow">' . $value . '</a>.'; // but add it back *after* the link. 
+					} else if ( preg_match( '/\.\<br \/\>', $value ) ) { 
+						$search_url   = add_query_arg( array( 's' => urlencode( $value ) ), bp_get_members_directory_permalink() );
+						$new_values[] = '<a href="' . esc_url( $search_url ) . '" rel="nofollow">' . $value . '</a>.<br />';
+					} else if ( preg_match( '/\<br \/\>', $value ) ) { 
+						$search_url   = add_query_arg( array( 's' => urlencode( $value ) ), bp_get_members_directory_permalink() );
+						$new_values[] = '<a href="' . esc_url( $search_url ) . '" rel="nofollow">' . $value . '</a><br />';
+
 					} else { 
 						$search_url   = add_query_arg( array( 's' => urlencode( $value ) ), bp_get_members_directory_permalink() );
 						$new_values[] = '<a href="' . esc_url( $search_url ) . '" rel="nofollow">' . $value . '</a>';
