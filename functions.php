@@ -302,3 +302,12 @@ function mla_custom_bp_mofile( $mofile, $domain ){
 	return $mofile;
 }
 add_filter( 'load_textdomain_mofile', 'mla_custom_bp_mofile', 10, 2 );
+
+/* Load group membership data from member database on 
+ * group page load. 
+ */ 
+function mla_update_group_membership_data() { 
+	$mla_group = new MLAGroup; 
+	$mla_group->sync(); 
+} 
+//add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
