@@ -294,3 +294,11 @@ function mla_xprofile_filter_link_profile_data( $field_value, $field_type = 'tex
 	return $values;
 }
 add_filter( 'bp_get_the_profile_field_value', 'mla_xprofile_filter_link_profile_data', 9, 2 );
+
+function mla_custom_bp_mofile( $mofile, $domain ){
+	if ( 'buddypress' == $domain ) {
+		$mofile = trailingslashit( WP_LANG_DIR ) . basename( $mofile );
+	}
+	return $mofile;
+}
+add_filter( 'load_textdomain_mofile', 'mla_custom_bp_mofile', 10, 2 );
