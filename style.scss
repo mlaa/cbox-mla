@@ -224,7 +224,9 @@ th, td {
   padding: 8px;
   line-height: 18px;
   text-align: left;
-  border-top: 1px solid #ddd;
+  &:not(:first-child) { 
+	  border-top: 1px solid #eee;
+  } 
 }
 th {
   font-weight: bold;
@@ -4207,8 +4209,9 @@ body {
 			} 
 		}
 	}
-	#wpadminbar,
-	.twipsy { display: none !important }
+	body:not(.cacap) #wpadminbar, .twipsy { 
+		display: none !important 
+	}
 	#sidebar { 
 		min-height: auto !important;
 	}
@@ -4246,7 +4249,9 @@ body {
 	.mobileMenu { margin-top: 5px }
 	.post-category,
 	.time-posted { display: none }
-	#wpadminbar{ display: none }
+	body:not(.cacap) #wpadminbar { 
+		display: none 
+	}
 	div#content .padder {
 		margin-right: 0;
 		width: auto;

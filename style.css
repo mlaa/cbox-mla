@@ -222,8 +222,9 @@ table {
 th, td {
   padding: 8px;
   line-height: 18px;
-  text-align: left;
-  border-top: 1px solid #ddd; }
+  text-align: left; }
+  th:not(:first-child), td:not(:first-child) {
+    border-top: 1px solid #eee; }
 
 th {
   font-weight: bold;
@@ -3974,8 +3975,7 @@ body {
       .mobile-menu-container a.button #loginlogout {
         right: 10px; }
 
-  #wpadminbar,
-  .twipsy {
+  body:not(.cacap) #wpadminbar, .twipsy {
     display: none !important; }
 
   #sidebar {
@@ -4028,7 +4028,7 @@ body {
   .time-posted {
     display: none; }
 
-  #wpadminbar {
+  body:not(.cacap) #wpadminbar {
     display: none; }
 
   div#content .padder {
