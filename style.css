@@ -2271,7 +2271,8 @@ span.activity {
       height: 90%;
       margin-right: 10px;
       padding: 3px;
-      padding-top: 17px;
+      padding-top: 22px;
+      line-height: 1.1em;
       cursor: pointer; }
       #cacap-user-widget-new #cacap-new-widget-types li a, #cacap-user-widget-new #cacap-new-widget-types li a:hover, #cacap-user-widget-new #cacap-new-widget-types li:hover, #cacap-user-widget-new #cacap-new-widget-types li:active {
         color: #2e2e2e;
@@ -2301,9 +2302,9 @@ span.activity {
             cursor: default;
             color: #333; }
       #cacap-user-widget-new #cacap-new-widget-types li .cacap-widget-type-name {
-        margin-top: 3px;
         display: block;
-        color: #333; }
+        color: #333;
+        line-height: 1.2em; }
       #cacap-user-widget-new #cacap-new-widget-types li .cacap-plus {
         font-size: 60px;
         color: #333; }

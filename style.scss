@@ -2332,7 +2332,8 @@ span.activity {
 			height: 90%;
 			margin-right: 10px;
 			padding: 3px;
-			padding-top: 17px;
+			padding-top: 22px;
+			line-height: 1.1em; 
 			cursor: pointer;
 
 			&.cacap-has-max {
@@ -2365,9 +2366,9 @@ span.activity {
 			}
 
 			.cacap-widget-type-name {
-				margin-top: 3px;
 				display: block;
 				color: #333; 
+				line-height: 1.2em; 
 			}
 			.cacap-plus { 
 				font-size: 60px; 
