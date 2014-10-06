@@ -4028,7 +4028,7 @@ body {
   .time-posted {
     display: none; }
 
-  body:not(.cacap) #wpadminbar {
+  #wpadminbar {
     display: none; }
 
   div#content .padder {
