@@ -232,13 +232,13 @@ function mla_xprofile_filter_link_profile_data( $field_value, $field_type = 'tex
 		return $field_value;
 	}
 
-	if ( ! strpos( $field_value, ',' ) && !strpos( $field_value, ';' )  && ( count( explode( ' ', $field_value ) ) > 5 ) ) { 
+	if ( ! strpos( $field_value, ',' ) && !strpos( $field_value, '; ' )  && ( count( explode( ' ', $field_value ) ) > 5 ) ) { 
 		return $field_value;
 	}
 
-	if ( strpos( $field_value, ';' ) ) { 
+	if ( strpos( $field_value, '; ' ) ) { 
 		$list_type = 'semicolon'; 
-		$values = explode( ';', $field_value ); // semicolon-separated lists
+		$values = explode( '; ', $field_value ); // semicolon-separated lists
 	} else { 
 		$list_type = 'comma'; 
 		$values = explode( ',', $field_value ); // comma-separated lists
@@ -320,5 +320,5 @@ function mla_update_member_data() {
 		_log( 'Something went wrong while trying to update member info from the member database.' ); 
 	} 
 } 
-//add_action( 'cacap_before_content', 'mla_update_member_data' );  
+add_action( 'cacap_before_content', 'mla_update_member_data' );  
 //add_action( 'bp_before_member_groups_content', 'mla_update_member_data' );  
