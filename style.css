@@ -2240,11 +2240,9 @@ span.activity {
   width: 100%;
   padding: 10px 0; }
   #cacap-user-widget-new #cacap-user-widget-new-content {
-    width: 900px;
-    margin: 0 auto; }
+    text-align: center; }
   #cacap-user-widget-new #cacap-new-widget-types {
-    overflow: hidden;
-    height: 100px; }
+    line-height: 1em; }
     #cacap-user-widget-new #cacap-new-widget-types a {
       text-decoration: none; }
     #cacap-user-widget-new #cacap-new-widget-types li {
@@ -2264,16 +2262,17 @@ span.activity {
       border-radius: 5px;
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
-      float: left;
       width: 100px;
-      display: block;
+      display: inline-block;
+      vertical-align: top;
       text-align: center;
-      height: 90%;
+      height: 90px;
       margin-right: 10px;
       padding: 3px;
       padding-top: 22px;
       line-height: 1.1em;
-      cursor: pointer; }
+      cursor: pointer;
+      margin-bottom: 10px; }
       #cacap-user-widget-new #cacap-new-widget-types li a, #cacap-user-widget-new #cacap-new-widget-types li a:hover, #cacap-user-widget-new #cacap-new-widget-types li:hover, #cacap-user-widget-new #cacap-new-widget-types li:active {
         color: #2e2e2e;
         text-decoration: none; }

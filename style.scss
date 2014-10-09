@@ -2310,13 +2310,11 @@ span.activity {
 	padding: 10px 0;
 
 	#cacap-user-widget-new-content {
-		width: 900px;
-		margin: 0 auto;
+		text-align: center; 
 	}
 
 	#cacap-new-widget-types {
-		overflow: hidden;
-		height: 100px;
+		line-height: 1em; 
 
 		a {
 			text-decoration: none;
@@ -2325,16 +2323,17 @@ span.activity {
 		li {
 			@include minimalButton; 
 			@include borderRadius(5px); 
-			float: left;
 			width: 100px;
-			display: block;
+			display: inline-block;
+			vertical-align: top; 
 			text-align: center;
-			height: 90%;
+			height: 90px;
 			margin-right: 10px;
 			padding: 3px;
 			padding-top: 22px;
 			line-height: 1.1em; 
 			cursor: pointer;
+			margin-bottom: 10px; 
 
 			&.cacap-has-max {
 				opacity: .4;
