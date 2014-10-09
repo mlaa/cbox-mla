@@ -1945,9 +1945,7 @@ ul#topic-post-list {
   }
 }
 div.admin-links {
-    position: absolute;
-    top: 25px;
-    right: 30px;
+    float: right; 
     font-size: 85%;
     a { 
 	    @include minimalButton;

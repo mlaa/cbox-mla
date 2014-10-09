@@ -1858,9 +1858,7 @@ ul#topic-post-list {
       margin-left: 54px; }
 
 div.admin-links {
-  position: absolute;
-  top: 25px;
-  right: 30px;
+  float: right;
   font-size: 85%; }
   div.admin-links a {
     display: inline-block;
