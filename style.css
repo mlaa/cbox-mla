@@ -2589,6 +2589,12 @@ body.wiki.single-bp_doc #subnav {
 .bbp-breadcrumb-current, .bbp-topic-meta, .bbp-pagination {
   color: #999; }
 
+#bbp-searchform input#ts {
+  padding: 11px;
+  position: relative;
+  top: 2px;
+  /* line it up with the button */ }
+
 /* BBPress Bleeding */
 .groups.forums #item-header {
   display: none; }
