@@ -2589,11 +2589,13 @@ body.wiki.single-bp_doc #subnav {
 .bbp-breadcrumb-current, .bbp-topic-meta, .bbp-pagination {
   color: #999; }
 
-#bbp-searchform input#ts {
-  padding: 11px;
-  position: relative;
-  top: 2px;
-  /* line it up with the button */ }
+#bbp-searchform {
+  margin-bottom: 20px; }
+  #bbp-searchform input#ts {
+    padding: 11px;
+    position: relative;
+    top: 2px;
+    /* line it up with the button */ }
 
 /* BBPress Bleeding */
 .groups.forums #item-header {
@@ -2624,7 +2626,7 @@ body.wiki.single-bp_doc #subnav {
 
 #bbpress-forums {
   font-size: inherit; }
-  #bbpress-forums div.bbp-search-form {
+  #bbpress-forums .bbp-search-form {
     float: none;
     margin-bottom: 15px; }
   #bbpress-forums div.odd, #bbpress-forums #bbpress-forums ul.odd {

@@ -2633,6 +2633,7 @@ body.wiki.single-bp_doc #subnav {
 }
 
 #bbp-searchform { 
+	margin-bottom: 20px; 
 	input#ts { 
 		padding: 11px; 
 		position: relative; 
@@ -2669,7 +2670,7 @@ body.wiki.single-bp_doc #subnav {
 }
 #bbpress-forums {
 	font-size: inherit;
-	div.bbp-search-form { 
+	.bbp-search-form { 
 		float: none; 
 		margin-bottom: 15px; 
 	} 
