@@ -3231,6 +3231,9 @@ h3:empty {
   clear: none;
   margin: 7px;
   margin-bottom: 45px; }
+#bp-group-documents .admin-links a {
+  padding: 8px;
+  margin: 0 3px; }
 
 /* --- End BP Group Documents ("Files") --- }}} */
 /* --- Structure --- {{{1 */
@@ -3823,7 +3826,9 @@ body {
 
   body {
     margin-top: -28px;
-    min-width: initial;
+    min-width: 0 !important; }
+
+  body:not(.cacap) {
     overflow-x: hidden;
     /* Temporary hack. kept getting like 2% extra space. Scrollbar issue? */ }
 

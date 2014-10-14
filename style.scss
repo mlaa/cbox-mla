@@ -4041,9 +4041,11 @@ body {
 	}
 	body {
 		margin-top: -28px;
-		min-width: initial; 
-		overflow-x: hidden; /* Temporary hack. kept getting like 2% extra space. Scrollbar issue? */ 
+		min-width: 0 !important;  
 	}
+	body:not(.cacap) { 
+		overflow-x: hidden; /* Temporary hack. kept getting like 2% extra space. Scrollbar issue? */ 
+	} 
 	.row { 
 	} 
 	#content, { 
