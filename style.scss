@@ -3374,6 +3374,9 @@ div.item-options a.selected {
     top: 2px;
     text-transform: none;
 }
+.sidebar-activity-tabs a:before { 
+	font-size: 20px; 
+} 
 /* WordPress Icons */
 .post-top {
     padding-top: 0px
@@ -3700,7 +3703,6 @@ div#message p:before {
 }
 .groups #item-buttons .group-button a:before {
     content: "#";
-    font-size: 150%;
     padding: 0 2px 0 0;
 }
 /* Main Menu Icons */
