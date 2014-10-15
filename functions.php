@@ -320,5 +320,5 @@ function mla_update_member_data() {
 		_log( 'Something went wrong while trying to update member info from the member database.' ); 
 	} 
 } 
-add_action( 'cacap_before_content', 'mla_update_member_data' );  
+//add_action( 'cacap_before_content', 'mla_update_member_data' );  
 //add_action( 'bp_before_member_groups_content', 'mla_update_member_data' );  
