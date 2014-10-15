@@ -3369,7 +3369,7 @@ div.item-options a.selected {
     font-family: "iconsweetsRegular";
     color: inherit;
     padding-right: 2px;
-    font-size: 130%;
+    font-size: 16px;
     position: relative;
     top: 2px;
     text-transform: none;
@@ -3481,7 +3481,7 @@ span.comments a:before {
 .button:before,
 .generic-button a:before {
     display: inline-block;
-    font-size: 135%;
+    font-size: 16px;
     padding: 0 2px 6px 1px;
 }
 
@@ -3586,7 +3586,7 @@ li#nav-docs-groups-li a:before,
 }
 #bp-create-doc-button:before {
     content: "C";
-    font-size: 165%;
+    font-size: 20px;
 }
 li#nav-notifications-groups-li a:before {
     content: "6"
