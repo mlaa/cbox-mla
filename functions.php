@@ -379,9 +379,6 @@ function my_custom_groupblog_setup_nav() {
 			$blog_id = get_groupblog_blog_id( $current_group->id );
 			$details = get_blog_details( $blog_id );
 
-			_log( 'blog details are:' ); 
-			_log( $details ); 
-
 			// is the group blog public?
 			if( (bool) $details->public == true ) {
 
@@ -395,15 +392,6 @@ function my_custom_groupblog_setup_nav() {
 
 		}
 
-		_log( array(
-			'name' => $name,
-			'slug' => $slug,
-			'parent_url' => $group_link,
-			'parent_slug' => $parent_slug,
-			'screen_function' => 'groupblog_screen_blog',
-			'position' => 32,
-			'item_css_id' => 'group-blog'
-		) ); 
 		// define subnav item
 		bp_core_new_subnav_item(
 			array(
