@@ -1,7 +1,6 @@
 # Content Changes for 2.1.0 Rollout
 
- * [x] remove photo credits from slider posts (they're handled by the alt text now)
-   - Katina's done this on production 
+ * [ ] remove photo credits from slider posts (they're handled by the alt text now)
  * [ ] upgrade WP to 4.0
  * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
  * [ ] fetch and check out the buddypress-docs branch `mla`. This branch has the feature that will allow us to disable attachments but show existing attachments. 
@@ -36,7 +35,13 @@ Language Association.
 
 # Changes in Version 2.1.0 
 
+ * User profiles are now highly configurable "portfolios," thanks to a plugin initially developed for the CUNY Academic Commons. Members can now add their positions, publications, educational data, and custom fields to their profiles, and rearrange their order. This portfolio is displayed in a clean, clutter-free interface that prints nicely to paper or PDF.  
  * Buddypress-docs has a cleaned-up interface. It no longer gives users the arguably unnecessary options of changing the associated group of a doc, or of changing its access rights or parent doc.  
+ * WordPress has been updated to 4.0. Additional version upgrades include: 
+  - Akismet -> 3.0.2
+  - BP Group Documents -> 1.6
+  - CommentPress Code -> 3.5.9
+  - WP Accessibility -> 1.3.7
 
 # Changes in Version 2.0 
 
