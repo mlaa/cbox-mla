@@ -2295,6 +2295,12 @@ span.activity {
 
 /* --- CACAP Portfolio / Profile --- {{{2 */ 
 
+/* CACAP CSS is still getting loaded here, 
+ * so we have to override some things 
+ */ 
+.activity .main-menu { 
+	font-size: 100%; 
+} 
 .cacap-bp-profile-fields { 
 	width: 900px; 
 } 
