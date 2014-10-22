@@ -3067,6 +3067,9 @@ select {
     margin-right: 0px; }
   .main-menu a {
     padding: 9px 0 0 20px; }
+    .main-menu a:hover {
+      color: #000;
+      transition: color 0.7s; }
 
 #main-menu-wrap li#menu-item-151 a:hover, #main-menu-wrap li:last-child a:hover {
   border-right: 0px none; }
