@@ -10,8 +10,7 @@
 ?>
 
 	<form role="search" method="get" id="bbp-searchform" action="">
-		<label for="ts">Search this group's forum topics:</label>
-		<input type="text" name="ts" id="ts" value="<?php echo ( isset( $_REQUEST['ts'] ) ) ? $_REQUEST['ts'] : ''; ?>" />
+		<input type="text" name="ts" id="ts" value="<?php echo ( isset( $_REQUEST['ts'] ) ) ? $_REQUEST['ts'] : ''; ?>" placeholder="Search this forum:" />
 		<input type="submit" id="searchsubmit" value="Search" />
 	</form> 
 
