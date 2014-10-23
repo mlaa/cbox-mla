@@ -2230,7 +2230,7 @@ span.activity {
 /* CACAP CSS is still getting loaded here, 
  * so we have to override some things 
  */
-.activity .main-menu {
+.activity.bp-user .main-menu {
   font-size: 100%; }
 
 .cacap-bp-profile-fields {
