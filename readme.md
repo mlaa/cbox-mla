@@ -17,7 +17,6 @@
  * [ ] Network Dashboard -> Users -> Profile Fields -> Institutional or Other Affiliation -> Edit: 
    - description: e.g. &quot;College of Yoknapatawpha&quot; 
 
-
 ##Optional Changes
  * [ ] apply [Buddypress patch #5858](https://buddypress.trac.wordpress.org/ticket/5858), which fixes #104 with site searches incorrectly reporting the number of results. 
 
