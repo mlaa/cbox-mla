@@ -416,5 +416,28 @@ if( has_action( 'bp_setup_nav', 'bp_groupblog_setup_nav' ) ) {
 
 	// replace with our own
 	add_action( 'bp_setup_nav', 'my_custom_groupblog_setup_nav' );
-
 } 
+
+/**
+ * For group blogs, override the avatar with that of the group
+ * Props to Christian Wach and CommentPress for this. 
+ * See #116. 
+ *
+ */
+function mla_get_blog_avatar( $avatar, $blog_id = '', $args ){
+	// did we get anything?
+	_log( 'blog id is:' ); 
+	_log( $blog_id ); 
+	// do we have groupblogs?
+	if ( function_exists( 'get_groupblog_group_id' ) ) {
+		// get the group id
+		$group_id = get_groupblog_group_id( $blog_id );
+	}
+	// did we get a group for which this is the group blog?
+	if ( isset( $group_id ) ) {
+		return bp_core_fetch_avatar( array( 'item_id' => $group_id, 'object' => 'group' ) );
+	} else {
+		return $avatar;
+	}
+} 
+add_filter( 'bp_get_blog_avatar', 'mla_get_blog_avatar', 20, 3 ); 
