@@ -425,9 +425,6 @@ if( has_action( 'bp_setup_nav', 'bp_groupblog_setup_nav' ) ) {
  *
  */
 function mla_get_blog_avatar( $avatar, $blog_id = '', $args ){
-	// did we get anything?
-	_log( 'blog id is:' ); 
-	_log( $blog_id ); 
 	// do we have groupblogs?
 	if ( function_exists( 'get_groupblog_group_id' ) ) {
 		// get the group id
