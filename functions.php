@@ -31,10 +31,6 @@ if ( file_exists( WP_LANG_DIR . '/buddypress-' . BPLANG . '.mo' ) ) {
 	load_textdomain( 'buddypress', WP_LANG_DIR . '/buddypress-' . BPLANG . '.mo' );
 }
 
-/* This function filters out membership activities from the group activity stream, 
- * so that "so-and-so joined the group X" doesn't clutter the activity stream. 
- */ 
-
 /* this is a jQuery hack to check the checkbox on 
  * Create a Group → 4. Forum → Group Forum → 
  * “Yes. I want this Group to have a forum” 
