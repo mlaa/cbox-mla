@@ -265,10 +265,10 @@ function mla_xprofile_filter_link_profile_data( $field_value, $field_type = 'tex
 						$value = preg_replace( '/\.$/', '', $value ); // remove the period at the end
 						$search_url   = add_query_arg( array( 's' => urlencode( $value ) ), bp_get_members_directory_permalink() );
 						$new_values[] = '<a href="' . esc_url( $search_url ) . '" rel="nofollow">' . $value . '</a>.'; // but add it back *after* the link. 
-					} else if ( preg_match( '/\.\<br \/\>', $value ) ) { 
+					} else if ( preg_match( '/\.\<br \/\>/', $value ) ) { 
 						$search_url   = add_query_arg( array( 's' => urlencode( $value ) ), bp_get_members_directory_permalink() );
 						$new_values[] = '<a href="' . esc_url( $search_url ) . '" rel="nofollow">' . $value . '</a>.<br />';
-					} else if ( preg_match( '/\<br \/\>', $value ) ) { 
+					} else if ( preg_match( '/\<br \/\>/', $value ) ) { 
 						$search_url   = add_query_arg( array( 's' => urlencode( $value ) ), bp_get_members_directory_permalink() );
 						$new_values[] = '<a href="' . esc_url( $search_url ) . '" rel="nofollow">' . $value . '</a><br />';
 
