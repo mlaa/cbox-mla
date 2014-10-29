@@ -2311,6 +2311,37 @@ span.activity {
         font-size: 60px;
         color: #333; }
 
+/* --- Welcome "Bubble" Modal Dialog for CACAP {{{3 --- */
+.remodal-confirm {
+  display: inline-block;
+  background-color: #fafafa;
+  border: 1px solid #ebebeb;
+  border-bottom: 2px solid #ddd;
+  color: #2e2e2e;
+  font-size: 11px;
+  font-family: proxima-nova, Helvetica, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+  font-weight: bold;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 12px;
+  font-size: 14px; }
+  .remodal-confirm a, .remodal-confirm a:hover, .remodal-confirm:hover, .remodal-confirm:active {
+    color: #2e2e2e;
+    text-decoration: none; }
+  .remodal-confirm:hover {
+    background-color: #ebebeb; }
+  .remodal-confirm:active {
+    background-color: #e1e1e1;
+    text-shadow: none; }
+
+.remodal-close {
+  display: none;
+  /* disable X button to clean it up a bit */ }
+
+/* --- Welcome "Bubble" Modal Dialog for CACAP }}} --- */
 /* --- End CACAP Portfolio / Profile --- }}} */
 /* --- End Members --- }}} */
 /* Profile Action Buttons */
