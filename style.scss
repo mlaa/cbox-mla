@@ -2380,6 +2380,20 @@ span.activity {
 	}
 }
 
+/* --- Welcome "Bubble" Modal Dialog for CACAP {{{3 --- */ 
+
+.remodal-confirm { 
+	@include minimalButton; 
+	padding: 12px; 
+	font-size: 14px; 
+} 
+
+.remodal-close { 
+	display: none; /* disable X button to clean it up a bit */ 
+} 
+
+/* --- Welcome "Bubble" Modal Dialog for CACAP }}} --- */ 
+
 /* --- End CACAP Portfolio / Profile --- }}} */ 
 
 /* --- End Members --- }}} */
