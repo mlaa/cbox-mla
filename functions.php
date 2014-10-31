@@ -170,6 +170,9 @@ function remove_general_subnav() {
 
 add_action( 'wp', 'remove_general_subnav', 2 );
 
+// remove portfolio subnav area from member activity area settings tab. 
+// This page just had lots of visibility settings for CACAP profile areas, 
+// but they weren't working properly, and didn't include "free entry" areas. 
 function mla_remove_portfolio_subnav() {
 	global $bp;
 	bp_core_remove_subnav_item( $bp->settings->slug, 'profile' );
