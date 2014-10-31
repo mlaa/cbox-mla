@@ -1707,6 +1707,8 @@ div.activity-comments {
     div.activity-comments .acomment-avatar img.avatar {
       width: 60px;
       height: 60px; }
+  div.activity-comments .ac-textarea textarea {
+    height: 60px; }
   div.activity-comments .acomment-meta, div.activity-comments .acomment-content, div.activity-comments .acomment-options {
     margin-left: 75px; }
   div.activity-comments .acomment-meta {

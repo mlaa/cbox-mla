@@ -1763,6 +1763,9 @@ div.activity-comments {
 			height: 60px; 
 		}
 	} 
+	.ac-textarea textarea { 
+		height: 60px; 
+	} 
 	.acomment-meta, .acomment-content, .acomment-options { 
 		margin-left: 75px; 
 	} 
@@ -1792,6 +1795,7 @@ div.activity-comments {
 			padding: 0; 
 		}
 	} 
+
 }
 
 body.activity-permalink div.activity-comments ul li > ul {
