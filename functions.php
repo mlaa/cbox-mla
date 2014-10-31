@@ -170,6 +170,12 @@ function remove_general_subnav() {
 
 add_action( 'wp', 'remove_general_subnav', 2 );
 
+function mla_remove_portfolio_subnav() {
+	global $bp;
+	bp_core_remove_subnav_item( $bp->settings->slug, 'profile' );
+}
+
+add_action( 'wp', 'mla_remove_portfolio_subnav', 2 );
 
 
 /*
