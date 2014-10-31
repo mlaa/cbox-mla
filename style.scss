@@ -2618,6 +2618,15 @@ thead:first-child tr th, thead:first-child tr td {
 #doc-permissions-less { 
 	margin-top: 3px; 
 } 
+#doc-submit-options { 
+	margin-bottom: 30px; 
+}
+.delete-doc-button { 
+	@include minimalButton; 
+	padding: 10px; 
+	position: relative; 
+	top: 5px; 
+} 
 
 /*Third Pary Plugin Fixes*/
 #links-personal-li #links-order-select,

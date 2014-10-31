@@ -2578,6 +2578,35 @@ thead:first-child tr th, thead:first-child tr td {
 #doc-permissions-less {
   margin-top: 3px; }
 
+#doc-submit-options {
+  margin-bottom: 30px; }
+
+.delete-doc-button {
+  display: inline-block;
+  background-color: #fafafa;
+  border: 1px solid #ebebeb;
+  border-bottom: 2px solid #ddd;
+  color: #2e2e2e;
+  font-size: 11px;
+  font-family: proxima-nova, Helvetica, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+  font-weight: bold;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 10px;
+  position: relative;
+  top: 5px; }
+  .delete-doc-button a, .delete-doc-button a:hover, .delete-doc-button:hover, .delete-doc-button:active {
+    color: #2e2e2e;
+    text-decoration: none; }
+  .delete-doc-button:hover {
+    background-color: #ebebeb; }
+  .delete-doc-button:active {
+    background-color: #e1e1e1;
+    text-shadow: none; }
+
 /*Third Pary Plugin Fixes*/
 #links-personal-li #links-order-select,
 #links-personal-li #links-category-select {
