@@ -222,8 +222,9 @@ table {
 th, td {
   padding: 8px;
   line-height: 18px;
-  text-align: left;
-  border-top: 1px solid #ddd; }
+  text-align: left; }
+  th:not(:first-child), td:not(:first-child) {
+    border-top: 1px solid #eee; }
 
 th {
   font-weight: bold;
@@ -314,8 +315,7 @@ label {
   display: block;
   font-size: 80%;
   font-weight: bold;
-  margin: 5px 0;
-  text-transform: uppercase; }
+  margin: 5px 0; }
   label ul {
     padding: 0; }
   label li {
@@ -1260,9 +1260,11 @@ div.pagination {
   clear: both;
   margin: 25px 0; }
   div.pagination#pag-bottom .pag-count {
-    padding: 10px 0; }
+    padding: 10px 0;
+    margin-top: 10px; }
   div.pagination .pag-count {
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 10px; }
   div.pagination .pagination-links {
     float: right;
     display: inline-block; }
@@ -1705,6 +1707,8 @@ div.activity-comments {
     div.activity-comments .acomment-avatar img.avatar {
       width: 60px;
       height: 60px; }
+  div.activity-comments .ac-textarea textarea {
+    height: 60px; }
   div.activity-comments .acomment-meta, div.activity-comments .acomment-content, div.activity-comments .acomment-options {
     margin-left: 75px; }
   div.activity-comments .acomment-meta {
@@ -1855,9 +1859,7 @@ ul#topic-post-list {
       margin-left: 54px; }
 
 div.admin-links {
-  position: absolute;
-  top: 25px;
-  right: 30px;
+  float: right;
   font-size: 85%; }
   div.admin-links a {
     display: inline-block;
@@ -2226,6 +2228,123 @@ span.activity {
 #profile-nav-menu ul {
   list-style: none outside none; }
 
+/* --- CACAP Portfolio / Profile --- {{{2 */
+/* CACAP CSS is still getting loaded here, 
+ * so we have to override some things 
+ */
+.activity.bp-user .main-menu {
+  font-size: 100%; }
+
+.cacap-bp-profile-fields {
+  width: 900px; }
+
+#cacap-user-widget-new {
+  background-color: #efefef;
+  border-bottom: 2px solid #eee;
+  border-top: 2px solid #eee;
+  width: 100%;
+  padding: 10px 0; }
+  #cacap-user-widget-new #cacap-user-widget-new-content {
+    text-align: center; }
+  #cacap-user-widget-new #cacap-new-widget-types {
+    line-height: 1em; }
+    #cacap-user-widget-new #cacap-new-widget-types a {
+      text-decoration: none; }
+    #cacap-user-widget-new #cacap-new-widget-types li {
+      display: inline-block;
+      background-color: #fafafa;
+      border: 1px solid #ebebeb;
+      border-bottom: 2px solid #ddd;
+      color: #2e2e2e;
+      font-size: 11px;
+      font-family: proxima-nova, Helvetica, sans-serif;
+      text-decoration: none;
+      text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+      font-weight: bold;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      width: 100px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      height: 90px;
+      margin-right: 10px;
+      padding: 3px;
+      padding-top: 22px;
+      line-height: 1.1em;
+      cursor: pointer;
+      margin-bottom: 10px; }
+      #cacap-user-widget-new #cacap-new-widget-types li a, #cacap-user-widget-new #cacap-new-widget-types li a:hover, #cacap-user-widget-new #cacap-new-widget-types li:hover, #cacap-user-widget-new #cacap-new-widget-types li:active {
+        color: #2e2e2e;
+        text-decoration: none; }
+      #cacap-user-widget-new #cacap-new-widget-types li:hover {
+        background-color: #ebebeb; }
+      #cacap-user-widget-new #cacap-new-widget-types li:active {
+        background-color: #e1e1e1;
+        text-shadow: none; }
+      #cacap-user-widget-new #cacap-new-widget-types li.cacap-has-max {
+        opacity: .4; }
+        #cacap-user-widget-new #cacap-new-widget-types li.cacap-has-max .cacap-has-max-tooltip {
+          position: absolute;
+          font-size: .9em;
+          height: 1.4em;
+          background: #fff;
+          border: 1px solid #666;
+          opacity: 2;
+          color: #000;
+          display: none; }
+        #cacap-user-widget-new #cacap-new-widget-types li.cacap-has-max:hover {
+          cursor: default;
+          background-color: #FAFAFA; }
+          #cacap-user-widget-new #cacap-new-widget-types li.cacap-has-max:hover .cacap-has-max-tooltip {
+            display: block; }
+          #cacap-user-widget-new #cacap-new-widget-types li.cacap-has-max:hover a {
+            cursor: default;
+            color: #333; }
+      #cacap-user-widget-new #cacap-new-widget-types li .cacap-widget-type-name {
+        display: block;
+        color: #333;
+        line-height: 1.2em; }
+      #cacap-user-widget-new #cacap-new-widget-types li .cacap-plus {
+        font-size: 60px;
+        color: #333; }
+
+/* --- Welcome "Bubble" Modal Dialog for CACAP {{{3 --- */
+.remodal-confirm {
+  display: inline-block;
+  background-color: #fafafa;
+  border: 1px solid #ebebeb;
+  border-bottom: 2px solid #ddd;
+  color: #2e2e2e;
+  font-size: 11px;
+  font-family: proxima-nova, Helvetica, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+  font-weight: bold;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 12px;
+  font-size: 14px; }
+  .remodal-confirm a, .remodal-confirm a:hover, .remodal-confirm:hover, .remodal-confirm:active {
+    color: #2e2e2e;
+    text-decoration: none; }
+  .remodal-confirm:hover {
+    background-color: #ebebeb; }
+  .remodal-confirm:active {
+    background-color: #e1e1e1;
+    text-shadow: none; }
+
+.remodal-close {
+  display: none;
+  /* disable X button to clean it up a bit */ }
+
+/* --- Welcome "Bubble" Modal Dialog for CACAP }}} --- */
+/* --- End CACAP Portfolio / Profile --- }}} */
 /* --- End Members --- }}} */
 /* Profile Action Buttons */
 .bp-user #item-buttons .generic-button,
@@ -2451,6 +2570,45 @@ thead:first-child tr th, thead:first-child tr td {
   background: transparent;
   padding: 0; }
 
+#doc-associated-group, #doc-settings, #doc-parent, #doc-permissions-edit {
+  /* Hide advanced settings for docs. Have to 
+   * hide these in CSS, since they're set with AJAX 
+   * and sent via POST. 
+   */
+  display: none; }
+
+#doc-permissions-less {
+  margin-top: 3px; }
+
+#doc-submit-options {
+  margin-bottom: 30px; }
+
+.delete-doc-button {
+  display: inline-block;
+  background-color: #fafafa;
+  border: 1px solid #ebebeb;
+  border-bottom: 2px solid #ddd;
+  color: #2e2e2e;
+  font-size: 11px;
+  font-family: proxima-nova, Helvetica, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+  font-weight: bold;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 10px;
+  position: relative;
+  top: 5px; }
+  .delete-doc-button a, .delete-doc-button a:hover, .delete-doc-button:hover, .delete-doc-button:active {
+    color: #2e2e2e;
+    text-decoration: none; }
+  .delete-doc-button:hover {
+    background-color: #ebebeb; }
+  .delete-doc-button:active {
+    background-color: #e1e1e1;
+    text-shadow: none; }
+
 /*Third Pary Plugin Fixes*/
 #links-personal-li #links-order-select,
 #links-personal-li #links-category-select {
@@ -2498,6 +2656,14 @@ body.wiki.single-bp_doc #subnav {
 .bbp-breadcrumb-current, .bbp-topic-meta, .bbp-pagination {
   color: #999; }
 
+#bbp-searchform {
+  margin-bottom: 20px; }
+  #bbp-searchform input#ts {
+    padding: 11px;
+    position: relative;
+    top: 2px;
+    /* line it up with the button */ }
+
 /* BBPress Bleeding */
 .groups.forums #item-header {
   display: none; }
@@ -2527,7 +2693,7 @@ body.wiki.single-bp_doc #subnav {
 
 #bbpress-forums {
   font-size: inherit; }
-  #bbpress-forums div.bbp-search-form {
+  #bbpress-forums .bbp-search-form {
     float: none;
     margin-bottom: 15px; }
   #bbpress-forums div.odd, #bbpress-forums #bbpress-forums ul.odd {
@@ -2728,7 +2894,7 @@ h1#category-title span, h1#tag-title span {
   color: #555; }
 
 /* BuddyPress */
-#item-header-avatar img.avatar {
+#item-header-avatar img.avatar, .cacap-avatar img.avatar {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -2969,6 +3135,9 @@ select {
     margin-right: 0px; }
   .main-menu a {
     padding: 9px 0 0 20px; }
+    .main-menu a:hover {
+      color: #000;
+      transition: color 0.7s; }
 
 #main-menu-wrap li#menu-item-151 a:hover, #main-menu-wrap li:last-child a:hover {
   border-right: 0px none; }
@@ -3138,7 +3307,11 @@ h3:empty {
   padding-left: 32px; }
 #bp-group-documents div.pagination {
   clear: none;
-  margin: 7px; }
+  margin: 7px;
+  margin-bottom: 45px; }
+#bp-group-documents .admin-links a {
+  padding: 8px;
+  margin: 0 3px; }
 
 /* --- End BP Group Documents ("Files") --- }}} */
 /* --- Structure --- {{{1 */
@@ -3733,7 +3906,9 @@ body {
 
   body {
     margin-top: -28px;
-    min-width: initial;
+    min-width: 0 !important; }
+
+  body:not(.cacap) {
     overflow-x: hidden;
     /* Temporary hack. kept getting like 2% extra space. Scrollbar issue? */ }
 
@@ -3883,8 +4058,7 @@ body {
       .mobile-menu-container a.button #loginlogout {
         right: 10px; }
 
-  #wpadminbar,
-  .twipsy {
+  body:not(.cacap) #wpadminbar, .twipsy {
     display: none !important; }
 
   #sidebar {

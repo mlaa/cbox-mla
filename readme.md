@@ -1,6 +1,24 @@
-# Content Changes for 2.1.0 Rollout
+# Changes for 2.1.0 Rollout
 
- * remove photo credits from slider posts (they're handled by the alt text now)
+ * [ ] remove photo credits from slider posts (they're handled by the alt text now)
+ * [ ] upgrade WP to 4.0
+ * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
+ * [ ] ensure that we're using the mlaa repo versions of buddypress-docs, bp-group-documents, bp-groupblog?. 
+ * [ ] check out CACAP from our repo: `git clone https://github.com/mlaa/cac-advanced-profiles.git`
+ * [ ] get CACAP dependencies via git submodules: `git submodule update --init --recursive` 
+ * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Public): drag the following fields to their places: 
+   - Institutional or Other Affiliation -> Brief Descriptor
+   - Title -> About You
+ * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Edit Mode): make sure fields are in this order: 
+   - Left column: Name, Institutional or Other Affiliation
+   - Right column: Title
+ * [ ] Network Dashboard -> Users -> Profile Fields -> Title -> Edit: 
+   - description: e.g. &quot;Adjunct Instructor&quot; 
+ * [ ] Network Dashboard -> Users -> Profile Fields -> Institutional or Other Affiliation -> Edit: 
+   - description: e.g. &quot;College of Yoknapatawpha&quot; 
+
+##Optional Changes
+ * [ ] apply [Buddypress patch #5858](https://buddypress.trac.wordpress.org/ticket/5858), which fixes #104 with site searches incorrectly reporting the number of results. 
 
 # Commons-in-a-Box MLA Child Theme
 
@@ -16,7 +34,13 @@ Language Association.
 
 # Changes in Version 2.1.0 
 
+ * User profiles are now highly configurable "portfolios," thanks to a plugin initially developed for the CUNY Academic Commons. Members can now add their positions, publications, educational data, and custom fields to their profiles, and rearrange their order. This portfolio is displayed in a clean, clutter-free interface that prints nicely to paper or PDF.  
  * Buddypress-docs has a cleaned-up interface. It no longer gives users the arguably unnecessary options of changing the associated group of a doc, or of changing its access rights or parent doc.  
+ * WordPress has been updated to 4.0. Additional version upgrades include: 
+  - Akismet -> 3.0.2
+  - BP Group Documents -> 1.6
+  - CommentPress Code -> 3.5.9
+  - WP Accessibility -> 1.3.7
 
 # Changes in Version 2.0 
 
