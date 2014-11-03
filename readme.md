@@ -3,8 +3,15 @@
  * [ ] remove photo credits from slider posts (they're handled by the alt text now)
  * [ ] upgrade WP to 4.0
  * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
- * [ ] ensure that we're using the mlaa repo versions of buddypress-docs, bp-group-documents, bp-groupblog?. 
+ * [ ] ensure that we're using the mlaa repo versions of buddypress-docs, bp-group-documents, bp-groupblog. 
  * [ ] check out CACAP from our repo: `git clone https://github.com/mlaa/cac-advanced-profiles.git`
+ * [ ] ensure we're on the correct branches
+   - [ ] cbox-mla: develop
+   - [ ] cac-advanced-profiles: master
+   - [ ] commons: develop 
+   - [ ] bp-groupblog: master
+   - [ ] buddypress-docs: develop
+   - [ ] bp-group-documents: master
  * [ ] get CACAP dependencies via git submodules: `git submodule update --init --recursive` 
  * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Public): drag the following fields to their places: 
    - Institutional or Other Affiliation -> Brief Descriptor
