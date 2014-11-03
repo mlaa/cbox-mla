@@ -443,3 +443,16 @@ function mla_get_blog_avatar( $avatar, $blog_id = '', $args ){
 	}
 } 
 add_filter( 'bp_get_blog_avatar', 'mla_get_blog_avatar', 20, 3 ); 
+
+
+/* This adds a `title` attribute to thumbnail images which it copies from 
+ * images' alt text. Not super standard but it accomplishes what we want 
+ * from the feature slider area. 
+ */ 
+function mla_thumbnail_html( $attr ) { 
+	if ( ! isset( $attr['title'] ) ) { 
+		$attr['title'] = $attr['alt'];
+	} 
+	return $attr; 
+} 
+add_filter( 'wp_get_attachment_image_attributes', 'mla_thumbnail_html', 10 ); 
