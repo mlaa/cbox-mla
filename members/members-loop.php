@@ -48,12 +48,8 @@
 				  * but it'll add an extra query for each member in the loop
 				  * (only one regardless of the number of fields you show):
 				  *
-				  */ 
-				  echo xprofile_get_field_data( 'Title', bp_get_member_user_id() ). '<br/>';
-				  echo xprofile_get_field_data( 'Institutional or Other Affiliation', bp_get_member_user_id() ) . '<br/>';
-				  echo xprofile_get_field_data( 'Interests', bp_get_member_user_id() ). '<br/>';
-				  echo xprofile_get_field_data( '<em>Twitter</em> User Name', bp_get_member_user_id() ). '<br/>';
-				  echo xprofile_get_field_data( 'Blog', bp_get_member_user_id() ). '<br/>';
+				  * bp_member_profile_data( 'field=the field name' );
+				  */
 				?>
 			</div>
 
