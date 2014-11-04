@@ -1,8 +1,10 @@
 # Changes for 2.1.0 Rollout
 
  * [ ] remove photo credits from slider posts (they're handled by the alt text now)
- * [ ] upgrade WP to 4.0
- * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
+ * [ ] upgrade WP to 4.0 and upgrade plugins
+   - [ ] may require changing permissions: `sudo chown -R www-data:www-data ~/app`
+   - [ ] change back afterwards with: `sudo chown -R admin:admin ~/app`
+   - [ ] but the uploads dir still needs to be writeable. 
  * [ ] ensure that we're using the mlaa repo versions of buddypress-docs, bp-group-documents, bp-groupblog. 
  * [ ] check out CACAP from our repo: `git clone https://github.com/mlaa/cac-advanced-profiles.git`
  * [ ] ensure we're on the correct branches
@@ -12,14 +14,17 @@
    - [ ] bp-groupblog: master
    - [ ] buddypress-docs: develop
    - [ ] bp-group-documents: master
+   - [ ] mla-admin-bar: develop
+ * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
  * [ ] get CACAP dependencies via git submodules: `git submodule update --init --recursive` 
+ * [ ] network-enable CAC-Advanced-Profiles
  * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Public): drag the following fields to their places: 
    - Institutional or Other Affiliation -> Brief Descriptor
    - Title -> About You
  * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Edit Mode): make sure fields are in this order: 
    - Left column: Name, Institutional or Other Affiliation
    - Right column: Title
- * [ ] Network Dashboard -> Users -> Profile Fields -> Title -> Edit: 
+ * [ ] Network Dashboard -> Users -> Portfolio Fields -> Title -> Edit: 
    - description: e.g. &quot;Adjunct Instructor&quot; 
  * [ ] Network Dashboard -> Users -> Profile Fields -> Institutional or Other Affiliation -> Edit: 
    - description: e.g. &quot;College of Yoknapatawpha&quot; 
