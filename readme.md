@@ -8,13 +8,13 @@
  * [ ] ensure that we're using the mlaa repo versions of buddypress-docs, bp-group-documents, bp-groupblog. 
  * [ ] check out CACAP from our repo: `git clone https://github.com/mlaa/cac-advanced-profiles.git`
  * [ ] ensure we're on the correct branches
-   - [ ] cbox-mla: develop
+   - [ ] cbox-mla: master
    - [ ] cac-advanced-profiles: master
-   - [ ] commons: develop 
+   - [ ] commons: master  
    - [ ] bp-groupblog: master
-   - [ ] buddypress-docs: develop
+   - [ ] buddypress-docs: master
    - [ ] bp-group-documents: master
-   - [ ] mla-admin-bar: develop
+   - [ ] mla-admin-bar: master
  * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
  * [ ] get CACAP dependencies via git submodules: `git submodule update --init --recursive` 
  * [ ] network-enable CAC-Advanced-Profiles
