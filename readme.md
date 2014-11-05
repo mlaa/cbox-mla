@@ -1,34 +1,34 @@
 # Changes for 2.1.0 Rollout
 
- * [ ] remove photo credits from slider posts (they're handled by the alt text now)
- * [ ] upgrade WP to 4.0 and upgrade plugins
-   - [ ] may require changing permissions: `sudo chown -R www-data:www-data ~/app`
-   - [ ] change back afterwards with: `sudo chown -R admin:admin ~/app`
-   - [ ] but the uploads dir still needs to be writeable. 
- * [ ] ensure that we're using the mlaa repo versions of buddypress-docs, bp-group-documents, bp-groupblog. 
- * [ ] check out CACAP from our repo: `git clone https://github.com/mlaa/cac-advanced-profiles.git`
- * [ ] ensure we're on the correct branches
-   - [ ] cbox-mla: master
-   - [ ] cac-advanced-profiles: master
-   - [ ] commons: master  
-   - [ ] bp-groupblog: master
-   - [ ] buddypress-docs: master
-   - [ ] bp-group-documents: master
-   - [ ] mla-admin-bar: master
- * [ ] disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
- * [ ] get CACAP dependencies via git submodules: `git submodule update --init --recursive` 
- * [ ] network-enable CAC-Advanced-Profiles
- * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Public): drag the following fields to their places: 
+ * [x] 1105 11:41 remove photo credits from slider posts (they're handled by the alt text now)
+ * [x] 1105 11:41 upgrade WP to 4.0 and upgrade plugins
+   - [x] 1105 11:41 may require changing permissions: `sudo chown -R www-data:www-data ~/app`
+   - [x] 1105 11:41 change back afterwards with: `sudo chown -R admin:admin ~/app`
+   - [x] 1105 11:41 but the uploads dir still needs to be writeable. 
+ * [x] 1105 11:41 ensure that we're using the mlaa repo versions of buddypress-docs, bp-group-documents, bp-groupblog. 
+ * [x] 1105 11:41 check out CACAP from our repo: `git clone https://github.com/mlaa/cac-advanced-profiles.git`
+ * [x] 1105 11:41 ensure we're on the correct branches
+   - [x] 1105 11:41 cbox-mla: master
+   - [x] 1105 11:41 cac-advanced-profiles: master
+   - [x] 1105 11:41 commons: master  
+   - [x] 1105 11:41 bp-groupblog: master
+   - [x] 1105 11:41 buddypress-docs: master
+   - [x] 1105 11:41 bp-group-documents: master
+   - [x] 1105 11:41 mla-admin-bar: master
+ * [x] 1105 11:41 disable attachments in BP Docs. (Dashboard -> Buddypress Docs -> Settings -> Disable Attachments) 
+ * [x] 1105 11:41 get CACAP dependencies via git submodules: `git submodule update --init --recursive` 
+ * [x] 1105 11:41 network-enable CAC-Advanced-Profiles
+ * [x] 1105 11:41 Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Public): drag the following fields to their places: 
    - Institutional or Other Affiliation -> Brief Descriptor
    - Title -> About You
- * [ ] Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Edit Mode): make sure fields are in this order: 
+ * [x] 1105 11:41 Network Dashboard -> Users -> CAC Advanced Profiles -> Tab: Profile Header (Edit Mode): make sure fields are in this order: 
    - Left column: Name, Institutional or Other Affiliation
    - Right column: Title
- * [ ] Network Dashboard -> Users -> Portfolio Fields -> Title -> Edit: 
+ * [x] 1105 11:41 Network Dashboard -> Users -> Portfolio Fields -> Title -> Edit: 
    - description: e.g., &quot;Adjunct Instructor&quot; 
- * [ ] Network Dashboard -> Users -> Profile Fields -> Institutional or Other Affiliation -> Edit: 
+ * [x] 1105 11:41 Network Dashboard -> Users -> Profile Fields -> Institutional or Other Affiliation -> Edit: 
    - description: e.g., &quot;College of Yoknapatawpha&quot; 
- * [ ] make links work for things in the slider, updates blog post, and help blog post. 
+ * [x] 1105 11:41 make links work for things in the slider, updates blog post, and help blog post. 
 
 ##Optional Changes
  * [ ] apply [Buddypress patch #5858](https://buddypress.trac.wordpress.org/ticket/5858), which fixes #104 with site searches incorrectly reporting the number of results. 
