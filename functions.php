@@ -456,3 +456,20 @@ function mla_thumbnail_html( $attr ) {
 	return $attr; 
 } 
 add_filter( 'wp_get_attachment_image_attributes', 'mla_thumbnail_html', 10 ); 
+
+
+// Props to mgmartel and funkolector for the gist: 
+// https://gist.github.com/mgmartel/4463855  
+// see mlaa/cbox-mla#95: https://github.com/mlaa/cbox-mla/issues/95 
+/**
+ * Sort users by last name
+ *
+ * Changes the querystring for the member directory to sort users by their last name
+ *
+ * @param BP_User_Query $bp_user_query
+ */
+function alphabetize_by_last_name( $bp_user_query ) {
+    if ( 'alphabetical' == $bp_user_query->query_vars['type'] )
+        $bp_user_query->uid_clauses['orderby'] = "ORDER BY substring_index(u.display_name, ' ', -1)";
+}
+add_action ( 'bp_pre_user_query', 'alphabetize_by_last_name' );
