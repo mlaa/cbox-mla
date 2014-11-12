@@ -82,3 +82,10 @@ jQuery(document).ready(function($) {
 		stopProp(e); // don't hide dropdown when clicking in the dropdown
 	});
 });
+
+jQuery(document).ready(function($) {
+	$('.ac_form_cancel').click(function(e) { 
+		e.preventDefault(); 
+		$(this).parent().parent().slideUp(); 
+	}); 
+});  
