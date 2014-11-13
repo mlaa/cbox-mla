@@ -15,7 +15,7 @@ Language Association.
  * Member directory alphabetical listing now sorts by last name instead of first. 
  * Activity comments now have a button for canceling them, replacing the message "or press esc to cancel." 
  * The "tour" plugin that introduces the Activities section to first-time users has been disabled, fixing some issues with Internet Explorer. 
-  
+ * Changes you make to your portfolio will now show up in your activity stream. 
 
 # Changes in Version 2.1.0 "Picaresque" 
 
