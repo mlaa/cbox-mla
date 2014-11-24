@@ -10,6 +10,11 @@ Language Association.
 [1]: http://commons.mla.org
 [2]: https://github.com/cuny-academic-commons/cbox-theme
 
+# 2.1.1 Rollout Todo
+[ ] pull master branch of cbox-mla
+[ ] pull master branch of cac-advanced-profiles
+[ ] Dashboard -> Widgets -> Footer Middle -> RSS: FAQ -> How many items would you like to display? -> set to 6
+
 # Changes in Version 2.1.1 Bugfix Release
 
  * Member directory alphabetical listing now sorts by last name instead of first. 
