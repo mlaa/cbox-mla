@@ -319,13 +319,15 @@ function mla_update_group_membership_data() {
 
 function mla_update_member_data() { 
 	$mla_member = new MLAMember(); 
-	if ( $mla_member->sync() ) { 
-		_log( 'Success! Member data synced.' ); 
-	} else { 
-		_log( 'Something went wrong while trying to update member info from the member database.' ); 
-	} 
+	// don't sync anything just yet. Still testing. 
+	//if ( $mla_member->sync() ) { 
+		//_log( 'Success! Member data synced.' ); 
+	//} else { 
+		//_log( 'Something went wrong while trying to update member info from the member database.' ); 
+	//} 
+	$mla_member->get_mla_member_data(); 
 } 
-//add_action( 'cacap_before_content', 'mla_update_member_data' );  
+add_action( 'cacap_before_content', 'mla_update_member_data' );  
 //add_action( 'bp_before_member_groups_content', 'mla_update_member_data' );  
 
 /**
