@@ -47,7 +47,6 @@ jQuery(document).ready(function($) {
 	function hideDropdown() {
 		if ( helpMenuIsVisible ) {
 			$('#helpdropdown').fadeOut('600');
-			$('#helpdropdown').removeClass('right');
 			helpMenuIsVisible = false;
 		}
 	}
