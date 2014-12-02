@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
 		$('#helpdropdown').toggleClass('right', isSmallWindow);
 		$('#helpdropdown').css({
 			position: 'absolute',
-			top: '86px',
+			top: '115px',
 			right: rightoffset + 'px',
 		});
 		if (helpMenuIsVisible) { 
