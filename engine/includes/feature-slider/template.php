@@ -134,7 +134,7 @@ if( $slider_query->have_posts() ) :
 	<?php if( has_post_thumbnail() && $video_value == "no" ) :?>
 		<li>
 			<!-- Image -->
-			<a href="<?php echo $slide_url; ?>">
+			<a href="#">
 				<?php the_post_thumbnail( array( 'width' => $sliderwidth, 'height' => $sliderheight, 'crop' => true ) ) ?>
 			</a>
 
