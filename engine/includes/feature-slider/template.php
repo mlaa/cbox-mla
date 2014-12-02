@@ -110,7 +110,8 @@ if( $slider_query->have_posts() ) :
 		// slide URL
 		$slide_url = get_post_meta( $post->ID, '_cbox_custom_url', true );
 		if ( empty( $slide_url ) ) {
-			$slide_url = get_permalink();
+			//$slide_url = get_permalink();
+			$slide_url = ''; 
 		} else {
 			$slide_url = esc_url( $slide_url );
 		}
@@ -134,7 +135,7 @@ if( $slider_query->have_posts() ) :
 	<?php if( has_post_thumbnail() && $video_value == "no" ) :?>
 		<li>
 			<!-- Image -->
-			<a href="#">
+			<a href="<?php echo $slide_url; ?>">
 				<?php the_post_thumbnail( array( 'width' => $sliderwidth, 'height' => $sliderheight, 'crop' => true ) ) ?>
 			</a>
 
