@@ -111,7 +111,7 @@ if( $slider_query->have_posts() ) :
 		$slide_url = get_post_meta( $post->ID, '_cbox_custom_url', true );
 		if ( empty( $slide_url ) ) {
 			//$slide_url = get_permalink();
-			$slide_url = ''; 
+			$slide_url = '#'; 
 		} else {
 			$slide_url = esc_url( $slide_url );
 		}
