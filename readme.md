@@ -10,7 +10,19 @@ Language Association.
 [1]: http://commons.mla.org
 [2]: https://github.com/cuny-academic-commons/cbox-theme
 
-# Changes in Version 2.1.0 
+# 2.1.1 Rollout Todo
+[ ] pull master branch of cbox-mla
+[ ] pull master branch of cac-advanced-profiles
+[ ] Dashboard -> Widgets -> Footer Middle -> RSS: FAQ -> How many items would you like to display? -> set to 6
+
+# Changes in Version 2.1.1 Bugfix Release
+
+ * Member directory alphabetical listing now sorts by last name instead of first. 
+ * Activity comments now have a button for canceling them, replacing the message "or press esc to cancel." 
+ * The "tour" plugin that introduces the Activities section to first-time users has been disabled, fixing some issues with Internet Explorer. 
+ * Changes you make to your portfolio will now show up in your activity stream. 
+
+# Changes in Version 2.1.0 "Picaresque" 
 
  * User profiles are now highly configurable "portfolios," thanks to a plugin initially developed for the CUNY Academic Commons. Members can now add their positions, publications, educational data, and custom fields to their profiles, and rearrange their order. This portfolio is displayed in a clean, clutter-free interface that prints nicely to paper or PDF.  
  * Buddypress-docs has a cleaned-up interface. It no longer gives users the arguably unnecessary options of changing the associated group of a doc, or of changing its access rights or parent doc.  
@@ -20,7 +32,7 @@ Language Association.
   - CommentPress Code -> 3.5.9
   - WP Accessibility -> 1.3.7
 
-# Changes in Version 2.0 
+# Changes in Version 2.0 "Courtship" 
 
  * The site has been given a new, flat theme. Gradients, textures, and 3D buttons have been replaced by simple, minimalistic elements. The colorscheme has been also simplified, favoring desaturated colors and grayscale over the bright reds and oranges of the previous theme. 
  * Many redundant UI elements have been removed. Some subscription links have been removed in favor of the "Email Subscriptions" group tab. Pagination buttons that previously appeared on the top and bottom of any content area now only appear at the bottom. Forums titles that bear the same titles as their groups have been removed. 

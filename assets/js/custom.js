@@ -47,7 +47,6 @@ jQuery(document).ready(function($) {
 	function hideDropdown() {
 		if ( helpMenuIsVisible ) {
 			$('#helpdropdown').fadeOut('600');
-			$('#helpdropdown').removeClass('right');
 			helpMenuIsVisible = false;
 		}
 	}
@@ -60,7 +59,7 @@ jQuery(document).ready(function($) {
 		$('#helpdropdown').toggleClass('right', isSmallWindow);
 		$('#helpdropdown').css({
 			position: 'absolute',
-			top: '86px',
+			top: '115px',
 			right: rightoffset + 'px',
 		});
 		if (helpMenuIsVisible) { 
@@ -82,3 +81,10 @@ jQuery(document).ready(function($) {
 		stopProp(e); // don't hide dropdown when clicking in the dropdown
 	});
 });
+
+jQuery(document).ready(function($) {
+	$('.ac_form_cancel').click(function(e) { 
+		e.preventDefault(); 
+		$(this).parent().parent().slideUp(); 
+	}); 
+});  

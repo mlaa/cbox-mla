@@ -102,7 +102,7 @@
 							<textarea id="ac-input-<?php bp_activity_id(); ?>" class="ac-input" name="ac_input_<?php bp_activity_id(); ?>"></textarea>
 						</div>
 						<input type="submit" name="ac_form_submit" value="<?php esc_attr_e( 'Post', 'buddypress' ); ?>">
-						<input type="hidden" name="comment_form_id" value="<?php bp_activity_id(); ?>" />
+						<button name="ac_form_cancel" class="ac_form_cancel"><?php echo __('Cancel', 'buddypress'); ?></button> 
 					</div>
 
 					<?php do_action( 'bp_activity_entry_comments' ); ?>
