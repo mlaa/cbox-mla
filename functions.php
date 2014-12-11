@@ -315,7 +315,7 @@ function mla_update_group_membership_data() {
 	$mla_group = new MLAGroup( $debug = true ); 
 	$mla_group->sync(); 
 } 
-add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
+//add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
 
 function mla_update_member_data() { 
 	$mla_member = new MLAMember( $debug = true ); 
@@ -326,7 +326,7 @@ function mla_update_member_data() {
 	} 
 	//$mla_member->get_mla_member_data(); // debugging
 } 
-add_action( 'cacap_before_content', 'mla_update_member_data' );  
+//add_action( 'cacap_before_content', 'mla_update_member_data' );  
 //add_action( 'bp_before_member_groups_content', 'mla_update_member_data' );  
 
 /**
