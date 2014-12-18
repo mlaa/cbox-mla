@@ -2236,7 +2236,16 @@ span.activity {
   font-size: 100%; }
 
 .cacap-bp-profile-fields {
-  width: 900px; }
+  /*width: 900px; */
+  /* A temporary hack to hide some profile fields per #159.
+  /* This has to be done in CSS for the moment, since these fields 
+   * are baked into CACAP, and profiles won't save without them.
+   */
+  display: none; }
+
+.link-to-mla-org {
+  font-size: 1.2em;
+  margin-top: 0.6em; }
 
 #cacap-user-widget-new {
   background-color: #efefef;
@@ -2291,7 +2300,7 @@ span.activity {
         #cacap-user-widget-new #cacap-new-widget-types li.cacap-has-max .cacap-has-max-tooltip {
           position: absolute;
           font-size: .9em;
-          height: 1.4em;
+          Height: 1.4em;
           background: #fff;
           border: 1px solid #666;
           opacity: 2;
