@@ -312,17 +312,21 @@ add_filter( 'load_textdomain_mofile', 'mla_custom_bp_mofile', 10, 2 );
  * group page load. 
  */ 
 function mla_update_group_membership_data() { 
-	$mla_group = new MLAGroup( $debug = true ); 
-	$mla_group->sync(); 
+	if ( class_exists( 'MLAGroup' ) ) { 
+		$mla_group = new MLAGroup( $debug = true ); 
+		$mla_group->sync(); 
+	} 
 } 
 add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
 
 function mla_update_member_data() { 
-	$mla_member = new MLAMember( $debug = true ); 
-	if ( $mla_member->sync() ) { 
-		_log( 'Success! Member data synced.' ); 
-	} else { 
-		_log( 'Something went wrong while trying to update member info from the member database.' ); 
+	if ( class_exists( 'MLAMember' ) ) { 
+		$mla_member = new MLAMember( $debug = true ); 
+		if ( $mla_member->sync() ) { 
+			_log( 'Success! Member data synced.' ); 
+		} else { 
+			_log( 'Something went wrong while trying to update member info from the member database.' ); 
+		} 
 	} 
 } 
 add_action( 'cacap_before_content', 'mla_update_member_data' );  
