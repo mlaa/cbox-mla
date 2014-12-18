@@ -2302,6 +2302,10 @@ span.activity {
 /* CACAP CSS is still getting loaded here, 
  * so we have to override some things 
  */ 
+
+#cacap-body { 
+	margin-top: 2em; 
+} 
 .activity.bp-user .main-menu { 
 	font-size: 100%; 
 } 
