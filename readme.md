@@ -10,10 +10,33 @@ Language Association.
 [1]: http://commons.mla.org
 [2]: https://github.com/cuny-academic-commons/cbox-theme
 
-# 2.1.1 Rollout Todo
-[ ] pull master branch of cbox-mla
-[ ] pull master branch of cac-advanced-profiles
-[ ] Dashboard -> Widgets -> Footer Middle -> RSS: FAQ -> How many items would you like to display? -> set to 6
+# Changes planned for 2.3.0 "Sentimental" 
+ * [ ] upgrade to 2.0 version of cbox-mla-blog 
+ * [ ] complete switch to new API endpoints
+
+# 2.2.2 "Epistolary" rollout todo
+
+ * [ ] Pull in changes from the following repos: 
+  - [ ] commons
+  - [ ] cbox-mla
+  - [ ] cac-advanced-profiles 
+  - [ ] mla-admin-bar
+
+# Content Changes Needed for 2.2.0 Rollout 
+
+The changes in the admin bar require some updates to the how-to blog: 
+ * [ ] http://howtouse.commons.mla.org/2013/05/31/creating-an-account-on-mla-commons/  
+  - [ ] "Click where it says Log in in the top left side of the page" -- this is now the top right. 
+  - [ ] the screenshot that directly follows the above line should be updated 
+  - [ ] the last screenshot should be updated 
+ * [ ] http://howtouse.commons.mla.org/2014/11/05/editing-your-portfolio/ 
+  - [ ] all screenshots containing the black admin bar should be updated
+ * [ ] http://faq.commons.mla.org/2014/08/12/profile-update/ 
+  - [ ] "the 'Activity' page" is now called "My Commons," and is accessible from the top right of each page (the right of the admin bar) 
+ * [ ] http://howtouse.commons.mla.org/2014/03/21/controlling-group-notifications/
+  - [ ] the first and second screenshots should be updated 
+ * [ ] http://howtouse.commons.mla.org/2013/04/04/how-to-find-things-on-mla-commons/  
+  - [ ] the first screenshot needs updating
 
 # Changes in Version 2.1.1 Bugfix Release
 
