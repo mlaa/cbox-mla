@@ -25,6 +25,8 @@ Language Association.
 # Changes in Version 2.2.2 "Epistolary" 
  * Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
  * The black bar at the top of the page has been simplified. Clicking on your avatar now takes you to your portfolio, and clicking "My Commons" takes you to your activity page. 
+ * Commons-in-a-Box has been updated to [version 1.0.9](https://wordpress.org/plugins/commons-in-a-box/changelog/), which brings with it [BuddyPress version 2.1.1](https://codex.buddypress.org/releases/version-2-1-1/), BuddyPress Docs 1.8.5, and many others. Among BuddyPress 2.1 features is autosuggestion for @-mentions.  
+ * To avoid naming collisions with MLA forums, group forums have been renamed to "discussions." 
 
 # Changes in Version 2.1.1 Bugfix Release
 
