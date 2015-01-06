@@ -21,6 +21,12 @@
 
 	<?php while ( bp_blogs() ) : bp_the_blog(); ?>
 
+	<?php 	
+		// Don't show the main site, i.e. "MLA Commons"
+		// in the Site Directory. 
+		if ( 1 == bp_get_blog_id() ) continue; 
+	?> 
+
 		<li>
 			<div class="item-avatar">
 				<a href="<?php bp_blog_permalink(); ?>"><?php bp_blog_avatar( 'type=thumb' ); ?></a>
