@@ -3296,6 +3296,14 @@ h3:empty {
 #wp-admin-bar-blog-1 {
   display: none; }
 
+/* Make activity area notifications and messages count blue */
+#user-notifications .count, #user-messages .count {
+  background-color: #07d;
+  color: #fafafa;
+  /* MLA blue */
+  border: 0 !important;
+  padding: 3px 7px 3px 6px; }
+
 /* --- End Misc Bugfixes --- }}} */
 /* --- BP Group Documents ("Files") --- {{{ */
 #bp-group-documents #subnav {
