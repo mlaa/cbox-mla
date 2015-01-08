@@ -125,6 +125,7 @@ $type_filter = '';
 function add_type_filter() { 
 	global $type_filter; 
 	if($_COOKIE['bp-group-type']!='all') $type_filter = new BP_Groups_Type_Filter();
+	_log( "adding type filter:", $type_filter ); 
 } 
 function remove_type_filter() {
 	global $type_filter;
@@ -203,6 +204,40 @@ function type_filter_js() {
 }
 add_action('wp_footer', 'status_filter_js');
 add_action('wp_footer', 'type_filter_js');
+
+function mla_reset_filter_cookies() { 
+	
+	// If we have jQuery, set filter cookies to 'all' so that
+	// we don't have persistent filters across pages.  
+	if( wp_script_is( 'jquery', 'done' ) ): ?> 
+
+		<script type="text/javascript">
+			// Reset group filters cookies to 'all'.
+			jq.cookie('bp-groups-type','all',{ path: '/' });
+			jq.cookie('bp-groups-filter','active',{ path: '/' });
+			jq.cookie('bp-groups-scope','all',{ path: '/' });
+			jq.cookie('bp-groups-status','all',{ path: '/' });
+			jq.cookie('bp-members-scope','all',{ path: '/' });
+			jq.cookie('bp-members-filter','active',{ path: '/' });
+			jq.cookie('bp-activity-scope','all',{ path: '/' });
+			jq.cookie('bp-activity-filter','-1',{ path: '/' });
+		</script> 
+
+	<?php endif;
+
+	// Now set them in PHP, since PHP will have already 
+	// loaded the cookie vars before Javascript has had a 
+	// chance to set them.  
+	$_COOKIE['bp-groups-type'] = 'all';
+	$_COOKIE['bp-groups-filter'] = 'active';
+	$_COOKIE['bp-groups-status'] = 'all';
+	$_COOKIE['bp-groups-scope'] = 'all'; 
+	$_COOKIE['bp-members-scope'] = 'all';
+	$_COOKIE['bp-members-filter'] = 'active';
+	$_COOKIE['bp-activity-scope'] = 'all';
+	$_COOKIE['bp-activity-filter'] = '-1';
+} 
+add_action('wp_head', 'mla_reset_filter_cookies'); 
 
 /* This part adds the MLA Group type
  * (i.e. Committee, Division, Discussion Group)
