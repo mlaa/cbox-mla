@@ -20,6 +20,14 @@
 	<ul id="members-list" class="item-list" role="main">
 
 	<?php while ( bp_members() ) : bp_the_member(); ?>
+	
+		<?php
+			// Don't count self as one of the members in the 
+			// member directory. 
+			if ( bp_get_member_user_id() == bp_loggedin_user_id() ) { 
+				continue; 
+			} 
+		?>
 
 		<li>
 			<div class="item-avatar">
