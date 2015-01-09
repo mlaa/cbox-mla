@@ -21,6 +21,10 @@ Language Association.
   - [ ] cbox-mla
   - [ ] cac-advanced-profiles 
   - [ ] mla-admin-bar
+ * [ ] In Dashboard -> Appearance -> Widgets, or `wp-admin/widgets.php`, replace the "Homepage Right" widget `Recent Networkwide Blog Posts` with `MLA Recent Networkwide Blog Posts`. 
+  - [ ] Uncheck "Link widget title to Blogs directory" 
+  - [ ] Change "Max posts to show" to 3. 
+  - [ ] Click "Save." 
 
 # Changes in Version 2.2.2 "Epistolary" 
  * Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
