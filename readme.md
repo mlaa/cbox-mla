@@ -16,15 +16,17 @@ Language Association.
 
 # 2.2.2 "Epistolary" Rollout Todo
 
+ * [ ] Update to the latest versions of WP, CBOX and follow all of the related instructions for updating network sites and CBOX plugins. Don't upgrade BP Group Documents, since we separately maintain that one. 
  * [ ] Pull in changes from the following repos: 
-  - [ ] commons
-  - [ ] cbox-mla
-  - [ ] cac-advanced-profiles 
-  - [ ] mla-admin-bar
+   - [ ] commons
+   - [ ] cbox-mla
+   - [ ] cbox-mla-blog 
+   - [ ] cac-advanced-profiles 
+   - [ ] mla-admin-bar
  * [ ] In Dashboard -> Appearance -> Widgets, or `wp-admin/widgets.php`, replace the "Homepage Right" widget `Recent Networkwide Blog Posts` with `MLA Recent Networkwide Blog Posts`. 
-  - [ ] Uncheck "Link widget title to Blogs directory" 
-  - [ ] Change "Max posts to show" to 3. 
-  - [ ] Click "Save." 
+   - [ ] Uncheck "Link widget title to Blogs directory" 
+   - [ ] change "Max posts to show" to 3. 
+   - [ ] Click "Save." 
 
 # Changes in Version 2.2.2 "Epistolary" 
  * Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
