@@ -284,20 +284,10 @@ add_filter('bp_get_group_type', 'mla_group_type_filter');
  * no other filters are set) is actually set to filter out membership 
  * activities. This way, the activity list doesn't overflow with 
  * activities like "User ___ joined the group ___." 
- *
- * Also included is a hack to display group blog posts along with 
- * network blog posts in the activity stream. 
  */ 
 function mla_filter_querystring( $query_string, $object, $object_fitler, $object_score, $object_page, $object_search_terms, $object_extras ) { 
-	// let's just filter when we're on the activity page
 	if ( 'activity' == $object ) { 
-
-		// Here's a hack to make the activity stream "Posts" 
-		// filter display group blog posts, as well. 
-		if ( 'type=new_blog_post&action=new_blog_post' == $query_string ) { 
-			$query_string = 'type=new_blog_post,new_groupblog_post&action=new_blog_post,new_groupblog_post'; 
-		} 
-
+		// let's just filter when we're on the activity page
 		if ( strpos( $query_string, 'type=' ) === false ) { 
 			// if there's no type filter, then the type 
 			// filter is really "everything." In that case, 
