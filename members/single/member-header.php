@@ -18,7 +18,9 @@
 	</h2>
 
 	<span class="user-nicename">@<?php bp_displayed_user_username(); ?></span>
-	<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ); ?>. <a href="<?php echo bp_displayed_user_domain() ?>">View this member's public portfolio.</a></span>
+	<?php if ( ! bp_is_my_profile() ): ?> 
+		<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ); ?>. <a href="<?php echo esc_attr( bp_displayed_user_domain() ); ?>">View this member's public portfolio.</a></span>
+	<?php endif; ?> 
 
 	<?php do_action( 'bp_before_member_header_meta' ); ?>
 
