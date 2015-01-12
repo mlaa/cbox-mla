@@ -10,13 +10,14 @@ Language Association.
 [1]: http://commons.mla.org
 [2]: https://github.com/cuny-academic-commons/cbox-theme
 
+[![Stories in Ready](https://badge.waffle.io/mlaa/cbox-mla.png?label=ready&title=Ready)](https://waffle.io/mlaa/cbox-mla) 
+
 # Changes in 2.3.0 "Sentimental" 
  * [x] Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
  * [ ] upgrade to 2.0 version of cbox-mla-blog 
  * [ ] complete switch to new API endpoints
 
-
-# 2.2.2 "Epistolary" Rollout Todo
+# 2.2.0 "Epistolary" Rollout Todo
 
  * [ ] Update to the latest versions of WP, CBOX and follow all of the related instructions for updating network sites and CBOX plugins. Don't upgrade BP Group Documents, since we separately maintain that one. 
  * [ ] Pull in changes from the following repos: 
@@ -30,9 +31,9 @@ Language Association.
    - [ ] change "Max posts to show" to 3. 
    - [ ] Click "Save." 
 
-# Changes in Version 2.2.2 "Epistolary" 
+# Changes in Version 2.2.0 "Epistolary" 
  * The black bar at the top of the page has been simplified. Clicking on your avatar now takes you to your portfolio, and clicking "My Commons" takes you to your activity page. 
- * Commons-in-a-Box has been updated to [version 1.0.9](https://wordpress.org/plugins/commons-in-a-box/changelog/), which brings with it [BuddyPress version 2.1.1](https://codex.buddypress.org/releases/version-2-1-1/), BuddyPress Docs 1.8.5, and many others. Among BuddyPress 2.1 features is autosuggestion for @-mentions.  
+ * WordPress has been updated to version 4.1. Commons-in-a-Box has been updated to [version 1.0.9](https://wordpress.org/plugins/commons-in-a-box/changelog/), which brings with it [BuddyPress version 2.1.1](https://codex.buddypress.org/releases/version-2-1-1/), BuddyPress Docs 1.8.5, and many others. Among BuddyPress 2.1 features is autosuggestion for @-mentions.  
  * To avoid naming collisions with MLA forums, group forums have been renamed to "discussions." 
 
 # Changes in Version 2.1.1 Bugfix Release
