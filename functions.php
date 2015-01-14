@@ -482,5 +482,5 @@ add_action( 'bp_pre_user_query', 'alphabetize_by_last_name' );
 function mla_set_default_email_subscription_level( $level ) { 
 	return 'dig'; 
 } 
-add_filter( 'ass_default_subscription_level', mla_set_default_email_subscription_level, 99 );
-add_filter( 'ass_get_default_subscription', mla_set_default_email_subscription_level, 99 );
+add_filter( 'ass_default_subscription_level', 'mla_set_default_email_subscription_level', 99 );
+add_filter( 'ass_get_default_subscription', 'mla_set_default_email_subscription_level', 99 );
