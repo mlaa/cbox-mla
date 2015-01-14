@@ -12,6 +12,8 @@ Language Association.
 
 [![Stories in Ready](https://badge.waffle.io/mlaa/cbox-mla.png?label=ready&title=Ready)](https://waffle.io/mlaa/cbox-mla) 
 
+[![Stories in Ready](https://badge.waffle.io/mlaa/cbox-mla.png?label=ready&title=Ready)](https://waffle.io/mlaa/cbox-mla) 
+
 # Changes in 2.3.0 "Sentimental" 
  * [x] Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
  * [ ] upgrade to 2.0 version of cbox-mla-blog 
