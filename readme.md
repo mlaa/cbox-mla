@@ -14,23 +14,25 @@ Language Association.
 
 [![Stories in Ready](https://badge.waffle.io/mlaa/cbox-mla.png?label=ready&title=Ready)](https://waffle.io/mlaa/cbox-mla) 
 
-# Changes in 2.3.0 "Sentimental" 
- * [x] Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
+# Changes Planned for Version 2.4.0 "Spy" 
  * [ ] upgrade to 2.0 version of cbox-mla-blog 
+
+# Changes Planned for Version 2.3.0 "Sentimental" 
+ * [x] Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
  * [ ] complete switch to new API endpoints
 
 # 2.2.0 "Epistolary" Rollout Todo
 
  * [ ] Update to the latest versions of WP, CBOX and follow all of the related instructions for updating network sites and CBOX plugins. Don't upgrade BP Group Documents, since we separately maintain that one. 
- * [ ] Pull in changes from the following repos: 
-   - [ ] commons
-   - [ ] cbox-mla
-   - [ ] cbox-mla-blog 
-   - [ ] mla-admin-bar
- * [ ] In Dashboard -> Appearance -> Widgets, or `wp-admin/widgets.php`, replace the "Homepage Right" widget `Recent Networkwide Blog Posts` with `MLA Recent Networkwide Blog Posts`. 
-   - [ ] Uncheck "Link widget title to Blogs directory" 
-   - [ ] change "Max posts to show" to 3. 
-   - [ ] Click "Save." 
+ * [x] 0115 15:27 Pull in changes from the following repos: 
+   - [x] 0115 14:58 commons
+   - [x] 0115 14:56 cbox-mla
+   - [x] 0115 14:56 cbox-mla-blog 
+   - [x] 0115 14:56 mla-admin-bar
+ * [x] 0115 15:25 In Dashboard -> Appearance -> Widgets, or `wp-admin/widgets.php`, replace the "Homepage Right" widget `Recent Networkwide Blog Posts` with `MLA Recent Networkwide Blog Posts`. 
+   - [x] 0115 15:25 Uncheck "Link widget title to Blogs directory" 
+   - [x] 0115 15:25 change "Max posts to show" to 3. 
+   - [x] 0115 15:25 Click "Save." 
 
 # Changes in Version 2.2.0 "Epistolary" 
  * The black bar at the top of the page has been simplified. Clicking on your avatar now takes you to your portfolio, and clicking "My Commons" takes you to your activity page. 
