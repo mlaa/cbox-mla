@@ -10,10 +10,6 @@ Language Association.
 [1]: http://commons.mla.org
 [2]: https://github.com/cuny-academic-commons/cbox-theme
 
-[![Stories in Ready](https://badge.waffle.io/mlaa/cbox-mla.png?label=ready&title=Ready)](https://waffle.io/mlaa/cbox-mla) 
-
-[![Stories in Ready](https://badge.waffle.io/mlaa/cbox-mla.png?label=ready&title=Ready)](https://waffle.io/mlaa/cbox-mla) 
-
 # Changes Planned for Version 2.4.0 "Spy" 
  * [ ] upgrade to 2.0 version of cbox-mla-blog 
 
