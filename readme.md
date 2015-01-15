@@ -26,7 +26,6 @@ Language Association.
    - [ ] commons
    - [ ] cbox-mla
    - [ ] cbox-mla-blog 
-   - [ ] cac-advanced-profiles 
    - [ ] mla-admin-bar
  * [ ] In Dashboard -> Appearance -> Widgets, or `wp-admin/widgets.php`, replace the "Homepage Right" widget `Recent Networkwide Blog Posts` with `MLA Recent Networkwide Blog Posts`. 
    - [ ] Uncheck "Link widget title to Blogs directory" 
