@@ -23,7 +23,7 @@ Language Association.
 
 # 2.2.0 "Epistolary" Rollout Todo
 
- * [ ] Update to the latest versions of WP, CBOX and follow all of the related instructions for updating network sites and CBOX plugins. Don't upgrade BP Group Documents, since we separately maintain that one. 
+ * [x] 0115 16:09 Update to the latest versions of WP, CBOX and follow all of the related instructions for updating network sites and CBOX plugins. Don't upgrade BP Group Documents, since we separately maintain that one. 
  * [x] 0115 15:27 Pull in changes from the following repos: 
    - [x] 0115 14:58 commons
    - [x] 0115 14:56 cbox-mla
