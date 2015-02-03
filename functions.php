@@ -489,6 +489,7 @@ function mla_filter_gettext( $translated, $original, $domain ) {
 	// and what they should be replaced with
 	$strings = array(
 		'Username' => 'User name', // per MLA house style
+		'login' => 'log-in', // per MLA house style
 		// Add some more strings here
 	);
 
