@@ -312,7 +312,7 @@ add_filter( 'load_textdomain_mofile', 'mla_custom_bp_mofile', 10, 2 );
  */ 
 function mla_update_group_membership_data() { 
 	if ( class_exists( 'MLAGroup' ) ) { 
-		$mla_group = new MLAGroup( $debug = true ); 
+		$mla_group = new MLAGroup( $debug = 'verbose' ); 
 		$mla_group->sync(); 
 	} 
 } 
@@ -320,7 +320,7 @@ add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
 
 function mla_update_member_data() { 
 	if ( class_exists( 'MLAMember' ) ) { 
-		$mla_member = new MLAMember( $debug = true ); 
+		$mla_member = new MLAMember( $debug = 'verbose' ); 
 		if ( $mla_member->sync() ) { 
 			_log( 'Success! Member data synced.' ); 
 		} else { 
