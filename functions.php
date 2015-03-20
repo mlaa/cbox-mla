@@ -484,3 +484,11 @@ function mla_set_default_email_subscription_level( $level ) {
 } 
 add_filter( 'ass_default_subscription_level', 'mla_set_default_email_subscription_level', 99 );
 add_filter( 'ass_get_default_subscription', 'mla_set_default_email_subscription_level', 99 );
+
+/** 
+ * Stop Invite Anyone from adding a nav item to user profiles. 
+ * This effectively prevents users from being able to invite non-members
+ * by email, and simplifies invites overall. 
+ * See #141 for details. 
+ */ 
+remove_action( 'bp_setup_nav', 'invite_anyone_setup_nav' );

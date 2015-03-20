@@ -22,6 +22,7 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 				<form action="<?php bp_group_send_invite_form_action() ?>" method="post" id="send-invite-form">
 			<?php endif; ?>
 
+
 				<div class="left-menu">
 
 					<p><?php _e("Search for members to invite:", 'bp-invite-anyone') ?></span></p>
@@ -84,7 +85,7 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 				<div class="clear"></div>
 
 			<?php if ( $event != 'create' ) : ?>
-				<p class="clear"><input type="submit" name="submit" id="submit" value="<?php _e( 'Invite Others', 'buddypress' ) ?>" /></p>
+				<p class="clear"><input type="submit" name="submit" id="submit" value="<?php _e( 'Send Invites', 'buddypress' ) ?>" /></p>
 				<?php wp_nonce_field( 'groups_send_invites', '_wpnonce_send_invites') ?>
 			<?php endif; ?>
 
@@ -102,10 +103,6 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 	?>
 
 	<?php do_action( 'bp_before_group_send_invites_content' ) ?>
-
-	<?php if ( invite_anyone_access_test() && !bp_is_group_create() ) : ?>
-		<p><?php _e( 'Want to invite someone to the group who is not yet a member of the site?', 'bp-invite-anyone' ) ?> <a href="<?php echo bp_loggedin_user_domain() . BP_INVITE_ANYONE_SLUG . '/invite-new-members/group-invites/' . bp_get_group_id() ?>"><?php _e( 'Send invitations by email.', 'bp-invite-anyone' ) ?></a></p>
-	<?php endif; ?>
 
 	<?php if ( !bp_get_new_group_id() ) : ?>
 		<form action="<?php invite_anyone_group_invite_form_action() ?>" method="post" id="send-invite-form">
@@ -136,7 +133,7 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 	<div class="main-column">
 
 		<div id="message" class="info">
-			<p><?php _e('Select people to invite from your friends list.', 'buddypress'); ?></p>
+			<p><?php _e('Select members to invite.', 'buddypress'); ?></p>
 		</div>
 
 		<?php do_action( 'bp_before_group_send_invites_list' ) ?>
@@ -175,7 +172,7 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 
 	<?php if ( !bp_get_new_group_id() ) : ?>
 	<div class="submit">
-		<input type="submit" name="submit" id="submit" value="<?php _e( 'Invite Others', 'buddypress' ) ?>" />
+		<input type="submit" name="submit" id="submit" value="<?php _e( 'Send Invites', 'buddypress' ) ?>" />
 	</div>
 	<?php endif; ?>
 
