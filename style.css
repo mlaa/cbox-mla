@@ -2238,13 +2238,6 @@ span.activity {
 .activity.bp-user .main-menu {
   font-size: 100%; }
 
-.cacap-bp-profile-fields {
-  /* A temporary hack to hide some profile fields per #159.
-   * This has to be done in CSS for the moment, since these fields 
-   * are baked into CACAP, and profiles won't save without them.
-   */
-  display: none; }
-
 .link-to-mla-org {
   font-size: 1.2em;
   margin-top: 0.6em; }

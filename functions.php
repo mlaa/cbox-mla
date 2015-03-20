@@ -201,8 +201,7 @@ add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
 // force reload css on new versions
 function my_wp_default_styles( $styles )
 {
-	//use epoch time for version
-	$styles->default_version = '2.0.2';
+	$styles->default_version = '2.2.0';
 }
 add_action( 'wp_default_styles', 'my_wp_default_styles' );
 
@@ -313,7 +312,7 @@ add_filter( 'load_textdomain_mofile', 'mla_custom_bp_mofile', 10, 2 );
  */ 
 function mla_update_group_membership_data() { 
 	if ( class_exists( 'MLAGroup' ) ) { 
-		$mla_group = new MLAGroup( $debug = true ); 
+		$mla_group = new MLAGroup( $debug = 'verbose' ); 
 		$mla_group->sync(); 
 	} 
 } 
@@ -321,7 +320,7 @@ add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
 
 function mla_update_member_data() { 
 	if ( class_exists( 'MLAMember' ) ) { 
-		$mla_member = new MLAMember( $debug = true ); 
+		$mla_member = new MLAMember( $debug = 'verbose' ); 
 		if ( $mla_member->sync() ) { 
 			_log( 'Success! Member data synced.' ); 
 		} else { 
@@ -492,3 +491,25 @@ add_filter( 'ass_get_default_subscription', 'mla_set_default_email_subscription_
  * See #141 for details. 
  */ 
 remove_action( 'bp_setup_nav', 'invite_anyone_setup_nav' );
+
+function mla_filter_gettext( $translated, $original, $domain ) {
+	// This is an array of original strings
+	// and what they should be replaced with
+	$strings = array(
+		'Username' => 'User name', // per MLA house style
+		'login' => 'log-in', // per MLA house style
+		// Add some more strings here
+	);
+
+	// See if the current string is in the $strings array
+	// If so, replace it's translation
+	if ( ! empty( $strings[ $original ] ) ) {
+		// This accomplishes the same thing as __()
+		// but without running it through the filter again
+		$translations = &get_translations_for_domain( $domain );
+		$translated = $translations->translate( $strings[ $original ] );
+	}
+
+	return $translated;
+}
+add_filter( 'gettext', 'mla_filter_gettext', 10, 3 ); 

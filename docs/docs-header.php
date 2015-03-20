@@ -2,6 +2,7 @@
 
 <?php /* Subnavigation on user pages is handled by BP's core functions */ ?>
 <?php if ( !bp_is_user() ) : ?>
+	<?php if ( function_exists( 'bp_docs_get_theme' ) ): ?> 
 		<?php if ( 'minimal' == bp_docs_get_theme() ){ 
 			bp_docs_create_button();  // no tabs in the minimal theme 
 		} else { 
@@ -11,6 +12,7 @@
 			<?php 
 		} 
 		?>
+	<?php endif; ?> 
 <?php endif ?>
 
 <?php do_action( 'bp_docs_before_doc_header_content' ) ?>
