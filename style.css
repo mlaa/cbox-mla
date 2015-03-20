@@ -1193,6 +1193,45 @@ div#subnav.item-list-tabs {
     color: #222;
     background: transparent; }
 
+/* Group Creation Steps and Related Stuffs */
+div#group-create-tabs.item-list-tabs ul li a {
+  font-size: 0.95em;
+  padding: 0.4em; }
+
+#invite-anyone-invite-list li {
+  min-height: 115px; }
+  #invite-anyone-invite-list li img {
+    float: left;
+    margin-right: 3%; }
+  #invite-anyone-invite-list li .action {
+    display: inline-block;
+    background-color: #fafafa;
+    border: 1px solid #ebebeb;
+    border-bottom: 2px solid #ddd;
+    color: #2e2e2e;
+    font-size: 11px;
+    font-family: proxima-nova, Helvetica, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 10px;
+    margin-top: -4px;
+    /* nudge */ }
+    #invite-anyone-invite-list li .action a, #invite-anyone-invite-list li .action a:hover, #invite-anyone-invite-list li .action:hover, #invite-anyone-invite-list li .action:active {
+      color: #2e2e2e;
+      text-decoration: none; }
+    #invite-anyone-invite-list li .action:hover {
+      background-color: #ebebeb; }
+    #invite-anyone-invite-list li .action:active {
+      background-color: #e1e1e1;
+      text-shadow: none; }
+
+#send-invite-form .submit {
+  margin-bottom: 40px; }
+
 /* --- End Item Tabs --- }}} */
 /* --- Directories --- {{{ */
 .directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .single-bp_doc #content, .forum-search #content, .page-template #content, .topic-tag #content, .post-type-archive-bp_doc #content, .create-blog #content, .page-id-5521 #content {

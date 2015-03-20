@@ -52,4 +52,4 @@ Language Association.
 ## Changes Planned for Version 2.3.0 "Sentimental" 
  * [x] Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
  * [ ] complete switch to new API endpoints
-
+ * [ ] install the plugin Invite Anyone to allow users to invite non-contacts to groups
