@@ -417,7 +417,7 @@ function my_custom_groupblog_setup_nav() {
 }
 
 // do we have the BP Groupblog action?
-if( has_action( 'bp_setup_nav', 'bp_groupblog_setup_nav' ) ) {
+if ( has_action( 'bp_setup_nav', 'bp_groupblog_setup_nav' ) ) {
 
 	// remove BP Groupblog's action
 	remove_action( 'bp_setup_nav', 'bp_groupblog_setup_nav' );
@@ -472,8 +472,8 @@ add_filter( 'wp_get_attachment_image_attributes', 'mla_thumbnail_html', 10 );
  * @param BP_User_Query $bp_user_query
  */
 function alphabetize_by_last_name( $bp_user_query ) {
-    if ( 'alphabetical' == $bp_user_query->query_vars['type'] )
-        $bp_user_query->uid_clauses['orderby'] = "ORDER BY substring_index(u.display_name, ' ', -1)";
+	if ( 'alphabetical' == $bp_user_query->query_vars['type'] )
+		$bp_user_query->uid_clauses['orderby'] = "ORDER BY substring_index(u.display_name, ' ', -1)";
 }
 add_action( 'bp_pre_user_query', 'alphabetize_by_last_name' );
 
@@ -498,6 +498,7 @@ function mla_filter_gettext( $translated, $original, $domain ) {
 	$strings = array(
 		'Username' => 'User name', // per MLA house style
 		'login' => 'log-in', // per MLA house style
+		'Group Blog' => 'Site', // bp-groupblog textdomain fix
 		// Add some more strings here
 	);
 
@@ -513,3 +514,17 @@ function mla_filter_gettext( $translated, $original, $domain ) {
 	return $translated;
 }
 add_filter( 'gettext', 'mla_filter_gettext', 10, 3 ); 
+
+/**
+ * The plugin bp-groupblog doesn't load its textdomain from all the
+ * usual locations, i.e. wp-content/languages/plugins, and so we have to load 
+ * it manually. In addition, we have to translate 'Group Blog' to 'Site' above
+ * using mla_filter_gettext.  
+ *
+ * Hooking this to `load_textdomain` apparently causes a feedback loop
+ * that breaks everything. Hooking to `wp_footer` doesn't do anything. 
+ */ 
+function mla_load_textdomains() { 
+	load_plugin_textdomain( 'groupblog', false );
+} 
+add_action( 'wp_head', 'mla_load_textdomains' ); 
