@@ -201,7 +201,8 @@ add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
 // force reload css on new versions
 function my_wp_default_styles( $styles )
 {
-	$styles->default_version = '2.3.0';
+	// Reload stylesheet every time the file has been modified. 
+	$styles->default_version = filemtime( 'style.css' );
 }
 add_action( 'wp_default_styles', 'my_wp_default_styles' );
 
