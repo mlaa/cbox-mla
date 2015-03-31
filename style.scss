@@ -1161,7 +1161,7 @@ div#group-create-tabs.item-list-tabs ul li a {
 		float: left;
 		margin-right: 3%;
 	} 
-	.action { 
+	.action a { 
 		@include minimalButton; 
 		padding: 10px; 
 		margin-top: -4px; /* nudge */ 
