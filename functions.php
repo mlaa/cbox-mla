@@ -499,6 +499,7 @@ function mla_filter_gettext( $translated, $original, $domain ) {
 		'Username' => 'User name', // per MLA house style
 		'login' => 'log-in', // per MLA house style
 		'Group Blog' => 'Site', // bp-groupblog textdomain fix
+		'Blogs' => 'Sites', // bp-groupblog textdomain fix
 		// Add some more strings here
 	);
 
