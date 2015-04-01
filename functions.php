@@ -201,7 +201,7 @@ add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
 // force reload css on new versions
 function my_wp_default_styles( $styles )
 {
-	// Reload stylesheet every time the file has been modified. 
+	// Reload stylesheet every time the file has been modified.  
 	$styles->default_version = filemtime( 'style.css' );
 }
 add_action( 'wp_default_styles', 'my_wp_default_styles' );
@@ -529,4 +529,4 @@ add_filter( 'gettext', 'mla_filter_gettext', 10, 3 );
 function mla_load_textdomains() { 
 	load_plugin_textdomain( 'groupblog', false );
 } 
-add_action( 'wp_head', 'mla_load_textdomains' ); 
+//add_action( 'wp_head', 'mla_load_textdomains' ); 
