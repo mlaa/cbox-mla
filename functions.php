@@ -530,3 +530,18 @@ function mla_load_textdomains() {
 	load_plugin_textdomain( 'groupblog', false );
 } 
 //add_action( 'wp_head', 'mla_load_textdomains' ); 
+
+/** 
+ * Edits "Site Directory Directory" to "Site Directory" 
+ * If buddypress fixes #6339, this can be removed. 
+ * https://buddypress.trac.wordpress.org/ticket/6339 
+ */ 
+function mla_ixnay_on_redundant_directory_titles( $title, $component ) { 
+	if ( 'blogs' == $component ) { 
+		if ( 'Site Directory Directory' == $title ) { 
+			$title = 'Site Directory'; // shorten to avoid redundancy
+		} 
+	} 
+	return $title; 
+} 
+add_filter( 'bp_get_directory_title', 'mla_ixnay_on_redundant_directory_titles', 10, 2); 
