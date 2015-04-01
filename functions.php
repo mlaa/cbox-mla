@@ -202,7 +202,7 @@ add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
 function my_wp_default_styles( $styles )
 {
 	// Reload stylesheet every time the file has been modified.  
-	$styles->default_version = filemtime( 'style.css' );
+	$styles->default_version = filemtime( get_stylesheet_directory() . '/style.css' );
 }
 add_action( 'wp_default_styles', 'my_wp_default_styles' );
 
