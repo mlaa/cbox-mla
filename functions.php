@@ -329,7 +329,7 @@ function mla_update_member_data() {
 		} 
 	} 
 } 
-add_action( 'cacap_before_content', 'mla_update_member_data' );  
+//add_action( 'cacap_body', 'mla_update_member_data' );  
 add_action( 'bp_before_member_groups_content', 'mla_update_member_data' );  
 
 /**
