@@ -2425,8 +2425,23 @@ span.activity {
 	display: none; /* disable X button to clean it up a bit */ 
 } 
 
-/* --- Welcome "Bubble" Modal Dialog for CACAP }}} --- */ 
+/* --- End Welcome "Bubble" Modal Dialog for CACAP }}} --- */ 
 
+/* --- CACAP Hacks {{{3 --- */ 
+
+/* This is a somewhat unfortunate hack to hide Xprofile fields in 
+ * CACAP. Removing the template doesn't quite do the trick, since 
+ * that apparently causes CACAP not to save properly. 
+ * But look in cac-advanced-profiles/templates/cacap/bp-profile-fields-edit.php  
+ * and maybe there's a way to remove those entries and still have CACAP
+ * save everything properly? 
+ */ 
+.cacap-bp-profile-fields { 
+	/*display: none; */
+} 
+
+/* --- End CACAP Hacks }}} --- */ 
+ 
 /* --- End CACAP Portfolio / Profile --- }}} */ 
 
 /* --- End Members --- }}} */
@@ -3298,6 +3313,7 @@ select {
 	} 
 } 
 /* --- End Advanced Search Form --- }}} */ 
+
 
 /* --- Misc Bugfixes --- {{{1 */ 
 
