@@ -408,7 +408,7 @@ span.edit-link {
   float: right; }
 
 span.edit-link a {
-  color: #999999; }
+  color: #999; }
 
 /* The actual Posts*/
 .author-avatar {
@@ -515,7 +515,7 @@ img.aligncenter {
 
 .page-link a:active,
 .page-link a:hover {
-  color: #ff4b33; }
+  color: #FF4B33; }
 
 .page-link a:link,
 .page-link a:visited {
@@ -680,7 +680,7 @@ p#breadcrumbs {
   margin: 0 0 20px 62px; }
 
 #comments .bypostauthor {
-  background: #f9f9f9; }
+  background: #F9F9F9; }
 
 #comments .comment-head {
   margin: 0 0 15px 70px; }
@@ -795,7 +795,7 @@ ol.commentlist {
   font-size: inherit; }
 
 li.bypostauthor {
-  background: none repeat scroll 0 0 #f8fdff !important; }
+  background: none repeat scroll 0 0 #F8FDFF !important; }
 
 #commentform input.txt {
   background: #F9F9F9;
@@ -864,7 +864,7 @@ h2 {
   margin: .5em 0 1em 0; }
 
 h2.page-title a:hover, h2.post-title a:hover, h1.page-title a:hover, h1.post-title a:hover {
-  color: #999999; }
+  color: #999; }
 
 h3 {
   font-size: 1.8em;
@@ -1525,7 +1525,7 @@ div#sidebar table td, table.forum td {
   text-align: center; }
 
 table tr.alt {
-  background: #fbfbfb; }
+  background: #FBFBFB; }
 
 table.notification-settings {
   margin-bottom: 20px;
@@ -2273,9 +2273,6 @@ span.activity {
  */
 #cacap-edit {
   margin-top: 2em; }
-
-.activity.bp-user .main-menu {
-  font-size: 100%; }
 
 .link-to-mla-org {
   font-size: 1.2em;
