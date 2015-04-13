@@ -5,7 +5,7 @@ function mla_bp_search_form_type_select_add_forums($options) {
 	$options['bbpforums']  = __( 'Forums',  'buddypress' ); 
 	return $options; 
 } 
-add_filter('bp_search_form_type_select_options', 'mla_bp_search_form_type_select_add_forums'); 
+//add_filter('bp_search_form_type_select_options', 'mla_bp_search_form_type_select_add_forums'); 
 
 // Fix forum search handling - JR
 function mla_bp_core_action_search_site( $slug = '') { 
