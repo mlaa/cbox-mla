@@ -8,6 +8,8 @@
  * @since 0.8.5
  */
 
+// @todo: add back the ability to invite contacts
+// load_template( dirname( __FILE__ ) . '/send-invites.php' ); 
 
 if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to check for pre-1.2 versions of BP
 
@@ -119,15 +121,6 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 
 		<?php wp_nonce_field( 'groups_invite_uninvite_user', '_wpnonce_invite_uninvite_user' ) ?>
 
-		<?php if ( ! invite_anyone_is_large_network( 'users' ) ) : ?>
-			<p><?php _e( 'Select members from the directory:', 'bp-invite-anyone' ) ?></p>
-
-			<div id="invite-anyone-member-list">
-				<ul>
-					<?php bp_new_group_invite_member_list() ?>
-				</ul>
-			</div>
-		<?php endif ?>
 	</div>
 
 	<div class="main-column">
