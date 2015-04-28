@@ -57,9 +57,14 @@ Language Association.
 # Rollout Plan
 
 ## Content Changes Necessary for 2.3.0 "Sentimental"
- * [ ] change "MLA Blogs" to "MLA Sites" in Dashboard -> Widgets -> Homepage Right 
- * [ ] in Network Dashboard -> Settings -> Invite Anyone: 
+ * [ ] merge all `develop` branches into `master`. 
+ * [ ] run `git submodule foreach git pull`
+ * [ ] clone and activate Invite Anyone
+    - [ ] in Network Dashboard -> Settings -> Invite Anyone: 
     - [ ] set "only allow those members who have been a member for 999999999 days" 
     - [ ] allow everyone in the following options
     - [ ] limit number of invites to 10
-
+ * [ ] change "MLA Blogs" to "MLA Sites" in Dashboard -> Widgets -> Homepage Right 
+ * [ ] roll out blog theme with ./rollout.sh president, and verify that everything looks OK
+    - [ ] if that works, roll out others
+ 
