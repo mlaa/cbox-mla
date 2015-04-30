@@ -501,6 +501,10 @@ function mla_filter_gettext( $translated, $original, $domain ) {
 		'login' => 'log-in', // per MLA house style
 		'Group Blog' => 'Site', // bp-groupblog textdomain fix
 		'Blogs' => 'Sites', // bp-groupblog textdomain fix
+		'Blog' => 'Site', // bp-groupblog textdomain fix
+		'Friends' => 'Contacts', // it's a formality thing
+		'Friend' => 'Contact', 
+		'Friendships' => 'Contacts',
 		// Add some more strings here
 	);
 
@@ -529,7 +533,7 @@ add_filter( 'gettext', 'mla_filter_gettext', 10, 3 );
 function mla_load_textdomains() { 
 	load_plugin_textdomain( 'groupblog', false );
 } 
-//add_action( 'wp_head', 'mla_load_textdomains' ); 
+add_action( 'wp_head', 'mla_load_textdomains' ); 
 
 /** 
  * Edits "Site Directory Directory" to "Site Directory" 
