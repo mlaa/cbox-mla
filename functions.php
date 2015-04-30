@@ -533,7 +533,7 @@ add_filter( 'gettext', 'mla_filter_gettext', 10, 3 );
 function mla_load_textdomains() { 
 	load_plugin_textdomain( 'groupblog', false );
 } 
-add_action( 'plugins_loaded', 'mla_load_textdomains' ); 
+add_action( 'wp_head', 'mla_load_textdomains' ); 
 
 /** 
  * Edits "Site Directory Directory" to "Site Directory" 
