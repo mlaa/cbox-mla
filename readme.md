@@ -51,5 +51,20 @@ Language Association.
 
 ## Changes Planned for Version 2.3.0 "Sentimental" 
  * [x] Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
- * [ ] complete switch to new API endpoints
+ * [x] 0420 14:29 complete switch to new API endpoints
+ * [x] 0420 14:29 install the plugin Invite Anyone to allow users to invite non-contacts to groups
 
+# Rollout Plan
+
+## Content Changes Necessary for 2.3.0 "Sentimental"
+ * [ ] merge all `develop` branches into `master`. 
+ * [ ] run `git submodule foreach git pull`
+ * [ ] clone and activate Invite Anyone
+    - [ ] in Network Dashboard -> Settings -> Invite Anyone: 
+    - [ ] set "only allow those members who have been a member for 999999999 days" 
+    - [ ] allow everyone in the following options
+    - [ ] limit number of invites to 10
+ * [ ] change "MLA Blogs" to "MLA Sites" in Dashboard -> Widgets -> Homepage Right 
+ * [ ] roll out blog theme with ./rollout.sh president, and verify that everything looks OK
+    - [ ] if that works, roll out others
+ 

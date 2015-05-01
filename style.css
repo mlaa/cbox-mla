@@ -408,7 +408,7 @@ span.edit-link {
   float: right; }
 
 span.edit-link a {
-  color: #999999; }
+  color: #999; }
 
 /* The actual Posts*/
 .author-avatar {
@@ -515,7 +515,7 @@ img.aligncenter {
 
 .page-link a:active,
 .page-link a:hover {
-  color: #ff4b33; }
+  color: #FF4B33; }
 
 .page-link a:link,
 .page-link a:visited {
@@ -680,7 +680,7 @@ p#breadcrumbs {
   margin: 0 0 20px 62px; }
 
 #comments .bypostauthor {
-  background: #f9f9f9; }
+  background: #F9F9F9; }
 
 #comments .comment-head {
   margin: 0 0 15px 70px; }
@@ -795,7 +795,7 @@ ol.commentlist {
   font-size: inherit; }
 
 li.bypostauthor {
-  background: none repeat scroll 0 0 #f8fdff !important; }
+  background: none repeat scroll 0 0 #F8FDFF !important; }
 
 #commentform input.txt {
   background: #F9F9F9;
@@ -864,7 +864,7 @@ h2 {
   margin: .5em 0 1em 0; }
 
 h2.page-title a:hover, h2.post-title a:hover, h1.page-title a:hover, h1.post-title a:hover {
-  color: #999999; }
+  color: #999; }
 
 h3 {
   font-size: 1.8em;
@@ -1193,6 +1193,48 @@ div#subnav.item-list-tabs {
     color: #222;
     background: transparent; }
 
+/* Group Creation Steps and Related Stuffs */
+div#group-create-tabs.item-list-tabs ul li a {
+  font-size: 0.95em;
+  padding: 0.4em; }
+
+#invite-anyone-invite-list li, #group-create-body #friend-list li {
+  min-height: 115px; }
+  #invite-anyone-invite-list li img, #group-create-body #friend-list li img {
+    float: left;
+    margin-right: 3%; }
+  #invite-anyone-invite-list li .action a, #group-create-body #friend-list li .action a {
+    display: inline-block;
+    background-color: #fafafa;
+    border: 1px solid #ebebeb;
+    border-bottom: 2px solid #ddd;
+    color: #2e2e2e;
+    font-size: 11px;
+    font-family: proxima-nova, Helvetica, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 10px;
+    margin-top: -4px;
+    /* nudge */ }
+    #invite-anyone-invite-list li .action a a, #invite-anyone-invite-list li .action a a:hover, #invite-anyone-invite-list li .action a:hover, #invite-anyone-invite-list li .action a:active, #group-create-body #friend-list li .action a a, #group-create-body #friend-list li .action a a:hover, #group-create-body #friend-list li .action a:hover, #group-create-body #friend-list li .action a:active {
+      color: #2e2e2e;
+      text-decoration: none; }
+    #invite-anyone-invite-list li .action a:hover, #group-create-body #friend-list li .action a:hover {
+      background-color: #ebebeb; }
+    #invite-anyone-invite-list li .action a:active, #group-create-body #friend-list li .action a:active {
+      background-color: #e1e1e1;
+      text-shadow: none; }
+
+.invite-anyone .main-column #message {
+  margin-top: 40px; }
+
+#send-invite-form .submit {
+  margin-bottom: 40px; }
+
 /* --- End Item Tabs --- }}} */
 /* --- Directories --- {{{ */
 .directory.groups #content, .directory.blogs #content, .directory.members #content, .directory.activity #content, .wiki #content, .single-bp_doc #content, .forum-search #content, .page-template #content, .topic-tag #content, .post-type-archive-bp_doc #content, .create-blog #content, .page-id-5521 #content {
@@ -1486,7 +1528,7 @@ div#sidebar table td, table.forum td {
   text-align: center; }
 
 table tr.alt {
-  background: #fbfbfb; }
+  background: #FBFBFB; }
 
 table.notification-settings {
   margin-bottom: 20px;
@@ -2235,9 +2277,6 @@ span.activity {
 #cacap-edit {
   margin-top: 2em; }
 
-.activity.bp-user .main-menu {
-  font-size: 100%; }
-
 .link-to-mla-org {
   font-size: 1.2em;
   margin-top: 0.6em; }
@@ -2347,7 +2386,19 @@ span.activity {
   display: none;
   /* disable X button to clean it up a bit */ }
 
-/* --- Welcome "Bubble" Modal Dialog for CACAP }}} --- */
+/* --- End Welcome "Bubble" Modal Dialog for CACAP }}} --- */
+/* --- CACAP Hacks {{{3 --- */
+/* This is a somewhat unfortunate hack to hide Xprofile fields in 
+ * CACAP. Removing the template doesn't quite do the trick, since 
+ * that apparently causes CACAP not to save properly. 
+ * But look in cac-advanced-profiles/templates/cacap/bp-profile-fields-edit.php  
+ * and maybe there's a way to remove those entries and still have CACAP
+ * save everything properly? 
+ */
+.cacap-bp-profile-fields {
+  display: none; }
+
+/* --- End CACAP Hacks }}} --- */
 /* --- End CACAP Portfolio / Profile --- }}} */
 /* --- End Members --- }}} */
 /* Profile Action Buttons */

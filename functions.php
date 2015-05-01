@@ -201,7 +201,8 @@ add_action( 'admin_bar_menu', 'mlac_remove_forums_from_adminbar', 9999 );
 // force reload css on new versions
 function my_wp_default_styles( $styles )
 {
-	$styles->default_version = '2.2.0';
+	// Reload stylesheet every time the file has been modified.  
+	$styles->default_version = filemtime( get_stylesheet_directory() . '/style.css' );
 }
 add_action( 'wp_default_styles', 'my_wp_default_styles' );
 
@@ -213,18 +214,27 @@ function mla_remove_name_from_edit_profile($cols) {
 } 
 add_filter('cacap_header_edit_columns', 'mla_remove_name_from_edit_profile'); 
 
-function mla_is_group_committee() { 
+function mla_is_group_committee( $group_id = 0 ) {
+	// use the current group if we're not passed one.
+	if ( 0 == $group_id ) $group_id = bp_get_current_group_id();
+
 	// if mla_oid starts with "M," it's a committee
-	return ('M' == substr( groups_get_groupmeta( bp_get_current_group_id(), 'mla_oid' ), 0, 1 ) ) ? true : false; 
-} 
-
-function mla_remove_membership_request_from_committees() {
-	if ( mla_is_group_committee() ) { 
-		bp_core_remove_subnav_item( bp_get_current_group_slug(), 'request-membership' ); 
-	} 
+	return ('M' == substr( groups_get_groupmeta( $group_id, 'mla_oid' ), 0, 1 ) ) ? true : false;
 }
-add_filter( 'bp_setup_nav', 'mla_remove_membership_request_from_committees' ); 
 
+/* Remove the button "Request Membership" from committees. */
+function mla_remove_membership_request_from_committees() {
+	if ( mla_is_group_committee() ) {
+		bp_core_remove_subnav_item( bp_get_current_group_slug(), 'request-membership' );
+	}
+}
+add_action( 'bp_setup_nav', 'mla_remove_membership_request_from_committees', 100 );
+
+/* Don't allow members to invite others to committees. */
+function mla_disallow_invites_to_committees( $user_can_invite, $group_id, $invite_status ) {
+	return ( mla_is_group_committee( $group_id ) ? false : $user_can_invite );
+}
+add_filter( 'bp_groups_user_can_send_invites', 'mla_disallow_invites_to_committees', 10, 3 );
 
 // remove default profile link handling so we can override it below
 remove_filter( 'bp_get_the_profile_field_value', 'xprofile_filter_link_profile_data' );
@@ -312,7 +322,7 @@ add_filter( 'load_textdomain_mofile', 'mla_custom_bp_mofile', 10, 2 );
  */ 
 function mla_update_group_membership_data() { 
 	if ( class_exists( 'MLAGroup' ) ) { 
-		$mla_group = new MLAGroup( $debug = true ); 
+		$mla_group = new MLAGroup( $debug = false ); 
 		$mla_group->sync(); 
 	} 
 } 
@@ -320,15 +330,15 @@ add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
 
 function mla_update_member_data() { 
 	if ( class_exists( 'MLAMember' ) ) { 
-		$mla_member = new MLAMember( $debug = true ); 
+		$mla_member = new MLAMember( $debug = false ); 
 		if ( $mla_member->sync() ) { 
-			_log( 'Success! Member data synced.' ); 
+			//_log( 'Success! Member data synced.' ); 
 		} else { 
 			_log( 'Something went wrong while trying to update member info from the member database.' ); 
 		} 
 	} 
 } 
-add_action( 'cacap_before_content', 'mla_update_member_data' );  
+add_action( 'cacap_header', 'mla_update_member_data' );  
 add_action( 'bp_before_member_groups_content', 'mla_update_member_data' );  
 
 /**
@@ -417,7 +427,7 @@ function my_custom_groupblog_setup_nav() {
 }
 
 // do we have the BP Groupblog action?
-if( has_action( 'bp_setup_nav', 'bp_groupblog_setup_nav' ) ) {
+if ( has_action( 'bp_setup_nav', 'bp_groupblog_setup_nav' ) ) {
 
 	// remove BP Groupblog's action
 	remove_action( 'bp_setup_nav', 'bp_groupblog_setup_nav' );
@@ -472,8 +482,8 @@ add_filter( 'wp_get_attachment_image_attributes', 'mla_thumbnail_html', 10 );
  * @param BP_User_Query $bp_user_query
  */
 function alphabetize_by_last_name( $bp_user_query ) {
-    if ( 'alphabetical' == $bp_user_query->query_vars['type'] )
-        $bp_user_query->uid_clauses['orderby'] = "ORDER BY substring_index(u.display_name, ' ', -1)";
+	if ( 'alphabetical' == $bp_user_query->query_vars['type'] )
+		$bp_user_query->uid_clauses['orderby'] = "ORDER BY substring_index(u.display_name, ' ', -1)";
 }
 add_action( 'bp_pre_user_query', 'alphabetize_by_last_name' );
 
@@ -483,3 +493,68 @@ function mla_set_default_email_subscription_level( $level ) {
 } 
 add_filter( 'ass_default_subscription_level', 'mla_set_default_email_subscription_level', 99 );
 add_filter( 'ass_get_default_subscription', 'mla_set_default_email_subscription_level', 99 );
+
+/** 
+ * Stop Invite Anyone from adding a nav item to user profiles. 
+ * This effectively prevents users from being able to invite non-members
+ * by email, and simplifies invites overall. 
+ * See #141 for details. 
+ */ 
+remove_action( 'bp_setup_nav', 'invite_anyone_setup_nav' );
+
+function mla_filter_gettext( $translated, $original, $domain ) {
+	// This is an array of original strings
+	// and what they should be replaced with
+	$strings = array(
+		'Username' => 'User name', // per MLA house style
+		'login' => 'log-in', // per MLA house style
+		'Group Blog' => 'Site', // bp-groupblog textdomain fix
+		'Blogs' => 'Sites', // bp-groupblog textdomain fix
+		'Blog' => 'Site', // bp-groupblog textdomain fix
+		'Friends' => 'Contacts', // it's a formality thing
+		'Friend' => 'Contact', 
+		'Friendships' => 'Contacts',
+		// Add some more strings here
+	);
+
+	// See if the current string is in the $strings array
+	// If so, replace it's translation
+	if ( ! empty( $strings[ $original ] ) ) {
+		// This accomplishes the same thing as __()
+		// but without running it through the filter again
+		$translations = &get_translations_for_domain( $domain );
+		$translated = $translations->translate( $strings[ $original ] );
+	}
+
+	return $translated;
+}
+add_filter( 'gettext', 'mla_filter_gettext', 10, 3 ); 
+
+/**
+ * The plugin bp-groupblog doesn't load its textdomain from all the
+ * usual locations, i.e. wp-content/languages/plugins, and so we have to load 
+ * it manually. In addition, we have to translate 'Group Blog' to 'Site' above
+ * using mla_filter_gettext.  
+ *
+ * Hooking this to `load_textdomain` apparently causes a feedback loop
+ * that breaks everything. Hooking to `wp_footer` doesn't do anything. 
+ */ 
+function mla_load_textdomains() { 
+	load_plugin_textdomain( 'groupblog', false );
+} 
+add_action( 'wp_head', 'mla_load_textdomains' ); 
+
+/** 
+ * Edits "Site Directory Directory" to "Site Directory" 
+ * If buddypress fixes #6339, this can be removed. 
+ * https://buddypress.trac.wordpress.org/ticket/6339 
+ */ 
+function mla_ixnay_on_redundant_directory_titles( $title, $component ) { 
+	if ( 'blogs' == $component ) { 
+		if ( 'Site Directory Directory' == $title ) { 
+			$title = 'Site Directory'; // shorten to avoid redundancy
+		} 
+	} 
+	return $title; 
+} 
+add_filter( 'bp_get_directory_title', 'mla_ixnay_on_redundant_directory_titles', 10, 2); 

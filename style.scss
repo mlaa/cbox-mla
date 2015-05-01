@@ -1149,6 +1149,32 @@ div#subnav.item-list-tabs {
 	margin-bottom: 20px;
 }
 
+/* Group Creation Steps and Related Stuffs */ 
+div#group-create-tabs.item-list-tabs ul li a { 
+	font-size: 0.95em; 
+	padding: 0.4em; 
+} 
+
+#invite-anyone-invite-list li, #group-create-body #friend-list li { 
+	min-height: 115px; 
+	img { 
+		float: left;
+		margin-right: 3%;
+	} 
+	.action a { 
+		@include minimalButton; 
+		padding: 10px; 
+		margin-top: -4px; /* nudge */ 
+	} 
+} 
+
+.invite-anyone .main-column #message { 
+	margin-top: 40px; 
+} 
+#send-invite-form .submit { 
+	margin-bottom: 40px; 
+}
+
 /* --- End Item Tabs --- }}} */ 
 
 /* --- Directories --- {{{ */ 
@@ -2306,9 +2332,6 @@ span.activity {
 #cacap-edit { 
 	margin-top: 2em; 
 } 
-.activity.bp-user .main-menu { 
-	font-size: 100%; 
-} 
 
 .link-to-mla-org { 
 	font-size: 1.2em; 
@@ -2390,6 +2413,7 @@ span.activity {
 	}
 }
 
+
 /* --- Welcome "Bubble" Modal Dialog for CACAP {{{3 --- */ 
 
 .remodal-confirm { 
@@ -2402,8 +2426,23 @@ span.activity {
 	display: none; /* disable X button to clean it up a bit */ 
 } 
 
-/* --- Welcome "Bubble" Modal Dialog for CACAP }}} --- */ 
+/* --- End Welcome "Bubble" Modal Dialog for CACAP }}} --- */ 
 
+/* --- CACAP Hacks {{{3 --- */ 
+
+/* This is a somewhat unfortunate hack to hide Xprofile fields in 
+ * CACAP. Removing the template doesn't quite do the trick, since 
+ * that apparently causes CACAP not to save properly. 
+ * But look in cac-advanced-profiles/templates/cacap/bp-profile-fields-edit.php  
+ * and maybe there's a way to remove those entries and still have CACAP
+ * save everything properly? 
+ */ 
+.cacap-bp-profile-fields { 
+	display: none; 
+} 
+
+/* --- End CACAP Hacks }}} --- */ 
+ 
 /* --- End CACAP Portfolio / Profile --- }}} */ 
 
 /* --- End Members --- }}} */
@@ -3275,6 +3314,7 @@ select {
 	} 
 } 
 /* --- End Advanced Search Form --- }}} */ 
+
 
 /* --- Misc Bugfixes --- {{{1 */ 
 
