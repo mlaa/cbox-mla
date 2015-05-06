@@ -1,11 +1,10 @@
 <?php 
 // Adds BBPress "Forums" select option to Advanced Search. - JR
-function mla_bp_search_form_type_select_add_forums($options) { 
+function mla_bp_search_form_type_remove_posts($options) { 
 	unset($options['posts']); 
-	$options['bbpforums']  = __( 'Forums',  'buddypress' ); 
 	return $options; 
 } 
-//add_filter('bp_search_form_type_select_options', 'mla_bp_search_form_type_select_add_forums'); 
+add_filter('bp_search_form_type_select_options', 'mla_bp_search_form_type_remove_posts'); 
 
 // Fix forum search handling - JR
 function mla_bp_core_action_search_site( $slug = '') { 
