@@ -28,23 +28,9 @@
 
 <?php 
 
-$query = 'type=active&action=active&per_page=999999';  
-$counter = 0; 
+ob_implicit_flush( true ); 
 
-if ( bp_has_members( $query ) ) : ?>
-
-<?php while ( bp_members() ) : bp_the_member(); ?>
-	
-<?php 
-$user_id = bp_get_member_user_id(); 
-//echo "user id: $user_id"; 
-//echo 'fields: '; 
-$fields = bp_xprofile_get_fields_by_visibility_levels( $user_id, array( 'public' ) ); 
-//foreach ( $fields as $field ) { echo $field; } 
-if ( in_array( 4, $fields ) ) { 
-	$twitter_raw = xprofile_get_field_data( 4, $user_id );
-	// clean up these horrendous twitter usernames
-	if ( '' !== $twitter_raw ) {  
+function clean_up_twitter_username( $twitter_raw ) { 
 		if ( 0 === strpos( $twitter_raw, 'http://twitter.com/' ) ) { 
 			$twitter_username = substr( $twitter_raw, 19 );  
 		} else if ( 0 === strpos( $twitter_raw, 'https://twitter.com/' ) ) { 
@@ -62,22 +48,48 @@ if ( in_array( 4, $fields ) ) {
 		} else { 
 			$twitter_username = $twitter_raw; 
 		} 
-		echo $twitter_username; 
-		echo ', '; 
-		$counter = $counter + 1;
+		return $twitter_username; 
+} 
+
+function twitter_username_for_member( $user_id ) { 
+	$fields = bp_xprofile_get_fields_by_visibility_levels( $user_id, array( 'public' ) ); 
+	// check to see if field 4, twitter username, is public
+	if ( in_array( 4, $fields ) ) { 
+		// now get it!
+		$twitter_raw = xprofile_get_field_data( 4, $user_id );
+		if ( '' !== $twitter_raw ) {  
+			// clean that up
+			$twitter_username = clean_up_twitter_username( $twitter_raw ); 
+			echo $twitter_username; 
+			echo ', '; 
+			return true; 
+		} 
+	} else { 
+			return false; 
 	} 
 } 
 
-			?>
 
-	<?php endwhile; ?>
+$page = 1; 
+$thisquery = 'type=active&action=active&per_page=500&page='; 
 
-<?php 
-echo "<p>Total:";  
-echo $counter; 
-echo "</p>"; 
-?> 
+$counter = 0; 
 
 
-<?php endif; ?>
+while ( bp_has_members( $thisquery . $page ) ) {
+
+	while ( bp_members() ) : bp_the_member(); 
+		
+		$user_id = bp_get_member_user_id(); 
+		$return = twitter_username_for_member( $user_id ); 
+		if ( $return ) $counter = $counter + 1; 
+
+	endwhile;
+
+	$page = $page + 1; 
+
+}
+
+
+?>
 </div> 
