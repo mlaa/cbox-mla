@@ -4,7 +4,9 @@
 <?php if ( !bp_is_user() ) : ?>
 	<?php if ( function_exists( 'bp_docs_get_theme' ) ): ?> 
 		<?php if ( 'minimal' == bp_docs_get_theme() ){ 
-			bp_docs_create_button();  // no tabs in the minimal theme 
+			if ( bp_docs_current_user_can_create_in_context() ) {
+				bp_docs_create_button();  // no tabs in the minimal theme
+			}
 		} else { 
 			?><div class="item-list-tabs no-ajax docs-tabs" id="subnav" role="navigation">
 				<?php bp_docs_tabs( bp_docs_current_user_can_create_in_context() );?> 
