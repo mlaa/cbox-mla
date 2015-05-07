@@ -29,6 +29,7 @@
 <?php 
 
 $query = 'type=active&action=active&per_page=999999';  
+$counter = 0; 
 
 if ( bp_has_members( $query ) ) : ?>
 
@@ -63,6 +64,7 @@ if ( in_array( 4, $fields ) ) {
 		} 
 		echo $twitter_username; 
 		echo ', '; 
+		$counter = $counter + 1;
 	} 
 } 
 
@@ -70,7 +72,12 @@ if ( in_array( 4, $fields ) ) {
 
 	<?php endwhile; ?>
 
-	</ul>
+<?php 
+echo "<p>Total:";  
+echo $counter; 
+echo "</p>"; 
+?> 
+
 
 <?php endif; ?>
 </div> 
