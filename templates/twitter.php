@@ -19,6 +19,8 @@
 	die(); 
 } 
 
+//ob_implicit_flush( true ); 
+
 ?> 
 
 	<div id="content" role="main" class="<?php do_action( 'content_class' ); ?>">
@@ -26,9 +28,8 @@
 <h1>A Dynamically-Generated List of Public Twitter Usernames of MLA Commons Members</h1>
 <h2>Sorted by Last Activity</h2>
 
-<?php 
 
-ob_implicit_flush( true ); 
+<?php 
 
 function clean_up_twitter_username( $twitter_raw ) { 
 		if ( 0 === strpos( $twitter_raw, 'http://twitter.com/' ) ) { 
@@ -52,6 +53,7 @@ function clean_up_twitter_username( $twitter_raw ) {
 } 
 
 function twitter_username_for_member( $user_id ) { 
+	ob_start(); 
 	$fields = bp_xprofile_get_fields_by_visibility_levels( $user_id, array( 'public' ) ); 
 	// check to see if field 4, twitter username, is public
 	if ( in_array( 4, $fields ) ) { 
@@ -62,9 +64,11 @@ function twitter_username_for_member( $user_id ) {
 			$twitter_username = clean_up_twitter_username( $twitter_raw ); 
 			echo $twitter_username; 
 			echo ', '; 
+			ob_end_flush(); 
 			return true; 
 		} 
 	} else { 
+			ob_end_flush(); 
 			return false; 
 	} 
 } 
@@ -90,6 +94,6 @@ while ( bp_has_members( $thisquery . $page ) ) {
 
 }
 
-
+echo 'The end!'; 
 ?>
 </div> 
