@@ -489,7 +489,19 @@ add_action( 'bp_pre_user_query', 'alphabetize_by_last_name' );
 
 /* Set default email subscription level for new group members to 'daily digest.' */ 
 function mla_set_default_email_subscription_level( $level ) { 
-	return 'dig'; 
+	global $bp, $groups_template;
+	if ( !$group )
+		$group =& $groups_template->group;
+
+	if ( isset( $group->id ) )
+		$group_id = $group->id;
+	else if ( isset( $bp->groups->new_group_id ) )
+		$group_id = $bp->groups->new_group_id;
+
+	$default_subscription =  groups_get_groupmeta( $group_id, 'ass_default_subscription' );
+	_log( "Hey! default subscription is: $default_subscription for group_id $group_id" ); 
+	if ( ! $default_subscription) return 'dig'; 
+	else return $default_subscription; 
 } 
 add_filter( 'ass_default_subscription_level', 'mla_set_default_email_subscription_level', 99 );
 add_filter( 'ass_get_default_subscription', 'mla_set_default_email_subscription_level', 99 );
