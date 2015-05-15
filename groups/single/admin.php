@@ -120,9 +120,11 @@
 
 	<?php do_action( 'bp_after_group_settings_admin' ); ?>
 
-	<?php if(count($allowed_sections)) : ?>
+<?php // disabling this check for now, since buddypress-group-email-subscriptions
+	  // hooks into the above, and adds a new section that needs to be saved. 	
+		// if(count($allowed_sections)) : ?>
 	<p><input type="submit" value="<?php _e( 'Save Changes', 'buddypress' ); ?>" id="save" name="save" /></p>
-	<?php endif; ?>
+	<?php // endif; ?>
 
 	<?php wp_nonce_field( 'groups_edit_group_settings' ); ?>
 
