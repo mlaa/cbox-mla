@@ -60,18 +60,7 @@ add_action( 'bp_directory_groups_actions', 'mla_ass_group_subscribe_button' );
 
 
 /* Set default email subscription level for new group members to 'daily digest.' */ 
-function mla_set_default_email_subscription_level( $level ) { 
-	global $bp, $groups_template;
-	if ( !$group )
-		$group =& $groups_template->group;
-
-	if ( isset( $group->id ) )
-		$group_id = $group->id;
-	else if ( isset( $bp->groups->new_group_id ) )
-		$group_id = $bp->groups->new_group_id;
-
-	$default_subscription =  groups_get_groupmeta( $group_id, 'ass_default_subscription' );
-	_log( "Hey! default subscription is: $default_subscription for group_id $group_id" ); 
+function mla_set_default_email_subscription_level( $default_subscription ) { 
 	if ( ! $default_subscription) return 'dig'; 
 	else return $default_subscription; 
 } 
