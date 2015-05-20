@@ -30,6 +30,6 @@
 		}
 	},
 	"config": {
-		"devUrl": "http://example.dev"
+		"devUrl": "https://london.dev"
 	}
 }
