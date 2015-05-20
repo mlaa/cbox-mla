@@ -1,0 +1,31 @@
+// Examples
+
+// Colors
+$bad-example-color: #f00
+$good-example-color: #0f0
+
+.examples
+  list-style: none
+  padding: 0
+
+.bad-example
+  padding-left: 1.25em
+  position: relative
+  &:before
+    color: $bad-example-color
+    content: '\2717'
+    display: inline-block
+    left: 0
+    position: absolute
+    vertical-align: middle
+
+.good-example
+  padding-left: 1.25em
+  position: relative
+  &:before
+    color: $good-example-color
+    content: '\2713'
+    display: inline-block
+    left: 0
+    position: absolute
+    vertical-align: middle
