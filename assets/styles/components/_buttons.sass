@@ -1,0 +1,14 @@
+button, .button, .generic-button a
+  @extend .tile
+  color: $page-text-color
+  &:hover,
+  &.current
+    background-color: $button-active-background-color
+    text-decoration: none
+  &:active
+    background-color: $button-background-color
+    border: 1px solid $button-border-color
+    border-bottom: 2px solid $button-border-color
+
+.pagination-links > .page-numbers
+  @extend button
