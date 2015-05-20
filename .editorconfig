@@ -2,9 +2,20 @@
 
 root = true
 
+# PHP Coding Standards per WordPress Coding Standards:
+# http://make.wordpress.org/core/handbook/coding-standards/
+
 [*]
+charset = utf-8
 indent_style = tab
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
+
+# Sass Coding Standards per Sass Guidelines
+# http://sass-guidelin.es/
+
+[{*.json,*.sass,*.scss,*.css}]
+indent_style = space
+indent_size = 2
