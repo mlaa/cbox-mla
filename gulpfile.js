@@ -90,7 +90,7 @@ var cssTasks = function(filename) {
         outputStyle: 'nested', // libsass doesn't support expanded yet
         precision: 10,
         includePaths: ['.'],
-        errLogToConsole: !enabled.failStyleTask
+        errLogToConsole: true
       }));
     })
     .pipe(function() {
