@@ -20,9 +20,14 @@
   @extend %tabarea
   li
     display: inline
-  .tab, li a
-    border-bottom: 2px solid transparent
-    margin: 0 2px
+  li
+    &.current a
+      border-color: $mla-blue
+      text-decoration: none
+      color: $black
+    a
+      border-bottom: 2px solid transparent
+      margin: 0 2px
 
 .tabarea-vertical
   @extend %tabarea

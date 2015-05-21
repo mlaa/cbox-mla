@@ -1,13 +1,15 @@
 // Masthead
-
-.masthead
-  border-top: solid 10px $mla-blue
-  padding: 1.5em 1em 0.5em 1em
-  a
+#main-site-header
+  display: flex
+  align-items: baseline
+  +tile
+  .brand
+    flex: 1 0
+    font-size: $size-l
+    font-weight: $header-bold
     color: $black
-
-.masthead-title
-  font-size: 2em
-  line-height: 1.2em
-  margin: 0
-  padding: 0
+    white-space: nowrap
+  nav
+    display: inline
+    @extend .tabarea-horizontal
+    font-size: $size-ms

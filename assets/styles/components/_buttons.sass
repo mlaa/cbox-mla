@@ -1,5 +1,7 @@
 button, .button, .generic-button a
-  @extend .tile
+  +tile
+  display: inline-block
+  white-space: nowrap
   color: $page-text-color
   &:hover,
   &.current
@@ -10,5 +12,9 @@ button, .button, .generic-button a
     border: 1px solid $button-border-color
     border-bottom: 2px solid $button-border-color
 
-.pagination-links > .page-numbers
-  @extend button
+.pagination
+  display: flex
+  .pag-count
+    flex: 1
+  .pagination-links > .page-numbers
+    @extend button
