@@ -18,6 +18,10 @@ function title() {
 		return sprintf( __( 'Search Results for %s', 'cpwpst' ), get_search_query() );
 	} elseif ( is_404() ) {
 		return __( 'Not Found', 'cpwpst' );
+	} elseif ( is_page('members') || is_page('groups') ) {
+		// Don't show titles here.
+		// We'll add them in the templates instead.
+		return '';
 	} else {
 		return get_the_title();
 	}
