@@ -12,4 +12,5 @@
 		endif;
 		?>
 	</nav>
+	<?php get_search_form( true ); ?>
 </header>
