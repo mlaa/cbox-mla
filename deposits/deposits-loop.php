@@ -64,9 +64,9 @@ if ( 'page' == substr( $querystring, 0, 4 ) && strlen( $querystring ) < 8 ) {
 
 	<?php endif; ?>
 
-		<div class="pagination">
-			<div class="pag-count"><?php humcore_deposit_pagination_count(); ?></div>
-			<div class="pagination-links"><?php humcore_deposit_pagination_links(); ?></div>
+		<div id="pag-bottom" class="pagination">
+			<div id="deposits-loop-count-bottom" class="pag-count"><?php humcore_deposit_pagination_count(); ?></div>
+			<div id="deposits-loop-pag-bottom" class="pagination-links"><?php humcore_deposit_pagination_links(); ?></div>
 		</div>
 
 <?php else : ?>
