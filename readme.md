@@ -46,9 +46,6 @@ Language Association.
 
 # Future Releases
 
-## Changes Planned for Version 2.4.0 "Spy" 
- * [ ] upgrade to 2.0 version of cbox-mla-blog 
-
 ## Changes Planned for Version 2.3.0 "Sentimental" 
  * [x] Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
  * [x] 0420 14:29 complete switch to new API endpoints
