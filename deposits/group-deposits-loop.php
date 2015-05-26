@@ -15,10 +15,6 @@
 
 <?php
 
-if ( is_user_logged_in() ) {
-	echo '<a href="/deposits/item/new/" class="bp-deposits-deposit button" title="Deposit an Item">Deposit an Item</a>';
-}
-
 // Fill this string with the list of activity types
 // you want to see when the filter is set to "everything."
 // An easy way to get this list is to check out the html source
@@ -28,10 +24,11 @@ $my_querystring = sprintf( 'facets[group_facet][]=%s', urlencode( bp_get_current
 
 // If the ajax string is empty, that usually means that
 // it's the first page of the "everything" filter.
-$querystring = '';
-
+$querystring = bp_ajax_querystring( 'deposits' );
 if ( empty( $querystring ) ) {
 	$querystring = $my_querystring;
+} else {
+	$querystring = implode( '&', array( $my_querystring, $querystring ) );
 }
 
 // Handle subsequent pages of the "Everything" filter
@@ -68,9 +65,9 @@ if ( 'page' == substr( $querystring, 0, 4 ) && strlen( $querystring ) < 8 ) {
 
 	<?php endif; ?>
 
-		<div class="pagination">
-			<div class="pag-count"><?php humcore_deposit_pagination_count(); ?></div>
-			<div class="pagination-links"><?php humcore_deposit_pagination_links(); ?></div>
+		<div id="pag-bottom" class="pagination">
+			<div id="deposits-loop-count-bottom" class="pag-count"><?php humcore_deposit_pagination_count(); ?></div>
+			<div id="deposits-loop-pag-bottom" class="pagination-links"><?php humcore_deposit_pagination_links(); ?></div>
 		</div>
 
 <?php else : ?>
