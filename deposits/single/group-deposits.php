@@ -20,7 +20,7 @@
 	<div id="content">
 		<div class="padder">
 
-		<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
+		<?php if ( bp_has_groups( 'max=1' ) ) : while ( bp_groups() ) : bp_the_group(); ?>
 
 		<?php do_action( 'bp_before_group_deposits_content' ); ?>
 
@@ -47,19 +47,40 @@
 
 				<?php do_action( 'bp_before_group_deposits_body' ); ?>
 
-<!--				<div class="item-list-tabs no-ajax" id="subnav">
+				<?php
+
+				$displayed_user_fullname = bp_get_displayed_user_fullname();
+
+				if ( is_user_logged_in() ) {
+					echo '<a href="/deposits/item/new/" class="bp-deposits-deposit button" title="Deposit an Item">Deposit an Item</a><p />';
+				} ?>
+
+				<div class="item-list-tabs no-ajax" id="subnav">
 					<ul>
+					<li class="current selected" id="deposits-groups"><a href="#"></a></li>
 
-						<?php bp_get_options_nav(); ?>
+					<li id="deposits-order-select" class="last filter">
 
-						<?php do_action( 'humcore_deposit_plugin_options_nav' ); ?>
+						<label for="deposits-order-by"><?php _e( 'Order By:', 'humcore_domain' ); ?></label>
+						<select id="deposits-order-by">
+							<option value="date"><?php _e( 'Newest Deposits', 'humcore_domain' ); ?></option>
+							<option value="author"><?php _e( 'Primary Author', 'humcore_domain' ); ?></option>
+							<option value="title"><?php _e( 'Title', 'humcore_domain' ); ?></option>
+
+							<?php do_action( 'humcore_deposits_directory_order_options' ); ?>
+
+						</select>
+					</li>
 
 					</ul>
-				</div>--><!-- .item-list-tabs -->
+				</div><!-- .item-list-tabs -->
 
 				<h3><?php do_action( 'bp_template_title' ); ?></h3>
+				<div id="deposits-dir-list" class="deposits dir-list" style="display: block;">
 
 				<?php do_action( 'bp_template_content' ); ?>
+
+				</div>
 
 				<?php do_action( 'bp_after_group_deposits_body' ); ?>
 

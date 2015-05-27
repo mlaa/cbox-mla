@@ -12,7 +12,19 @@ Language Association.
 
 # Current and Past Releases
 
+## Changes in Version 2.3.1 Bugfix Release
+ * Minor bug fixes to the behavior of the Invite Anyone plugin, the BP Group Email Subscription plugin, and [the official blog theme](https://github.com/mlaa/cbox-mla-blog/issues?q=milestone:"2.3.1+Bugfix+Release"+is:closed). 
+ * Search boxes were added to all official blogs. 
+ * A more complete list may be found in the [closed issues for this milestone](https://github.com/mlaa/cbox-mla/issues?q=milestone:"2.3.1+Bugfix+Release"+is:closed). 
+ 
+## Changes in Version 2.3.0 "Sentimental" 
+
+ * Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
+ * Group membership data is also dynamically synced with the MLA member database. 
+ * Members may now invite to their groups not only their contacts, but anyone else, as well. 
+
 ## Changes in Version 2.2.0 "Epistolary" 
+
  * The black bar at the top of the page has been simplified. Clicking on your avatar now takes you to your portfolio, and clicking "My Commons" takes you to your activity page. 
  * WordPress has been updated to version 4.1. Commons-in-a-Box has been updated to [version 1.0.9](https://wordpress.org/plugins/commons-in-a-box/changelog/), which brings with it [BuddyPress version 2.1.1](https://codex.buddypress.org/releases/version-2-1-1/), BuddyPress Docs 1.8.5, and many others. Among BuddyPress 2.1 features is autosuggestion for @-mentions.  
  * To avoid naming collisions with MLA forums, group forums have been renamed to "discussions." 
@@ -43,28 +55,3 @@ Language Association.
  * Help-related items on the homepage have been moved to a dropdown item revealed by clicking the homepage menu item "help." 
  * Group announcements have been removed. Group administrators who wish to make announcements may do so by making forum posts.  
  * The "Docs" plugin has been redesigned in a new, minimal style that transforms formerly tabular data into easier-to-read prose.  
-
-# Future Releases
-
-## Changes Planned for Version 2.4.0 "Spy" 
- * [ ] upgrade to 2.0 version of cbox-mla-blog 
-
-## Changes Planned for Version 2.3.0 "Sentimental" 
- * [x] Member names, email addresses, and institutional affiliations are now dynamically updated from the MLA member database. These fields are no longer editable in portfolios, but remain editable on mla.org. 
- * [x] 0420 14:29 complete switch to new API endpoints
- * [x] 0420 14:29 install the plugin Invite Anyone to allow users to invite non-contacts to groups
-
-# Rollout Plan
-
-## Content Changes Necessary for 2.3.0 "Sentimental"
- * [ ] merge all `develop` branches into `master`. 
- * [ ] run `git submodule foreach git pull`
- * [ ] clone and activate Invite Anyone
-    - [ ] in Network Dashboard -> Settings -> Invite Anyone: 
-    - [ ] set "only allow those members who have been a member for 999999999 days" 
-    - [ ] allow everyone in the following options
-    - [ ] limit number of invites to 10
- * [ ] change "MLA Blogs" to "MLA Sites" in Dashboard -> Widgets -> Homepage Right 
- * [ ] roll out blog theme with ./rollout.sh president, and verify that everything looks OK
-    - [ ] if that works, roll out others
- 
