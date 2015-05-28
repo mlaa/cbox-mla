@@ -30,3 +30,7 @@ foreach ( $cpwpst_includes as $file ) {
 	require_once $filepath;
 }
 unset($file, $filepath);
+
+
+// Remove redundant subscription button from group header.
+remove_action( 'bp_group_header_meta', 'ass_group_subscribe_button' );
