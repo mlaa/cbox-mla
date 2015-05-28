@@ -12,13 +12,13 @@
 	<form role="search" method="get" id="bbp-searchform" action="">
 		<input type="text" name="ts" id="ts" value="<?php echo ( isset( $_REQUEST['ts'] ) ) ? $_REQUEST['ts'] : ''; ?>" placeholder="Search this discussion:" />
 		<input type="submit" id="searchsubmit" value="Search" />
-	</form> 
+	</form>
 
 <div id="bbpress-forums">
 
 	<?php //bbp_breadcrumb(); ?>
 
-	<?php bbp_forum_subscription_link(); ?>
+	<?php // bbp_forum_subscription_link(); ?>
 
 	<?php do_action( 'bbp_template_before_single_forum' ); ?>
 
