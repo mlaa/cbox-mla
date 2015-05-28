@@ -25,18 +25,18 @@
 
 			<section class="row">
 
-			<div class="item-list-tabs" role="navigation">
-				<ul>
-					<li class="selected" id="members-all"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'All Members <span>%s</span>', 'buddypress' ), bp_get_total_member_count() ); ?></a></li>
+			<?php if ( is_user_logged_in() && bp_is_active( 'friends' ) && bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
+				<div class="item-list-tabs" role="navigation">
+					<ul>
+						<li class="selected" id="members-all"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'All Members <span>%s</span>', 'buddypress' ), bp_get_total_member_count() ); ?></a></li>
 
-					<?php if ( is_user_logged_in() && bp_is_active( 'friends' ) && bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
-						<li id="members-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/'; ?>"><?php printf( __( 'My Friends <span>%s</span>', 'buddypress' ), bp_get_total_friend_count( bp_loggedin_user_id() ) ); ?></a></li>
-					<?php endif; ?>
+							<li id="members-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/'; ?>"><?php printf( __( 'My Friends <span>%s</span>', 'buddypress' ), bp_get_total_friend_count( bp_loggedin_user_id() ) ); ?></a></li>
 
-					<?php do_action( 'bp_members_directory_member_types' ); ?>
+						<?php do_action( 'bp_members_directory_member_types' ); ?>
 
-				</ul>
-			</div><!-- .item-list-tabs -->
+					</ul>
+				</div><!-- .item-list-tabs -->
+			<?php endif; ?>
 
 			<div class="item-list-tabs" id="subnav" role="navigation">
 				<ul>
