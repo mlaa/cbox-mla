@@ -47,7 +47,13 @@
 
 			<div class="action">
 
-				<?php do_action( 'bp_directory_blogs_actions' ); ?>
+				<?php
+					// Disabling this for the moment, since the only action is "visit site,"
+					// which seems a little redundant, considering that the site titles themselves
+					// are links. If we need this later, though, uncomment this and figure out
+					// another way to hide the "visit site" buttons.
+					// do_action( 'bp_directory_blogs_actions' );
+				?>
 
 				<div class="meta">
 
