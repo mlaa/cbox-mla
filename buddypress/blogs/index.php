@@ -5,12 +5,6 @@
 
 		<?php do_action( 'bp_before_directory_blogs_content' ); ?>
 
-		<div id="blog-dir-search" class="dir-search" role="search">
-
-			<?php bp_directory_blogs_search_form(); ?>
-
-		</div><!-- #blog-dir-search -->
-
 		<?php if ( is_user_logged_in() && bp_get_total_blog_count_for_user( bp_loggedin_user_id() ) ) : ?>
 			<div class="item-list-tabs" role="navigation">
 				<ul>

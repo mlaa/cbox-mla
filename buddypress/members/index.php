@@ -15,16 +15,6 @@
 
 			<section class="row">
 
-				<h1><?php echo __('Member Directory') ?></h1>
-
-				<div id="members-dir-search" class="dir-search" role="search">
-					<?php bp_directory_members_search_form(); ?>
-				</div><!-- #members-dir-search -->
-
-			</section>
-
-			<section class="row">
-
 			<?php if ( is_user_logged_in() && bp_is_active( 'friends' ) && bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
 				<div class="item-list-tabs" role="navigation">
 					<ul>
