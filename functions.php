@@ -20,6 +20,7 @@ $cpwpst_includes = [
 	'lib/extras.php',                // Extra functions
 	'lib/customizer.php',            // Customizer functions
 	'lib/custom.php',                // Custom functions
+	'lib/mla/group-filters.php',     // Filters for MLA groups
 ];
 
 foreach ( $cpwpst_includes as $file ) {
