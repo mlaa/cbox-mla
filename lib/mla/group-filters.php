@@ -306,3 +306,12 @@ function mla_filter_querystring( $query_string, $object, $object_fitler, $object
 	return $query_string;
 }
 add_filter( 'bp_dtheme_ajax_querystring', 'mla_filter_querystring', 10, 7 );
+
+/**
+ * Don't count joining a group as a "recent activity." This
+ * makes it so that the "recently active groups" is a little more
+ * useful, since it doesn't show just groups that have had membership
+ * changes recently.
+ */
+remove_action( 'groups_join_group',           'groups_update_last_activity' );
+remove_action( 'groups_leave_group',          'groups_update_last_activity' );
