@@ -1,3 +1,13 @@
+<?php
+/*
+ * This file is just Sage's base.php with a standard post template plugged in it,
+ * which serves as a placeholder for the magic that BuddyPress Global Search does
+ * to inject fancy search results into this page.
+ *
+ * TODO: Replace everything until and including `<main>` with some call to a
+ * `get_template_part()` or equivalent. DRY it up!
+ */
+?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 	<?php get_template_part( 'templates/head' ); ?>
