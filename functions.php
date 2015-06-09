@@ -21,6 +21,7 @@ $cpwpst_includes = [
 	'lib/customizer.php',            // Customizer functions
 	'lib/custom.php',                // Custom functions
 	'lib/mla/group-filters.php',     // Filters for MLA groups
+	'lib/mla/bp-global-search.php',  // Customizations for BuddyPress Global Search
 ];
 
 foreach ( $cpwpst_includes as $file ) {
