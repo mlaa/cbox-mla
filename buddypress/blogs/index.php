@@ -19,26 +19,6 @@
 			</div><!-- .item-list-tabs -->
 		<?php endif; ?>
 
-		<div class="item-list-tabs" id="subnav" role="navigation">
-			<ul>
-
-				<?php do_action( 'bp_blogs_directory_blog_sub_types' ); ?>
-
-				<li id="blogs-order-select" class="last filter">
-
-					<label for="blogs-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
-					<select id="blogs-order-by">
-						<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
-						<option value="newest"><?php _e( 'Newest', 'buddypress' ); ?></option>
-						<option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ); ?></option>
-
-						<?php do_action( 'bp_blogs_directory_order_options' ); ?>
-
-					</select>
-				</li>
-			</ul>
-		</div>
-
 		<div id="blogs-dir-list" class="blogs dir-list">
 
 			<?php bp_get_template_part( 'blogs/blogs-loop' ); ?>
