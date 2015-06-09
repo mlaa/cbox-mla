@@ -1,7 +1,5 @@
 <div id="buddypress">
 
-<h1><?php echo MLA\Tuileries\Titles\title(); ?></h1>
-
 	<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
 
 	<?php
