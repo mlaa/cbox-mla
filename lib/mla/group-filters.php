@@ -262,11 +262,11 @@ function mla_group_type_filter($type, $group="") {
 				break;
 			case "D":
 				// Formerly "Division";
-				$mla_type = 'MLA Forum';
+				$mla_type = 'Forum';
 				break;
 			case "G":
 				// Formerly "Discussion Group";
-				$mla_type = 'MLA Forum';
+				$mla_type = 'Forum';
 				break;
 			case "F":
 				$mla_type = "Prospective Forum";
