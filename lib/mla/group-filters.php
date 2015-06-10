@@ -252,28 +252,27 @@ function mla_group_type_filter($type, $group="") {
 	if ( empty( $group ) )
 		$group =& $groups_template->group;
 
-	$mla_oid = (groups_get_groupmeta($group->id, 'mla_oid'));
-	if (!empty($mla_oid)) {
+	$mla_oid = ( groups_get_groupmeta( $group->id, 'mla_oid' ) );
+	if ( !empty( $mla_oid ) ) {
 		$mla_type_let = $mla_oid[0];
-		$type = substr($type, 0, -6); //this avoids redundancy like "Discussion Group (Private Group)"
-		$visibility = " (".$type.")";
 
 		switch($mla_type_let) {
 			case "M":
 				$mla_type = "Committee";
 				break;
 			case "D":
-				$mla_type = "Division";
+				// Formerly "Division";
+				$mla_type = 'MLA Forum';
 				break;
 			case "G":
-				$mla_type = "Discussion Group";
+				// Formerly "Discussion Group";
+				$mla_type = 'MLA Forum';
 				break;
 			case "F":
 				$mla_type = "Prospective Forum";
 				break;
 		}
 		$type = $mla_type;
-		$type .= $visibility;
 	}
 	return $type;
 }
