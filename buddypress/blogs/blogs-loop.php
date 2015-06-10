@@ -15,18 +15,6 @@
 
 <?php if ( bp_has_blogs( bp_ajax_querystring( 'blogs' ) ) ) : ?>
 
-	<div id="pag-top" class="pagination">
-
-		<div class="pag-count" id="blog-dir-count-top">
-			<?php bp_blogs_pagination_count(); ?>
-		</div>
-
-		<div class="pagination-links" id="blog-dir-pag-top">
-			<?php bp_blogs_pagination_links(); ?>
-		</div>
-
-	</div>
-
 	<?php do_action( 'bp_before_directory_blogs_list' ); ?>
 
 	<ul id="blogs-list" class="item-list" role="main">
