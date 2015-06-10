@@ -1,6 +1,6 @@
 <?php
 /**
- * CPWPST includes
+ * Tuileries includes
  *
  * The $cpwpst_includes array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
@@ -8,7 +8,6 @@
  * Please note that missing files will produce a fatal error.
  *
  */
-
 $cpwpst_includes = [
 	'lib/utils.php',                 // Utility functions
 	'lib/init.php',                  // Initial theme setup and constants
@@ -22,6 +21,7 @@ $cpwpst_includes = [
 	'lib/custom.php',                // Custom functions
 	'lib/mla/group-filters.php',     // Filters for MLA groups
 	'lib/mla/bp-global-search.php',  // Customizations for BuddyPress Global Search
+	'lib/mla/blog-avatars.php',      // Custom blog avatars
 ];
 
 foreach ( $cpwpst_includes as $file ) {
