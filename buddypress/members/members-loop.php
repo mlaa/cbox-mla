@@ -23,7 +23,8 @@
 
 		<li>
 			<div class="item-avatar">
-				<a href="<?php bp_member_permalink(); ?>"><?php bp_member_avatar(); ?></a>
+				<a href="<?php bp_member_permalink(); ?>"><?php bp_member_avatar( array( 'type' => 'full' ) ); ?></a>
+
 			</div>
 
 			<div class="item">
@@ -42,6 +43,10 @@
 
 				<?php do_action( 'bp_directory_members_item' ); ?>
 
+				<div class="action">
+					<?php do_action( 'bp_directory_members_actions' ); ?>
+				</div>
+
 				<?php
 				 /***
 				  * If you want to show specific profile fields here you can,
@@ -53,11 +58,6 @@
 				?>
 			</div>
 
-			<div class="action">
-
-				<?php do_action( 'bp_directory_members_actions' ); ?>
-
-			</div>
 
 			<div class="clear"></div>
 		</li>

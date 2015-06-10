@@ -6,42 +6,27 @@ do_action( 'bp_before_group_header' );
 
 ?>
 
-<div id="item-actions">
-
-	<?php if ( bp_group_is_visible() ) : ?>
-
-		<?php do_action( 'bp_after_group_menu_admins' );
-
-		if ( bp_group_has_moderators() ) :
-			do_action( 'bp_before_group_menu_mods' ); ?>
-
-			<h3><?php _e( 'Group Mods' , 'buddypress' ); ?></h3>
-
-			<?php bp_group_list_mods();
-
-			do_action( 'bp_after_group_menu_mods' );
-
-		endif;
-
-	endif; ?>
-
-</div><!-- #item-actions -->
-
 <div id="item-header-avatar">
 	<a href="<?php bp_group_permalink(); ?>" title="<?php bp_group_name(); ?>">
 
 		<?php bp_group_avatar(); ?>
 
 	</a>
+	<div id="item-buttons">
+
+		<?php do_action( 'bp_group_header_actions' ); ?>
+
+	</div><!-- #item-buttons -->
 </div><!-- #item-header-avatar -->
 
+
 <div id="item-header-content">
+	<h1><?php echo bp_current_group_name(); ?></h1>
 	<span class="highlight"><?php bp_group_type(); ?></span>,
 	<span class="activity"><?php printf( __( 'last active %s.', 'buddypress' ), bp_get_group_last_active() ); ?></span>
 	<span class="admins"><?php _e( 'Group admins: ' ); Custom\group_list_admins(); ?>.</span>
-	<!-- Disabled: list moderators.
-	<span class="mods">Group moderators: <?php Custom\group_list_admins( false, 'mod' ); ?>.</span>
-	-->
+
+	<?php do_action( 'bp_after_group_menu_admins' ); ?>
 
 	<?php do_action( 'bp_before_group_header_meta' ); ?>
 
@@ -49,11 +34,6 @@ do_action( 'bp_before_group_header' );
 
 		<?php bp_group_description(); ?>
 
-		<div id="item-buttons">
-
-			<?php do_action( 'bp_group_header_actions' ); ?>
-
-		</div><!-- #item-buttons -->
 
 		<?php do_action( 'bp_group_header_meta' ); ?>
 
