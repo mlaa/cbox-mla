@@ -22,8 +22,9 @@
 	<?php while ( bp_blogs() ) : bp_the_blog(); ?>
 
 		<li>
+
 			<div class="item-avatar">
-				<a href="<?php bp_blog_permalink(); ?>"><?php bp_blog_avatar( 'type=thumb' ); ?></a>
+				<a href="<?php bp_blog_permalink(); ?>"><?php bp_blog_avatar( 'type=full' ); ?></a>
 			</div>
 
 			<div class="item">
