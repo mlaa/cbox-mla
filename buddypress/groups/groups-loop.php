@@ -24,9 +24,9 @@
 		<li <?php bp_group_class(); ?>>
 			<div class="item-avatar">
 				<a href="<?php bp_group_permalink(); ?>"><?php bp_group_avatar(); ?></a>
+				<div class="action"><?php do_action( 'bp_directory_groups_actions' ); ?></div>
 			</div>
 
-			<div class="action"><?php do_action( 'bp_directory_groups_actions' ); ?></div>
 
 			<div class="item">
 				<div class="item-title"><a href="<?php bp_group_permalink(); ?>"><?php bp_group_name(); ?></a></div>
