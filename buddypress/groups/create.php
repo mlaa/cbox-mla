@@ -8,7 +8,7 @@
 
 		<?php do_action( 'bp_before_create_group' ); ?>
 
-		<div class="item-list-tabs no-ajax" id="group-create-tabs" role="navigation">
+		<div class="progress-tracker no-ajax" id="group-create-tabs" role="navigation">
 			<ul>
 
 				<?php bp_group_creation_tabs(); ?>
