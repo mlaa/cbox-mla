@@ -311,6 +311,8 @@ add_filter( 'bp_dtheme_ajax_querystring', 'mla_filter_querystring', 10, 7 );
  * makes it so that the "recently active groups" is a little more
  * useful, since it doesn't show just groups that have had membership
  * changes recently.
+ *
+ * This feature requires Buddypress >= 2.3.0.
  */
 remove_action( 'groups_join_group',           'groups_update_last_activity' );
 remove_action( 'groups_leave_group',          'groups_update_last_activity' );
