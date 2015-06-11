@@ -1,6 +1,10 @@
 <?php
+/* This file contains functions that remove elements that we deem unnecessary.
+ * Redundant titles, redundant buttons, etc.
+ */
+
 /*
- * Remove redundant email status button in group headings;
+/* Remove redundant email status button in group headings;
  * this is handled by the group tab "Email Options"
  */
 remove_action( 'bp_group_header_meta', 'ass_group_subscribe_button' );
@@ -15,7 +19,8 @@ function mla_remove_forum_subscribe_link( $link ){
 }
 add_filter( 'bbp_get_forum_subscribe_link', 'mla_remove_forum_subscribe_link' );
 
-/* Remove forum title, since in our use cases forum titles have the same names as
+/*
+ * Remove forum title, since in our use cases forum titles have the same names as
  * their parent groups, and users see a redundant title on group forums pages.
  */
 function mla_remove_forum_title( $title ) {
