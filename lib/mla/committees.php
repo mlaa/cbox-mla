@@ -1,5 +1,7 @@
 <?php
-/* This file contains functions that handle the behavior of MLA committees. */
+/*
+ * Functions that handle the behavior of MLA committees.
+ */
 
 function mla_is_group_committee( $group_id = 0 ) {
 	// use the current group if we're not passed one.

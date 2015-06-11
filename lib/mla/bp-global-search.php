@@ -1,5 +1,7 @@
 <?php
-// customizations for the BuddyPress Global Search plugin
+/*
+ * Customizations for the BuddyPress Global Search plugin.
+ */
 
 function mla_filter_bp_global_search_items( $search_items ) {
 	if ( empty( $search_items ) ) {

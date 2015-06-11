@@ -23,6 +23,10 @@ $cpwpst_includes = [
 	'lib/mla/bp-global-search.php',    // Customizations for BuddyPress Global Search
 	'lib/mla/committees.php',          // Committee behaviors
 	'lib/mla/group-filters.php',       // Filters for MLA groups
+	'lib/mla/groupblog.php',           // Customizations for the BP-Groupblog plugin
+	'lib/mla/nonmembers.php',          // Functions for handling nonmembers
+	'lib/mla/oracle-api-sync.php',     // Functions for syncing membership data with the MLA API
+	'lib/mla/portfolios.php',          // Functions to customize CACAP "Portfolios"
 	'lib/mla/remove-unnecessary.php',  // Remove stuff
 ];
 

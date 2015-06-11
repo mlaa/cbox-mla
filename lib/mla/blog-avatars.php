@@ -1,5 +1,6 @@
 <?php
-/* Custom blog avatar functions.
+/*
+ * Custom blog avatar functions.
  */
 
 /**
@@ -23,7 +24,8 @@ function mla_group_blog_avatars( $avatar, $blog_id = '', $args ){
 }
 add_filter( 'bp_get_blog_avatar', 'mla_group_blog_avatars', 20, 3 );
 
-/* Custom blog avatars for custom people.
+/*
+ * Custom blog avatars for custom people.
  */
 function mla_custom_avatars($avatar, $blogid, $params) {
 	$custom_avatars = array(

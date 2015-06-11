@@ -4,7 +4,7 @@
  */
 
 /*
-/* Remove redundant email status button in group headings;
+ * Remove redundant email status button in group headings;
  * this is handled by the group tab "Email Options"
  */
 remove_action( 'bp_group_header_meta', 'ass_group_subscribe_button' );
@@ -55,9 +55,11 @@ function remove_general_subnav() {
 }
 add_action( 'wp', 'remove_general_subnav', 2 );
 
-// remove portfolio subnav area from member activity area settings tab.
-// This page just had lots of visibility settings for CACAP profile areas,
-// but they weren't working properly, and didn't include "free entry" areas.
+/*
+ * Remove portfolio subnav area from member activity area settings tab.
+ * This page just had lots of visibility settings for CACAP profile areas,
+ * but they weren't working properly, and didn't include "free entry" areas.
+ */
 function mla_remove_portfolio_subnav() {
 	global $bp;
 	bp_core_remove_subnav_item( $bp->settings->slug, 'profile' );
@@ -72,13 +74,14 @@ function remove_forums_nav() {
 }
 add_action( 'wp', 'remove_forums_nav', 3 );
 
-function mla_remove_name_from_edit_profile($cols) {
-	// Assuming "1" is going to be "name."
-	// We have to rebuild the array, too.
-	$cols['left'] = array_values( array_diff( $cols['left'], array( 1 ) ) );
-	return $cols;
-}
-add_filter('cacap_header_edit_columns', 'mla_remove_name_from_edit_profile');
 
 // remove default profile link handling so we can override it below
 remove_filter( 'bp_get_the_profile_field_value', 'xprofile_filter_link_profile_data' );
+
+/**
+ * Stop Invite Anyone from adding a nav item to user profiles.
+ * This effectively prevents users from being able to invite non-members
+ * by email, and simplifies invites overall.
+ * See #141 for details.
+ */
+remove_action( 'bp_setup_nav', 'invite_anyone_setup_nav' );
