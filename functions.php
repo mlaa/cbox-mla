@@ -20,6 +20,7 @@ $cpwpst_includes = [
 	'lib/utils.php',                   // Utility functions
 	'lib/wrapper.php',                 // Theme wrapper class
 	'lib/mla/blog-avatars.php',        // Custom blog avatars
+	'lib/mla/bp-ges.php',              // Customizations for BuddyPress Group Email Subscriptions
 	'lib/mla/bp-global-search.php',    // Customizations for BuddyPress Global Search
 	'lib/mla/committees.php',          // Committee behaviors
 	'lib/mla/group-filters.php',       // Filters for MLA groups
@@ -38,7 +39,6 @@ foreach ( $cpwpst_includes as $file ) {
 	require_once $filepath;
 }
 unset($file, $filepath);
-
 
 // Remove redundant subscription button from group header.
 remove_action( 'bp_group_header_meta', 'ass_group_subscribe_button' );
