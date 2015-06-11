@@ -9,19 +9,21 @@
  *
  */
 $cpwpst_includes = [
-	'lib/utils.php',                 // Utility functions
-	'lib/init.php',                  // Initial theme setup and constants
-	'lib/wrapper.php',               // Theme wrapper class
-	'lib/conditional-tag-check.php', // ConditionalTagCheck class
-	'lib/config.php',                // Configuration
-	'lib/assets.php',                // Scripts and stylesheets
-	'lib/titles.php',                // Page titles
-	'lib/extras.php',                // Extra functions
-	'lib/customizer.php',            // Customizer functions
-	'lib/custom.php',                // Custom functions
-	'lib/mla/group-filters.php',     // Filters for MLA groups
-	'lib/mla/bp-global-search.php',  // Customizations for BuddyPress Global Search
-	'lib/mla/blog-avatars.php',      // Custom blog avatars
+	'lib/assets.php',                  // Scripts and stylesheets
+	'lib/conditional-tag-check.php',   // ConditionalTagCheck class
+	'lib/config.php',                  // Configuration
+	'lib/custom.php',                  // Custom functions
+	'lib/customizer.php',              // Customizer functions
+	'lib/extras.php',                  // Extra functions
+	'lib/init.php',                    // Initial theme setup and constants
+	'lib/titles.php',                  // Page titles
+	'lib/utils.php',                   // Utility functions
+	'lib/wrapper.php',                 // Theme wrapper class
+	'lib/mla/blog-avatars.php',        // Custom blog avatars
+	'lib/mla/bp-global-search.php',    // Customizations for BuddyPress Global Search
+	'lib/mla/committees.php',          // Committee behaviors
+	'lib/mla/group-filters.php',       // Filters for MLA groups
+	'lib/mla/remove-unnecessary.php',  // Remove stuff
 ];
 
 foreach ( $cpwpst_includes as $file ) {
