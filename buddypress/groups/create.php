@@ -1,6 +1,10 @@
 <?php do_action( 'bp_before_create_group_page' ); ?>
 
+<?php use MLA\Tuileries\Titles; ?>
+
 <div id="buddypress">
+
+	<h2><?php _e( 'Create a Group' ); ?></h2>
 
 	<?php do_action( 'bp_before_create_group_content_template' ); ?>
 
