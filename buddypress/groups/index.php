@@ -12,10 +12,7 @@
 
 			<nav class="secondary" role="navigation">
 				<ul>
-					<li class="selected" id="groups-all"><a href="<?php bp_groups_directory_permalink(); ?>"><?php printf( __( 'All Groups <span>%s</span>', 'buddypress' ), bp_get_total_group_count() ); ?></a></li>
-
 					<?php $url_stub = bp_get_groups_directory_permalink(); ?>
-					<?php _log( 'url_stub is:', $url_stub ); ?>
 
 					<li id="groups-personal"><a href="<?php echo $url_stub . 'my-groups/'; ?>"><?php printf( __( 'My Groups <span>%s</span>', 'buddypress' ), bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
 
