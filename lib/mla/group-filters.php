@@ -34,8 +34,8 @@ function mla_group_directory_type_filter() {
 	$str .= '</select></li>';
 	echo $str;
 }
-//add_action( 'bp_groups_directory_group_types', 'mla_group_directory_status_filter');
-//add_action( 'bp_groups_directory_group_types', 'mla_group_directory_type_filter');
+add_action( 'bp_groups_directory_group_types', 'mla_group_directory_status_filter');
+add_action( 'bp_groups_directory_group_types', 'mla_group_directory_type_filter');
 
 class BP_Groups_Status_Filter {
 	protected $status;
@@ -133,10 +133,10 @@ function remove_type_filter() {
 	global $type_filter;
 	if($_COOKIE['bp-group-type']!='all') $type_filter->remove_filters();
 }
-//add_action('bp_before_groups_loop','add_status_filter');
-//add_action('bp_after_groups_loop','remove_status_filter');
-//add_action('bp_before_groups_loop','add_type_filter');
-//add_action('bp_after_groups_loop','remove_type_filter');
+add_action('bp_before_groups_loop','add_status_filter');
+add_action('bp_after_groups_loop','remove_status_filter');
+add_action('bp_before_groups_loop','add_type_filter');
+add_action('bp_after_groups_loop','remove_type_filter');
 
 function status_filter_js() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
@@ -162,6 +162,11 @@ function status_filter_js() {
 
 		if ( jq('.dir-search input').length )
 			search_terms = jq('.dir-search input').val();
+
+		console.log( 'hey! heres an object:' );
+		console.debug( object );
+		console.log( 'and! heres a filter:' );
+		console.debug( filter );
 
 		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
 
