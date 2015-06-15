@@ -14,11 +14,11 @@
 				<ul>
 					<?php $url_stub = bp_get_groups_directory_permalink(); ?>
 
-					<li id="groups-personal"><a href="<?php echo $url_stub . 'my-groups/'; ?>"><?php printf( __( 'My Groups <span>%s</span>', 'buddypress' ), bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
-
 					<li id="forums"><a href="<?php echo $url_stub . 'forums/'; ?>"><?php _e( 'Forums', 'buddypress' );?></a></li>
 					<li id="committees"><a href="<?php echo $url_stub . 'committees/'; ?>"><?php _e( 'Committees', 'buddypress' );?></a></li>
 					<li id="members-groups"><a href="<?php echo $url_stub . 'members-groups/'; ?>"><?php _e( "Members' Groups", 'buddypress' );?></a></li>
+
+					<li id="groups-personal"><a href="<?php echo $url_stub . 'my-groups/'; ?>"><?php _e( 'My Groups', 'buddypress' ); ?></a></li>
 
 					<?php do_action( 'bp_groups_directory_group_filter' ); ?>
 
