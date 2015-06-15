@@ -17,12 +17,7 @@
 					<?php $url_stub = bp_get_groups_directory_permalink(); ?>
 					<?php _log( 'url_stub is:', $url_stub ); ?>
 
-
-					<?php if ( is_user_logged_in() && bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
-
-						<li id="groups-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_groups_slug() . '/my-groups/'; ?>"><?php printf( __( 'My Groups <span>%s</span>', 'buddypress' ), bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
-
-					<?php endif; ?>
+					<li id="groups-personal"><a href="<?php echo $url_stub . 'my-groups/'; ?>"><?php printf( __( 'My Groups <span>%s</span>', 'buddypress' ), bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
 
 					<li id="forums"><a href="<?php echo $url_stub . 'forums/'; ?>"><?php _e( 'Forums', 'buddypress' );?></a></li>
 					<li id="committees"><a href="<?php echo $url_stub . 'committees/'; ?>"><?php _e( 'Committees', 'buddypress' );?></a></li>
