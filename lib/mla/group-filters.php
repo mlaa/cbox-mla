@@ -3,40 +3,6 @@
 
 //namespace MLA\Tuileries\Custom\GroupFilters;
 
-/* This part adds custom MLA filters to the BuddyPress
- * Groups directory, allowing users to filter the groups by type
- * (committees, discussion groups, etc) and by visibility
- * (private, public, hidden, etc).
- */
-// [COMMUNITY STRUCTURE] Add private/public filter to group lists
-
-function mla_group_directory_status_filter() {
-	$str  = '<li class="last filter-status" style="margin-left: 1em; float: left;"><label for="groups-filter-by">Visibility:</label>';
-	$str .= '<select id="groups-filter-by">';
-	$str .= '<option value="all">All</option>';
-	$str .= '<option value="public">Public</option>';
-	$str .= '<option value="private">Private</option>';
-	if (is_admin() || is_super_admin()) {
-		$str .= '<option value="hidden">Hidden</option>';
-	}
-	$str .= '</select></li>';
-	echo $str;
-}
-function mla_group_directory_type_filter() {
-	$str  = '<li class="last filter-type" style="margin-left: 1em; float: left;"><label for="groups-filter-by-type">Type:</label>';
-	$str .= '<select id="groups-filter-by-type">';
-	$str .= '<option value="all">All</option>';
-	$str .= '<option value="committees">Committees</option>';
-	$str .= '<option value="divisions">Divisions</option>';
-	$str .= '<option value="discussion_groups">Discussion Groups</option>';
-	$str .= '<option value="prospective_forums">Prospective Forums</option>';
-	$str .= '<option value="other">Other</option>';
-	$str .= '</select></li>';
-	echo $str;
-}
-add_action( 'bp_groups_directory_group_types', 'mla_group_directory_status_filter');
-add_action( 'bp_groups_directory_group_types', 'mla_group_directory_type_filter');
-
 class BP_Groups_Status_Filter {
 	protected $status;
 	protected $group_ids = array();
@@ -291,41 +257,3 @@ function mla_group_type_filter($type, $group="") {
 }
 add_filter('bp_get_group_type', 'mla_group_type_filter');
 
-/*
- * Filter membership activities out of AJAX querystrings.
- * This effectively makes it so that the "Everything" filter
- * of the Activities page (the default filter that's set when
- * no other filters are set) is actually set to filter out membership
- * activities. This way, the activity list doesn't overflow with
- * activities like "User ___ joined the group ___."
- */
-function mla_filter_querystring( $query_string, $object, $object_fitler, $object_score, $object_page, $object_search_terms, $object_extras ) {
-	if ( 'activity' == $object ) {
-		// let's just filter when we're on the activity page
-		if ( strpos( $query_string, 'type=' ) === false ) {
-			// if there's no type filter, then the type
-			// filter is really "everything." In that case,
-			// hijack it and make it not-so-everything
-			// (i.e. remove membership data)
-			$my_querystring = "type=activity_update,new_blog_post,new_blog_comment,created_group,updated_profile,new_forum_topic,new_forum_post,new_groupblog_post,added_group_document,edited_group_document,bp_doc_created,bp_doc_edited,bp_doc_comment,bbp_topic_create,bbp_reply_create&action=activity_update,new_blog_post,new_blog_comment,created_group,updated_profile,new_forum_topic,new_forum_post,new_groupblog_post,added_group_document,edited_group_document,bp_doc_created,bp_doc_edited,bp_doc_comment,bbp_topic_create,bbp_reply_create";
-			if ( strlen( $query_string ) > 0 ) {
-				$query_string = $my_querystring . '&'. $query_string;
-			} else {
-				$query_string = $my_querystring;
-			}
-		}
-	}
-	return $query_string;
-}
-add_filter( 'bp_dtheme_ajax_querystring', 'mla_filter_querystring', 10, 7 );
-
-/**
- * Don't count joining a group as a "recent activity." This
- * makes it so that the "recently active groups" is a little more
- * useful, since it doesn't show just groups that have had membership
- * changes recently.
- *
- * This feature requires Buddypress >= 2.3.0.
- */
-remove_action( 'groups_join_group',           'groups_update_last_activity' );
-remove_action( 'groups_leave_group',          'groups_update_last_activity' );
