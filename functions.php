@@ -19,6 +19,7 @@ $cpwpst_includes = [
 	'lib/titles.php',                  // Page titles
 	'lib/utils.php',                   // Utility functions
 	'lib/wrapper.php',                 // Theme wrapper class
+	'lib/mla/activities.php',          // Custom behaviors for activities.
 	'lib/mla/blog-avatars.php',        // Custom blog avatars
 	'lib/mla/bp-ges.php',              // Customizations for BuddyPress Group Email Subscriptions
 	'lib/mla/bp-global-search.php',    // Customizations for BuddyPress Global Search
