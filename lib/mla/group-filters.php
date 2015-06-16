@@ -93,6 +93,9 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 	function setup_group_ids() {
 		global $wpdb, $bp;
 		$sql_stub = "SELECT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid' AND LEFT(meta_value, 1) =  %s";
+
+		_log( "Hey!!! Filtering now with status type: $this->status_type" );
+
 		switch ( $this->status_type ) {
 			case "committees":
 				$sql = $wpdb->prepare($sql_stub, 'M');
@@ -106,10 +109,16 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 			case "prospective_forums":
 				$sql = $wpdb->prepare($sql_stub, 'F');
 				break;
-			case "other":
+			case "forums":
+				$sql = "SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid' AND ( LEFT( meta_value, 1 ) = 'D' OR LEFT( meta_value, 1) = 'G' )";
+				break;
+			case "members-groups":
 				$sql = "SELECT DISTINCT group_id from  {$bp->groups->table_name}_groupmeta WHERE group_id NOT IN (SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid')";
 				break;
 		}
+
+		_log( "And the SQL is: $sql" );
+
 		$this->group_ids = wp_parse_id_list( $wpdb->get_col( $sql ) );
 	}
 }
@@ -163,11 +172,6 @@ function status_filter_js() {
 		if ( jq('.dir-search input').length )
 			search_terms = jq('.dir-search input').val();
 
-		console.log( 'hey! heres an object:' );
-		console.debug( object );
-		console.log( 'and! heres a filter:' );
-		console.debug( filter );
-
 		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
 
 		return false;
@@ -176,23 +180,18 @@ function status_filter_js() {
 	</script>
 <?php }
 }
+
 function type_filter_js() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
 	<script type="text/javascript">
 	if (jq.cookie('bp-groups-status')) {
 		jq('li.filter-type select').val(jq.cookie('bp-groups-type'));
 	}
-	jq('li.filter-type select').change( function() {
+	jq('#groups-directory-form nav.secondary li').click( function() {
 
-		if ( jq('.item-list-tabs li.selected').length )
-			var el = jq('.item-list-tabs li.selected');
-		else
-			var el = jq(this);
-
-		var css_id = el.attr('id').split('-');
-		var object = css_id[0];
-		var scope = css_id[1];
-		var status = jq(this).val();
+		var object = 'groups';
+		var scope = 'all';
+		var status = this.id;
 		var filter = jq('select#groups-order-by-type').val();
 		var search_terms = '';
 
@@ -200,6 +199,15 @@ function type_filter_js() {
 
 		if ( jq('.dir-search input').length )
 			search_terms = jq('.dir-search input').val();
+
+		console.log( 'hey! heres an object:' );
+		console.debug( object );
+		console.log( 'hey! heres the filter:' );
+		console.debug( filter );
+		console.log( 'hey! heres the scope:' );
+		console.debug( scope );
+		console.log( 'hey! heres the status:' );
+		console.debug( status );
 
 		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
 
