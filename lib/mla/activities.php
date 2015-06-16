@@ -25,7 +25,7 @@ function mla_filter_querystring( $query_string, $object, $object_fitler, $object
 	}
 	return $query_string;
 }
-add_filter( 'bp_dtheme_ajax_querystring', 'mla_filter_querystring', 10, 7 );
+add_filter( 'bp_legacy_theme_ajax_querystring', 'mla_filter_querystring', 10, 7 );
 
 /**
  * Don't count joining a group as a "recent activity." This
