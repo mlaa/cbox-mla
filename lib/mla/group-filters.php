@@ -1,8 +1,6 @@
 <?php
 /* This script contains Buddypress customizations for MLA group types. */
 
-//namespace MLA\Tuileries\Custom\GroupFilters;
-
 class BP_Groups_Status_Filter {
 	protected $status;
 	protected $group_ids = array();
