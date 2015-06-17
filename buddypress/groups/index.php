@@ -12,23 +12,24 @@
 
 			<nav class="secondary" role="navigation">
 				<ul>
-					<li class="selected" id="groups-all"><a href="<?php bp_groups_directory_permalink(); ?>"><?php _e( 'All Groups', 'buddypress' ); ?></a></li>
+					<li class="selected" id="groups-all"><a href="<?php bp_groups_directory_permalink(); ?>"><?php _e( 'All', 'buddypress' ); ?></a></li>
+
+					<?php if ( is_user_logged_in() && bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
+						<li id="groups-personal"><a href="<?php echo $url_stub . 'my-groups/'; ?>"><?php _e( 'My', 'buddypress' ); ?></a></li>
+
+					<?php else: ?>
+
+						<li id="groups-personal"><a href="<?php echo wp_login_url(); ?>"><?php _e( 'My', 'buddypress' ); ?></a></li>
+
+					<?php endif; ?>
 
 					<?php $url_stub = bp_get_groups_directory_permalink(); ?>
 					<?php _log( 'url_stub is:', $url_stub ); ?>
 
 					<li id="forums"><a href="<?php echo $url_stub . 'forums/'; ?>"><?php _e( 'Forums', 'buddypress' );?></a></li>
 					<li id="committees"><a href="<?php echo $url_stub . 'committees/'; ?>"><?php _e( 'Committees', 'buddypress' );?></a></li>
-					<li id="members-groups"><a href="<?php echo $url_stub . 'members-groups/'; ?>"><?php _e( "Members' Groups", 'buddypress' );?></a></li>
+					<li id="members-groups"><a href="<?php echo $url_stub . 'members-groups/'; ?>"><?php _e( 'Member-created', 'buddypress' );?></a></li>
 
-					<?php if ( is_user_logged_in() && bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
-						<li id="groups-personal"><a href="<?php echo $url_stub . 'my-groups/'; ?>"><?php _e( 'My Groups', 'buddypress' ); ?></a></li>
-
-					<?php else: ?>
-
-						<li id="groups-personal"><a href="<?php echo wp_login_url(); ?>"><?php _e( 'My Groups', 'buddypress' ); ?></a></li>
-
-					<?php endif; ?>
 
 
 					<?php do_action( 'bp_groups_directory_group_filter' ); ?>
