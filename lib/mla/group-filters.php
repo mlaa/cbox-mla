@@ -156,8 +156,12 @@ function type_filter_js() {
 	jq('#groups-directory-form nav.secondary li').click( function() {
 
 		var object = 'groups';
-		var scope = 'all';
 		var status = this.id;
+		if ( 'groups-personal' == status ) {
+			var scope = 'personal';
+		} else {
+			var scope = 'all';
+		}
 		var filter = jq('select#groups-order-by-type').val();
 		var search_terms = '';
 
@@ -165,15 +169,6 @@ function type_filter_js() {
 
 		if ( jq('.dir-search input').length )
 			search_terms = jq('.dir-search input').val();
-
-		console.log( 'hey! heres an object:' );
-		console.debug( object );
-		console.log( 'hey! heres the filter:' );
-		console.debug( filter );
-		console.log( 'hey! heres the scope:' );
-		console.debug( scope );
-		console.log( 'hey! heres the status:' );
-		console.debug( status );
 
 		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
 
