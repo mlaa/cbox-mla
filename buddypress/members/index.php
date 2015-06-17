@@ -19,7 +19,7 @@
 						<ul>
 							<li class="selected" id="members-all"><a href="<?php bp_members_directory_permalink(); ?>"><?php _e( 'All', 'buddypress' ); ?></a></li>
 
-							<li id="members-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/'; ?>"><?php printf( __( 'My Friends <span>%s</span>', 'buddypress' ), bp_get_total_friend_count( bp_loggedin_user_id() ) ); ?></a></li>
+							<li id="members-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/'; ?>"><?php _e( 'My Contacts', 'buddypress' ); ?></a></li>
 
 							<?php do_action( 'bp_members_directory_member_types' ); ?>
 

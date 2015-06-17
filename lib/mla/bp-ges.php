@@ -49,9 +49,7 @@ function mla_ass_group_subscribe_button() {
 	$notifications_url = home_url().'/groups/'.groups_get_slug( $group->id ).'/notifications/';
 	?>
 
-	<div class="group-subscription-div">
-		<a class="group-subscription-options-link" id="gsublink-<?php echo esc_attr( $group->id ); ?>" href="<?php echo esc_html( $notifications_url ); ?>" title="<?php _e( 'Change your email subscription options for this group', 'bp-ass' );?>"><span class="group-subscription-status<?php echo esc_attr( $gemail_icon_class ); ?>" id="gsubstat-<?php echo esc_attr( $group->id ); ?>"><?php echo $status; ?></span> <?php echo $sep; ?></a>
-	</div>
+	<a class="group-subscription-options-link button" id="gsublink-<?php echo esc_attr( $group->id ); ?>" href="<?php echo esc_html( $notifications_url ); ?>" title="<?php _e( 'Change your email subscription options for this group', 'bp-ass' );?>">Manage Subscription</a>
 
 	<?php
 }
