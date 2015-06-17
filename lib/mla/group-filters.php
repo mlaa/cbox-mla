@@ -60,8 +60,6 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 		global $wpdb, $bp;
 		$sql_stub = "SELECT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid' AND LEFT(meta_value, 1) =  %s";
 
-		_log( "Hey!!! Filtering now with status type: $this->status_type" );
-
 		switch ( $this->status_type ) {
 			case "committees":
 				$sql = $wpdb->prepare($sql_stub, 'M');
@@ -82,8 +80,6 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 				$sql = "SELECT DISTINCT group_id from  {$bp->groups->table_name}_groupmeta WHERE group_id NOT IN (SELECT DISTINCT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid')";
 				break;
 		}
-
-		_log( "And the SQL is: $sql" );
 
 		$this->group_ids = wp_parse_id_list( $wpdb->get_col( $sql ) );
 	}
