@@ -96,15 +96,14 @@ $type_filter = '';
 function add_type_filter() {
 	global $type_filter;
 	if($_COOKIE['bp-group-type']!='all') $type_filter = new BP_Groups_Type_Filter();
-	_log( "adding type filter:", $type_filter );
 }
 function remove_type_filter() {
 	global $type_filter;
 	if($_COOKIE['bp-group-type']!='all') $type_filter->remove_filters();
 }
-add_action('bp_before_groups_loop','add_status_filter');
+add_action('bp_before_groups_loop','add_status_filter', 20);
 add_action('bp_after_groups_loop','remove_status_filter');
-add_action('bp_before_groups_loop','add_type_filter');
+add_action('bp_before_groups_loop','add_type_filter', 20);
 add_action('bp_after_groups_loop','remove_type_filter');
 
 function type_filter_js() {
@@ -113,7 +112,7 @@ function type_filter_js() {
 	if (jq.cookie('bp-groups-status')) {
 		jq('li.filter-type select').val(jq.cookie('bp-groups-type'));
 	}
-	jq('#groups-directory-form nav.secondary li').click( function() {
+	jq('#groups-directory-form nav.secondary li.mla-tab').click( function() {
 
 		var object = 'groups';
 		var status = this.id;
@@ -131,6 +130,10 @@ function type_filter_js() {
 			search_terms = jq('.dir-search input').val();
 
 		bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
+
+		var url = [location.protocol, '//', location.host, location.pathname].join('');
+
+		history.pushState( status, "", url + '?type=' + status );
 
 		return false;
 
@@ -176,7 +179,7 @@ add_action('wp_head', 'mla_reset_filter_cookies');
 
 /* This part adds the MLA Group type
  * (i.e. Committee, Division, Discussion Group)
- * to the Buddypress Group Type display
+ bp* to the Buddypress Group Type display
  */
 
 function mla_group_type_filter($type, $group="") {
@@ -211,10 +214,9 @@ function mla_group_type_filter($type, $group="") {
 }
 add_filter('bp_get_group_type', 'mla_group_type_filter');
 
-// TODO
-function mla_filter_querystring_from_url( $query_string, $object, $object_fitler, $object_score, $object_page, $object_search_terms, $object_extras ) {
-	if ( 'groups' == $object ) {
+function mla_filter_groups_from_url() {
+	if ( array_key_exists( 'type', $_GET ) ) {
+		$_COOKIE['bp-groups-type'] = $_GET['type'];
 	}
-	return $query_string;
 }
-add_filter( 'bp_legacy_theme_ajax_querystring', 'mla_filter_querystring_from_url', 20, 7 );
+add_action( 'bp_before_groups_loop', 'mla_filter_groups_from_url', 10 );

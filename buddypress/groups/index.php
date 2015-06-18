@@ -15,11 +15,11 @@
 					<li class="mla-tab selected" id="groups-all"><a href="<?php bp_groups_directory_permalink(); ?>"><?php _e( 'All', 'buddypress' ); ?></a></li>
 
 					<?php if ( is_user_logged_in() && bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
-						<li class="mla-tab" id="groups-personal"><a href="<?php echo $url_stub . 'my-groups/'; ?>"><?php _e( 'My', 'buddypress' ); ?></a></li>
+						<li id="groups-personal"><a href="<?php echo $url_stub . 'my-groups/'; ?>"><?php _e( 'My', 'buddypress' ); ?></a></li>
 
 					<?php else: ?>
 
-						<li class="mla-tab" id="groups-personal"><a href="<?php echo wp_login_url(); ?>"><?php _e( 'My', 'buddypress' ); ?></a></li>
+						<li id="groups-personal"><a href="<?php echo wp_login_url(); ?>"><?php _e( 'My', 'buddypress' ); ?></a></li>
 
 					<?php endif; ?>
 
