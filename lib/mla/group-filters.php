@@ -109,11 +109,40 @@ add_action('bp_after_groups_loop','remove_type_filter');
 function type_filter_js() {
 	if( wp_script_is( 'jquery', 'done' ) ) { ?>
 	<script type="text/javascript">
-	if (jq.cookie('bp-groups-status')) {
-		jq('li.filter-type select').val(jq.cookie('bp-groups-type'));
-	}
-	jq('#groups-directory-form nav.secondary li.mla-tab').click( function() {
 
+	jq(window).on('popstate', function(e) {
+		var object = 'groups';
+
+		// Get $_GET-like queries from the URL
+		function get_query(){
+			var url = location.search;
+			var qs = url.substring(url.indexOf('?') + 1).split('&');
+			for(var i = 0, result = {}; i < qs.length; i++){
+				qs[i] = qs[i].split('=');
+				result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+			}
+			return result;
+		}
+		var $_GET = get_query();
+
+		if ( $_GET['type'].length ) {
+			var object = 'groups';
+			var status = $_GET['type'];
+			if ( 'groups-personal' == status ) {
+				var scope = 'personal';
+			} else {
+				var scope = 'all';
+			}
+			var filter = ''; var search_terms = '';
+			jq.cookie('bp-groups-type',status,{ path: '/' });
+			bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
+		}
+
+		jq.cookie('bp-groups-type',e.state,{ path: '/' });
+
+	});
+
+	jq('#groups-directory-form nav.secondary li.mla-tab').click( function() {
 		var object = 'groups';
 		var status = this.id;
 		if ( 'groups-personal' == status ) {
@@ -133,7 +162,7 @@ function type_filter_js() {
 
 		var url = [location.protocol, '//', location.host, location.pathname].join('');
 
-		history.pushState( status, "", url + '?type=' + status );
+		history.pushState( { type: status }, "", url + '?type=' + status );
 
 		return false;
 
