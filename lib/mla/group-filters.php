@@ -237,3 +237,10 @@ function mla_group_type_filter($type, $group="") {
 }
 add_filter('bp_get_group_type', 'mla_group_type_filter');
 
+// TODO
+function mla_filter_querystring_from_url( $query_string, $object, $object_fitler, $object_score, $object_page, $object_search_terms, $object_extras ) {
+	if ( 'groups' == $object ) {
+	}
+	return $query_string;
+}
+add_filter( 'bp_legacy_theme_ajax_querystring', 'mla_filter_querystring_from_url', 20, 7 );
