@@ -29,6 +29,8 @@ add_filter( 'buddyboss_global_search_option_items-to-search', 'mla_filter_bp_glo
 function mla_rename_forums( $item ) {
 	if ( 'forums' == $item ) {
 		return 'Discussions';
+	} elseif ( 'groupblogs' == $item ) {
+		return 'Site posts';
 	} else {
 		return ucfirst( $item ); // Title Case
 	}
