@@ -37,20 +37,3 @@ add_filter( 'bp_legacy_theme_ajax_querystring', 'mla_filter_querystring', 10, 7 
  */
 remove_action( 'groups_join_group',           'groups_update_last_activity' );
 remove_action( 'groups_leave_group',          'groups_update_last_activity' );
-
-// Experimental attempt to filter activity topic
-function mla_filter_activity_excerpt( $excerpt ) {
-	_log( "heyo! excerpt is: $excerpt" );
-	return $excerpt;
-}
-//add_filter( 'bbp_activity_topic_create_excerpt', 'mla_filter_activity_excerpt' );
-
-function mla_filter_activity_header( $activity_array ) {
-	_log( 'hi!' );
-	_log( $activity_array );
-	return $activity_array;
-}
-//add_filter( 'bp_get_activity_action', 'mla_filter_activity_header' );
-
-// Don't show secondary avatars, since they're ugly.
-remove_filter( 'bp_get_activity_action_pre_meta', array( $bp_legacy_var,  'secondary_avatars', 10 ) );
