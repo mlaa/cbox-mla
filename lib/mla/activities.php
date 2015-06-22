@@ -37,3 +37,8 @@ add_filter( 'bp_legacy_theme_ajax_querystring', 'mla_filter_querystring', 10, 7 
  */
 remove_action( 'groups_join_group',           'groups_update_last_activity' );
 remove_action( 'groups_leave_group',          'groups_update_last_activity' );
+
+function my_remove_secondary_avatars( $bp_legacy ) {
+    remove_filter( 'bp_get_activity_action_pre_meta', array( $bp_legacy, 'secondary_avatars' ), 10, 2 );
+}
+add_action( 'bp_theme_compat_actions', 'my_remove_secondary_avatars' );
