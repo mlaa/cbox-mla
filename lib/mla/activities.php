@@ -38,6 +38,14 @@ add_filter( 'bp_legacy_theme_ajax_querystring', 'mla_filter_querystring', 10, 7 
 remove_action( 'groups_join_group',           'groups_update_last_activity' );
 remove_action( 'groups_leave_group',          'groups_update_last_activity' );
 
+/*
+ * Don't show secondary avatars in activity items. These are little icons next
+ * to group and member names. They clutter up activity items and generally make everything
+ * look pretty messy. Get rid of them!
+ *
+ * Props to @r-a-y for the fix, from this BP support thread:
+ * https://buddypress.org/support/topic/how-can-i-disable-secondary-avatars-in-activity-items/#post-240959
+ */
 function my_remove_secondary_avatars( $bp_legacy ) {
     remove_filter( 'bp_get_activity_action_pre_meta', array( $bp_legacy, 'secondary_avatars' ), 10, 2 );
 }
