@@ -80,12 +80,6 @@ jq(document).ready( function() {
 		if ( document.activeElement !== this ) {
 			if (!this.value.match(/\S+/)) {
 				this.value = '';
-				jq('#whats-new-options').animate({
-					height:'40px'
-				});
-				jq('form#whats-new-form textarea').animate({
-					height:'20px'
-				});
 				jq('#aw-whats-new-submit').prop('disabled', true);
 			}
 		}
