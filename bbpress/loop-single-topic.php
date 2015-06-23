@@ -76,7 +76,7 @@ use MLA\Tuileries\Custom;
 	} else {
 		printf( '%s posts. First posted %s by %s, and last updated %s',
 			ucfirst( Custom\convert_number_to_words( $post_count ) ),
-			bbp_get_topic_freshness_link(),
+			bbp_get_topic_post_date( false, true ),
 			bbp_get_topic_author_link( array( 'type' => 'name' ) ),
 			bbp_get_topic_freshness_link()
 			);
