@@ -7,6 +7,8 @@
  * @subpackage Theme
  */
 
+use MLA\Tuileries\Custom;
+
 ?>
 
 <ul id="bbp-topic-<?php bbp_topic_id(); ?>" <?php bbp_topic_class(); ?>>
@@ -64,14 +66,25 @@
 				<?php do_action( 'bbp_theme_after_topic_started_in' ); ?>
 
 			<?php endif; ?>
-		
-		<?php echo __('Last updated '); ?> 
 
-		<?php do_action( 'bbp_theme_before_topic_freshness_link' ); ?>
 
-		<?php bbp_topic_freshness_link(); ?>
+<?php
+	$post_count = bbp_get_topic_post_count();
 
-		<?php do_action( 'bbp_theme_after_topic_freshness_link' ); ?>
+	if ( '1' == $post_count ) {
+		echo 'Posted ' . bbp_get_topic_freshness_link();
+	} else {
+		printf( '%s posts. First posted %s by %s, and last updated %s',
+			ucfirst( Custom\convert_number_to_words( $post_count ) ),
+			bbp_get_topic_freshness_link(),
+			bbp_get_topic_author_link( array( 'type' => 'name' ) ),
+			bbp_get_topic_freshness_link()
+			);
+	}
+	printf( ' by <span class="bbp-topic-freshness-author">%s.</span>',
+		bbp_get_author_link( array( 'post_id' => bbp_get_topic_last_active_id(), 'type' => 'name' ) )
+		);
+?>
 
 		</p>
 
@@ -81,6 +94,5 @@
 
 	</li>
 
-	<li class="bbp-topic-reply-count"><?php bbp_show_lead_topic() ? bbp_topic_reply_count() : bbp_topic_post_count(); ?></li>
 
 </ul><!-- #bbp-topic-<?php bbp_topic_id(); ?> -->

@@ -15,11 +15,6 @@
 
 	<li class="bbp-header">
 
-		<ul class="forum-titles">
-			<li class="bbp-topic-title"><?php _e( 'Topic', 'bbpress' ); ?></li>
-			<li class="bbp-topic-reply-count"><?php bbp_show_lead_topic() ? _e( 'Replies', 'bbpress' ) : _e( 'Posts', 'bbpress' ); ?></li>
-		</ul>
-
 	</li>
 
 	<li class="bbp-body">
