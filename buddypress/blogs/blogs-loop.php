@@ -29,9 +29,11 @@
 
 			<div class="item">
 				<div class="item-title"><a href="<?php bp_blog_permalink(); ?>"><?php bp_blog_name(); ?></a></div>
-				<div class="item-meta"><span class="activity"><?php bp_blog_last_active(); ?></span></div>
+
+				<div class="item-meta"><span class="activity"><?php bp_blog_last_active(); ?></span>. <?php bp_blog_latest_post(); ?></div>
 
 				<?php do_action( 'bp_directory_blogs_item' ); ?>
+
 			</div>
 
 			<div class="action">
@@ -44,11 +46,6 @@
 					// do_action( 'bp_directory_blogs_actions' );
 				?>
 
-				<div class="meta">
-
-					<?php bp_blog_latest_post(); ?>
-
-				</div>
 
 			</div>
 
