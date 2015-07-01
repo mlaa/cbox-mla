@@ -8,5 +8,9 @@
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<!-- End TypeKit Embed Code -->
 
+	<!-- Google Fonts Embed Code -->
+		<link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+	<!-- End Google Fonts Embed Code -->
+
 	<?php wp_head(); ?>
 </head>
