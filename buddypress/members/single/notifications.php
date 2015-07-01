@@ -13,9 +13,6 @@
 	<ul>
 		<?php bp_get_options_nav(); ?>
 
-		<li id="members-order-select" class="last filter">
-			<?php bp_notifications_sort_order_form(); ?>
-		</li>
 	</ul>
 </div>
 
