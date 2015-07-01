@@ -11,7 +11,7 @@
 			<li>
 				<a href="<?php bp_group_member_domain(); ?>">
 
-					<?php bp_group_member_avatar_thumb(); ?>
+					<?php bp_group_member_avatar(); ?>
 
 				</a>
 
