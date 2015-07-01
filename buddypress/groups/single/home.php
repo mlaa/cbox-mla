@@ -105,7 +105,7 @@
 				elseif ( bp_is_group_activity()   ) : bp_get_template_part( 'groups/single/activity'     );
 
 				// Group Members
-				elseif ( bp_is_group_members()    ) : bp_groups_members_template_part();
+				elseif ( bp_is_group_members()    ) : mla_bp_groups_members_template_part();
 
 				// Group Invitations
 				elseif ( bp_is_group_invites()    ) : bp_get_template_part( 'groups/single/send-invites' );
