@@ -23,7 +23,6 @@ $cpwpst_includes = [
 	'lib/mla/blog-avatars.php',        // Custom blog avatars
 	'lib/mla/bp-ges.php',              // Customizations for BuddyPress Group Email Subscriptions
 	'lib/mla/bp-global-search.php',    // Customizations for BuddyPress Global Search
-	'lib/mla/buttons.php',             // Fancy-pants buttons
 	'lib/mla/committees.php',          // Committee behaviors
 	'lib/mla/group-members-search.php',// Group members search
 	'lib/mla/group-filters.php',       // Filters for MLA groups
