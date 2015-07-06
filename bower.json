@@ -10,8 +10,7 @@
   "private": true,
   "dependencies": {
     "modernizr": "2.8.2",
-    "normalize.css": "~3.0.3",
-    "typographic": "~2.9.3"
+    "normalize.css": "~3.0.3"
   },
   "overrides": {
     "modernizr": {
