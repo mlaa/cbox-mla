@@ -1,23 +1,23 @@
 {
-	"name": "cbox-tuileries",
-	"homepage": "https://github.com/mlaa/cbox-mla",
-	"authors": [
-		"Jonathan Reeve <jon.reeve@gmail.com",
-		"Julien Melissas <julien@craftpeak.com>",
-		"Ben Word <ben@benword.com>"
-	],
-	"license": "GPL2",
-	"private": true,
-	"dependencies": {
-		"modernizr": "2.8.2",
-		"normalize.css": "~3.0.3"
-	},
-	"overrides": {
-		"modernizr": {
-			"main": "./modernizr.js"
-		},
-		"normalize.css": {
-			"main": "./normalize.css"
-		}
-	}
+  "name": "cbox-tuileries",
+  "homepage": "https://github.com/mlaa/cbox-mla",
+  "authors": [
+    "Jonathan Reeve <jon.reeve@gmail.com",
+    "Julien Melissas <julien@craftpeak.com>",
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "GPL2",
+  "private": true,
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "normalize.css": "~3.0.3"
+  },
+  "overrides": {
+    "modernizr": {
+      "main": "./modernizr.js"
+    },
+    "normalize.css": {
+      "main": "./normalize.css"
+    }
+  }
 }

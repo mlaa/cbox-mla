@@ -50,3 +50,39 @@ function my_remove_secondary_avatars( $bp_legacy ) {
     remove_filter( 'bp_get_activity_action_pre_meta', array( $bp_legacy, 'secondary_avatars' ), 10, 2 );
 }
 add_action( 'bp_theme_compat_actions', 'my_remove_secondary_avatars' );
+
+/**
+ * Output the activity delete link.
+ * Now with a fresh icon!
+ *
+ * @uses bp_get_activity_delete_link()
+ */
+function mla_bp_activity_delete_link() {
+	echo mla_bp_get_activity_delete_link();
+}
+
+	/**
+	 * Return an iconified activity delete link.
+	 *
+	 */
+	function mla_bp_get_activity_delete_link() {
+
+		$url   = bp_get_activity_delete_url();
+		$class = 'delete-activity';
+
+		// Determine if we're on a single activity page, and customize accordingly
+		if ( bp_is_activity_component() && is_numeric( bp_current_action() ) ) {
+			$class = 'delete-activity-single';
+		}
+
+		$link = '<a href="' . esc_url( $url ) . '" class="button item-button bp-secondary-action ' . $class . ' confirm" rel="nofollow">' .'<span class="dashicons dashicons-trash"></span></a>';
+
+		/**
+		 * Filters the activity delete link.
+		 *
+		 * @since BuddyPress (1.1.0)
+		 *
+		 * @param string $link Activity delete HTML link.
+		 */
+		return apply_filters( 'bp_get_activity_delete_link', $link );
+	}
