@@ -10,7 +10,9 @@
   "private": true,
   "dependencies": {
     "modernizr": "2.8.2",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "flowtype": "~1.1.0",
+    "jquery": "~2.1.4"
   },
   "overrides": {
     "modernizr": {

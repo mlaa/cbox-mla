@@ -74,4 +74,6 @@
 	// Load Events
 	$( document ).ready( UTIL.loadEvents );
 
+	$('body').flowtype();
+
 } )( jQuery ); // Fully reference jQuery after this point.
