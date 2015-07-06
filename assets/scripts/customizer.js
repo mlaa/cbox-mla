@@ -11,6 +11,5 @@
 			$( '.brand' ).text( to );
 		} );
 	} );
-
+	
 } )( jQuery );
-
