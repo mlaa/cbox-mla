@@ -8,8 +8,14 @@ wp menu location assign inside-header-navigation primary_navigation
 # Get ID of "Activity" menu item
 ACTIVITY_ID=`wp menu item list inside-header-navigation | grep Activity | cut -f1`
 
-# Rename "Activity" to "Dashboard" and put it at the beginning of the menu
-wp menu item update $ACTIVITY_ID --position=1 --title=Dashboard
+# Remove "Activity" since we'll be effectively replacing it with the dashboard
+wp menu item delete $ACTIVITY_ID
+
+# Make a new page called "Dashboard"
+DASHBOARD_ID=`wp post create --post_type=page --post_title=Dashboard --post_status=publish --porcelain`
+
+# Make a menu item that corresponds with our newly-created page
+wp menu item add-post inside-header-navigation $DASHBOARD_ID --title=Dashboard --position=1
 
 # --------- Plugins ----------
 
@@ -31,4 +37,3 @@ wget https://downloads.wordpress.org/plugin/buddypress-profile-progression.zip &
 
 # Now activate!
 wp plugin activate buddypress-profile-progression
-
