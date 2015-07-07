@@ -1,19 +1,8 @@
-<?php while ( have_posts() ) : the_post(); ?>
-	<?php get_template_part( 'templates/page', 'header' ); ?>
-	<?php get_template_part( 'templates/content', 'page' ); ?>
-<?php endwhile; ?>
-
 <?php do_action( 'bp_before_directory_activity' ); ?>
 
 <div id="buddypress">
 
 	<?php do_action( 'bp_before_directory_activity_content' ); ?>
-
-	<?php if ( is_user_logged_in() ) : ?>
-
-		<?php bp_get_template_part( 'activity/post-form' ); ?>
-
-	<?php endif; ?>
 
 	<?php do_action( 'template_notices' ); ?>
 
