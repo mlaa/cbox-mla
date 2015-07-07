@@ -504,3 +504,174 @@ function mla_set_nonmember_flag( $user_id ) {
 	update_user_meta( $user_id, 'mla_nonmember', 'yes' );
 }
 add_action( 'wpmu_new_user', 'mla_set_nonmember_flag' );
+
+/**
+ * Adds support for user at-mentions to the Suggestions API.
+ */
+class MLA_Name_Suggestions extends BP_Suggestions {
+
+        /**
+        * Default arguments for this suggestions service.
+        *
+        * @since BuddyPress (2.1.0)
+        * @var array $args {
+        *     @type int $limit Maximum number of results to display. Default: 200.
+        *     @type string $term The suggestion service will try to find results that contain this string.
+        *           Mandatory.
+        * }
+        */
+        protected $default_args = array(
+                'limit'        => 200,
+                'term'         => '',
+                'type'         => '',
+        );
+
+        /**
+        * Validate and sanitise the parameters for the suggestion service query.
+        *
+        * @return true|WP_Error If validation fails, return a WP_Error object. On success, return true (bool).
+        * @since BuddyPress (2.1.0)
+        */
+        public function validate() {
+                $this->args = apply_filters( 'mla_name_suggestions_args', $this->args, $this );
+
+                // Check for invalid or missing mandatory parameters.
+                if ( empty( $this->args['term'] ) ) {
+                        return new WP_Error( 'missing_requirement' );
+                }
+
+                return apply_filters( 'mla_name_suggestions_validate_args', parent::validate(), $this );
+        }
+
+        /**
+        * Find and return a list of user name suggestions that match the query.
+        *
+        * @return array|WP_Error Array of results. If there were problems, returns a WP_Error object.
+        * @since BuddyPress (2.1.0)
+        */
+        public function get_suggestions() {
+
+                $user_query = array(
+                        'count_total'     => '',  // Prevents total count
+                        'populate_extras' => false,
+                        'type'            => 'alphabetical',
+
+                        'page'            => 1,
+                        'per_page'        => $this->args['limit'],
+                        'search_terms'    => $this->args['term'],
+                        'search_wildcard' => 'right',
+                );
+
+                $user_query = apply_filters( 'mla_suggestions_query_args', $user_query, $this );
+
+                if ( is_wp_error( $user_query ) ) {
+                        return $user_query;
+                }
+
+                add_action( 'bp_pre_user_query', array( $this, 'mla_query_users_by_name' ) );
+
+                $user_query = new BP_User_Query( $user_query );
+
+                $results = array();
+                foreach ( $user_query->results as $user ) {
+                        $result        = new stdClass();
+                        $result->ID    = $user->user_nicename;
+                        $result->image = bp_core_fetch_avatar( array( 'html' => false, 'item_id' => $user->ID ) );
+                        $result->name  = bp_core_get_user_displayname( $user->ID );
+
+                        $results[] = $result;
+                }
+
+                return apply_filters( 'mla_name_suggestions_get_suggestions', $results, $this );
+        }
+
+        /**
+        * Query users by name
+        *
+        * @param BP_User_Query $bp_user_query
+        */
+        public function mla_query_users_by_name( $bp_user_query ) {
+
+                global $wpdb;
+
+        if ( ! empty( $bp_user_query->query_vars['search_terms'] ) ) {
+                        $bp_user_query->uid_clauses['where'] = " WHERE u.ID IN ( SELECT ID FROM {$wpdb->users} WHERE spam = 0 AND deleted = 0 AND user_status = 0 ) AND u.ID IN ( SELECT ID FROM {$wpdb->users} WHERE ( display_name LIKE '%" . ucfirst( strtolower(  $bp_user_query->query_vars['search_terms'] ) ) ."%' ) )";
+                        $bp_user_query->uid_clauses['orderby'] = "ORDER BY substring_index(u.display_name, ' ', -1)";
+                }
+
+        }
+
+}
+add_filter( 'bp_suggestions_services', function() { return 'MLA_Name_Suggestions'; } );
+
+/**
+ * Override BP AJAX endpoint for Suggestions API lookups.
+ *
+ * @since BuddyPress (2.1.0)
+ */
+function mla_ajax_get_suggestions() {
+        if ( ! bp_is_user_active() || empty( $_GET['term'] ) || empty( $_GET['type'] ) ) {
+                wp_send_json_error( 'missing_parameter' );
+                exit;
+        }
+
+        $results = bp_core_get_suggestions( array(
+                'term' => sanitize_text_field( $_GET['term'] ),
+                'type' => 'mla_members',
+                'limit' => '200',
+        ) );
+
+        if ( is_wp_error( $results ) ) {
+                wp_send_json_error( $results->get_error_message() );
+                exit;
+        }
+
+        wp_send_json_success( $results );
+}
+remove_action( 'wp_ajax_bp_get_suggestions', 'bp_ajax_get_suggestions' );
+add_action( 'wp_ajax_bp_get_suggestions', 'mla_ajax_get_suggestions' );
+
+/**
+ * Enqueue @mentions JS.
+ *
+*/
+function mla_member_mentions_script() {
+        if ( ! bp_activity_maybe_load_mentions_scripts() ) {
+                return;
+        }
+
+        // Special handling for New/Edit screens in wp-admin
+        if ( is_admin() ) {
+                if (
+                        ! get_current_screen() ||
+                        ! in_array( get_current_screen()->base, array( 'page', 'post' ) ) ||
+                        ! post_type_supports( get_current_screen()->post_type, 'editor' ) ) {
+                        return;
+                }
+        }
+
+	$min = '';
+        //$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+        wp_enqueue_script( 'mla-mentions', get_stylesheet_directory_uri() . "/assets/js/mentions{$min}.js", array( 'jquery', 'jquery-atwho' ), bp_get_version(), true );
+	wp_enqueue_style( 'mla-mentions-css', get_stylesheet_directory_uri() . "/assets/css/mentions{$min}.css", array(), bp_get_version() );
+
+}
+remove_action( 'bp_enqueue_scripts', 'bp_activity_mentions_script' );
+remove_action( 'bp_admin_enqueue_scripts', 'bp_activity_mentions_script' );
+add_action( 'bp_enqueue_scripts', 'mla_member_mentions_script' );
+add_action( 'bp_admin_enqueue_scripts', 'mla_member_mentions_script' );
+
+function mla_mentions_script_enable( $current_status ) {
+        return $current_status || bp_is_groups_component() || bp_is_new_deposit_page();
+}
+add_filter( 'bp_activity_maybe_load_mentions_scripts', 'mla_mentions_script_enable' );
+
+function mla_bp_core_override_common_scripts( $current_scripts ) {
+        $min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	$current_scripts['jquery-atwho']['file'] = get_stylesheet_directory_uri() . "/assets/js/jquery.atwho{$min}.js";
+	$current_scripts['jquery-caret']['file'] = get_stylesheet_directory_uri() . "/assets/js/jquery.caret{$min}.js";
+        return $current_scripts;
+}
+add_filter( 'bp_core_register_common_scripts', 'mla_bp_core_override_common_scripts' );
+
