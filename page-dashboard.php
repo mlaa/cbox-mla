@@ -1,3 +1,8 @@
+
+<?php if ( is_user_logged_in() ) : ?>
+
+<main id="mla-newsfeed-area">
+
 <?php do_action( 'bp_before_directory_activity' ); ?>
 
 <div id="buddypress">
@@ -6,13 +11,11 @@
 
 	<?php do_action( 'template_notices' ); ?>
 
-	<?php if ( is_user_logged_in() ) : ?>
-
 	<div class="item-list-tabs activity-type-tabs" role="navigation">
 		<ul>
 			<?php do_action( 'bp_before_activity_type_tab_all' ); ?>
 
-			<li class="selected" id="activity-all"><a href="<?php bp_activity_directory_permalink(); ?>" title="<?php esc_attr_e( 'The public activity for everyone on this site.', 'buddypress' ); ?>"><?php printf( __( 'All Members <span>%s</span>', 'buddypress' ), bp_get_total_member_count() ); ?></a></li>
+			<li class="selected" id="activity-all"><a href="<?php bp_activity_directory_permalink(); ?>" title="<?php esc_attr_e( 'Your news feed.', 'buddypress' ); ?>"><?php _e( 'Newsfeed', 'buddypress' ); ?></a></li>
 
 
 				<?php do_action( 'bp_before_activity_type_tab_friends' ); ?>
@@ -60,8 +63,6 @@
 		</ul>
 	</div><!-- .item-list-tabs -->
 
-	<?php endif; ?>
-
 	<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 		<ul>
 			<li class="feed"><a href="<?php bp_sitewide_activity_feed_link(); ?>" title="<?php esc_attr_e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
@@ -99,3 +100,31 @@
 	<?php do_action( 'bp_after_directory_activity' ); ?>
 
 </div>
+
+</main>
+
+<aside id="mla-sidebar">
+	<div class="mla-profile-box">
+		<p>Hey I'm a profile box!</p>
+	</div>
+
+	<div class="item-list-tabs">
+	<ul>
+		<li class="current"><a href="">Item One</a></li>
+		<li><a href="">Item Two</a></li>
+		<li><a href="">Item Three</a></li>
+	</ul>
+	</div>
+
+	<h3>Sidebar Here</h3>
+	<p>Herp derpsum perp dee derp, mer herderder. Sherp berp derpler, herpem serp tee perper merpus terp dee. Sherpus berps herpsum herpler. Berps herderder herpsum herpderpsmer herp? Derperker der herpler derp derpsum berps perp sherpus. Merpus mer perper derpler perp tee. Berps derpus, derpler ler mer nerpy herpem derp der derps.</p>
+	<p>Herp derpsum perp dee derp, mer herderder. Sherp berp derpler, herpem serp tee perper merpus terp dee. Sherpus berps herpsum herpler. Berps herderder herpsum herpderpsmer herp? Derperker der herpler derp derpsum berps perp sherpus. Merpus mer perper derpler perp tee. Berps derpus, derpler ler mer nerpy herpem derp der derps.</p>
+	<p>Herp derpsum perp dee derp, mer herderder. Sherp berp derpler, herpem serp tee perper merpus terp dee. Sherpus berps herpsum herpler. Berps herderder herpsum herpderpsmer herp? Derperker der herpler derp derpsum berps perp sherpus. Merpus mer perper derpler perp tee. Berps derpus, derpler ler mer nerpy herpem derp der derps.</p>
+	<p>Herp derpsum perp dee derp, mer herderder. Sherp berp derpler, herpem serp tee perper merpus terp dee. Sherpus berps herpsum herpler. Berps herderder herpsum herpderpsmer herp? Derperker der herpler derp derpsum berps perp sherpus. Merpus mer perper derpler perp tee. Berps derpus, derpler ler mer nerpy herpem derp der derps.</p>
+</aside>
+
+<?php else: ?>
+
+<?php auth_redirect(); ?>
+
+<?php endif; ?>
