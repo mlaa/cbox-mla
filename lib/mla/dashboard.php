@@ -29,17 +29,33 @@ class MLA_BP_Profile_Area extends WP_Widget {
 		$link_title = ! empty( $instance['link_title'] );
 
 		echo $before_widget;
-		echo $before_title;
 		?>
 
-		<?php $current_user = bp_loggedin_user_id();
-		echo bp_core_fetch_avatar( array(
-			'item_id' => $current_user,
-			'type'    => 'full',
-		)); ?>
-		<p class="profile_widget name"><?php echo bp_core_get_user_displayname( $current_user ); ?></p>
-		<p class="profile_widget title"><?php echo xprofile_get_field_data( 'title', $current_user ); ?></p>
-		<p class="profile_area institutional_affiliation"><?php echo xprofile_get_field_data( 2, $current_user ); ?></p>
+		<div class="user_profile">
+
+			<?php $current_user = bp_loggedin_user_id();
+			echo bp_core_fetch_avatar( array(
+				'item_id' => $current_user,
+				'type'    => 'full',
+			)); ?>
+
+			<div class="profile_meta">
+				<p class="profile_widget name"><?php echo bp_core_get_user_displayname( $current_user ); ?></p>
+				<p class="profile_widget title"><?php echo xprofile_get_field_data( 'title', $current_user ); ?></p>
+				<p class="profile_area institutional_affiliation"><?php echo xprofile_get_field_data( 2, $current_user ); ?></p>
+			</div>
+
+		</div><!-- .user_profile -->
+
+		<div id="profile_button">
+			<a class="button">View / Edit My Portfolio</a>
+		</div>
+
+		<div class="links">
+			<a href="">My Sites</a>
+			<a href="">My Groups</a>
+			<a href="">My Contacts</a>
+		</div>
 
 		<?php echo $after_widget; ?>
 	<?php
