@@ -30,66 +30,16 @@ class MLA_BP_Profile_Area extends WP_Widget {
 
 		echo $before_widget;
 		echo $before_title;
+		?>
 
-		if ( $link_title ) {
-			$dir_link = trailingslashit( bp_get_root_domain() ) . trailingslashit( bp_get_blogs_root_slug() );
-			$title = '<a href="' . $dir_link . '">' . $instance['title'] . '</a>';
-		} else {
-			$title = $instance['title'];
-		}
-		echo $title;
-		echo $after_title;
-
-		if ( empty( $instance['max_posts'] ) || !$instance['max_posts'] )
-			$instance['max_posts'] = 10;
-
-		// Load more items that we need, because many will be filtered out by privacy
-		$real_max = $instance['max_posts'] * 10;
-		$counter = 0;
-
-		$query_string_a = empty( $instance['include_groupblog'] ) ? 'action=new_blog_post' : 'action=new_blog_post,new_groupblog_post';
-		$query_string_b = '&max=' . $real_max . '&per_page=' . $real_max;
-
-		if ( bp_has_activities( $query_string_a . $query_string_b ) ) : ?>
-
-			<ul id="blog-post-list" class="activity-list item-list">
-
-				<?php while ( bp_activities() ) : bp_the_activity(); ?>
-
-					<?php if ( $counter >= $instance['max_posts'] ) break ?>
-
-					<li>
-						<div class="activity-content" style="margin: 0">
-							<div class="activity-avatar">
-								<?php bp_activity_avatar() ?>
-							</div>
-
-							<div class="activity-header">
-								<?php bp_activity_action() ?>
-							</div>
-
-							<?php if ( bp_get_activity_content_body() ) : ?>
-
-									<?php bp_activity_content_body() ?>
-
-							<?php endif; ?>
-
-						</div>
-					</li>
-
-					<?php $counter++ ?>
-
-				<?php endwhile; ?>
-
-			</ul>
-
-		<p class="cac-more-link"><a href="<?php bp_blogs_directory_permalink(); ?>">More Blogs</a></p>
-
-		<?php else : ?>
-			<div id="message" class="info">
-				<p><?php _e( 'Sorry, there were no blog posts found. Why not write one?', 'buddypress' ) ?></p>
-			</div>
-		<?php endif; ?>
+		<?php $current_user = bp_loggedin_user_id();
+		echo bp_core_fetch_avatar( array(
+			'item_id' => $current_user,
+			'type'    => 'full',
+		)); ?>
+		<p class="profile_widget name"><?php echo bp_core_get_user_displayname( $current_user ); ?></p>
+		<p class="profile_widget title"><?php echo xprofile_get_field_data( 'title', $current_user ); ?></p>
+		<p class="profile_area institutional_affiliation"><?php echo xprofile_get_field_data( 2, $current_user ); ?></p>
 
 		<?php echo $after_widget; ?>
 	<?php
@@ -98,36 +48,13 @@ class MLA_BP_Profile_Area extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		$instance['max_posts']  = strip_tags( $new_instance['max_posts'] );
-		$instance['title']      = strip_tags( $new_instance['title'] );
-		$instance['link_title'] = empty( $new_instance['link_title'] ) ? '0' : '1';
-		$instance['include_groupblog'] = empty( $new_instance['include_groupblog'] ) ? '0' : '1';
-
 		return $instance;
 	}
 
 	function form( $instance ) {
-		$instance   = wp_parse_args( (array) $instance, array(
-			'max_posts'  => 10,
-			'title'      => __( 'Recent Blog Posts', 'cbox-theme' ),
-			'link_title' => true,
-		) );
-		$max_posts  = strip_tags( $instance['max_posts'] );
-		$title      = strip_tags( $instance['title'] );
-		$link_title = (bool) $instance['link_title'];
-		$include_groupblog = (bool) $instance['include_groupblog'];
-
 		?>
-
-		<p><label for="<?php echo $this->get_field_id( 'title' ) ?>"><?php _e('Title: ', 'cbox-theme'); ?> <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" style="width: 90%" /></label></p>
-
-		<p><label for="<?php echo $this->get_field_name( 'link_title' ) ?>"><input type="checkbox" name="<?php echo $this->get_field_name( 'link_title' ) ?>" value="1" <?php checked( $link_title ) ?> /> <?php _e( 'Link widget title to Blogs directory', 'cbox-theme' ) ?></label></p>
-
-		<p><label for="<?php echo $this->get_field_name( 'include_groupblog' ) ?>"><input type="checkbox" name="<?php echo $this->get_field_name( 'include_groupblog' ) ?>" value="1" <?php checked( $include_groupblog ) ?> /> <?php _e( 'Include groupblog posts', 'cbox-theme' ) ?></label></p>
-
-		<p><label for="<?php echo $this->get_field_id( 'max_posts' ) ?>"><?php _e('Max posts to show:', 'buddypress'); ?> <input class="widefat" id="<?php echo $this->get_field_id( 'max_posts' ); ?>" name="<?php echo $this->get_field_name( 'max_posts' ); ?>" type="text" value="<?php echo esc_attr( $max_posts ); ?>" style="width: 30%" /></label></p>
-
-	<?php
+		<p>This widget adds a profile area to a sidebar, including the logged-in user's avatar, title, affiliation, and a few useful links. </p>
+		<?php
 	}
 }
 
