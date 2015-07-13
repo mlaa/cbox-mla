@@ -43,13 +43,13 @@ class MLA_BP_Profile_Area extends WP_Widget {
 				<p class="profile_widget name"><?php echo bp_core_get_user_displayname( $current_user ); ?></p>
 				<p class="profile_widget title"><?php echo xprofile_get_field_data( 'title', $current_user ); ?></p>
 				<p class="profile_area institutional_affiliation"><?php echo xprofile_get_field_data( 2, $current_user ); ?></p>
-				<p class="profile_progression"><?php bppp_progression_block( $current_user ); ?></p>
 
 			</div>
 
 		</div><!-- .user_profile -->
 
 		<div id="profile_button">
+			<p class="profile_progression"><?php bppp_progression_block( $current_user ); ?></p>
 			<a class="button">View / Edit My Portfolio</a>
 		</div>
 
