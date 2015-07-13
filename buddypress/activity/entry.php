@@ -31,7 +31,7 @@
 
 		</div>
 
-		<?php if ( bp_activity_has_content() ) : ?>
+		<?php if ( ! is_page( 'dashboard' ) ) : ?>
 
 			<div class="activity-inner">
 
