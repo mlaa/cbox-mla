@@ -1,8 +1,6 @@
 
 <?php if ( is_user_logged_in() ) : ?>
 
-<main id="mla-newsfeed-area">
-
 <?php do_action( 'bp_before_directory_activity' ); ?>
 
 <div id="buddypress">
@@ -100,28 +98,6 @@
 	<?php do_action( 'bp_after_directory_activity' ); ?>
 
 </div>
-
-</main>
-
-<aside id="mla-sidebar">
-	<div class="mla-profile-box">
-		<p>Hey I'm a profile box!</p>
-	</div>
-
-	<div class="item-list-tabs">
-	<ul>
-		<li class="current"><a href="">Item One</a></li>
-		<li><a href="">Item Two</a></li>
-		<li><a href="">Item Three</a></li>
-	</ul>
-	</div>
-
-	<h3>Sidebar Here</h3>
-	<p>Herp derpsum perp dee derp, mer herderder. Sherp berp derpler, herpem serp tee perper merpus terp dee. Sherpus berps herpsum herpler. Berps herderder herpsum herpderpsmer herp? Derperker der herpler derp derpsum berps perp sherpus. Merpus mer perper derpler perp tee. Berps derpus, derpler ler mer nerpy herpem derp der derps.</p>
-	<p>Herp derpsum perp dee derp, mer herderder. Sherp berp derpler, herpem serp tee perper merpus terp dee. Sherpus berps herpsum herpler. Berps herderder herpsum herpderpsmer herp? Derperker der herpler derp derpsum berps perp sherpus. Merpus mer perper derpler perp tee. Berps derpus, derpler ler mer nerpy herpem derp der derps.</p>
-	<p>Herp derpsum perp dee derp, mer herderder. Sherp berp derpler, herpem serp tee perper merpus terp dee. Sherpus berps herpsum herpler. Berps herderder herpsum herpderpsmer herp? Derperker der herpler derp derpsum berps perp sherpus. Merpus mer perper derpler perp tee. Berps derpus, derpler ler mer nerpy herpem derp der derps.</p>
-	<p>Herp derpsum perp dee derp, mer herderder. Sherp berp derpler, herpem serp tee perper merpus terp dee. Sherpus berps herpsum herpler. Berps herderder herpsum herpderpsmer herp? Derperker der herpler derp derpsum berps perp sherpus. Merpus mer perper derpler perp tee. Berps derpus, derpler ler mer nerpy herpem derp der derps.</p>
-</aside>
 
 <?php else: ?>
 
