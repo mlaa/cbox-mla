@@ -54,9 +54,12 @@ class MLA_BP_Profile_Area extends WP_Widget {
 		</div>
 
 		<div class="links">
-			<a href="">My Sites</a>
-			<a href="">My Groups</a>
-			<a href="">My Contacts</a>
+			<?php
+				$member_slug = bp_loggedin_user_domain();
+			?>
+				<a href="<?php echo $member_slug . BP_BLOGS_SLUG ?>">My Sites</a>
+				<a href="<?php echo $member_slug . BP_GROUPS_SLUG ?>">My Groups</a>
+				<a href="<?php echo $member_slug . BP_FRIENDS_SLUG ?>">My Contacts</a>
 		</div>
 
 		<?php echo $after_widget; ?>
