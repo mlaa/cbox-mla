@@ -243,11 +243,33 @@ jq(document).ready( function() {
 			filter = jq(this).val(),
 			scope;
 
+		alert( filter );
+
 		if ( !selected_tab.length ) {
 			scope = null;
 		} else {
 			scope = selected_tab.attr('id').substr( 9, selected_tab.attr('id').length );
 		}
+
+		bp_activity_request(scope, filter);
+
+		return false;
+	});
+
+	/* Same kind of activity filter, but for the Dashboard page. */
+	jq('.dashboard-type-tabs a').click( function() {
+		var selected_tab = jq( 'div.activity-type-tabs li.selected' ),
+			filter = jq(this).attr('id'),
+			scope;
+		alert( filter );
+
+		if ( !selected_tab.length ) {
+			scope = null;
+		} else {
+			scope = selected_tab.attr('id').substr( 9, selected_tab.attr('id').length );
+		}
+
+		jq('div.activity').css('filter', 'blur(4px)');
 
 		bp_activity_request(scope, filter);
 
