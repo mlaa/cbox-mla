@@ -33,7 +33,7 @@
 
 	<div class="activity" role="main">
 
-		<?php bp_get_template_part( 'activity/activity-loop' ); ?>
+		<?php bp_get_template_part( 'activity/newsfeed' ); ?>
 
 	</div><!-- .activity -->
 
