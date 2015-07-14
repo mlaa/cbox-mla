@@ -243,8 +243,6 @@ jq(document).ready( function() {
 			filter = jq(this).val(),
 			scope;
 
-		alert( filter );
-
 		if ( !selected_tab.length ) {
 			scope = null;
 		} else {
@@ -261,7 +259,6 @@ jq(document).ready( function() {
 		var selected_tab = jq( 'div.activity-type-tabs li.selected' ),
 			filter = jq(this).attr('id'),
 			scope;
-		alert( filter );
 
 		if ( !selected_tab.length ) {
 			scope = null;
@@ -269,7 +266,10 @@ jq(document).ready( function() {
 			scope = selected_tab.attr('id').substr( 9, selected_tab.attr('id').length );
 		}
 
+
 		bp_activity_request(scope, filter);
+
+		jq(this).parent().addClass('selected');
 
 		return false;
 	});
