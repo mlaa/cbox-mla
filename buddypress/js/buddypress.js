@@ -269,8 +269,6 @@ jq(document).ready( function() {
 			scope = selected_tab.attr('id').substr( 9, selected_tab.attr('id').length );
 		}
 
-		jq('div.activity').css('filter', 'blur(4px)');
-
 		bp_activity_request(scope, filter);
 
 		return false;

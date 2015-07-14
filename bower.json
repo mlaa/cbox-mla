@@ -10,7 +10,8 @@
   "private": true,
   "dependencies": {
     "modernizr": "2.8.2",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "spinners": "~1.2.2"
   },
   "overrides": {
     "modernizr": {
