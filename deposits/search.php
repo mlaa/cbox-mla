@@ -1,10 +1,6 @@
 <?php
-
 /**
- * Template Name: BuddyPress - Search Results
- * BuddyPress - Search Results
- *
- * @package BuddyPress
+ * Template Name: HumCORE Search Results
  */
 
 get_header( 'buddypress' ); ?>

@@ -1,11 +1,6 @@
 <?php
-
 /**
- * Template Name: BuddyPress - Deposits Directory
- * BuddyPress - Deposits Directory
- *
- * @package BuddyPress
- * @subpackage bp-default
+ * Template Name: HumCORE Deposits Directory
  */
 
 get_header( 'buddypress' ); ?>

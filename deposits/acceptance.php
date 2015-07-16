@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Terms Acceptance
+ * Template Name: HumCORE Terms Acceptance
  */
 if ( ! empty( $_POST ) ) {
 	if ( ! is_user_logged_in() ) { auth_redirect(); }
