@@ -89,3 +89,73 @@ function mla_register_profile_widget()
 	return register_widget( "MLA_BP_Profile_Area" );
 }
 add_action( 'widgets_init', 'mla_register_profile_widget' );
+
+/**
+ * Custom scope to allow mixing in official MLA activity items into the newsfeed.
+ *
+ * @param array $retval Empty array by default
+ * @param array $filter Current activity arguments
+ * @return array
+ */
+function mla_custom_activity_scope( $retval = array(), $filter = array() ) {
+
+	// Determine the user_id
+	if ( ! empty( $filter['user_id'] ) ) {
+		$user_id = $filter['user_id'];
+	} else {
+		$user_id = bp_displayed_user_id()
+			? bp_displayed_user_id()
+			: bp_loggedin_user_id();
+	}
+
+	// Define official MLA blogs
+	$blogs = array(
+		'blogs' => array(
+			14,  // FAQ
+			15,  // News from the MLA
+			35,  // From the President
+			36,  // From the Executive Director
+			37,  // PMLA
+			38,  // Convention
+			111, // Executive Council
+			127, // The Trend
+			221, // Connected Academics
+			281, // MLA Resources
+		),
+	);
+
+	// Should we show all items regardless of sitewide visibility?
+	$show_hidden = array();
+	if ( ! empty( $user_id ) && ( $user_id !== bp_loggedin_user_id() ) ) {
+		$show_hidden = array(
+			'column' => 'hide_sitewide',
+			'value'  => 0
+		);
+	}
+
+	$retval = array(
+		'relation' => 'AND',
+		array(
+			'relation' => 'AND',
+			array(
+				'column' => 'component',
+				'value'  => buddypress()->blogs->id
+			),
+			array(
+				'column'  => 'item_id',
+				'compare' => 'IN',
+				'value'   => (array) $blogs['blogs']
+			),
+		),
+		$show_hidden,
+
+		// overrides
+		'override' => array(
+			'filter'      => array( 'user_id' => 0 ),
+			'show_hidden' => true
+		),
+	);
+
+	return $retval;
+}
+add_filter( 'bp_activity_set_mla_scope_args', 'mla_custom_activity_scope', 10, 2 );

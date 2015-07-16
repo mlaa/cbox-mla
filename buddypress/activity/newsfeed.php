@@ -4,7 +4,7 @@
 
 <?php $querystring = bp_ajax_querystring( 'activity' ); ?>
 
-<?php $querystring = $querystring . '&scope=friends,groups'; ?>
+<?php $querystring = $querystring . '&scope=friends,groups,mla'; ?>
 
 <?php if ( bp_has_activities( $querystring ) ) : ?>
 
