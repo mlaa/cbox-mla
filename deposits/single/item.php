@@ -62,7 +62,7 @@
 
 					<?php $wp_referer = wp_get_referer();
 					printf( '<div class="action"><a id="deposit-return" href="%1$s" class="button deposits-return white">Back to Deposits</a></div>',
-						( ! empty( $wp_referer ) && ! strpos( $wp_referer, '~item/new~' ) ) ? $wp_referer : '/deposits/' );
+						( ! empty( $wp_referer ) && ! strpos( $wp_referer, 'item/new' ) ) ? $wp_referer : '/deposits/' );
 					?>
 
 					<?php else : ?>
@@ -71,7 +71,7 @@
 
 					<?php $wp_referer = wp_get_referer();
 					printf( '<div class="action"><a id="deposit-return" href="%1$s" class="button deposits-return white">Back to Deposits</a></div>',
-						( ! empty( $wp_referer ) && ! strpos( $wp_referer, '~item/new~' ) ) ? $wp_referer : '/deposits/' );
+						( ! empty( $wp_referer ) && ! strpos( $wp_referer, 'item/new' ) ) ? $wp_referer : '/deposits/' );
 					?>
 
 					<?php endif; ?>
@@ -85,7 +85,7 @@
 		<?php else : ?>
 		<?php $wp_referer = wp_get_referer();
 		printf( '<div class="action"><a id="deposit-return" href="%1$s" class="button deposits-return white">Back to Deposits</a></div>',
-			( ! empty( $wp_referer ) && ! strpos( $wp_referer, '~item/new~' ) ) ? $wp_referer : '/deposits/' );
+			( ! empty( $wp_referer ) && ! strpos( $wp_referer, 'item/new' ) ) ? $wp_referer : '/deposits/' );
 		?>
 
 		<?php endif; ?>
