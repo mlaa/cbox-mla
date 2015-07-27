@@ -111,8 +111,6 @@ function type_filter_js() {
 	<script type="text/javascript">
 
 	jq(window).on('popstate', function(e) {
-		var object = 'groups';
-
 		// Get $_GET-like queries from the URL
 		function get_query(){
 			var url = location.search;
@@ -125,20 +123,61 @@ function type_filter_js() {
 		}
 		var $_GET = get_query();
 
-		if ( $_GET['type'].length ) {
+		// Check to see if we're looking at the groups directory.
+		if ( jq('body').is('.groups, .directory') ) {
+			alert( 'Welp, I guess this is the groups directory.' );
 			var object = 'groups';
-			var status = $_GET['type'];
-			if ( 'groups-personal' == status ) {
-				var scope = 'personal';
-			} else {
-				var scope = 'all';
+
+			// If there are URL flags, AJAX-filter content using them.
+			if ( $_GET['type'].length ) {
+				var object = 'groups';
+				var status = $_GET['type'];
+				if ( 'groups-personal' == status ) {
+					var scope = 'groups';
+				} else {
+					var scope = 'all';
+				}
+				var filter = ''; var search_terms = '';
+				jq.cookie('bp-groups-type',status,{ path: '/' });
+				bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
 			}
-			var filter = ''; var search_terms = '';
-			jq.cookie('bp-groups-type',status,{ path: '/' });
-			bp_filter_request( object, filter, scope, 'div.' + object, search_terms, 1, jq.cookie('bp-' + object + '-extras') );
+
+			// Me set cookies.
+			jq.cookie('bp-groups-type',e.state,{ path: '/' });
 		}
 
-		jq.cookie('bp-groups-type',e.state,{ path: '/' });
+		// TODO: factor this out and put it with the other dashboard filter functions
+		if ( jq('body').is('.page, .dashboard') ) {
+
+			// If there are URL flags, AJAX-filter content using them.
+			if ( $_GET['type'].length ) {
+				alert( $_GET['type'] );
+				var object = 'activity';
+				var status = $_GET['type'];
+				var search_terms = '';
+				jq.cookie('bp-activity-type',status,{ path: '/' });
+				if ( 'newsfeed' == filter ) {
+					// This is the newsfeed, so filter by my groups,
+					// my contacts, and official MLA stuff.
+					var scope = 'friends,groups,mla';
+					var filter = '';
+				} else {
+					var scope = '';
+					var filter = status;
+				}
+				console.log( 'filtering request.' );
+				console.log( 'filter:' );
+				console.debug( filter );
+				console.log( 'scope:' );
+				console.debug( scope );
+
+				bp_activity_request( scope, filter );
+			}
+
+			// Me set cookies.
+			jq.cookie('bp-activity-type',e.state,{ path: '/' });
+		}
+
 
 	});
 
@@ -163,6 +202,11 @@ function type_filter_js() {
 		var url = [location.protocol, '//', location.host, location.pathname].join('');
 
 		history.pushState( { type: status }, "", url + '?type=' + status );
+
+		alert( 'heyo!');
+
+		// Make sure the tabs are highlighted correctly.
+		jq(this).parent().addClass('selected');
 
 		return false;
 
