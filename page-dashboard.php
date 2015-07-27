@@ -26,6 +26,8 @@
 		</ul>
 	</div><!-- .item-list-tabs -->
 
+<?php if ( is_user_logged_in() ) : ?>
+
 	<?php do_action( 'bp_before_directory_activity_list' ); ?>
 
 	<div class="activity" role="main">
@@ -42,9 +44,7 @@
 
 	<?php do_action( 'bp_after_directory_activity' ); ?>
 
-</div>
-
-<?php if ( is_user_logged_in() ) : ?>
+</div> 
 
 <aside class="sidebar" role="complementary">
 	<?php dynamic_sidebar('sidebar-primary'); ?>
@@ -53,8 +53,12 @@
 
 <?php else: ?>
 
+<?php dynamic_sidebar('mla-dashboard-main'); // show the logged-out dashboard area ?> 
+
+</div>
+
 <aside class="sidebar" role="complementary">
 	<?php dynamic_sidebar('mla-dashboard-logged-out'); ?>
 </aside><!-- /.sidebar -->
 
-<?php endif; ?>
+<?php endif; ?> 

@@ -2,6 +2,17 @@
 
 // Functions for the dashboard
 
+// Make a new sidebar for the main dashboard area. This will probably hold
+// an RSS feed with MLA news items. 
+function mla_dashboard_main(){
+	register_sidebar( array(
+		'id'          => 'mla-dashboard-main',
+		'name'        => 'Dashboard Main Area',
+		'description' => 'This is the left area of the main dashboard, visible only to logged-out users.',
+	));
+}
+add_action( 'widgets_init', 'mla_dashboard_sidebars', 9 );
+
 // Make a new sidebar for tabbed widgets. This will hold
 // "From the MLA," -> "News," "Sites," and "Resources."
 function mla_dashboard_sidebars(){
