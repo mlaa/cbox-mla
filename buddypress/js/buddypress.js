@@ -269,7 +269,14 @@ jq(document).ready( function() {
 
 		bp_activity_request(scope, filter);
 
+		// Make sure the tabs are highlighted correctly.
 		jq(this).parent().addClass('selected');
+
+		var url = [location.protocol, '//', location.host, location.pathname].join('');
+
+		//alert( 'pushing state!' );
+
+		history.pushState( { type: filter }, "", url + '?type=' + filter );
 
 		return false;
 	});
