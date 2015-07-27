@@ -13,7 +13,7 @@ function mla_update_group_membership_data() {
 		$mla_group->sync();
 	}
 }
-//add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
+add_action( 'bp_before_group_body', 'mla_update_group_membership_data' );
 
 function mla_update_member_data() {
 	if ( class_exists( 'MLAMember' ) ) {
@@ -25,5 +25,5 @@ function mla_update_member_data() {
 		}
 	}
 }
-//add_action( 'cacap_header', 'mla_update_member_data' );
-//add_action( 'bp_before_member_groups_content', 'mla_update_member_data' );
+add_action( 'cacap_header', 'mla_update_member_data' );
+add_action( 'bp_before_member_groups_content', 'mla_update_member_data' );
