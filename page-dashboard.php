@@ -1,6 +1,3 @@
-
-<?php if ( is_user_logged_in() ) : ?>
-
 <?php do_action( 'bp_before_directory_activity' ); ?>
 
 <div id="buddypress">
@@ -47,6 +44,8 @@
 
 </div>
 
+<?php if ( is_user_logged_in() ) : ?>
+
 <aside class="sidebar" role="complementary">
 	<?php dynamic_sidebar('sidebar-primary'); ?>
 	<?php dynamic_sidebar('mla-dashboard-tabbed-sidebar'); ?>
@@ -54,8 +53,8 @@
 
 <?php else: ?>
 
-<?php auth_redirect(); ?>
+<aside class="sidebar" role="complementary">
+	<?php dynamic_sidebar('mla-dashboard-logged-out'); ?>
+</aside><!-- /.sidebar -->
 
 <?php endif; ?>
-
-

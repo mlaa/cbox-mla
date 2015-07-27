@@ -13,6 +13,16 @@ function mla_dashboard_sidebars(){
 }
 add_action( 'widgets_init', 'mla_dashboard_sidebars', 9 );
 
+// Make a new sidebar for logged-out stuff. This will hold
+// "MLA Member Resources."
+function mla_dashboard_logged_out(){
+	register_sidebar( array(
+		'id'          => 'mla-dashboard-logged-out',
+		'name'        => 'Dashboard Sidebar for Logged-Out Users',
+		'description' => 'This sidebar was originally meant to contain "MLA Member Resources."',
+	));
+}
+add_action( 'widgets_init', 'mla_dashboard_sidebars', 9 );
 /* A widget for displaying the logged-in user's avatar, name, affiliation,
  * and a few useful links to that user's pages.
  */
