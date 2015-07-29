@@ -1,8 +1,10 @@
 <?php do_action( 'bp_before_activity_loop' ); ?>
 
-<?php $querystring = bp_ajax_querystring( 'activity' ); ?> 
+<?php _log( 'Here comes a template querystring:', bp_ajax_querystring( 'activity' ) ); ?>
 
-<?php _log( 'Here comes the completed querystring:', $querystring ); ?>
+<?php $querystring = bp_ajax_querystring( 'activity' ); ?>
+
+<?php $querystring = $querystring . '&scope=friends,groups,mla'; ?>
 
 <?php if ( bp_has_activities( $querystring ) ) : ?>
 

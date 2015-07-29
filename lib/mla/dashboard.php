@@ -180,20 +180,3 @@ function mla_custom_activity_scope( $retval = array(), $filter = array() ) {
 	return $retval;
 }
 add_filter( 'bp_activity_set_mla_scope_args', 'mla_custom_activity_scope', 10, 2 );
-
-
-function mla_filter_newsfeed_querystring( $querystring ) { 
-	_log( 'Here comes a template querystring:', $querystring );
-
-	if ( ! empty( $_GET['type'] ) ) { 
-		$type = $_GET['type']; 
-		$tabs = array( 'new_groupblog_post', 'bbp_topic_create', 'new_member', 'new_deposit' ); 
-		if ( in_array( $type, $tabs ) ) {
-			$querystring = "type=$type";
-		}  
-	} else { 
-		_log( 'no GET!' ); 
-		$querystring = $querystring . '&scope=friends,groups,mla';
-	}
-} 
-add_filter( 'bp_ajax_querystring', 'mla_filter_newsfeed_querystring', 999 );
