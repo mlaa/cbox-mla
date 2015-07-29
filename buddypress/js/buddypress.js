@@ -266,6 +266,7 @@ jq(document).ready( function() {
 			scope = selected_tab.attr('id').substr( 9, selected_tab.attr('id').length );
 		}
 
+		jq.cookie('bp-activity-type',filter,{ path: '/' });
 
 		bp_activity_request(scope, filter);
 
