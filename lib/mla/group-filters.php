@@ -125,7 +125,6 @@ function type_filter_js() {
 
 		// Check to see if we're looking at the groups directory.
 		if ( jq('body').is('.groups, .directory') ) {
-			alert( 'Welp, I guess this is the groups directory.' );
 			var object = 'groups';
 
 			// If there are URL flags, AJAX-filter content using them.
@@ -151,7 +150,6 @@ function type_filter_js() {
 
 			// If there are URL flags, AJAX-filter content using them.
 			if ( $_GET['type'].length ) {
-				alert( $_GET['type'] );
 				var object = 'activity';
 				var status = $_GET['type'];
 				var search_terms = '';
@@ -202,8 +200,6 @@ function type_filter_js() {
 		var url = [location.protocol, '//', location.host, location.pathname].join('');
 
 		history.pushState( { type: status }, "", url + '?type=' + status );
-
-		alert( 'heyo!');
 
 		// Make sure the tabs are highlighted correctly.
 		jq(this).parent().addClass('selected');
