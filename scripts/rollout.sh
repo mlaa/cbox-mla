@@ -1,4 +1,5 @@
 #!/bin/bash -u
+set -x
 
 # Script for rolling out this theme.
 # Requires: wp-cli (should be already installed)
@@ -18,6 +19,8 @@ fi
 
 SERVER=$1
 
+URL="--url=$SERVER"
+
 # Temporarily move widgets to "wp_inactive_widgets" area so we can save their content while
 # we change the theme.
 # Dashboard Widgets: 1. rss-5: "News from the MLA"; 2. text-15: "MLA Sites"; 3. links-2: "Member Resources"
@@ -31,7 +34,7 @@ done
 wp widget delete text-13
 
 # Activate this theme.
-wp theme activate tuileries --url=$SERVER
+wp theme activate tuileries $URL
 
 # Add profile area to dashboard sidebar
 wp widget add mla_bp_profile_area sidebar-primary
@@ -68,3 +71,19 @@ wget https://downloads.wordpress.org/plugin/buddypress-profile-progression.zip &
 
 # Now activate!
 wp plugin activate buddypress-profile-progression
+
+# --------- Styles ------------
+
+cd - # Go back to what we're assuming is the tuileries/scripts directory
+cd ..
+git submodule --init --recursive # Check out a copy of the Boilerplate repo, which lives at assets/styles
+
+echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using `npm install`, `bower install`, and `gulp`. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself." 
+
+# And you can do that on the box itself by uncommenting these lines: 
+
+# sudo apt-get install npm 
+# npm install #install node dependencies
+# npm install bower 
+# bower install
+# gulp
