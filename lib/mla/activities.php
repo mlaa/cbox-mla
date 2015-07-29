@@ -10,17 +10,12 @@
 function mla_filter_querystring( $query_string, $object, $object_fitler, $object_score, $object_page, $object_search_terms, $object_extras ) {
 	if ( 'activity' == $object ) {
 		// let's just filter when we're on the activity page
-		if ( strpos( $query_string, 'type=' ) === false ) {
+		if ( ( strpos( $query_string, 'type=' ) === false ) ) { 
 			// if there's no type filter, then the type
 			// filter is really "everything." In that case,
 			// hijack it and make it not-so-everything
 			// (i.e. remove membership data)
-			$my_querystring = "type=activity_update,new_blog_post,new_blog_comment,created_group,updated_profile,new_forum_topic,new_forum_post,new_groupblog_post,added_group_document,edited_group_document,bp_doc_created,bp_doc_edited,bp_doc_comment,bbp_topic_create,bbp_reply_create&action=activity_update,new_blog_post,new_blog_comment,created_group,updated_profile,new_forum_topic,new_forum_post,new_groupblog_post,added_group_document,edited_group_document,bp_doc_created,bp_doc_edited,bp_doc_comment,bbp_topic_create,bbp_reply_create";
-			if ( strlen( $query_string ) > 0 ) {
-				$query_string = $my_querystring . '&'. $query_string;
-			} else {
-				$query_string = $my_querystring;
-			}
+			$query_string = "type=activity_update,new_blog_post,new_blog_comment,created_group,updated_profile,new_forum_topic,new_forum_post,new_groupblog_post,added_group_document,edited_group_document,bp_doc_created,bp_doc_edited,bp_doc_comment,bbp_topic_create,bbp_reply_create,new_deposit, new_member&action=activity_update,new_blog_post,new_blog_comment,created_group,updated_profile,new_forum_topic,new_forum_post,new_groupblog_post,added_group_document,edited_group_document,bp_doc_created,bp_doc_edited,bp_doc_comment,bbp_topic_create,bbp_reply_create,new_deposit,new_member&scope=friends,groups,mla";
 		}
 	}
 	return $query_string;
