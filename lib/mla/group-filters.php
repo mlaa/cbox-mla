@@ -293,3 +293,10 @@ function mla_filter_groups_from_url() {
 	}
 }
 add_action( 'bp_before_groups_loop', 'mla_filter_groups_from_url', 10 );
+
+function mla_filter_activities_from_url() {
+	if ( array_key_exists( 'type', $_GET ) ) {
+		$_COOKIE['bp-activity-filter'] = $_GET['type'];
+	}
+}
+add_action( 'bp_before_activity_loop', 'mla_filter_activities_from_url', 10 );
