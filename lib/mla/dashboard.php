@@ -43,50 +43,53 @@ class MLA_BP_Profile_Area extends WP_Widget {
 	}
 
 	function widget($args, $instance) {
-		global $bp;
 
-		extract( $args );
+		if ( is_user_logged_in() ) { 
 
-		$link_title = ! empty( $instance['link_title'] );
+			global $bp;
 
-		echo $before_widget;
-		?>
+			extract( $args );
 
-		<div class="user_profile">
+			$link_title = ! empty( $instance['link_title'] );
 
-			<?php $current_user = bp_loggedin_user_id();
-			echo bp_core_fetch_avatar( array(
-				'item_id' => $current_user,
-				'type'    => 'full',
-			)); ?>
+			echo $before_widget;
+			?>
 
-			<div class="profile_meta">
-				<p class="profile_widget name"><?php echo bp_core_get_user_displayname( $current_user ); ?></p>
-				<p class="profile_widget title"><?php echo xprofile_get_field_data( 'title', $current_user ); ?></p>
-				<p class="profile_area institutional_affiliation"><?php echo xprofile_get_field_data( 2, $current_user ); ?></p>
+			<div class="user_profile">
 
+				<?php $current_user = bp_loggedin_user_id();
+				echo bp_core_fetch_avatar( array(
+					'item_id' => $current_user,
+					'type'    => 'full',
+				)); ?>
+
+				<div class="profile_meta">
+					<p class="profile_widget name"><?php echo bp_core_get_user_displayname( $current_user ); ?></p>
+					<p class="profile_widget title"><?php echo xprofile_get_field_data( 'title', $current_user ); ?></p>
+					<p class="profile_area institutional_affiliation"><?php echo xprofile_get_field_data( 2, $current_user ); ?></p>
+
+				</div>
+
+			</div><!-- .user_profile -->
+
+			<div id="profile_button">
+				<?php if ( is_plugin_active( 'buddypress-profile-progression' ) ) : ?>
+					<p class="profile_progression"><?php bppp_progression_block( $current_user ); ?></p>
+				<?php endif; ?>
+				<a class="button">View / Edit My Portfolio</a>
 			</div>
 
-		</div><!-- .user_profile -->
+			<div class="links">
+				<?php
+					$member_slug = bp_loggedin_user_domain();
+				?>
+					<a href="<?php echo $member_slug . BP_BLOGS_SLUG ?>">My Sites</a>
+					<a href="<?php echo $member_slug . BP_GROUPS_SLUG ?>">My Groups</a>
+					<a href="<?php echo $member_slug . BP_FRIENDS_SLUG ?>">My Contacts</a>
+			</div>
 
-		<div id="profile_button">
-			<?php if ( is_plugin_active( 'buddypress-profile-progression' ) ) : ?>
-				<p class="profile_progression"><?php bppp_progression_block( $current_user ); ?></p>
-			<?php endif; ?>
-			<a class="button">View / Edit My Portfolio</a>
-		</div>
-
-		<div class="links">
-			<?php
-				$member_slug = bp_loggedin_user_domain();
-			?>
-				<a href="<?php echo $member_slug . BP_BLOGS_SLUG ?>">My Sites</a>
-				<a href="<?php echo $member_slug . BP_GROUPS_SLUG ?>">My Groups</a>
-				<a href="<?php echo $member_slug . BP_FRIENDS_SLUG ?>">My Contacts</a>
-		</div>
-
-		<?php echo $after_widget; ?>
-	<?php
+			<?php echo $after_widget; ?>
+	<?php } 
 	}
 
 	function update( $new_instance, $old_instance ) {
