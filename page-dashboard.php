@@ -59,9 +59,11 @@
       // so that bp_activity_request can properly populate the other tabs
       // (i.e. "Posts," "Discussions," etc, with activities. 
 ?>
-<div class="activity"></div>
+<div class="activity">
 
 <?php dynamic_sidebar('mla-dashboard-main'); // show the logged-out dashboard area ?> 
+
+</div><!-- .activity --> 
 
 </div>
 
