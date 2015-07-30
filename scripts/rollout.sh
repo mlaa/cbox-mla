@@ -45,6 +45,12 @@ wp widget move rss-5 --sidebar-id=mla-dashboard-main
 # Add "MLA Resources" to the logged-out sidebar. 
 wp widget move links-2 --sidebar-id=mla-dashboard-logged-out
 
+# Populate footer with footer widgets
+for widget in text-6 rss-3 text-10
+do 
+	wp widget move $widget --sidebar-id=sidebar-footer
+done
+
 # Add CBOX menu to main nav area
 wp menu location assign inside-header-navigation primary_navigation
 
