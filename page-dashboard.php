@@ -53,6 +53,14 @@
 
 <?php else: ?>
 
+<?php // "Logged-out homepage." ?>
+
+<?php // The following line is a dummy div that needs to be there
+      // so that bp_activity_request can properly populate the other tabs
+      // (i.e. "Posts," "Discussions," etc, with activities. 
+?>
+<div class="activity"></div>
+
 <?php dynamic_sidebar('mla-dashboard-main'); // show the logged-out dashboard area ?> 
 
 </div>
