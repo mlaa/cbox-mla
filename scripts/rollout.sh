@@ -52,7 +52,7 @@ wp menu item delete $ACTIVITY_ID
 DASHBOARD_ID=`wp post create --post_type=page --post_title=Dashboard --post_status=publish --porcelain`
 
 # Make a menu item that corresponds with our newly-created page
-wp menu item add-post inside-header-navigation $DASHBOARD_ID --title=Dashboard --position=0
+wp menu item add-post inside-header-navigation $DASHBOARD_ID --title=Dashboard --position=1
 
 # --------- Plugins ----------
 
