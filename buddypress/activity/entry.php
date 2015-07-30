@@ -31,18 +31,7 @@
 
 		</div>
 
-		<?php if ( ! is_page( 'dashboard' ) ) : ?>
-
-			<div class="activity-inner">
-
-				<?php bp_activity_content_body(); ?>
-
-			</div>
-
-		<?php endif; ?>
-
 		<?php do_action( 'bp_activity_entry_content' ); ?>
-
 
 	</div>
 
