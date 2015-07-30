@@ -11,7 +11,7 @@ function mla_dashboard_main(){
 		'description' => 'This is the left area of the main dashboard, visible only to logged-out users.',
 	));
 }
-add_action( 'widgets_init', 'mla_dashboard_sidebars', 9 );
+add_action( 'widgets_init', 'mla_dashboard_main', 9 );
 
 // Make a new sidebar for tabbed widgets. This will hold
 // "From the MLA," -> "News," "Sites," and "Resources."
@@ -22,7 +22,7 @@ function mla_dashboard_sidebars(){
 		'description' => 'This is the "From the MLA" sidebar, containing MLA news, sites, and resources.',
 	));
 }
-add_action( 'widgets_init', 'mla_dashboard_sidebars', 9 );
+add_action( 'widgets_init', 'mla_dashboard_sidebars', 10 );
 
 // Make a new sidebar for logged-out stuff. This will hold
 // "MLA Member Resources."
@@ -33,7 +33,7 @@ function mla_dashboard_logged_out(){
 		'description' => 'This sidebar was originally meant to contain "MLA Member Resources."',
 	));
 }
-add_action( 'widgets_init', 'mla_dashboard_sidebars', 9 );
+add_action( 'widgets_init', 'mla_dashboard_logged_out', 11 );
 /* A widget for displaying the logged-in user's avatar, name, affiliation,
  * and a few useful links to that user's pages.
  */
