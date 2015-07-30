@@ -39,6 +39,12 @@ wp theme activate tuileries $URL
 # Add profile area to dashboard sidebar
 wp widget add mla_bp_profile_area sidebar-primary
 
+# Add "News from the MLA" to logged-out dashboard main area. 
+wp widget move rss-5 --sidebar-id=mla-dashboard-main 
+
+# Add "MLA Resources" to the logged-out sidebar. 
+wp widget move links-2 --sidebar-id=mla-dashboard-logged-out
+
 # Add CBOX menu to main nav area
 wp menu location assign inside-header-navigation primary_navigation
 
