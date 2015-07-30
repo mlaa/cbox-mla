@@ -260,6 +260,12 @@ jq(document).ready( function() {
 			filter = jq(this).attr('id'),
 			scope;
 
+		// Don't run an AJAX request on the newsfeed. 
+		// Let PHP handle that.
+		if ( 'newsfeed' === filter ) { 
+			return; 
+		} 
+
 		if ( !selected_tab.length ) {
 			scope = null;
 		} else {
