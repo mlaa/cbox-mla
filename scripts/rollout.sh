@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash
 set -x
 
 # Script for rolling out this theme.
