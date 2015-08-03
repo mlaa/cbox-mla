@@ -73,7 +73,7 @@ class MLA_BP_Profile_Area extends WP_Widget {
 			</div><!-- .user_profile -->
 
 			<div id="profile_button">
-				<?php if ( is_plugin_active( 'buddypress-profile-progression' ) ) : ?>
+				<?php if ( function_exists( 'bppp_progression_block'  ) ) : ?>
 					<p class="profile_progression"><?php bppp_progression_block( $current_user ); ?></p>
 				<?php endif; ?>
 				<a class="button">View / Edit My Portfolio</a>
