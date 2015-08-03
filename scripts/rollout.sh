@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash
 set -x
 
 # Script for rolling out this theme.
@@ -92,6 +92,12 @@ wget https://downloads.wordpress.org/plugin/buddypress-profile-progression.zip &
 # Now activate!
 wp plugin activate buddypress-profile-progression
 
+cd mla-admin-bar
+git checkout -b develop origin/develop #get the develop version of mla-admin-bar
+
+cd ../cbox-auth
+git checkout -b develop origin/develop #get the develop version of cbox-auth 
+
 # --------- Styles ------------
 
 cd - # Go back to what we're assuming is the tuileries/scripts directory
@@ -99,6 +105,7 @@ cd ..
 git submodule --init --recursive # Check out a copy of the Boilerplate repo, which lives at assets/styles
 
 echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using `npm install`, `bower install`, and `gulp`. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself." 
+
 
 # And you can do that on the box itself by uncommenting these lines: 
 
