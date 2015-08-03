@@ -6,9 +6,9 @@ set -x
 
 # Check to make sure either the P env variable is set, or there's a plugins
 # directory at /srv/www/commons/current/web/app/plugins.
-if [ -z "$P" ] || [ ! -d /srv/www/commons/current/web/app/plugins ]
+if [ ! -d /srv/www/commons/current/web/app/plugins ]
 then
-	echo "You need to set the location of your plugins directory before running this script."
+	echo "Can't find the plugins directory. Edit the script with the current path."
 	exit 1
 fi
 
@@ -103,6 +103,10 @@ git checkout -b develop origin/develop #get the develop version of cbox-auth
 cd - # Go back to what we're assuming is the tuileries/scripts directory
 cd ..
 git submodule --init --recursive # Check out a copy of the Boilerplate repo, which lives at assets/styles
+
+cd assets/styles
+git fetch
+git checkout -b develop origin/develop 
 
 echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using `npm install`, `bower install`, and `gulp`. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself." 
 
