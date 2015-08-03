@@ -6,9 +6,9 @@ set -x
 
 # Check to make sure either the P env variable is set, or there's a plugins
 # directory at /srv/www/commons/current/web/app/plugins.
-if [ -z "$P" ] || [ ! -d /srv/www/commons/current/web/app/plugins ]
+if [ ! -d /srv/www/commons/current/web/app/plugins ]
 then
-	echo "You need to set the location of your plugins directory before running this script."
+	echo "Can't find the plugins directory. Edit the script with the current path."
 	exit 1
 fi
 
