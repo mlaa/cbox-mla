@@ -13,7 +13,7 @@
 		},
 		"main.css": {
 			"files": [
-				"styles/main.sass"
+				"styles/main.scss"
 			],
 			"main": true
 		},
@@ -30,6 +30,6 @@
 		}
 	},
 	"config": {
-		"devUrl": "irving.dev"
+		"devUrl": "ohara.dev"
 	}
 }
