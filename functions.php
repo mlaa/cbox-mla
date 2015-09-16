@@ -56,6 +56,12 @@ add_action( 'wp_footer', 'mla_check_create_forum_for_new_group' );
 remove_action( 'bp_group_header_meta', 'ass_group_subscribe_button' );
 
 /*
+ * Don't update group last activy date if members join or leave.
+ */
+remove_action( 'groups_join_group', 'groups_update_last_activity' );
+remove_action( 'groups_leave_group', 'groups_update_last_activity' );
+
+/*
  * Remove forum subscribe link. Users are already subscribed to the forums
  * when they subscribe to the group. Having more fine-grained control over
  * subscriptions is unnecessary and confusing.
