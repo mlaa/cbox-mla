@@ -464,7 +464,7 @@ function mla_filter_gettext( $translated, $original, $domain ) {
 	if ( ! empty( $strings[ $original ] ) ) {
 		// This accomplishes the same thing as __()
 		// but without running it through the filter again
-		$translations = &get_translations_for_domain( $domain );
+		$translations = get_translations_for_domain( $domain );
 		$translated = $translations->translate( $strings[ $original ] );
 	}
 
