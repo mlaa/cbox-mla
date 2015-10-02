@@ -1,10 +1,9 @@
 <?php
 /* This script contains Buddypress customizations for MLA group types. */ 
 
-/* This part adds custom MLA filters to the BuddyPress 
- * Groups directory, allowing users to filter the groups by type
- * (committees, discussion groups, etc) and by visibility
- * (private, public, hidden, etc). 
+/* This part adds custom MLA filters to the BuddyPress Groups directory,
+ * allowing users to filter the groups by type (committees, forums, etc) and
+ * by visibility (private, public, hidden, etc).
  */
 // [COMMUNITY STRUCTURE] Add private/public filter to group lists
 
@@ -25,8 +24,7 @@ function mla_group_directory_type_filter() {
 	$str .= '<select id="groups-filter-by-type">';
 	$str .= '<option value="all">All</option>';
 	$str .= '<option value="committees">Committees</option>';
-	$str .= '<option value="divisions">Divisions</option>';
-	$str .= '<option value="discussion_groups">Discussion Groups</option>';
+	$str .= '<option value="forums">Forums</option>';
 	$str .= '<option value="prospective_forums">Prospective Forums</option>';
 	$str .= '<option value="other">Other</option>';
 	$str .= '</select></li>';
@@ -91,15 +89,13 @@ class BP_Groups_Type_Filter extends BP_Groups_Status_Filter {
 	function setup_group_ids() {
 		global $wpdb, $bp;
 		$sql_stub = "SELECT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid' AND LEFT(meta_value, 1) =  %s"; 
+		$sql_stub_forums = "SELECT group_id FROM {$bp->groups->table_name}_groupmeta WHERE meta_key = 'mla_oid' AND LEFT(meta_value, 1) IN (%s, %s)";
 		switch ( $this->status_type ) { 
 			case "committees": 
 				$sql = $wpdb->prepare($sql_stub, 'M');
 				break; 
-			case "divisions": 
-				$sql = $wpdb->prepare($sql_stub, 'D');
-				break; 
-			case "discussion_groups": 
-				$sql = $wpdb->prepare($sql_stub, 'G');
+			case "forums": 
+				$sql = $wpdb->prepare($sql_stub_forums, 'D', 'G');
 				break; 
 			case "prospective_forums": 
 				$sql = $wpdb->prepare($sql_stub, 'F');
@@ -240,7 +236,7 @@ function mla_reset_filter_cookies() {
 add_action('wp_head', 'mla_reset_filter_cookies'); 
 
 /* This part adds the MLA Group type
- * (i.e. Committee, Division, Discussion Group)
+ * (i.e. Committees and Forums)
  * to the Buddypress Group Type display 
  */ 
 
@@ -253,7 +249,7 @@ function mla_group_type_filter($type, $group="") {
 	$mla_oid = (groups_get_groupmeta($group->id, 'mla_oid')); 
 	if (!empty($mla_oid)) { 
 		$mla_type_let = $mla_oid[0]; 
-		$type = substr($type, 0, -6); //this avoids redundancy like "Discussion Group (Private Group)" 
+		$type = substr($type, 0, -6); // removes the word "Group" from group type
 		$visibility = " (".$type.")";
 
 		switch($mla_type_let) { 
@@ -261,10 +257,10 @@ function mla_group_type_filter($type, $group="") {
 				$mla_type = "Committee"; 	
 				break; 
 			case "D": 
-				$mla_type = "Division"; 	
+				$mla_type = "Forum";
 				break; 
 			case "G": 
-				$mla_type = "Discussion Group"; 	
+				$mla_type = "Forum";
 				break; 
 			case "F": 
 				$mla_type = "Prospective Forum";
