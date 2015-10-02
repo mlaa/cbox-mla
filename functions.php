@@ -12,11 +12,6 @@ require_once 'engine/includes/custom.php';
 require_once 'engine/includes/custom-filters.php';
 require_once 'engine/includes/bp-ges-custom.php';
 
-/**
- * Set this to true to put Infinity into developer mode. Developer mode will refresh the dynamic.css on every page load.
- */
-define( 'INFINITY_DEV_MODE', true );
-
 /* This script contains Buddypress customizations for MLA group types. */
 
 /* MLA edits to BP literals.
