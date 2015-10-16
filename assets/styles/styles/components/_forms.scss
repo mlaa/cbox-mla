@@ -1,0 +1,36 @@
+// Form elements
+
+// Colors
+$editor-border-color: #e5e5e5;
+
+// This needs to be super-specific to override bbpress.css.
+#bbpress-forums .bbp-the-content-wrapper .bbp-the-content {
+  @include recessed;
+}
+
+// This border seems to be missing, for some mysterious reason.
+#bbpress-forums .wp-editor-container {
+  border: 1px solid $editor-border-color;
+}
+
+// Don't show submit buttons, since the user will probably press
+// enter anyway.
+.dir-search,
+#bbp-searchform,
+#search-members-form,
+#search-message-form {
+
+  margin: 3em;
+  text-align: center;
+
+  input {
+    max-width: 35em;
+    padding: 0.7em;
+    width: 80%;
+  }
+
+  [type="submit"] {
+    display: none;
+  }
+
+}

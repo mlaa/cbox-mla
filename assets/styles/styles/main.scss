@@ -1,0 +1,53 @@
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+// endbower
+
+// Common
+@import 'utils/variables';
+@import 'utils/colors';
+@import 'utils/accessibility';
+@import 'utils/global';
+@import 'utils/responsive';
+@import 'utils/spacing';
+@import 'utils/typography';
+
+// Layouts
+@import 'layout/containers';
+@import 'layout/hidden';
+@import 'layout/print';
+
+// Base
+@import 'base/block';
+@import 'base/body';
+@import 'base/code';
+@import 'base/headers';
+@import 'base/html';
+@import 'base/links';
+@import 'base/lists';
+@import 'base/tables';
+
+// Components
+// tabs are loaded first, since masthead depends on it
+@import 'components/tabs';
+@import 'components/alerts';
+@import 'components/buttons';
+@import 'components/comments';
+@import 'components/endnotes';
+@import 'components/footer';
+@import 'components/forms';
+@import 'components/masthead';
+@import 'components/navigation-page';
+@import 'components/panels';
+@import 'components/progress';
+@import 'components/swatches';
+@import 'components/wp-classes';
+
+// Pages
+@import 'pages/portfolios';
+@import 'pages/activities';
+@import 'pages/dashboard';
+@import 'pages/groups-discussions';
+@import 'pages/groups-files';
+@import 'pages/groups-deposits';
+@import 'pages/member-deposits';
+@import 'pages/search';

@@ -1,0 +1,74 @@
+// Layout containers
+
+.container {
+  margin: 3em 1em;
+}
+
+.item-list {
+
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+
+  li {
+
+    @include tile;
+    align-items: center;
+    display: flex;
+    flex: 1 1 25em;
+    margin: 1em;
+    min-height: 175px;
+
+    .item {
+      margin: 1.5em;
+      min-width: 9em;
+    }
+
+  }
+
+}
+
+.item-avatar {
+  img {
+    @include tile;
+    border-radius: 3px;
+    display: block;
+    margin-left: -0.8em;
+  }
+}
+
+.item-title {
+  font-size: $size-m;
+
+  .update {
+    font-size: $size-xs;
+  }
+
+}
+
+#item-header {
+
+  @include content;
+  display: flex;
+
+  #item-header-avatar {
+
+    margin: 2em 3%;
+    width: 20%;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+    #item-buttons {
+      text-align: center;
+    }
+
+  }
+
+}
+
+#item-body > #bbpress-forums {
+  @include content;
+}

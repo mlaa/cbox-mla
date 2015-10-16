@@ -1,0 +1,45 @@
+// Styles to be used with the plugin BP Group Documents,
+// a plugin made for file uploading.
+
+#bp-group-documents {
+
+  text-align: center;
+
+  h3 {
+    font-size: $size-l;
+  }
+
+  // At the time of writing, this contained a way to sort files,
+  // but it doesn't seem very useful
+  #subnav {
+    display: none;
+  }
+
+}
+
+#bp-group-documents-list {
+
+  text-align: left;
+
+  li {
+    display: block;
+  }
+
+  .admin-links a {
+    @include button;
+  }
+
+}
+
+.bp-group-documents-icon {
+  display: none;
+}
+
+.bp-group-documents-title {
+  font-size: $size-m;
+}
+
+// There was a hard-coded icon here. This disables that icon.
+#nav-documents-groups-li {
+  background: transparent;
+}

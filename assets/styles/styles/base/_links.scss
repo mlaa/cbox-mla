@@ -1,0 +1,19 @@
+// Links
+
+a {
+
+  color: $page-link-color;
+  text-decoration: none;
+  word-wrap: break-word;
+
+  &:hover {
+    color: $page-link-hover-color;
+    text-decoration: underline;
+  }
+
+}
+
+header a,
+nav a {
+  text-decoration: none;
+}

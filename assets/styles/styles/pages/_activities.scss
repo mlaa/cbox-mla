@@ -1,0 +1,100 @@
+// Activity items
+
+// Colors
+$activity-background-color: #ddd;
+$activity-link-color: #ccc;
+$activity-link-hover-color: #777;
+$activity-inner-border-color: #eee;
+
+#whats-new-content {
+  padding: 2%;
+}
+
+#whats-new-textarea,
+#whats-new-post-in-box {
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .button {
+    min-height: 25px;
+  }
+
+}
+
+#whats-new-post-in-box {
+
+  margin: 1%;
+
+  select {
+    margin-left: 0.5em;
+  }
+
+}
+
+#whats-new {
+  height: 47px;
+}
+
+.activity-content {
+  margin: 1em;
+}
+
+.load-more {
+
+  flex: 100%;
+  padding: 1em;
+
+  a {
+    font-size: $size-m;
+    margin: 0 auto;
+  }
+
+}
+
+.activity-meta {
+
+  background-color: $activity-background-color;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: auto;
+
+  > a {
+
+    align-items: center;
+    background-color: $page-background-color;
+    border: 1px solid darken($page-background-color, 4%);
+    border-radius: 0;
+    color: $activity-link-color;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    &:hover {
+      color: $activity-link-hover-color;
+    }
+
+  }
+
+}
+
+.activity-inner {
+
+  border-left: 3px solid $activity-inner-border-color;
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+
+  img {
+    // Don't show images in activities.
+    // They have unpredictable dimensions and are hard to style
+    // so that they look good.
+    display: none;
+  }
+
+}
+
+.activity-comments {
+  display: none;
+}

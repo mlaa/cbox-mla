@@ -1,0 +1,20 @@
+// Footer
+
+footer {
+
+  background-color: $footer-bg-color;
+  color: $footer-text;
+  display: flex;
+
+  .widget {
+
+    padding: 1em;
+
+    a {
+      color: $footer-text;
+      text-decoration: underline;
+    }
+
+  }
+
+}

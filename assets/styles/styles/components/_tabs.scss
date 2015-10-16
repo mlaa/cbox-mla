@@ -1,0 +1,33 @@
+// Tabs
+
+@mixin tabs($color: $white) {
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+
+    display: inline;
+    list-style: none;
+
+    a {
+      border-bottom: 4px solid transparent;
+      color: $color;
+      display: inline-block;
+      padding: 0.6em 0.4em;
+    }
+
+  }
+
+  .current a,
+  .current-menu-item a,
+  .current-page-item a,
+  .selected a,
+  li a:hover {
+    border-bottom: 4px solid $color;
+    text-decoration: none;
+  }
+
+}

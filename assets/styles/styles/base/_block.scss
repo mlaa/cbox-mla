@@ -1,0 +1,11 @@
+// Block elements
+
+p {
+  margin: 0.5em 0 1.2em 0;
+  padding: 0;
+}
+
+// Single paragraphs shouldn't have this spacing between them.
+p:only-child {
+  margin: 0;
+}

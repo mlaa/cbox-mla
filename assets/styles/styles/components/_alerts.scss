@@ -1,0 +1,47 @@
+// Alerts and callouts
+
+// Colors
+$alert-caution-background-color: #ffe;
+$alert-caution-border-color: #ddc;
+
+$alert-info-background-color: #eef;
+$alert-info-border-color: #ccd;
+
+$alert-notice-background-color: #efe;
+$alert-notice-border-color: #cdc;
+
+$alert-warning-background-color: #fdd;
+$alert-warning-border-color: #caa;
+
+@mixin alert {
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.caution {
+  @include alert;
+  background-color: $alert-caution-background-color;
+  border-color: $alert-caution-border-color;
+}
+
+.info {
+  @include alert;
+  background-color: $alert-info-background-color;
+  border-color: $alert-info-border-color;
+}
+
+.notice,
+.bbp-template-notice {
+  @include alert;
+  background-color: $alert-notice-background-color;
+  border-color: $alert-notice-border-color;
+}
+
+.warning {
+  @include alert;
+  background-color: $alert-warning-background-color;
+  border-color: $alert-warning-border-color;
+}

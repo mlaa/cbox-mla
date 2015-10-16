@@ -1,0 +1,93 @@
+// Headers
+
+// Responsive web typography scale
+// adapted from http://typecast.com/blog/a-more-modern-scale-for-web-typography
+
+%header {
+  font-family: $header-font-family;
+  font-weight: $header-bold;
+  line-height: 1.3em;
+}
+
+h1 {
+
+  @extend %header;
+  margin: 1em 0 0.5em 0;
+
+  @include breakpoint(md) {
+    font-size: 3em;
+    line-height: 1.05em;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 2.5em;
+    line-height: 1.125em;
+  }
+
+  @include breakpoint(xs) {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
+
+}
+
+h2 {
+
+  @extend %header;
+  margin: 1.2em 0 0.5em 0;
+
+  @include breakpoint(md) {
+    font-size: 2.25em;
+    line-height: 1.25em;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 2em;
+  }
+
+  @include breakpoint(xs) {
+    font-size: 1.625em;
+    line-height: 1.15385em;
+  }
+
+}
+
+h3 {
+
+  @extend %header;
+  margin: 1.2em 0 0.5em 0;
+
+  @include breakpoint(md) {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 1.5em;
+  }
+
+  @include breakpoint(xs) {
+    font-size: 1.375em;
+    line-height: 1.13636em;
+  }
+
+}
+
+h4 {
+
+  @extend %header;
+  margin: 0.5em 0;
+
+  @include breakpoint(md) {
+    font-size: 1.125em;
+  }
+
+  @include breakpoint(xs) {
+    line-height: 1.11111em;
+  }
+
+}
+
+.page-header {
+  text-align: center;
+}

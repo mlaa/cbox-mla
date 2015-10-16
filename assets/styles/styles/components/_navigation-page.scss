@@ -1,0 +1,30 @@
+.secondary,
+#item-nav,
+.item-list-tabs {
+
+  @include tabs($color: $white);
+  background-color: $nav-secondary-background-color;
+  font-family: $header-font-family;
+  font-size: $size-vs;
+  text-align: center;
+
+  li {
+    display: inline;
+    font-size: $size-m;
+    margin: 1em 0.2em 0;
+  }
+
+}
+
+.tertiary,
+#item-body #subnav {
+
+  background-color: $nav-tertiary-background-color;
+  font-family: $header-font-family;
+  font-size: $size-vs;
+
+  label {
+    color: $nav-text-color;
+  }
+
+}

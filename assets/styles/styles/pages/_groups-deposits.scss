@@ -1,0 +1,8 @@
+// Groups -> Single Group -> Deposits tab
+
+// Hack to remove the icon
+#deposits-groups-li {
+  a:before {
+    display: none;
+  }
+}
