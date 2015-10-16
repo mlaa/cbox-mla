@@ -27,6 +27,8 @@ SERVER=$1
 
 URL="--url=$SERVER"
 
+
+
 # Temporarily move widgets to "wp_inactive_widgets" area so we can save their content while
 # we change the theme.
 # Dashboard Widgets: 1. rss-5: "News from the MLA"; 2. text-15: "MLA Sites"; 3. links-2: "Member Resources"
@@ -83,8 +85,9 @@ wp menu item add-post inside-header-navigation $DASHBOARD_ID --title=Dashboard -
 # --------- Plugins ----------
 
 # Get the BuddyPress Global Search plugin and activate it
-cd $plugins_dir
-git clone https://github.com/mlaa/buddypress-global-search.git
+# this is now already present in commons on the feature/new-cbox-mla branch
+#cd $plugins_dir
+#git clone https://github.com/mlaa/buddypress-global-search.git
 wp plugin activate buddypress-global-search
 
 # Get and activate the Blog Avatar plugin
@@ -93,16 +96,19 @@ wp plugin activate buddypress-global-search
 
 # Download a copy of Buddypress Profile Progression,
 # unzip it, and remove the zip file:
-wget https://downloads.wordpress.org/plugin/buddypress-profile-progression.zip && unzip buddypress-profile-progression.zip && rm buddypress-profile-progression.zip
+# this is now already present in commons on the feature/new-cbox-mla branch
+#wget https://downloads.wordpress.org/plugin/buddypress-profile-progression.zip && unzip buddypress-profile-progression.zip && rm buddypress-profile-progression.zip
 
 # Now activate!
 wp plugin activate buddypress-profile-progression
 
-cd $plugins_dir/mla-admin-bar
-git checkout -b develop origin/develop || git checkout develop #get the develop version of mla-admin-bar
+# this is now already present in commons on the feature/new-cbox-mla branch
+#cd $plugins_dir/mla-admin-bar
+#git checkout -b develop origin/develop || git checkout develop #get the develop version of mla-admin-bar
 
-cd $plugins_dir/cbox-auth
-git checkout -b develop origin/develop || git checkout develop #get the develop version of cbox-auth
+# this is now already present in commons on the feature/new-cbox-mla branch
+#cd $plugins_dir/cbox-auth
+#git checkout -b develop origin/develop || git checkout develop #get the develop version of cbox-auth
 
 # --------- Styles ------------
 
@@ -118,9 +124,9 @@ echo "Unless you're seeing errors, everything seems to have worked. Now in order
 
 # And you can do that on the box itself by uncommenting these lines:
 
-sudo apt-get install -y npm
+#sudo apt-get install -y npm # npm is already installed
 npm install #install node dependencies
-npm install bower # don't think this is necessary (bower should be a dependency installed above), but it doesn't hurt so i'm leaving it
+#npm install bower # already installed
 bower install
 gulp
 
