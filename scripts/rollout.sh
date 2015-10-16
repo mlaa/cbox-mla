@@ -18,11 +18,11 @@ then
 	exit 1
 fi
 
-if [ -z "$1" ]
-then
-	echo "Please specify the server address for your WP install, i.e. ./rollout.sh commons.mla.org"
-	exit 2
-fi
+#if [ -z "$1" ]
+#then
+#	echo "Please specify the server address for your WP install, i.e. ./rollout.sh commons.mla.org"
+#	exit 2
+#fi
 
 
 
