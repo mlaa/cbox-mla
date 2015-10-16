@@ -5,10 +5,10 @@ set -x
 # Script for rolling out this theme.
 # Requires: wp-cli (should be already installed)
 
-start_dir="$CWD"
+start_dir="$PWD"
 project_dir=/srv/www/commons/current/
-plugins_dir="$project_dir"/web/app/plugins
-themes_dir="$project_dir"/web/app/themes
+plugins_dir="$project_dir"web/app/plugins
+themes_dir="$project_dir"web/app/themes
 
 # Check to make sure either the P env variable is set, or there's a plugins
 # directory at /srv/www/commons/current/web/app/plugins.
