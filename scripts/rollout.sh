@@ -121,7 +121,7 @@ wp plugin activate buddypress-profile-progression
 #git fetch
 #git checkout -b develop origin/develop || git checkout develop
 
-echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using `npm install`, `bower install`, and `gulp`. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself."
+echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using 'npm install', 'bower install', and 'gulp'. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself."
 
 
 # And you can do that on the box itself by uncommenting these lines:
