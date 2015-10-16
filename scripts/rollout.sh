@@ -1,12 +1,18 @@
 #!/bin/bash
+#set -e
 set -x
 
 # Script for rolling out this theme.
 # Requires: wp-cli (should be already installed)
 
+start_dir="$CWD"
+project_dir=/srv/www/commons/current/
+plugins_dir="$project_dir"/web/app/plugins
+themes_dir="$project_dir"/web/app/themes
+
 # Check to make sure either the P env variable is set, or there's a plugins
 # directory at /srv/www/commons/current/web/app/plugins.
-if [ ! -d /srv/www/commons/current/web/app/plugins ]
+if [ ! -d "$plugins_dir" ]
 then
 	echo "Can't find the plugins directory. Edit the script with the current path."
 	exit 1
@@ -40,22 +46,22 @@ wp theme activate tuileries $URL
 # Add profile area to dashboard sidebar
 wp widget add mla_bp_profile_area sidebar-primary
 
-# Add "News from the MLA" to logged-out dashboard main area. 
-wp widget move rss-5 --sidebar-id=mla-dashboard-main 
+# Add "News from the MLA" to logged-out dashboard main area.
+wp widget move rss-5 --sidebar-id=mla-dashboard-main
 
-# Add "MLA Resources" to the logged-out sidebar. 
+# Add "MLA Resources" to the logged-out sidebar.
 wp widget move links-2 --sidebar-id=mla-dashboard-logged-out
 
 # Populate footer with footer widgets
 for widget in text-6 rss-3 text-10
-do 
+do
 	wp widget move $widget --sidebar-id=sidebar-footer
 done
 
-# Move "News from the MLA" (copy), "MLA Sites," and "Member Resources" to the tabbed sidebar, 
-# visible to logged-in users only. 
+# Move "News from the MLA" (copy), "MLA Sites," and "Member Resources" to the tabbed sidebar,
+# visible to logged-in users only.
 for widget in links-3 text-15 rss-6
-do 
+do
 	wp widget move $widget --sidebar-id=mla-dashboard-tabbed-sidebar
 done
 
@@ -77,7 +83,7 @@ wp menu item add-post inside-header-navigation $DASHBOARD_ID --title=Dashboard -
 # --------- Plugins ----------
 
 # Get the BuddyPress Global Search plugin and activate it
-cd $P #plugins
+cd $plugins_dir
 git clone https://github.com/mlaa/buddypress-global-search.git
 wp plugin activate buddypress-global-search
 
@@ -92,29 +98,32 @@ wget https://downloads.wordpress.org/plugin/buddypress-profile-progression.zip &
 # Now activate!
 wp plugin activate buddypress-profile-progression
 
-cd mla-admin-bar
-git checkout -b develop origin/develop #get the develop version of mla-admin-bar
+cd $plugins_dir/mla-admin-bar
+git checkout -b develop origin/develop || git checkout develop #get the develop version of mla-admin-bar
 
-cd ../cbox-auth
-git checkout -b develop origin/develop #get the develop version of cbox-auth 
+cd $plugins_dir/cbox-auth
+git checkout -b develop origin/develop || git checkout develop #get the develop version of cbox-auth
 
 # --------- Styles ------------
 
-cd - # Go back to what we're assuming is the tuileries/scripts directory
-cd ..
+cd $project_dir
 git submodule --init --recursive # Check out a copy of the Boilerplate repo, which lives at assets/styles
 
-cd assets/styles
+cd $themes_dir/cbox-mla/assets/styles
 git fetch
-git checkout -b develop origin/develop 
+git checkout -b develop origin/develop || git checkout develop
 
-echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using `npm install`, `bower install`, and `gulp`. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself." 
+echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using `npm install`, `bower install`, and `gulp`. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself."
 
 
-# And you can do that on the box itself by uncommenting these lines: 
+# And you can do that on the box itself by uncommenting these lines:
 
-# sudo apt-get install npm 
-# npm install #install node dependencies
-# npm install bower 
-# bower install
-# gulp
+sudo apt-get install -y npm
+npm install #install node dependencies
+npm install bower # don't think this is necessary (bower should be a dependency installed above), but it doesn't hurt so i'm leaving it
+bower install
+gulp
+
+
+# back to where we got started
+cd $start_dir
