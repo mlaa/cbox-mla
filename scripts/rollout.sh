@@ -10,7 +10,7 @@ project_dir=/srv/www/commons/current
 wp_dir="$project_dir"/web/wp
 plugins_dir="$project_dir"/web/app/plugins
 themes_dir="$project_dir"/web/app/themes
-this_theme_dir="$themes_dir"/cbox-mla
+this_theme_dir="$themes_dir"/tuileries
 
 # Check to make sure either the P env variable is set, or there's a plugins
 # directory at /srv/www/commons/current/web/app/plugins.
