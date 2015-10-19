@@ -6,9 +6,11 @@ set -x
 # Requires: wp-cli (should be already installed)
 
 start_dir="$PWD"
-project_dir=/srv/www/commons/current/
-plugins_dir="$project_dir"web/app/plugins
-themes_dir="$project_dir"web/app/themes
+project_dir=/srv/www/commons/current
+wp_dir="$project_dir"/web/wp
+plugins_dir="$project_dir"/web/app/plugins
+themes_dir="$project_dir"/web/app/themes
+this_theme_dir="$themes_dir"/cbox-mla
 
 # Check to make sure either the P env variable is set, or there's a plugins
 # directory at /srv/www/commons/current/web/app/plugins.
@@ -25,6 +27,7 @@ fi
 #fi
 
 
+cd $wp_dir
 
 
 # Temporarily move widgets to "wp_inactive_widgets" area so we can save their content while
@@ -122,7 +125,9 @@ wp plugin activate buddypress-profile-progression
 #git fetch
 #git checkout -b develop origin/develop || git checkout develop
 
-echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using 'npm install', 'bower install', and 'gulp'. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself."
+#echo "Unless you're seeing errors, everything seems to have worked. Now in order for the theme to be functional, you have to build it using 'npm install', 'bower install', and 'gulp'. If you're installing to a VM, you might want to do all that on your host machine, but if you're rolling out to AWS, you might want to do that in the box itself."
+
+cd $this_theme_dir
 
 
 # And you can do that on the box itself by uncommenting these lines:
