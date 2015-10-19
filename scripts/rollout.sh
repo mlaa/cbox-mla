@@ -44,11 +44,11 @@ done
 wp widget delete text-13
 
 # Activate this theme.
-#SERVER=$1
-#URL="--url=$SERVER"
+SERVER=$1
+URL="--url=$SERVER"
 #wp theme activate tuileries $URL
-wp theme delete cbox-theme # this shouldn't be necessary once cbox-mla is fixed to activate correctly by itself
-wp theme activate cbox-mla
+#wp theme delete cbox-theme # this shouldn't be necessary once cbox-mla is fixed to activate correctly by itself
+wp theme activate tuileries $URL
 
 # Add profile area to dashboard sidebar
 wp widget add mla_bp_profile_area sidebar-primary
