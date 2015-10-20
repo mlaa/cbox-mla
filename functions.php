@@ -4,6 +4,9 @@
  * implementation of CBOX.
  */
 
+// Turn down error reporting, specifically to ignore Infinity-generated warnings.
+ini_set('error_reporting', E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+
 // Include files instead of cluttering up this file.
 require_once 'engine/includes/advanced-search.php';
 require_once 'engine/includes/allowed-tags.php';
