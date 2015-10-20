@@ -1,4 +1,8 @@
 <?php
+
+// Turn down error reporting, specifically to ignore Infinity-generated warnings.
+ini_set('error_reporting', E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+
 /**
  * Tuileries includes
  *
