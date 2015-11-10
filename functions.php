@@ -667,7 +667,7 @@ add_action( 'bp_enqueue_scripts', 'mla_member_mentions_script' );
 add_action( 'bp_admin_enqueue_scripts', 'mla_member_mentions_script' );
 
 function mla_mentions_script_enable( $current_status ) {
-        return $current_status || bp_is_groups_component() || bp_is_new_deposit_page();
+        return $current_status || bp_is_groups_component() || humcore_is_deposit_new_page();
 }
 add_filter( 'bp_activity_maybe_load_mentions_scripts', 'mla_mentions_script_enable' );
 
