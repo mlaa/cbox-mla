@@ -13,7 +13,16 @@
 
 <?php do_action( 'bp_before_members_loop' ); ?>
 
-<?php if ( bp_has_members( bp_ajax_querystring( 'members' ) ) ) : ?>
+<?php  $interest = get_query_var( 'academic_interests', false );
+        if ( false !== $interest ) {
+                $interest_query_filter = '';
+                $term = get_term_by( 'term_taxonomy_id', $interest, 'mla_academic_interests' );
+	?>
+                <h4>Academic Interest: <?php echo $term->name; ?></h4>
+	<?php
+                $interest_query_filter = '&meta_key=academic_interests&meta_value=' . $interest;
+        } ?>
+<?php if ( bp_has_members( bp_ajax_querystring( 'members' ) . $interest_query_filter ) ) : ?>
 
 	<?php do_action( 'bp_before_directory_members_list' ); ?>
 

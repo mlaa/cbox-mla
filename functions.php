@@ -679,3 +679,16 @@ function mla_bp_core_override_common_scripts( $current_scripts ) {
 }
 add_filter( 'bp_core_register_common_scripts', 'mla_bp_core_override_common_scripts' );
 
+function mla_hide_extended_profile_field( ) {
+	global $pagenow;
+	if ( is_admin() && 'users.php' === $pagenow ) { ?>
+<style type='text/css' media='screen'>
+div.bp-profile-field.field_9
+{ display: none; }
+</style>
+	<?php }
+
+}
+add_action( 'admin_head', 'mla_hide_extended_profile_field' );
+
+
