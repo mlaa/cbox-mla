@@ -13,15 +13,15 @@
 
 <?php do_action( 'bp_before_members_loop' ); ?>
 
-<?php  $interest = get_query_var( 'academic_interests', false );
-        if ( false !== $interest ) {
-                $interest_query_filter = '';
-                $term = get_term_by( 'term_taxonomy_id', $interest, 'mla_academic_interests' );
+<?php	$interest = get_query_var( 'academic_interests', false );
+	$interest_query_filter = '';
+	if ( false !== $interest ) {
+		$term = get_term_by( 'name', urldecode( $interest ), 'mla_academic_interests' );
 	?>
-                <h4>Academic Interest: <?php echo $term->name; ?></h4>
+	<h4>Academic Interest: <?php echo $term->name; ?></h4>
 	<?php
-                $interest_query_filter = '&meta_key=academic_interests&meta_value=' . $interest;
-        } ?>
+		$interest_query_filter = '&meta_key=academic_interests&meta_value=' . $term->term_taxonomy_id;
+	} ?>
 <?php if ( bp_has_members( bp_ajax_querystring( 'members' ) . $interest_query_filter ) ) : ?>
 
 	<?php do_action( 'bp_before_directory_members_list' ); ?>
