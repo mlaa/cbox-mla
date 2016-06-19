@@ -83,8 +83,31 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($) {
-	$('.ac_form_cancel').click(function(e) { 
-		e.preventDefault(); 
-		$(this).parent().parent().slideUp(); 
-	}); 
-});  
+	$('.ac_form_cancel').click(function(e) {
+		e.preventDefault();
+		$(this).parent().parent().slideUp();
+	});
+});
+
+// search improvements
+jQuery(document).ready(function($) {
+
+  var getParameterByName = function(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+  };
+
+  var search_text = getParameterByName('s');
+
+  var search_input = $('input[id*="search"]');
+
+  if (search_text && search_input.val() === '') {
+    search_input.val(search_text);
+  }
+
+});
