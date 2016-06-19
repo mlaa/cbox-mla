@@ -110,4 +110,16 @@ jQuery(document).ready(function($) {
     search_input.val(search_text);
   }
 
+
+  /**
+   * copy number of results from bottom pagination to overwrite buggy top tab
+   */
+
+  var correct_results_count = $('#member-dir-count-bottom').html().match(/Viewing [0-9]+ - [0-9]+ of ([0-9]+) active members/)[1];
+
+  var target_el = $('#members-all span');
+
+  if (parseInt(correct_results_count) > 0) {
+    target_el.html(correct_results_count);
+  }
 });
