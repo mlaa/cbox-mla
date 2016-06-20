@@ -115,11 +115,14 @@ jQuery(document).ready(function($) {
    * copy number of results from bottom pagination to overwrite buggy top tab
    */
 
-  var correct_results_count = $('#member-dir-count-bottom').html().match(/Viewing [0-9]+ - [0-9]+ of ([0-9]+) active members/)[1];
+  var correct_results_el = $('#member-dir-count-bottom');
 
-  var target_el = $('#members-all span');
+  if (correct_results_el.length) {
+    var correct_results_count = correct_results_el.html().match(/Viewing [0-9]+ - [0-9]+ of ([0-9]+) active members/)[1];
+    var target_el = $('#members-all span');
 
-  if (parseInt(correct_results_count) > 0) {
-    target_el.html(correct_results_count);
+    if (parseInt(correct_results_count) > 0) {
+      target_el.html(correct_results_count);
+    }
   }
 });
