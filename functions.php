@@ -654,3 +654,14 @@ function mla_bp_core_override_common_scripts( $current_scripts ) {
         return $current_scripts;
 }
 add_filter( 'bp_core_register_common_scripts', 'mla_bp_core_override_common_scripts' );
+
+add_action( 'bp_enqueue_scripts', function() {
+	if ( bp_is_members_directory() ) {
+		wp_enqueue_style(
+			'mla-follow-css',
+			get_stylesheet_directory_uri() . "/assets/css/follow{$min}.css",
+			array(),
+			bp_get_version()
+		);
+	}
+});

@@ -1,0 +1,3 @@
+.action .follow-button a.follow:before {
+  content: none;
+}
