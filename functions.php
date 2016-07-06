@@ -573,9 +573,10 @@ class MLA_Name_Suggestions extends BP_Suggestions {
         public function mla_query_users_by_name( $bp_user_query ) {
 
                 global $wpdb;
+                $society_id = get_network_option( '', 'society_id' );
 
         if ( ! empty( $bp_user_query->query_vars['search_terms'] ) ) {
-                        $bp_user_query->uid_clauses['where'] = " WHERE u.ID IN ( SELECT ID FROM {$wpdb->users} WHERE spam = 0 AND deleted = 0 AND user_status = 0 ) AND u.ID IN ( SELECT ID FROM {$wpdb->users} WHERE ( display_name LIKE '%" . ucfirst( strtolower(  $bp_user_query->query_vars['search_terms'] ) ) ."%' ) )";
+                        $bp_user_query->uid_clauses['where'] = " WHERE u.ID IN ( SELECT tr.object_id FROM {$wpdb->users} us, wp_terms t, wp_term_relationships tr, wp_term_taxonomy tt where t.term_id = tt.term_id and tt.term_taxonomy_id = tr.term_taxonomy_id and tt.taxonomy='bp_member_type' and t.slug='{$society_id}' and us.spam = 0 AND us.deleted = 0 AND us.user_status = 0 AND us.display_name LIKE '%" . ucfirst( strtolower(  $bp_user_query->query_vars['search_terms'] ) ) ."%' )";
                         $bp_user_query->uid_clauses['orderby'] = "ORDER BY substring_index(u.display_name, ' ', -1)";
                 }
 
