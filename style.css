@@ -4239,4 +4239,8 @@ body {
 /* --- End Phones --- }}} */
 /* --- End Mobile --- }}} */
 
+#top-homepage #homepage-sidebar-right h4 {
+  font-size: 1.3em;
+}
+
 /*# sourceMappingURL=style.css.map */
