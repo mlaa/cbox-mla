@@ -666,3 +666,20 @@ add_action( 'bp_enqueue_scripts', function() {
 		);
 	}
 });
+
+/**
+ * turn profile edit link into profile view link
+ */
+function mla_filter_admin_bar_menu_my_account( $wp_admin_bar ) {
+	// this is a clone (value only), not a reference to the actual node
+	$my_account_node = $wp_admin_bar->get_node( 'my-account' );
+
+	if ( substr( $my_account_node->href, -5 ) === 'edit/' ) {
+		$wp_admin_bar->remove_node( 'my-account' );
+		$my_account_node->href = substr( $my_account_node->href, 0, -5 );
+		$wp_admin_bar->add_node( $my_account_node );
+	}
+
+	return $wp_admin_bar;
+}
+add_filter( 'admin_bar_menu', 'mla_filter_admin_bar_menu_my_account' );
