@@ -688,6 +688,7 @@ add_filter( 'admin_bar_menu', 'mla_filter_admin_bar_menu_my_account' );
  * something's broken with infinity script loading for header logo upload panel, this is a workaround.
  */
 function mla_add_infinity_template_js_to_admin_scripts() {
+	wp_enqueue_style( 'inf_tpl_css', '/app/themes/cbox-theme/engine/ICE/ext/options/upload/template.css' );
 	wp_enqueue_script( 'inf_tpl_js', '/app/themes/cbox-theme/engine/ICE/ext/options/upload/template.js' );
 }
 add_action( 'admin_enqueue_scripts', 'mla_add_infinity_template_js_to_admin_scripts' );
