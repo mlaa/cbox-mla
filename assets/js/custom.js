@@ -110,23 +110,4 @@ jQuery(document).ready(function($) {
     search_input.val(search_text);
   }
 
-
-  /**
-   * copy number of results from bottom pagination to overwrite buggy top tab
-   */
-
-  var correct_results_el = $('.dir-list .pag-count');
-
-  if (correct_results_el.length) {
-    var correct_results_count = (function() {
-      var match = correct_results_el.html().match(/Viewing [0-9]+ - [0-9]+ of ([0-9]+)/);
-      return (match && match.length > 1) ? match[1] : 0;
-    })();
-    var target_el = $('.main-tabs .selected span');
-
-    if (parseInt(correct_results_count) > 0) {
-      target_el.html(correct_results_count);
-    }
-  }
-
 });
